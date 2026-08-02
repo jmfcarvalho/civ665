@@ -1,0 +1,1313 @@
+{
+  "course": "CIV 665 - Sustainable Construction Engineering",
+  "module": {
+    "code": "020_sustainabledevelopment",
+    "title": "Sustainable Development, Circular Economy, and Environmental Assessment in Construction",
+    "academic_level": "Graduate / Master of Science",
+    "target_framework": "Reveal.js"
+  },
+  "slide_deck": [
+{
+  "slide_id": "01_cover",
+  "layout_type": "hero_cover",
+  "title": "Ecological Boundaries & Built Environment: The Evolution of Sustainable Development in Civil Engineering",
+  "subtitle": "Module 020 — Course CIV 665",
+  "technical_scope": [
+    "Historical trajectory from resource exploitation to planetary boundaries",
+    "Life Cycle Assessment (LCA) and Green Building Rating Tools (GBRTs)",
+    "Methodological critiques of current sustainability evaluation systems"
+  ],
+  "qr_code_access": {
+    "label": "Interactive Mobile Access",
+    "instructions": "Scan to follow the live interactive presentation on your mobile device",
+    "call_to_action": "Access live slides, interactive diagrams, reference links, and real-time polling.",
+    "url_placeholder": "https://civ665.eng.br/slides/020"
+  }
+}
+    {
+      "slide_id": "02_intro_objectives",
+      "layout_type": "two_column_structure",
+      "title": "Module Architecture & Learning Objectives",
+      "content": {
+        "learning_objectives": [
+          "Evaluate historical, geopolitical, and scientific drivers of sustainable development",
+          "Analyze flow dynamics: Linear throughput vs. closed-loop Circular Economy models",
+          "Apply Kibert's sustainable construction principles across material life cycles",
+          "Critique GBRT weighting matrices, operational biases, and regional applicability limits"
+        ],
+        "module_structure": [
+          "I. Chronological Foundations (1962–Present)",
+          "II. Conceptual Paradigms (SD & Circular Economy)",
+          "III. Sustainable Construction & Kibert Principles",
+          "IV. Computational LCA Tools & Inventory Databases",
+          "V. GBRTs & Methodological Critiques"
+        ]
+      }
+    },
+    {
+  "slide_id": "03_timeline_literature_conferences_agreements",
+  "layout_type": "interactive_matrix_timeline",
+  "title": "Integrated Chronological Matrix (1962–Present)",
+  "description": "Bifurcated node map linking foundational literature, UN summits, and international binding frameworks.",
+  "nodes": [
+  {
+    "year": 1962,
+    "category": "Literature",
+    "title": "Silent Spring (Rachel Carson)",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/a/a2/SilentSpring.jpg",
+    "image_source": "Wikimedia Commons / Houghton Mifflin",
+    "document_link": "https://www.rachelcarson.org/SilentSpring.aspx",
+    "instruction": "Clique na imagem para acessar a obra na íntegra ou documentação oficial.",
+    "focus": "Ecotoxicology, bioaccumulation, public environmental awareness",
+    "overview": {
+      "date": "September 27, 1962",
+      "author": "Rachel Carson",
+      "geopolitical_context": "Post-WWII industrial expansion, Cold War chemical warfare research transition to civilian agricultural pesticides (DDT) in the United States.",
+      "key_elements": [
+        "Bioaccumulation and biomagnification of synthetic pesticides",
+        "Public health impacts of unchecked chemical usage",
+        "Catalyst for the modern environmental movement and establishment of US EPA"
+      ]
+    }
+  },
+  {
+    "year": 1972,
+    "category": "Literature / Summit",
+    "title": "The Limits to Growth (Club of Rome) / UN Stockholm Conference",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/en/b/b2/LimitsToGrowth.jpg",
+    "image_source": "Wikimedia Commons / Universe Books",
+    "document_link": "https://www.clubofrome.org/publication/the-limits-to-growth/",
+    "instruction": "Clique na imagem para acessar a obra na íntegra ou documentação oficial.",
+    "focus": "System dynamics modeling of exponential resource depletion; First global UN environmental summit",
+    "overview": {
+      "date": "1972 (Book published March; Conference held June 5–16)",
+      "author": "Donella H. Meadows, Dennis L. Meadows, Jørgen Randers, William W. Behrens III / United Nations",
+      "geopolitical_context": "Global post-war economic boom meeting first resource constraints; East-West Cold War tension and North-South economic development divide.",
+      "key_elements": [
+        "World3 computer model simulating population, industrialization, and resource limits",
+        "Stockholm Declaration: 26 principles placing environmental issues at the forefront of international concerns",
+        "Creation of the United Nations Environment Programme (UNEP)"
+      ]
+    }
+  },
+  {
+    "year": 1979,
+    "category": "Agreements",
+    "title": "Bern Convention & LRTAP Convention (Geneva)",
+    "cover_image": "https://rm.coe.int/CoERMPublicCommonSearchServices/DisplayDCTMContent?documentId=0900001680078aff",
+    "image_source": "Council of Europe / UNECE",
+    "document_link": "https://www.coe.int/en/web/bern-convention",
+    "instruction": "Clique na imagem para acessar a obra na íntegra ou documentação oficial.",
+    "focus": "Transboundary pollution regulation and wildlife conservation protocols",
+    "overview": {
+      "date": "September 19 (Bern) & November 13 (LRTAP), 1979",
+      "author": "Council of Europe / United Nations Economic Commission for Europe (UNECE)",
+      "geopolitical_context": "Acid rain damage in Scandinavian and European forests originating from transboundary industrial sulfur emissions in Europe during the Cold War.",
+      "key_elements": [
+        "Bern Convention: Protection of wild flora, fauna, and natural habitats in Europe",
+        "LRTAP: First legally binding international instrument addressing regional air pollution",
+        "Framework for scientific collaboration on cross-border environmental impacts"
+      ]
+    }
+  },
+  {
+    "year": 1980,
+    "category": "Literature",
+    "title": "World Conservation Strategy (IUCN/UNEP/WWF)",
+    "cover_image": "https://portals.iucn.org/library/sites/library/files/documents/WCS-001.pdf",
+    "image_source": "IUCN / UNEP / WWF",
+    "document_link": "https://portals.iucn.org/library/node/6193",
+    "instruction": "Clique na imagem para acessar a obra na íntegra ou documentação oficial.",
+    "focus": "First formal introduction of 'sustainable development' in conservation context",
+    "overview": {
+      "date": "March 5, 1980",
+      "author": "International Union for Conservation of Nature (IUCN), UNEP, World Wildlife Fund (WWF)",
+      "geopolitical_context": "Emerging realization that conservation efforts fail without integrated socio-economic development in developing nations.",
+      "key_elements": [
+        "First formal linkage between ecological conservation and human development",
+        "Maintenance of essential ecological processes and life-support systems",
+        "Sustainable utilization of species and ecosystems"
+      ]
+    }
+  },
+  {
+    "year": 1987,
+    "category": "Literature / Report",
+    "title": "Our Common Future (Brundtland Report - WCED)",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/commons/2/29/Our_Common_Future.jpg",
+    "image_source": "United Nations / Oxford University Press",
+    "document_link": "https://sustainabledevelopment.un.org/content/documents/5987our-common-future.pdf",
+    "instruction": "Clique na imagem para acessar a obra na íntegra ou documentação oficial.",
+    "focus": "Formalization of Sustainable Development definition: meeting present needs without compromising future generations",
+    "overview": {
+      "date": "October 1987",
+      "author": "World Commission on Environment and Development (WCED) / Chaired by Gro Harlem Brundtland",
+      "geopolitical_context": "Late Cold War era, rising global economic interdependence, major industrial disasters (Chernobyl 1986, Bhopal 1984).",
+      "key_elements": [
+        "Canonical definition of 'Sustainable Development'",
+        "Integration of environmental, economic, and social dimensions",
+        "Call for a global UN summit on environment and development"
+      ]
+    }
+  },
+  {
+    "year": 1992,
+    "category": "Summit / Agreements",
+    "title": "UNCED Rio Earth Summit (Rio 92)",
+    "cover_image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Rio_Earth_Summit_1992.jpg",
+    "image_source": "United Nations Archives",
+    "document_link": "https://www.un.org/en/conferences/environment/rio1992",
+    "instruction": "Clique na imagem para acessar a obra na íntegra ou documentação oficial.",
+    "focus": "Agenda 21, UNFCCC, CBD, Rio Declaration on Environment and Development",
+    "overview": {
+      "date": "June 3–14, 1992",
+      "author": "United Nations Conference on Environment and Development (UNCED)",
+      "geopolitical_context": "Post-Cold War optimism, global consensus on multilateral environmental governance.",
+      "key_elements": [
+        "Agenda 21 action plan for global sustainable development",
+        "Establishment of UNFCCC (Climate Change) and CBD (Biodiversity)",
+        "Rio Declaration establishing the Precautionary Principle and Polluter Pays Principle"
+      ]
+    }
+  },
+  {
+    "year": 1995,
+    "category": "Summit Series",
+    "title": "COP 1 (Berlin)",
+    "cover_image": "https://unfccc.int/sites/default/files/styles/hero_image_desktop/public/2018-03/COP1_Berlin.jpg",
+    "image_source": "UNFCCC Secretariat",
+    "document_link": "https://unfccc.int/process-and-meetings/conferences/past-conferences/berlin-climate-change-conference-march-1995/cop-1",
+    "instruction": "Clique na imagem para acessar a obra na íntegra ou documentação oficial.",
+    "focus": "Initiation of the annual UNFCCC Conference of the Parties process",
+    "overview": {
+      "date": "March 28 – April 7, 1995",
+      "author": "UNFCCC Secretariat / Chaired by Angela Merkel",
+      "geopolitical_context": "Post-Rio operationalization phase; early debate on differentiated responsibilities between developed and developing nations.",
+      "key_elements": [
+        "Berlin Mandate: Recognition that voluntary commitments under UNFCCC were inadequate",
+        "Agreement to launch negotiations for legally binding targets for developed nations",
+        "Institutional setup for future climate diplomacy"
+      ]
+    }
+  },
+  {
+    "year": 1997,
+    "category": "Agreements",
+    "title": "Kyoto Protocol (UNFCCC)",
+    "cover_image": "https://unfccc.int/sites/default/files/styles/hero_image_desktop/public/2018-03/Kyoto_Protocol_Cover.jpg",
+    "image_source": "UNFCCC Secretariat",
+    "document_link": "https://unfccc.int/kyoto_protocol",
+    "instruction": "Clique na imagem para acessar a obra na íntegra ou documentação oficial.",
+    "focus": "First legally binding emission reduction targets for industrialized nations",
+    "overview": {
+      "date": "December 11, 1997",
+      "author": "UNFCCC Conference of the Parties (COP 3)",
+      "geopolitical_context": "Global economic expansion in the late 90s; friction between Annex I (developed) and non-Annex I nations regarding industrial responsibility.",
+      "key_elements": [
+        "Binding GHG reduction targets for Annex I countries",
+        "Market-based mechanisms: Clean Development Mechanism (CDM), Emissions Trading, Joint Implementation",
+        "Common But Differentiated Responsibilities (CBDR) principle"
+      ]
+    }
+  },
+  {
+    "year": 2015,
+    "category": "Agreements / Frameworks",
+    "title": "Sendai Framework, Agenda 2030 (SDGs) & Paris Agreement",
+    "cover_image": "https://www.un.org/sustainabledevelopment/wp-content/uploads/2015/09/SDG_Logo_Cover.jpg",
+    "image_source": "United Nations / UNDRR / UNFCCC",
+    "document_link": "https://sdgs.un.org/goals",
+    "instruction": "Clique na imagem para acessar a obra na íntegra ou documentação oficial.",
+    "focus": "Disaster risk reduction in infrastructure, 17 SDGs (focus ODS 9, 11, 12), and binding NDCs for global decarbonization",
+    "overview": {
+      "date": "March (Sendai), September (SDGs), December (Paris), 2015",
+      "author": "United Nations (UNDRR, UNGA, UNFCCC COP 21)",
+      "geopolitical_context": "Post-financial crisis global economy, worsening extreme weather events, universal recognition of climate risk.",
+      "key_elements": [
+        "Sendai Framework: Resilient infrastructure and risk reduction",
+        "Agenda 2030: 17 Sustainable Development Goals (SDG 9 Industry/Infra, SDG 11 Cities, SDG 12 Responsible Consumption)",
+        "Paris Agreement: Goal to limit warming below 2°C (pursuing 1.5°C) via Nationally Determined Contributions (NDCs)"
+      ]
+    }
+  },
+  {
+    "year": 2016,
+    "category": "Agreements / Urban Framework",
+    "title": "New Urban Agenda (UN-Habitat III - Quito)",
+    "cover_image": "https://habitat3.org/wp-content/uploads/NUA-Cover.jpg",
+    "image_source": "United Nations Human Settlements Programme (UN-Habitat)",
+    "document_link": "https://habitat3.org/the-new-urban-agenda/",
+    "instruction": "Clique na imagem para acessar a obra na íntegra ou documentação oficial.",
+    "focus": "Global standards for sustainable urban development, spatial planning, and resilient built environments",
+    "overview": {
+      "date": "October 20, 2016",
+      "author": "UN-Habitat (Habitat III Conference)",
+      "geopolitical_context": "Unprecedented global urbanization, especially in the Global South, driving resource demand and spatial inequality.",
+      "key_elements": [
+        "Sustainable urban spatial planning and design guidelines",
+        "Integration of civil infrastructure, housing affordability, and low-carbon urban systems",
+        "Operational framework for achieving SDG 11 at local scales"
+      ]
+    }
+  },
+  {
+    "year": 2019,
+    "category": "Literature / Report",
+    "title": "Global Status Report for Buildings and Construction (UNEP/WorldGBC)",
+    "cover_image": "https://globalabc.org/sites/default/files/2020-03/2019_GSR_Cover.png",
+    "image_source": "UNEP / Global Alliance for Buildings and Construction / WorldGBC",
+    "document_link": "https://www.unep.org/resources/publication/2019-global-status-report-buildings-and-construction-sector",
+    "instruction": "Clique na imagem para acessar a obra na íntegra ou documentação oficial.",
+    "focus": "Lifecycle carbon footprint baseline and decarbonization pathways for the built environment",
+    "overview": {
+      "date": "December 2019",
+      "author": "UN Environment Programme (UNEP) & GlobalABC",
+      "geopolitical_context": "Built environment sector recognized as accounting for nearly 40% of global energy-related CO2 emissions.",
+      "key_elements": [
+        "Quantification of operational vs. embodied carbon in construction",
+        "Roadmaps for net-zero carbon building stock by 2050",
+        "Policy and material innovation standards for AEC industries"
+      ]
+    }
+  },
+  {
+    "year": 2022,
+    "category": "Literature / Report",
+    "title": "IPCC WGIII Sixth Assessment Report (AR6 - Chapter 9: Buildings)",
+    "cover_image": "https://www.ipcc.ch/site/assets/uploads/2018/05/ar6_wg3_cover.jpg",
+    "image_source": "Intergovernmental Panel on Climate Change (IPCC)",
+    "document_link": "https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-9/",
+    "instruction": "Clique na imagem para acessar a obra na íntegra ou documentação oficial.",
+    "focus": "Mitigation strategies, net-zero carbon building standards, and climate adaptation in civil engineering and architecture",
+    "overview": {
+      "date": "April 2022",
+      "author": "Intergovernmental Panel on Climate Change (Working Group III)",
+      "geopolitical_context": "Urgent scientific imperative for immediate global emissions reductions to avoid exceeding 1.5°C threshold.",
+      "key_elements": [
+        "Sufficiency, Efficiency, Renewable (SER) framework for building design",
+        "Embodied carbon mitigation in structural materials (concrete, steel, timber)",
+        "Integrated lifecycle assessment (LCA) methodologies for smart, climate-adapted architecture"
+      ]
+    }
+  }
+]
+}
+    [
+  {
+    "slide_id": "04_all_cops_master_matrix",
+    "layout_type": "interactive_scrollable_table_with_popups",
+    "title": "Directory of UNFCCC COPs (COP 1 – COP 30)",
+    "description": "Comprehensive matrix with external documentation links, interactive detail popups, and navigation forks to pivotal summit deep-dives.",
+    "container_style": {
+      "max_height": "65vh",
+      "overflow_y": "auto",
+      "sticky_header": true
+    },
+    "columns": ["COP / Summit", "Year", "Host City", "Official Portal", "Interactive Details", "Deep-Dive"],
+    "rows": [
+      {
+        "cop": "Rio 92 (UNCED)",
+        "year": 1992,
+        "host": "Rio de Janeiro, Brazil",
+        "official_link": "https://www.un.org/en/conferences/environment/rio1992",
+        "popup_content": {
+          "primary_decision": "Adoption of UNFCCC Framework, CBD, Agenda 21, and Rio Declaration.",
+          "aec_impact": "Institutionalization of Environmental Impact Assessments (EIA) for civil works and adoption of Precautionary Principle in urban planning."
+        },
+        "has_pivotal_slide": true,
+        "target_slide_id": "05_pivotal_rio92"
+      },
+      {
+        "cop": "COP 1",
+        "year": 1995,
+        "host": "Berlin, Germany",
+        "official_link": "https://unfccc.int/process-and-meetings/conferences/past-conferences/berlin-climate-change-conference-march-1995/cop-1",
+        "popup_content": {
+          "primary_decision": "Berlin Mandate: Recognition that voluntary commitments were inadequate.",
+          "aec_impact": "Initial framework for evaluating industrial energy efficiency and manufacturing baselines."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 2",
+        "year": 1996,
+        "host": "Geneva, Switzerland",
+        "official_link": "https://unfccc.int/cop2/",
+        "popup_content": {
+          "primary_decision": "Geneva Ministerial Declaration endorsing IPCC Second Assessment Report conclusions.",
+          "aec_impact": "Scientific validation of anthropogenic influence driving early building thermal efficiency standards."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 3",
+        "year": 1997,
+        "host": "Kyoto, Japan",
+        "official_link": "https://unfccc.int/kyoto_protocol",
+        "popup_content": {
+          "primary_decision": "Kyoto Protocol adoption; establishment of Clean Development Mechanism (CDM).",
+          "aec_impact": "Economic valuation of embodied carbon and carbon credit baselines for infrastructure development."
+        },
+        "has_pivotal_slide": true,
+        "target_slide_id": "06_pivotal_cop3_kyoto"
+      },
+      {
+        "cop": "COP 4",
+        "year": 1998,
+        "host": "Buenos Aires, Argentina",
+        "official_link": "https://unfccc.int/cop4/",
+        "popup_content": {
+          "primary_decision": "Buenos Aires Plan of Action for operationalizing Kyoto mechanisms.",
+          "aec_impact": "Establishment of operational rules for energy efficiency CDM projects in municipal infrastructure."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 5",
+        "year": 1999,
+        "host": "Bonn, Germany",
+        "official_link": "https://unfccc.int/cop5/",
+        "popup_content": {
+          "primary_decision": "Technical guidelines and methodological approval for GHG emission reporting.",
+          "aec_impact": "Standardization of carbon emission accounting protocols for industrial material supply chains."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 6",
+        "year": 2000,
+        "host": "The Hague, Netherlands",
+        "official_link": "https://unfccc.int/cop6/",
+        "popup_content": {
+          "primary_decision": "Negotiation breakdown regarding carbon sinks and enforcement compliance.",
+          "aec_impact": "Temporary regulatory uncertainty for bio-based and timber construction certifications."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 6-2",
+        "year": 2001,
+        "host": "Bonn, Germany",
+        "official_link": "https://unfccc.int/cop6_2/",
+        "popup_content": {
+          "primary_decision": "Bonn Agreement rescuing the Kyoto Protocol rulebook.",
+          "aec_impact": "Inclusion of land-use and forestry accounting influencing sustainable urban development metrics."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 7",
+        "year": 2001,
+        "host": "Marrakech, Morocco",
+        "official_link": "https://unfccc.int/cop7/",
+        "popup_content": {
+          "primary_decision": "Marrakech Accords establishing operational rules for carbon trading.",
+          "aec_impact": "Formalized guidelines for structural decarbonization and credit generation in civil engineering."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 8",
+        "year": 2002,
+        "host": "New Delhi, India",
+        "official_link": "https://unfccc.int/cop8/",
+        "popup_content": {
+          "primary_decision": "Delhi Declaration on Climate Change and Sustainable Development.",
+          "aec_impact": "Focus on technology transfer for climate-resilient infrastructure in developing economies."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 9",
+        "year": 2003,
+        "host": "Milan, Italy",
+        "official_link": "https://unfccc.int/cop9/",
+        "popup_content": {
+          "primary_decision": "Afforestation and reforestation frameworks under CDM.",
+          "aec_impact": "Early supply chain traceability metrics for certified structural timber in building construction."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 10",
+        "year": 2004,
+        "host": "Buenos Aires, Argentina",
+        "official_link": "https://unfccc.int/cop10/",
+        "popup_content": {
+          "primary_decision": "Buenos Aires Programme of Work on Adaptation and Response Measures.",
+          "aec_impact": "Initial policy push for climate-proofing coastal and urban civil infrastructure against sea-level rise."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 11",
+        "year": 2005,
+        "host": "Montreal, Canada",
+        "official_link": "https://unfccc.int/cop11/",
+        "popup_content": {
+          "primary_decision": "Entry into force of Kyoto Protocol & adoption of Montreal Action Plan.",
+          "aec_impact": "Binding carbon caps driving heavy industrial efficiency in cement and steel manufacturing."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 12",
+        "year": 2006,
+        "host": "Nairobi, Kenya",
+        "official_link": "https://unfccc.int/cop12/",
+        "popup_content": {
+          "primary_decision": "Nairobi Work Programme on Impacts, Vulnerability, and Adaptation.",
+          "aec_impact": "Standardization of vulnerability risk assessments for critical civil engineering infrastructure."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 13",
+        "year": 2007,
+        "host": "Bali, Indonesia",
+        "official_link": "https://unfccc.int/cop13/",
+        "popup_content": {
+          "primary_decision": "Bali Road Map and introduction of Nationally Appropriate Mitigation Actions (NAMAs).",
+          "aec_impact": "Inclusion of national building energy efficiency programs into international mitigation frameworks."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 14",
+        "year": 2008,
+        "host": "Poznań, Poland",
+        "official_link": "https://unfccc.int/cop14/",
+        "popup_content": {
+          "primary_decision": "Poznań Strategic Programme on Technology Transfer.",
+          "aec_impact": "Financing mechanisms for sustainable building technologies and low-carbon HVAC systems."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 15",
+        "year": 2009,
+        "host": "Copenhagen, Denmark",
+        "official_link": "https://unfccc.int/cop15/",
+        "popup_content": {
+          "primary_decision": "Copenhagen Accord with $100B climate finance pledge.",
+          "aec_impact": "Capital allocation redirection toward resilient urban infrastructure and large-scale renewable installations."
+        },
+        "has_pivotal_slide": true,
+        "target_slide_id": "07_pivotal_cop15_copenhagen"
+      },
+      {
+        "cop": "COP 16",
+        "year": 2010,
+        "host": "Cancún, Mexico",
+        "official_link": "https://unfccc.int/cop16/",
+        "popup_content": {
+          "primary_decision": "Cancún Agreements & establishment of Green Climate Fund (GCF).",
+          "aec_impact": "Institutional funding mechanisms for sustainable urban transformation and flood defense works."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 17",
+        "year": 2011,
+        "host": "Durban, South Africa",
+        "official_link": "https://unfccc.int/cop17/",
+        "popup_content": {
+          "primary_decision": "Durban Platform for Enhanced Action launching universal treaty negotiations.",
+          "aec_impact": "Mandate toward universal building codes and structural emission regulations across all markets."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 18",
+        "year": 2012,
+        "host": "Doha, Qatar",
+        "official_link": "https://unfccc.int/cop18/",
+        "popup_content": {
+          "primary_decision": "Doha Amendment extending Kyoto Protocol to a second commitment period.",
+          "aec_impact": "Reinforced regulatory push for building envelope efficiency and reduced operational energy consumption."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 19",
+        "year": 2013,
+        "host": "Warsaw, Poland",
+        "official_link": "https://unfccc.int/cop19/",
+        "popup_content": {
+          "primary_decision": "Warsaw International Mechanism for Loss and Damage.",
+          "aec_impact": "Development of structural codes for post-disaster reconstruction and extreme weather resilience."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 20",
+        "year": 2014,
+        "host": "Lima, Peru",
+        "official_link": "https://unfccc.int/cop20/",
+        "popup_content": {
+          "primary_decision": "Lima Call for Climate Action outlining NDC structural requirements.",
+          "aec_impact": "Formal integration of municipal built environment targets within national climate action plans."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 21",
+        "year": 2015,
+        "host": "Paris, France",
+        "official_link": "https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement",
+        "popup_content": {
+          "primary_decision": "Paris Agreement (1.5°C goal, mandatory NDCs, Global Stocktake).",
+          "aec_impact": "Universal requirement for Life Cycle Assessment (LCA) and net-zero carbon building roadmaps."
+        },
+        "has_pivotal_slide": true,
+        "target_slide_id": "08_pivotal_cop21_paris"
+      },
+      {
+        "cop": "COP 22",
+        "year": 2016,
+        "host": "Marrakech, Morocco",
+        "official_link": "https://unfccc.int/cop22/",
+        "popup_content": {
+          "primary_decision": "Marrakech Action Proclamation; Global Alliance for Buildings and Construction integration.",
+          "aec_impact": "Sector-specific action plans targeting operational and embodied carbon reduction in construction."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 23",
+        "year": 2017,
+        "host": "Bonn, Germany",
+        "official_link": "https://unfccc.int/cop23/",
+        "popup_content": {
+          "primary_decision": "Talanoa Dialogue launched under Fiji Presidency.",
+          "aec_impact": "Integration of Nature-Based Solutions (NbS) alongside civil engineering for urban heat mitigation."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 24",
+        "year": 2018,
+        "host": "Katowice, Poland",
+        "official_link": "https://unfccc.int/katowice",
+        "popup_content": {
+          "primary_decision": "Katowice Climate Package (Paris Agreement Rulebook).",
+          "aec_impact": "Standardized metrics and verification protocols for GHG accounting in building operations."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 25",
+        "year": 2019,
+        "host": "Madrid, Spain",
+        "official_link": "https://unfccc.int/cop25",
+        "popup_content": {
+          "primary_decision": "Chile-Madrid Time for Action focusing on oceans and circular economy.",
+          "aec_impact": "Adoption of circular economy guidelines for demolition waste recycling and material reuse."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 26",
+        "year": 2021,
+        "host": "Glasgow, UK",
+        "official_link": "https://unfccc.int/cop26",
+        "popup_content": {
+          "primary_decision": "Glasgow Climate Pact; Article 6 carbon market rulebook completion.",
+          "aec_impact": "ESG procurement compliance, carbon border adjustments, and adoption of alternative low-carbon binders."
+        },
+        "has_pivotal_slide": true,
+        "target_slide_id": "09_pivotal_cop26_glasgow"
+      },
+      {
+        "cop": "COP 27",
+        "year": 2022,
+        "host": "Sharm El-Sheikh, Egypt",
+        "official_link": "https://unfccc.int/cop27",
+        "popup_content": {
+          "primary_decision": "Operationalization of Loss and Damage Fund.",
+          "aec_impact": "Priority funding for disaster-resilient structural design and coastal defense engineering in Global South."
+        },
+        "has_pivotal_slide": false,
+        "target_slide_id": null
+      },
+      {
+        "cop": "COP 28",
+        "year": 2023,
+        "host": "Dubai, UAE",
+        "official_link": "https://unfccc.int/cop28",
+        "popup_content": {
+          "primary_decision": "UAE Consensus (transition away from fossil fuels; launch of Buildings Breakthrough).",
+          "aec_impact": "Mandate for near-zero emission buildings by 2030 and electrification of heavy construction fleets."
+        },
+        "has_pivotal_slide": true,
+        "target_slide_id": "10_pivotal_cop28_dubai"
+      },
+      {
+        "cop": "COP 29",
+        "year": 2024,
+        "host": "Baku, Azerbaijan",
+        "official_link": "https://unfccc.int/cop29",
+        "popup_content": {
+          "primary_decision": "New Collective Quantified Goal (NCQG) on climate finance & Article 6 standards.",
+          "aec_impact": "Financing models for resilient infrastructure and cross-border carbon offsets in construction."
+        },
+        "has_pivotal_slide": true,
+        "target_slide_id": "11_pivotal_cop29_baku"
+      },
+      {
+        "cop": "COP 30",
+        "year": 2025,
+        "host": "Belém, Brazil",
+        "official_link": "https://unfccc.int/cop30",
+        "popup_content": {
+          "primary_decision": "Second-generation NDCs (2035 targets) & Bioeconomy framework integration.",
+          "aec_impact": "Mandatory embodied carbon caps and regulatory incentives for bio-based structural materials."
+        },
+        "has_pivotal_slide": true,
+        "target_slide_id": "12_pivotal_cop30_belem"
+      }
+    ]
+  },
+  {
+    "slide_id": "05_pivotal_rio92",
+    "layout_type": "pivotal_summit_deep_dive",
+    "parent_matrix_slide": "04_all_cops_master_matrix",
+    "title": "Pivotal Summit: Rio 92 (UNCED / Earth Summit)",
+    "logo": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Rio_Earth_Summit_1992.jpg",
+      "source": "United Nations Archives",
+      "document_link": "https://www.un.org/en/conferences/environment/rio1992"
+    },
+    "metadata": {
+      "year": 1992,
+      "location": "Rio de Janeiro, Brazil",
+      "legal_nature": "Foundational Multilateral Conference (Established UNFCCC)"
+    },
+    "geopolitical_context": "Post-Cold War diplomatic window enabling unprecedented global consensus on uniting economic development with environmental stewardship.",
+    "key_decisions": [
+      "Creation and opening for signature of the UNFCCC, CBD, and UNCCD treaties",
+      "Adoption of Agenda 21: A comprehensive global blueprint for sustainable development",
+      "Enunciation of the Rio Declaration containing 27 principles, including Common But Differentiated Responsibilities (CBDR)"
+    ],
+    "aec_engineering_impacts": [
+      "Institutionalized mandatory Environmental Impact Assessments (EIA) for major civil works",
+      "Formalized the Precautionary Principle into municipal spatial planning and site selection protocols",
+      "Laid the legal groundwork for energy efficiency mandates in building codes worldwide"
+    ]
+  },
+  {
+    "slide_id": "06_pivotal_cop3_kyoto",
+    "layout_type": "pivotal_summit_deep_dive",
+    "parent_matrix_slide": "04_all_cops_master_matrix",
+    "title": "Pivotal Summit: COP 3 (Kyoto Protocol)",
+    "logo": {
+      "url": "https://unfccc.int/sites/default/files/styles/hero_image_desktop/public/2018-03/Kyoto_Protocol_Cover.jpg",
+      "source": "UNFCCC Secretariat",
+      "document_link": "https://unfccc.int/kyoto_protocol"
+    },
+    "metadata": {
+      "year": 1997,
+      "location": "Kyoto, Japan",
+      "legal_nature": "Legally Binding Protocol under UNFCCC"
+    },
+    "geopolitical_context": "Establishment of top-down legally binding reduction targets exclusively for industrialized nations (Annex I), creating long-standing North-South diplomatic divides.",
+    "key_decisions": [
+      "Mandated a 5.2% average reduction in GHG emissions below 1990 levels for Annex I parties",
+      "Created market-based flexibility mechanisms: Clean Development Mechanism (CDM), Joint Implementation (JI), and Emissions Trading",
+      "Established quantitative accounting rules for six greenhouse gases"
+    ],
+    "aec_engineering_impacts": [
+      "Assigned monetary value to embodied carbon emissions in construction materials",
+      "Created the CDM market, enabling global climate finance for energy-efficient building retrofits and renewable energy civil infrastructure",
+      "Accelerated process technology improvements in carbon-intensive industries (cement clinker substitution, steel efficiency)"
+    ]
+  },
+  {
+    "slide_id": "07_pivotal_cop15_copenhagen",
+    "layout_type": "pivotal_summit_deep_dive",
+    "parent_matrix_slide": "04_all_cops_master_matrix",
+    "title": "Pivotal Summit: COP 15 (Copenhagen)",
+    "logo": {
+      "url": "https://unfccc.int/sites/default/files/styles/hero_image_desktop/public/2018-03/COP15_Copenhagen.jpg",
+      "source": "UNFCCC Secretariat",
+      "document_link": "https://unfccc.int/cop15/"
+    },
+    "metadata": {
+      "year": 2009,
+      "location": "Copenhagen, Denmark",
+      "legal_nature": "Political Accord (Non-binding multilateral consensus)"
+    },
+    "geopolitical_context": "Collision between developed economies and emerging powers (BASIC nations) in the aftermath of the 2008 global financial crisis, forcing a paradigm shift away from top-down treaties.",
+    "key_decisions": [
+      "First explicit multilateral recognition of capping global temperature rise to 2.0°C",
+      "Commitment by developed nations to mobilize $100 billion annually by 2020 for climate action in developing countries",
+      "Shifted diplomacy toward voluntary, bottom-up mitigation pledges (Pledge-and-Review framework)"
+    ],
+    "aec_engineering_impacts": [
+      "Initiated systemic green capital allocation for large-scale municipal infrastructure and transit-oriented development",
+      "Spurred urban adaptation modeling to justify public funding for climate-resilient civil engineering works",
+      "Promoted early voluntary green building certification schemes (LEED, BREEAM) across major property markets"
+    ]
+  },
+  {
+    "slide_id": "08_pivotal_cop21_paris",
+    "layout_type": "pivotal_summit_deep_dive",
+    "parent_matrix_slide": "04_all_cops_master_matrix",
+    "title": "Pivotal Summit: COP 21 (Paris Agreement)",
+    "logo": {
+      "url": "https://unfccc.int/sites/default/files/styles/hero_image_desktop/public/2018-03/COP21_Paris.jpg",
+      "source": "UNFCCC Secretariat",
+      "document_link": "https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement"
+    },
+    "metadata": {
+      "year": 2015,
+      "location": "Paris, France",
+      "legal_nature": "Legally Binding International Treaty"
+    },
+    "geopolitical_context": "Universal diplomatic breakthrough replacing rigid North-South distinctions with flexible Nationally Determined Contributions (NDCs) applicable to all nations.",
+    "key_decisions": [
+      "Binding commitment to hold global warming well below 2.0°C above pre-industrial levels and pursue efforts to limit it to 1.5°C",
+      "Establishment of mandatory 5-year NDCs ratcheting cycle and the Global Stocktake operational framework",
+      "Creation of enhanced transparency frameworks for tracking national mitigation and adaptation progress"
+    ],
+    "aec_engineering_impacts": [
+      "Triggered national mandates for mandatory Life Cycle Assessment (LCA) in building design and procurement",
+      "Enforced zero-carbon performance targets into municipal building codes and national infrastructure strategies",
+      "Accelerated decarbonization roadmaps for heavy materials, driving research into geopolymers, calcined clays, and green steel"
+    ]
+  },
+  {
+    "slide_id": "09_pivotal_cop26_glasgow",
+    "layout_type": "pivotal_summit_deep_dive",
+    "parent_matrix_slide": "04_all_cops_master_matrix",
+    "title": "Pivotal Summit: COP 26 (Glasgow Pact)",
+    "logo": {
+      "url": "https://unfccc.int/sites/default/files/styles/hero_image_desktop/public/2021-11/COP26_Glasgow.jpg",
+      "source": "UNFCCC Secretariat",
+      "document_link": "https://unfccc.int/cop26"
+    },
+    "metadata": {
+      "year": 2021,
+      "location": "Glasgow, United Kingdom",
+      "legal_nature": "Multilateral Decision Pact & Rulebook Completion"
+    },
+    "geopolitical_context": "Post-pandemic recovery setting where private sector financial institutions (GFANZ) aligned with net-zero 2050 roadmaps and carbon market mechanisms.",
+    "key_decisions": [
+      "Finalized Article 6 of the Paris Agreement, establishing centralized and bilateral global carbon trading rules",
+      "First explicit UN climate treaty decision targeting the phase-down of unabated coal power and inefficient fossil fuel subsidies",
+      "Request for countries to align 2030 NDCs directly with the 1.5°C threshold"
+    ],
+    "aec_engineering_impacts": [
+      "Institutionalized Environmental, Social, and Governance (ESG) compliance in civil engineering procurement and supply chains",
+      "Operationalized carbon offsets for major infrastructure projects under strict Article 6 verification",
+      "Catalyzed regional Carbon Border Adjustment Mechanisms (CBAM), imposing tariffs on high-embodied-carbon construction imports"
+    ]
+  },
+  {
+    "slide_id": "10_pivotal_cop28_dubai",
+    "layout_type": "pivotal_summit_deep_dive",
+    "parent_matrix_slide": "04_all_cops_master_matrix",
+    "title": "Pivotal Summit: COP 28 (UAE Consensus)",
+    "logo": {
+      "url": "https://unfccc.int/sites/default/files/styles/hero_image_desktop/public/2023-11/COP28_Dubai.jpg",
+      "source": "UNFCCC Secretariat",
+      "document_link": "https://unfccc.int/cop28"
+    },
+    "metadata": {
+      "year": 2023,
+      "location": "Dubai, United Arab Emirates",
+      "legal_nature": "Multilateral Consensus Document (Global Stocktake Outcome)"
+    },
+    "geopolitical_context": "Completion of the first official Global Stocktake revealing significant NDC implementation gaps, necessitating immediate sector-specific interventions.",
+    "key_decisions": [
+      "Historical global agreement to transition away from fossil fuels in energy systems in a just, orderly, and equitable manner",
+      "Global target to triple renewable energy capacity and double the global rate of energy efficiency improvements by 2030",
+      "Official launch of the Buildings Breakthrough initiative (Target: Near-zero emission and resilient buildings as the new normal by 2030)"
+    ],
+    "aec_engineering_impacts": [
+      "Enforced immediate operational decarbonization targets for building equipment and district energy systems",
+      "Mandated circular economy practices in structural demolition, material salvage, and concrete recycling",
+      "Spurred fleet electrification and hydrogen transition for heavy construction machinery"
+    ]
+  },
+  {
+    "slide_id": "11_pivotal_cop29_baku",
+    "layout_type": "pivotal_summit_deep_dive",
+    "parent_matrix_slide": "04_all_cops_master_matrix",
+    "title": "Pivotal Summit: COP 29 (Baku Finance Goal)",
+    "logo": {
+      "url": "https://unfccc.int/sites/default/files/styles/hero_image_desktop/public/2024-11/COP29_Baku.jpg",
+      "source": "UNFCCC Secretariat",
+      "document_link": "https://unfccc.int/cop29"
+    },
+    "metadata": {
+      "year": 2024,
+      "location": "Baku, Azerbaijan",
+      "legal_nature": "Financial Architecture Decision Framework"
+    },
+    "geopolitical_context": "Friction regarding the replacement of the $100B finance baseline with a trillions-scale target tailored to developing nations experiencing severe climate impacts.",
+    "key_decisions": [
+      "Adoption of the New Collective Quantified Goal (NCQG) on climate finance",
+      "Final operationalization of Article 6.2 and 6.4 carbon credit trading standards",
+      "Integration of adaptation finance tracking mechanisms into national reporting"
+    ],
+    "aec_engineering_impacts": [
+      "Direct capital flows toward climate-resilient civil infrastructure projects in developing regions",
+      "Standardization of cross-border carbon offset mechanisms specifically for major infrastructure developments",
+      "Expansion of urban climate adaptation engineering requirements (stormwater retention, coastal flood defenses)"
+    ]
+  },
+  {
+    "slide_id": "12_pivotal_cop30_belem",
+    "layout_type": "pivotal_summit_deep_dive",
+    "parent_matrix_slide": "04_all_cops_master_matrix",
+    "title": "Pivotal Summit: COP 30 (Belém Bioeconomy Summit)",
+    "logo": {
+      "url": "https://unfccc.int/sites/default/files/styles/hero_image_desktop/public/2025-05/COP30_Belem.jpg",
+      "source": "UNFCCC Secretariat",
+      "document_link": "https://unfccc.int/cop30"
+    },
+    "metadata": {
+      "year": 2025,
+      "location": "Belém, Brazil",
+      "legal_nature": "10-Year Paris Alignment & NDC Ratcheting Summit"
+    },
+    "geopolitical_context": "Critical 10-year milestone requiring submission of updated 2035 NDCs, with emphasis on tropical forest preservation and bioeconomy frameworks.",
+    "key_decisions": [
+      "Consolidation of second-generation NDCs incorporating strict 2035 emission reduction targets aligned with 1.5°C",
+      "Formal integration of multilateral bioeconomy frameworks into national climate strategies",
+      "Establishment of global nature-positive urban development directives"
+    ],
+    "aec_engineering_impacts": [
+      "Regulatory enforcement of strict embodied carbon thresholds across public and private construction sectors",
+      "Mandatory incentives and building code adoption for bio-based structural materials (engineered mass timber, bamboo, bio-composites)",
+      "Standardization of Nature-Based Engineering Solutions (NBES) for urban microclimate regulation and flood mitigation"
+    ]
+  }
+]
+    {
+  "slide_id": "05_conceptual_paradigms",
+  "layout_type": "bifurcated_flow_diagram",
+  "title": "System Dynamics: Linear Throughput vs. Closed-Loop Circular Economy",
+  "sections": {
+    "linear_economy": {
+      "left_card_concepts": {
+        "model": "Take → Make → Use → Waste (Extract → Manufacture → Construct → Occupy → Demolish → Landfill)",
+        "thermodynamic_state": "High entropy state characterized by uncompensated raw resource extraction, dissipative energy loss, and externalized environmental degradation.",
+        "economic_rationale": "Assumes infinite natural capital and infinite sink capacity, driving structural obsolescence and rapid material depreciation in civil infrastructure.",
+        "environmental_impact": "Massive embodied carbon release, severe habitat destruction, and critical solid waste generation in urban landfills."
+      },
+      "right_card_media": {
+        "video_url": "https://assets.mixkit.co/videos/preview/mixkit-industrial-factory-chimneys-emitting-smoke-41584-large.mp4",
+        "video_caption": "Linear Flow: Industrial throughput, resource extraction, and uncompensated waste generation."
+      }
+    },
+    "circular_economy": {
+      "left_card_concepts": {
+        "model": "Refuse → Reduce → Reuse → Repair → Remanufacture → Recycle → Regenerate",
+        "thermodynamic_state": "Minimization of virgin material input, maximum exergy retention, and maintenance of high-grade technical assets within closed-loop technosphere systems.",
+        "economic_rationale": "Decouples economic value creation in construction from finite resource consumption through long-term material stewardship and service-based business models.",
+        "environmental_impact": "Drastic reduction in embodied carbon, conservation of natural capital, and elimination of construction and demolition waste (CDW)."
+      },
+      "right_card_media": {
+        "video_url": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-recycling-plant-41581-large.mp4",
+        "video_caption": "Circular Flow: Closed-loop material recovery, urban mining, and technological regeneration."
+      }
+    },
+    "built_environment_application": {
+      "left_card_concepts": {
+        "frameworks": "Design for Deconstruction and Disassembly (DfD/DfA), reversibility of structural connections, and modular prefabricated construction.",
+        "digital_enablers": "Building Information Modeling (BIM) integrated with Material Passports (e.g., Madaster) for material traceability across the building life cycle.",
+        "resource_strategies": "Urban mining of heavy structural components (steel, concrete aggregates) and biological nutrient cycling for timber structures."
+      },
+      "right_card_media": {
+        "video_url": "https://assets.mixkit.co/videos/preview/mixkit-hands-holding-a-green-plant-in-a-futuristic-city-41579-large.mp4",
+        "video_caption": "Application: Integration of circular frameworks and sustainable systems in the built environment."
+      }
+    }
+  }
+}
+    {
+    "slide_id": "06_sustainable_construction_kibert",
+    "layout_type": "structured_bullet_matrix",
+    "title": "Sustainable Construction Principles (Kibert, 1994)",
+    "definition": "The creation and responsible management of a healthy built environment based on resource-efficient and ecological principles.",
+    "core_principles": [
+      {"principle": "Conserve", "detail": "Reduce overall resource consumption across the asset lifecycle"},
+      {"principle": "Reuse", "detail": "Maximize reusability of building components and existing structures"},
+      {"principle": "Recycle", "detail": "Utilize post-industrial and post-consumer recycled-content materials"},
+      {"principle": "Protect Nature", "detail": "Preserve natural ecological functions and site biodiversity"},
+      {"principle": "Eliminate Toxics", "detail": "Exclude hazardous substances from building material formulations"},
+      {"principle": "Apply LCA", "detail": "Incorporate Life Cycle Costing (LCC) and environmental LCA into design decisions"},
+      {"principle": "Focus on Quality", "detail": "Enhance structural durability, indoor environmental quality (IEQ), and resilience"}
+    ],
+    "has_fork": true,
+    "fork_target_slide_id": "06b_construction_sector_global_impacts"
+  },
+  {
+    "slide_id": "06b_construction_sector_global_impacts",
+    "layout_type": "animated_dashboard_charts",
+    "parent_slide_id": "06_sustainable_construction_kibert",
+    "title": "Global Environmental Footprint of the Built Environment",
+    "description": "Quantified baseline of the AEC sector's resource consumption and environmental footprint based on global status metrics (UNEP, GlobalABC, IPCC).",
+    "charts": [
+      {
+        "chart_id": "global_co2_share",
+        "type": "animated_donut",
+        "title": "Share of Global Energy-Related CO2 Emissions",
+        "data": [
+          {"label": "Building Operations", "value": 27, "unit": "%"},
+          {"label": "Construction & Materials (Embodied)", "value": 10, "unit": "%"},
+          {"label": "Other Industrial & Transport Sectors", "value": 63, "unit": "%"}
+        ],
+        "source": "UNEP / GlobalABC Status Report"
+      },
+      {
+        "chart_id": "global_resource_depletion",
+        "type": "animated_bar",
+        "title": "Sectoral Share of Global Resource & Energy Consumption",
+        "data": [
+          {"metric": "Raw Material Extraction", "value": 50, "unit": "%"},
+          {"metric": "Global Energy Demand", "value": 34, "unit": "%"},
+          {"metric": "Global Solid Waste Generation (CDW)", "value": 40, "unit": "%"},
+          {"metric": "Global Water Consumption", "value": 12, "unit": "%"}
+        ],
+        "source": "UNEP / IPCC WGIII / WorldGBC"
+      },
+      {
+        "chart_id": "embodied_vs_operational",
+        "type": "animated_stacked_bar",
+        "title": "Lifecycle Emissions Trajectory (New Construction to 2050)",
+        "data": [
+          {"category": "Embodied Carbon (Day 1)", "value": 50, "unit": "%"},
+          {"category": "Operational Carbon (Cumulative over 30 yrs)", "value": 50, "unit": "%"}
+        ],
+        "source": "Architecture 2030 / IPCC"
+      }
+    ]
+  }
+    {
+  "slide_id": "07_lca_computational_tools",
+  "layout_type": "three_column_breakdown",
+  "title": "Computational Life Cycle Assessment (LCA) Frameworks & Tools",
+  "columns": [
+    {
+      "category": "Methodological Standards",
+      "items": [
+        {
+          "name": "ISO 14040 / ISO 14044",
+          "logo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/ISO_Logo_%28Red_and_Square%29.svg",
+          "official_link": "https://www.iso.org/standard/37456.html",
+          "technical_description": "Establishes the foundational four-stage LCA framework: Goal & Scope Definition, Life Cycle Inventory (LCI), Life Cycle Impact Assessment (LCIA), and Interpretation. Defines mandatory data quality criteria, allocation rules, and cut-off provisions for complex systems."
+        },
+        {
+          "name": "EN 15978 / ISO 21930",
+          "logo_url": "https://www.cen.eu/Style%20Library/CEN/Images/cen-logo.png",
+          "official_link": "https://standards.iteh.ai/catalog/standards/cen/2e83162b-6323-455b-8f1d-5a9d16a12bd2/en-15978-2011",
+          "technical_description": "Standardizes building-level performance assessments across life cycle stages (A1-A3 Production, A4-A5 Construction, B1-B7 Operational, C1-C4 End-of-Life, D Module benefits). Mandates functional unit definitions (m² of GFA over reference service life) and Environmental Product Declaration (EPD) integration."
+        }
+      ]
+    },
+    {
+      "category": "LCI Databases",
+      "items": [
+        {
+          "name": "Ecoinvent Database",
+          "logo_url": "https://ecoinvent.org/wp-content/uploads/2021/09/ecoinvent_logo_rgb.png",
+          "official_link": "https://ecoinvent.org/",
+          "technical_description": "Comprehensive international background database supplying unit process and system-level inventory data. Covers global industrial supply chains, electricity grids, raw material extraction, chemical processing, and transport vectors critical for upstream AEC assessments."
+        },
+        {
+          "name": "Sphera GaBi Databases",
+          "logo_url": "https://sphera.com/wp-content/uploads/2020/04/Sphera_Logo_Header.png",
+          "official_link": "https://sphera.com/life-cycle-assessment-lca-software/",
+          "technical_description": "Industry-grade LCI dataset with rigorous annual updates. Focuses heavily on industrial manufacturing flows, metallurgy (steel, aluminum), chemical formulations, and energy-intensive building material processing streams."
+        },
+        {
+          "name": "EC3 (Embodied Carbon in Construction Calculator)",
+          "logo_url": "https://www.buildingtransparency.org/wp-content/uploads/2020/08/EC3_Logo_RGB.png",
+          "official_link": "https://www.buildingtransparency.org/org-ec3/",
+          "technical_description": "Open-access EPD database and procurement tool mapping digitizable supply-chain data (A1-A3). Enables structural and architectural material benchmarking (e.g., concrete mix designs, structural steel shapes) against climate-alignment baselines."
+        }
+      ]
+    },
+    {
+      "category": "Software Platforms",
+      "items": [
+        {
+          "name": "SimaPro",
+          "logo_url": "https://simapro.com/wp-content/uploads/2020/09/SimaPro_logo.png",
+          "official_link": "https://simapro.com/",
+          "technical_description": "High-granularity research software allowing complex parameterization, Monte Carlo uncertainty analysis, multi-attribute LCIA method customization (ReCiPe, CML, EF 3.0), and deep inventory structural modeling for building components."
+        },
+        {
+          "name": "openLCA",
+          "logo_url": "https://www.openlca.org/wp-content/uploads/2016/10/openLCA_Logo_horizontal.png",
+          "official_link": "https://www.openlca.org/",
+          "technical_description": "Open-source computational platform featuring Python/R API integration, high-performance matrix calculations, custom database merging capabilities, and advanced regionalization options for academic and applied AEC research."
+        },
+        {
+          "name": "One Click LCA",
+          "logo_url": "https://www.oneclicklca.com/wp-content/uploads/2021/10/One-Click-LCA-Logo.svg",
+          "official_link": "https://www.oneclicklca.com/",
+          "technical_description": "Automated BIM-integrated LCA software platform (Autodesk Revit, Rhino/Grasshopper, IFC). Automates material mapping, BREEAM/LEED compliance, Level(s) assessment, and real-time embodied carbon optimization during early-stage architectural design."
+        }
+      ]
+    }
+  ]
+}
+    [
+  {
+    "slide_id": "08_gbrt_comparative_overview",
+    "layout_type": "data_table",
+    "title": "Green Building Rating Tools (GBRTs): Global Landscape",
+    "columns": ["System", "Logo", "Origin / Region", "Assessment Scope", "Primary Focus Area", "Official Link", "Deep-Dive"],
+    "rows": [
+      {
+        "system": "LEED",
+        "logo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/LEED_logo.svg",
+        "origin": "USA",
+        "scope": "Global",
+        "focus": "Market transformation, energy efficiency, credit-based scoring",
+        "official_link": "https://www.usgbc.org/leed",
+        "has_fork": true,
+        "target_slide_id": "08a_gbrt_deepdive_leed"
+      },
+      {
+        "system": "BREEAM",
+        "logo_url": "https://www.breeam.com/wp-content/themes/breeam/assets/images/breeam-logo.svg",
+        "origin": "UK",
+        "scope": "Global / European",
+        "focus": "Weighting factors based on environmental impact categories",
+        "official_link": "https://bregroup.com/products/breeam/",
+        "has_fork": true,
+        "target_slide_id": "08b_gbrt_deepdive_breeam"
+      },
+      {
+        "system": "DGNB",
+        "logo_url": "https://www.dgnb.de/fileadmin/templates/dgnb/images/logo/DGNB_Logo_RGB.svg",
+        "origin": "Germany",
+        "scope": "Europe",
+        "focus": "Holistic lifecycle assessment (LCA + LCC performance)",
+        "official_link": "https://www.dgnb.de/en",
+        "has_fork": true,
+        "target_slide_id": "08c_gbrt_deepdive_dgnb"
+      },
+      {
+        "system": "CASBEE",
+        "logo_url": "http://www.ibec.or.jp/CASBEE/english/images/casbee_logo.gif",
+        "origin": "Japan",
+        "scope": "Asia",
+        "focus": "Eco-efficiency ratio (Environmental Quality / Load)",
+        "official_link": "http://www.ibec.or.jp/CASBEE/english/",
+        "has_fork": true,
+        "target_slide_id": "08d_gbrt_deepdive_casbee"
+      },
+      {
+        "system": "AQUA-HQE / Caixa Azul",
+        "logo_url": "https://vanzolini.org.br/wp-content/uploads/2021/08/logo-aqua-hqe.png",
+        "origin": "Brazil",
+        "scope": "National / Regional",
+        "focus": "Tropical context adaptation, social housing inclusion, local material availability",
+        "official_link": "https://vanzolini.org.br/aqua/",
+        "has_fork": true,
+        "target_slide_id": "08e_gbrt_deepdive_aqua_caixa_azul"
+      }
+    ]
+  },
+  {
+    "slide_id": "08a_gbrt_deepdive_leed",
+    "layout_type": "tool_deep_dive",
+    "parent_slide_id": "08_gbrt_comparative_overview",
+    "title": "LEED (Leadership in Energy and Environmental Design)",
+    "logo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/LEED_logo.svg",
+    "official_link": "https://www.usgbc.org/leed",
+    "governing_body": "U.S. Green Building Council (USGBC)",
+    "scoring_system": "110-point scale across prerequisites and credits (Certified, Silver, Gold, Platinum)",
+    "technical_framework": [
+      "Integrative Process and Location & Transportation optimization",
+      "Sustainable Sites, Water Efficiency, and Energy & Atmosphere mandates",
+      "Materials & Resources (emphasizing EPDs, HPDs, and raw material sourcing)",
+      "Indoor Environmental Quality (IEQ) and Innovation in Design"
+    ],
+    "aec_application": "Widely integrated into BIM workflows (Autodesk Revit) and global commercial corporate real estate procurement."
+  },
+  {
+    "slide_id": "08b_gbrt_deepdive_breeam",
+    "layout_type": "tool_deep_dive",
+    "parent_slide_id": "08_gbrt_comparative_overview",
+    "title": "BREEAM (Building Research Establishment Environmental Assessment Method)",
+    "logo_url": "https://www.breeam.com/wp-content/themes/breeam/assets/images/breeam-logo.svg",
+    "official_link": "https://bregroup.com/products/breeam/",
+    "governing_body": "Building Research Establishment (BRE)",
+    "scoring_system": "Percentage-based weighted scoring (Pass, Good, Very Good, Excellent, Outstanding)",
+    "technical_framework": [
+      "Rigorous environmental weighting across Management, Health & Wellbeing, Energy, and Transport",
+      "Water, Materials, Waste, Land Use & Ecology, and Pollution metrics",
+      "BRE Green Guide to Specification for structural component evaluation",
+      "Mandatory licensed third-party Assessor verification"
+    ],
+    "aec_application": "Prevailing benchmark across European civil markets, highly tailored to infrastructure and civil works via BREEAM Infrastructure (formerly CEEQUAL)."
+  },
+  {
+    "slide_id": "08c_gbrt_deepdive_dgnb",
+    "layout_type": "tool_deep_dive",
+    "parent_slide_id": "08_gbrt_comparative_overview",
+    "title": "DGNB (German Sustainable Building Council)",
+    "logo_url": "https://www.dgnb.de/fileadmin/templates/dgnb/images/logo/DGNB_Logo_RGB.svg",
+    "official_link": "https://www.dgnb.de/en",
+    "governing_body": "Deutsche Gesellschaft für Nachhaltiges Bauen",
+    "scoring_system": "Performance index / Total Performance Level (Bronze, Silver, Gold, Platinum)",
+    "technical_framework": [
+      "3-Pillar core: Environmental, Economic, and Socio-cultural/Functional Quality",
+      "Technical Quality, Process Quality, and Site Quality assessment",
+      "Mandatory quantitative Life Cycle Assessment (LCA) and Life Cycle Costing (LCC)",
+      "Strict compliance with European standards (EN 15978 / Level(s))"
+    ],
+    "aec_application": "Recognized as the most technically rigorous framework for quantitative engineering assessments, structural longevity, and circular economy integration."
+  },
+  {
+    "slide_id": "08d_gbrt_deepdive_casbee",
+    "layout_type": "tool_deep_dive",
+    "parent_slide_id": "08_gbrt_comparative_overview",
+    "title": "CASBEE (Comprehensive Assessment System for Built Environment Efficiency)",
+    "logo_url": "http://www.ibec.or.jp/CASBEE/english/images/casbee_logo.gif",
+    "official_link": "http://www.ibec.or.jp/CASBEE/english/",
+    "governing_body": "Japan Sustainable Building Consortium (JSBC) / IBEC",
+    "scoring_system": "BEE (Built Environment Efficiency) Ratio = Q (Quality) / L (Load) (C, B-, B+, A, S)",
+    "technical_framework": [
+      "Strict separation between Q (Built Environment Quality inside virtual boundary) and L (Built Environment Load outside)",
+      "Evaluation of indoor environment, service quality, and outdoor site environment",
+      "Assessment of off-site negative impacts (energy, resources, local ecosystem load)",
+      "High adaptation to high-density Asian urban contexts and seismic structural requirements"
+    ],
+    "aec_application": "Optimized for dense urban design, transit-oriented civil infrastructure, and high-performance building envelope dynamics in East Asia."
+  },
+  {
+    "slide_id": "08e_gbrt_deepdive_aqua_caixa_azul",
+    "layout_type": "tool_deep_dive",
+    "parent_slide_id": "08_gbrt_comparative_overview",
+    "title": "AQUA-HQE & Selo Casa Azul Caixa",
+    "logo_url": "https://vanzolini.org.br/wp-content/uploads/2021/08/logo-aqua-hqe.png",
+    "official_link": "https://vanzolini.org.br/aqua/",
+    "governing_body": "Fundação Vanzolini (AQUA-HQE) / Caixa Econômica Federal (Casa Azul)",
+    "scoring_system": "AQUA: 14 Environmental Quality Profile categories (Good, Performing, Excellent) | Casa Azul: Tiered levels (Bronze, Silver, Gold, Diamond)",
+    "technical_framework": [
+      "Processo de Gestão do Empreendimento (PGE) integrated with Qualidade Ambiental do Edifício (QAE)",
+      "Adaptations for tropical and sub-tropical bioclimatic zoning (NBR 15220 / NBR 15575 compliance)",
+      "Social inclusion parameters, local workforce development, and native material supply chains",
+      "Focus on social housing (MNHR / Minha Casa Minha Vida) financial viability"
+    ],
+    "aec_application": "Primary framework for public infrastructure and social housing credit underwriting in Brazil, driving regional construction supply chain compliance."
+  }
+]
+    {
+      "slide_id": "09_methodological_critique_gbrts",
+      "layout_type": "critical_analysis_block",
+      "title": "Epistemological & Methodological Critiques of GBRTs",
+      "critiques": [
+        {
+          "issue": "Weighting Arbitrariness & Panel Bias",
+          "analysis": "Multi-Criteria Decision Analysis (MCDA) weighting schemes often rely on expert consensus (AHP) rather than physical planetary boundary limits, enabling credit trade-offs (e.g., bicycle racks compensating for inefficient HVAC envelope design)."
+        },
+        {
+          "issue": "Operational vs. Embodied Carbon Imbalance",
+          "analysis": "Historically over-indexed on operational energy efficiency (Use Phase - Module B), underestimating upfront embodied impacts (Modules A1-A3: raw material extraction, transport, manufacturing)."
+        },
+        {
+          "issue": "Anthropocentric Bias vs. Ecological Integrity",
+          "analysis": "Heavy focus on human comfort, indoor air quality, and property asset valuation at the expense of local ecosystem destruction, raw material toxicity, and biodiversity loss."
+        },
+        {
+          "issue": "Regional Misalignment in Developing Economies",
+          "analysis": "Direct application of Northern-Hemisphere tools (e.g., US LEED) to developing markets (e.g., Brazil) disregards local construction typologies (structural masonry, reinforced concrete vs. timber framing), local material supply chains, and social infrastructure priorities."
+        }
+      ]
+    },
+    {
+      "slide_id": "10_materials_eco_efficiency",
+      "layout_type": "split_technical_focus",
+      "title": "Eco-Efficient Materials & Supply Chain Decarbonization",
+      "content": {
+        "extractive_impacts": [
+          "Aggregate quarrying: Land alteration, dust emissions, local hydrological disruption",
+          "Clinker production: Process emissions ($CaCO_3 \rightarrow CaO + CO_2$) accounting for ~8% of global anthropogenic emissions"
+        ],
+        "mitigation_strategies": [
+          "Supplementary Cementitious Materials (SCMs): Blast furnace slag, fly ash, calcined clays (LC3)",
+          "Recycled Concrete Aggregates (RCA) in structural and non-structural applications",
+          "Bio-based building materials and timber-concrete composites (carbon sinks)"
+        ]
+      }
+    }
+  {
+    "slide_id": "09_in_class_quiz",
+    "layout_type": "interactive_quiz_form",
+    "title": "In-Class Learning Assessment & Knowledge Check",
+    "description": "Scan the QR code or click the direct link below to submit your responses to today's active learning assessment.",
+    "access_options": {
+      "form_url": "https://forms.google.com/quiz-example-link",
+      "qr_code": {
+        "image_url": "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://forms.google.com/quiz-example-link",
+        "alt": "QR Code for In-Class Quiz Google Form",
+        "instruction": "Scan with your mobile device to open the quiz."
+      }
+    },
+    "quiz_topics": [
+      "Application of EN 15978 life cycle stages (A1-D) in structural design",
+      "Comparative metrics: Embodied carbon vs. operational carbon baselines",
+      "Implementation of Kibert's sustainable construction principles in AEC practice",
+      "GBRT alignment (LEED, BREEAM, DGNB, AQUA-HQE) in municipal procurement"
+    ]
+  },
+  {
+    "slide_id": "10_closing_references_weekly_report",
+    "layout_type": "closing_references_and_feedback",
+    "title": "Bibliographic References & Weekly Progress Report",
+    "sections": {
+      "weekly_report": {
+        "title": "Mandatory Weekly Progress Report",
+        "description": "Submit your weekly reflective synthesis and project milestones by Friday, 23:59.",
+        "form_url": "https://forms.google.com/weekly-report-example-link",
+        "qr_code": {
+          "image_url": "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://forms.google.com/weekly-report-example-link",
+          "alt": "QR Code for Weekly Report Google Form",
+          "instruction": "Scan to submit your weekly report."
+        }
+      },
+      "references": [
+        "Carson, R. (1962). Silent Spring. Houghton Mifflin.",
+        "ISO. (2011). EN 15978: Sustainability of construction works — Assessment of environmental performance of buildings. European Committee for Standardization.",
+        "IPCC. (2022). Climate Change 2022: Mitigation of Climate Change. Working Group III Contribution to AR6 (Chapter 9: Buildings). Cambridge University Press.",
+        "Kibert, C. J. (1994). Establishing principles and a model for sustainable construction. Proceedings of the First International Conference of CIB TG16.",
+        "Meadows, D. H., et al. (1972). The Limits to Growth. Universe Books.",
+        "UN-Habitat. (2016). The New Urban Agenda (Habitat III). United Nations Human Settlements Programme.",
+        "UNEP. (2023). Global Status Report for Buildings and Construction. United Nations Environment Programme / GlobalABC."
+      ]
+    }
+  }
+  ]
+}

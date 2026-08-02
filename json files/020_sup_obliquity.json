@@ -1,0 +1,77 @@
+{
+  "video_generation_spec": {
+    "title": "Earth Obliquity Variation and Synchronized Oscillatory Graph",
+    "target_model": "Gemini NanoBanana / Video Gen AI",
+    "reproducibility": {
+      "seed": 20260803,
+      "style": "3D scientific animation with integrated 2D dynamic vector overlays",
+      "camera_angle": "Fixed frontal orthographic view",
+      "lighting": "Realistic directional sunlight from off-screen left against deep space"
+    },
+    "technical_parameters": {
+      "aspect_ratio": "16:9",
+      "resolution": "356x200",
+      "display_height_px": 200,
+      "display_width_px": 356,
+      "duration_seconds": 12,
+      "frame_rate_fps": 30,
+      "total_frames": 360
+    },
+    "scene_layout": {
+      "background": "Deep black space canvas featuring subtle distant starfields and faint nebula dust",
+      "left_zone": {
+        "object": "3D Earth Globe",
+        "position": "Left third of the frame (x: 15% to 35%, y: 50%)",
+        "features": [
+          "Photorealistic 3D Earth surface with detailed continents and oceanic depth",
+          "Fast axial daily rotation along its rotational axis",
+          "Continuous back-and-forth nodding/tilting motion (Obliquity variation between 22.5° and 24.5°)",
+          "NO text, angle numbers, or height lines on or along the Earth"
+        ]
+      },
+      "right_zone": {
+        "object": "Scientific Plot Area",
+        "position": "Right two-thirds of the frame (x: 35% to 95%, y: 20% to 80%)",
+        "y_axis": {
+          "label": "ε (deg) / Obliquity Tilt",
+          "range": "[22.1, 24.5]",
+          "ticks": ["21", "23", "25"]
+        },
+        "x_axis": {
+          "label": "Time / Obliquity Cycle (~41 kyr)",
+          "orientation": "Horizontal base line"
+        },
+        "line_drawing_direction": "Glowing blue sinusoidal curve constructed dynamically from right to left, extending towards the Earth"
+      },
+      "inset_overlay": {
+        "object": "Oscillating Mechanical Metronome",
+        "position": "Top-right corner inset box (x: 75% to 92%, y: 10% to 35%)",
+        "style": "Semi-transparent rectangular frame with subtle border glow",
+        "motion": "Classic mechanical metronome arm swinging steadily back and forth to visually illustrate the periodic nodding/tilting variation mechanism"
+      }
+    },
+    "timeline": [
+      {
+        "time_range": "00:00 - 00:02",
+        "frame_range": "1 - 60",
+        "action": "Deep space environment initializes. Photorealistic 3D Earth appears on the left spinning fast. Scientific plot axes with 'ε (deg)' label fade in on the right."
+      },
+      {
+        "time_range": "00:02 - 00:06",
+        "frame_range": "61 - 180",
+        "action": "Earth begins nodding back and forth in obliquity tilt while maintaining fast axial spin. Synchronously, a vibrant blue oscillatory curve draws from right to left toward Earth."
+      },
+      {
+        "time_range": "00:06 - 00:09",
+        "frame_range": "181 - 270",
+        "action": "Semi-transparent inset window pops up in the top-right corner showing a metronome swinging back and forth. Earth continues multiple axial tilt oscillations on the left while the blue wave extends towards the globe."
+      },
+      {
+        "time_range": "00:09 - 00:12",
+        "frame_range": "271 - 360",
+        "action": "The blue obliquity curve completes its trajectory near Earth. The inset window smoothly fades out as Earth maintains its fast daily spin and ongoing tilting oscillations."
+      }
+    ],
+    "text_prompt_for_ai": "High-fidelity 16:9 3D scientific animation with 200px render height against a deep space background. On the left third, realistic 3D Earth spinning fast along its axis while smoothly nodding back and forth in obliquity tilt (22.5 to 24.5 degrees) across multiple cycles (clean Earth surface with NO text or angle numbers). On the right two-thirds, a scientific graph rendering a glowing blue oscillatory wave (epsilon tilt angle) from right to left toward Earth. In the top-right corner, an inset overlay showing a mechanical metronome swinging back and forth to demonstrate periodic tilting physics. Smooth 30fps animation."
+  }
+}

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full overflow-hidden select-none">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CIV 665 | Structural Analysis - PMS UFV</title>
+    
+    <!-- ESSENTIAL CDNs -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], throwOnError: false });"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- ========================================================================= -->
+    <!-- CENTRAL RESOURCE DIRECTORY (EASY IDENTIFICATION AND QUICK EDITS)           -->
+    <!-- All media, links, logos, and slide background configurations are set here  -->
+    <!-- ========================================================================= -->
+    <script>
+        const COURSE_ASSETS = {
+            // INSTITUTIONAL LOGOS (URL OR LOCAL PATHS, e.g., "pms.png")
+            logos: {
+                ufv: "https://dci.ufv.br/wp-content/themes/diretorias/assets/images/estrutura/logotipoUFV.png",
+                pms: "https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png"
+            },
+            
+            // SLIDE BACKGROUND CONFIGURATION (MATRIX KEY MATCHING "X_Y")
+            // Rules: Use URL, local path (e.g. "bg1.jpg"), or "" (empty string) for plain background with no image.
+            slideBackgrounds: {
+                "0_0": "bg0.png",
+                "1_0": "bg1.png",
+                "1_1": "bg2.png", // Plain background (No image)
+                "2_0": "bg3.png",
+                "3_0": "bg4.png"
+            },
+
+            // EXTERNAL LINKS AND FORM INTEGRATIONS
+            externalLinks: {
+                presentationAccess: "https://pms.ufv.br",
+                googleFormsQuiz: "https://docs.google.com/forms/d/e/1FAIpQLSc_EXAMPLE_QUIZ_LINK/viewform",
+                weeklyAssignment: "https://docs.google.com/forms/d/e/1FAIpQLSc_EXAMPLE_ASSIGNMENT_LINK/viewform",
+                pmsPortal: "https://pms.ufv.br"
+            },
+
+            // DYNAMIC QR CODE GENERATOR API
+            qrCodeGenerator: (url, color = "901812") => 
+                `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}&color=${color}`
+        };
+    </script>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 1: STYLES & IMMUTABLE CSS VARIABLES (GLOBAL CONFIGURATION)        -->
+    <!-- ========================================================================= -->
+    <style>
+        :root {
+            /* INSTITUTIONAL COLOR PALETTE */
+            --pms-red: #901812;
+            --pms-gold: #D1A705;
+            --pms-dark: #333333;
+            --pms-bg: #F4F6F5;
+            /* HIGHER TRANSPARENCY CARDS (ADJUSTED OPACITY FROM 0.88 TO 0.65 / 0.70) */
+            --pms-card-light: rgba(255, 255, 255, 0.65);
+            --pms-card-dark: rgba(51, 51, 51, 0.70);
+            --pms-text-muted: #444444;
+
+            /* SCREEN-SENSITIVE RESPONSIVE TYPOGRAPHY */
+            --font-title: 'Montserrat', sans-serif;
+            --font-body: 'PT Sans Narrow', sans-serif;
+
+            --fluid-h1: clamp(2.8rem, 6.0vw, 5.0rem);
+            --fluid-h2: clamp(2.2rem, 4.5vw, 3.5rem);
+            --fluid-h3: clamp(1.7rem, 3.2vw, 2.4rem);
+            --fluid-body: clamp(1.3rem, 2.2vw, 1.75rem);
+            --fluid-meta: clamp(1.1rem, 1.6vw, 1.45rem);
+            --fluid-tag: clamp(1.0rem, 1.4vw, 1.25rem);
+        }
+
+        html, body {
+            width: 100vw; height: 100vh; overflow: hidden;
+            background-color: var(--pms-bg);
+            font-family: var(--font-body); color: var(--pms-dark);
+        }
+
+        /* REUSABLE RESPONSIVE TYPOGRAPHY CLASSES */
+        .text-fluid-h1 { font-family: var(--font-title); font-size: var(--fluid-h1); font-weight: 900; color: var(--pms-red); line-height: 1.05; letter-spacing: -0.02em; }
+        .text-fluid-h2 { font-family: var(--font-title); font-size: var(--fluid-h2); font-weight: 800; color: var(--pms-red); line-height: 1.1; }
+        .text-fluid-h3 { font-family: var(--font-body); font-size: var(--fluid-h3); font-weight: 700; line-height: 1.2; }
+        .text-fluid-body { font-family: var(--font-body); font-size: var(--fluid-body); font-weight: 500; line-height: 1.4; }
+        .text-fluid-meta { font-family: var(--font-body); font-size: var(--fluid-meta); color: var(--pms-text-muted); font-weight: 600; }
+        .text-fluid-tag { font-family: var(--font-body); font-size: var(--fluid-tag); font-weight: 700; }
+
+        /* ENLARGED KATEX EQUATION STYLING */
+        .katex-display {
+            font-size: clamp(1.6rem, 3.5vw, 2.8rem) !important;
+            margin: 1rem 0 !important;
+        }
+        .katex { font-size: 1.15em; }
+
+        /* TRANSPARENT BORDERLESS CONTAINERS (GLASSMORPHISM WITH ENHANCED BLUR) */
+        .card-borderless-glass {
+            border: none !important;
+            background-color: var(--pms-card-light);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-borderless-glass-dark {
+            border: none !important;
+            background-color: var(--pms-card-dark);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-borderless-glass:hover, .card-borderless-glass-dark:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.10);
+        }
+
+        /* SOFTENED FULL-SCREEN BACKGROUND SHADE WITH INCREASED TRANSPARENCY */
+        .bg-right-fade {
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: cover;
+            position: relative;
+        }
+        .bg-right-fade::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, var(--pms-bg) 20%, rgba(244, 246, 245, 0.65) 50%, rgba(244, 246, 245, 0.15) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* SLIDE TRANSITIONS & NAVIGATION LAYOUT */
+        .slide-screen {
+            position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+            opacity: 0; pointer-events: none; z-index: 0;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+            overflow-y: auto;
+        }
+        .slide-screen > * { position: relative; z-index: 2; }
+        .slide-active { opacity: 1; transform: translate3d(0, 0, 0); pointer-events: auto; z-index: 10; }
+        .slide-hidden-left  { opacity: 0; transform: translate3d(-100%, 0, 0); }
+        .slide-hidden-right { opacity: 0; transform: translate3d(100%, 0, 0); }
+        .slide-hidden-up    { opacity: 0; transform: translate3d(0, -100%, 0); }
+        .slide-hidden-down  { opacity: 0; transform: translate3d(0, 100%, 0); }
+
+        /* TOUCH-FRIENDLY NAVIGATION CONTROLS */
+        .reveal-controls { position: fixed; bottom: 1.25rem; right: 1.5rem; width: 130px; height: 130px; z-index: 1000; }
+        .control-arrow {
+            position: absolute; width: 44px; height: 44px; background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 50%; color: #A1A1A1; font-size: 1.3rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; opacity: 0.25; pointer-events: none;
+            transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        }
+        .control-arrow.nav-up { top: 0; left: 43px; }
+        .control-arrow.nav-down { bottom: 0; left: 43px; }
+        .control-arrow.nav-left { top: 43px; left: 0; }
+        .control-arrow.nav-right { top: 43px; right: 0; }
+        .control-arrow.nav-enabled { color: var(--pms-red); opacity: 1; pointer-events: auto; }
+        .control-arrow.nav-enabled:hover { background: var(--pms-red); color: #FFFFFF; transform: scale(1.15); }
+    </style>
+</head>
+<body class="w-screen h-screen relative bg-[#F4F6F5]">
+
+    <!-- TOP PROGRESS BAR -->
+    <div class="fixed top-0 left-0 h-2 bg-[#D1A705] transition-all duration-500 z-[1000]" id="progressBar" style="width: 0%;"></div>
+
+    <!-- RESPONSIVE SLIDE INDICATOR -->
+    <div class="fixed bottom-4 left-4 sm:bottom-6 sm:left-8 text-fluid-meta font-bold text-[#333333] bg-white/80 backdrop-blur-md px-4 py-2 rounded-full shadow-md z-[1000] flex items-center space-x-3">
+        <span class="w-3 h-3 rounded-full bg-[#901812]"></span>
+        <span id="slideIndicator">Slide (0,0)</span>
+    </div>
+
+    <!-- TOUCH CONTROLS -->
+    <div class="reveal-controls">
+        <button id="btn-nav-up" onclick="moveInGrid(0, -1)" class="control-arrow nav-up" aria-label="Up"><i class="fa-solid fa-chevron-up"></i></button>
+        <button id="btn-nav-left" onclick="moveInGrid(-1, 0)" class="control-arrow nav-left" aria-label="Left"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="btn-nav-right" onclick="moveInGrid(1, 0)" class="control-arrow nav-right" aria-label="Right"><i class="fa-solid fa-chevron-right"></i></button>
+        <button id="btn-nav-down" onclick="moveInGrid(0, 1)" class="control-arrow nav-down" aria-label="Down"><i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2: HTML BODY & SLIDE STRUCTURE                                    -->
+    <!-- Incremental Injection Point: Add new slides here using slide-X-Y notation   -->
+    <!-- ========================================================================= -->
+    <main class="w-full h-full relative">
+
+        <!-- SLIDE (0,0): TITLE COVER WITH LARGER PMS LOGO AND INSTANT QR ACCESS -->
+        <div id="slide-0-0" class="slide-screen slide-active flex flex-col justify-between p-6 sm:p-10 md:p-12">
+            <header class="w-full flex justify-between items-center gap-4">
+                <div class="flex items-center space-x-4 sm:space-x-6 bg-white/75 backdrop-blur-md px-6 py-3.5 rounded-2xl shadow-sm">
+                    <img id="img-logo-ufv-0-0" alt="UFV Logo" class="h-10 sm:h-12 w-auto">
+                    <div class="h-10 w-[1px] bg-[#DEDEDE]"></div>
+                    <span class="text-fluid-tag text-[#333333]">CIV 665</span>
+                </div>
+                <a id="link-pms-portal-0-0" target="_blank" class="block bg-[#333333]/75 backdrop-blur-md p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+                    <img id="img-logo-pms-0-0" alt="PMS Logo" class="h-12 sm:h-16 w-auto">
+                </a>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full my-auto py-6">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="p-8 sm:p-12 rounded-3xl card-borderless-glass border-l-[16px] border-[#901812]">
+                        <span class="text-fluid-tag text-[#D1A705] tracking-wider block mb-2">CIV 665 — GRADUATE COURSE</span>
+                        <h1 class="text-fluid-h1 mb-4">ADVANCED STRUCTURAL ANALYSIS<span class="block text-fluid-h2 text-[#333333] font-bold mt-2">Flexural Mechanics & Beam Stress</span></h1>
+                        <p class="text-fluid-body text-[#444444]">Analytical Methods, Mathematical Formulations, and Real-Time Virtual Laboratories.</p>
+                    </div>
+                </div>
+
+                <!-- ENLARGED QR CODE CARD FOR INSTANT SLIDE ACCESS -->
+                <div class="lg:col-span-5 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-6">
+                    <div class="bg-white/85 backdrop-blur-md p-6 rounded-2xl text-center shadow-md">
+                        <img id="qr-presentation-cover-0-0" alt="Slide Access QR Code" class="w-full max-w-[220px] sm:max-w-[280px] lg:max-w-[320px] mx-auto rounded-lg">
+                        <span class="text-fluid-tag text-[#333333] font-bold mt-3 block">Follow On Smartphone</span>
+                    </div>
+                    <div class="text-center space-y-1">
+                        <span class="text-fluid-tag text-[#D1A705] block">Course Instructor</span>
+                        <p class="text-fluid-body font-bold text-white">Prof. José Maria Franco de Carvalho</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE (1,0): THEORETICAL CONTENT WITH FADED BACKGROUND -->
+        <div id="slide-1-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
+            <header class="w-full flex justify-between items-center mb-4">
+                <div>
+                    <span class="text-fluid-tag text-[#901812]">THEORETICAL MODULE</span>
+                    <h2 class="text-fluid-h2">Pure Bending Stress Equation</h2>
+                </div>
+                <img id="img-logo-pms-1-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-auto w-full py-4">
+                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-4">
+                    <h3 class="text-fluid-h3 text-[#333333]">Classical Formulation</h3>
+                    <p class="text-fluid-body text-[#444444]">The normal stress distribution $\sigma(y)$ in a symmetric cross-section subjected to bending moment $M$ is expressed as:</p>
+                    <div class="bg-white/75 backdrop-blur-md p-6 rounded-2xl text-center my-2 shadow-inner">
+                        $$\sigma(y) = \frac{M \cdot y}{I_x}$$
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Where $I_x$ denotes the principal centroidal moment of inertia and $y$ represents the distance from the neutral axis.</p>
+                </div>
+
+                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white space-y-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-fluid-tag text-[#D1A705] block mb-2">VERTICAL BRANCHING AVAILABLE</span>
+                        <h3 class="text-fluid-h3 text-white mb-3">Interactive Virtual Simulator</h3>
+                        <p class="text-fluid-body text-[#DEDEDE]">Press the <strong>Down Arrow (↓)</strong> or tap the button below to launch the interactive stress lab in real time.</p>
+                    </div>
+                    <button onclick="moveInGrid(0, 1)" class="w-full py-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px]">
+                        Launch Virtual Lab (Press ↓) <i class="fa-solid fa-flask ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE (1,1): VIRTUAL LAB (VERTICAL BRANCHING) -->
+        <div id="slide-1-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
+            <header class="w-full flex justify-between items-center mb-4">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705]">INTERACTIVE LAB (BRANCH Y=1)</span>
+                    <h2 class="text-fluid-h2 text-[#333333]">Flexural Stress Calculator</h2>
+                </div>
+                <button onclick="moveInGrid(0, -1)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px]">
+                    <i class="fa-solid fa-arrow-up mr-2"></i> Return to Theory
+                </button>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 my-auto w-full items-center py-4">
+                <div class="lg:col-span-5 p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-5">
+                    <h3 class="text-fluid-h3 text-[#333333] border-b border-black/10 pb-2">Beam Parameters</h3>
+                    
+                    <div class="space-y-2">
+                        <label class="text-fluid-meta block flex justify-between">
+                            <span>Bending Moment ($M$):</span>
+                            <span id="lbl-momento-1-1" class="text-[#901812] font-bold">50 kNm</span>
+                        </label>
+                        <input type="range" id="input-momento-1-1" min="10" max="100" value="50" class="w-full accent-[#901812] h-4" oninput="calcularTensao_1_1()">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-fluid-meta block flex justify-between">
+                            <span>Section Height ($h$):</span>
+                            <span id="lbl-altura-1-1" class="text-[#901812] font-bold">0.40 m</span>
+                        </label>
+                        <input type="range" id="input-altura-1-1" min="0.20" max="0.80" step="0.05" value="0.40" class="w-full accent-[#901812] h-4" oninput="calcularTensao_1_1()">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-fluid-meta block flex justify-between">
+                            <span>Section Width ($b$):</span>
+                            <span id="lbl-largura-1-1" class="text-[#901812] font-bold">0.20 m</span>
+                        </label>
+                        <input type="range" id="input-largura-1-1" min="0.10" max="0.40" step="0.05" value="0.20" class="w-full accent-[#901812] h-4" oninput="calcularTensao_1_1()">
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white space-y-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-fluid-tag text-[#D1A705] block mb-2">REAL-TIME NUMERICAL OUTPUT</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                            <div class="bg-white/10 p-5 rounded-2xl backdrop-blur-md">
+                                <span class="text-fluid-meta text-[#DEDEDE] block">Inertia ($I_x$)</span>
+                                <span id="res-inercia-1-1" class="text-fluid-h3 text-white font-mono">0.001067 m⁴</span>
+                            </div>
+                            <div class="bg-white/10 p-5 rounded-2xl backdrop-blur-md">
+                                <span class="text-fluid-meta text-[#DEDEDE] block">Max Stress ($\sigma_{max}$)</span>
+                                <span id="res-tensao-1-1" class="text-fluid-h2 text-[#D1A705] font-mono">9.38 MPa</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm">
+                        <i class="fa-solid fa-microchip text-[#D1A705] text-xl"></i>
+                        <span>Computed instantly via modular JavaScript function `calcularTensao_1_1()`.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE (2,0): IN-CLASS GOOGLE FORMS QUIZ (VISIBLE QR & DIRECT ACCESS BUTTONS) -->
+        <div id="slide-2-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
+            <header class="w-full flex justify-between items-center mb-4">
+                <div>
+                    <span class="text-fluid-tag text-[#901812]">SYNCHRONOUS ACTIVITY</span>
+                    <h2 class="text-fluid-h2">In-Class Assessment Quiz</h2>
+                </div>
+                <img id="img-logo-pms-2-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 my-auto w-full py-4 items-center">
+                <div class="lg:col-span-6 p-6 sm:p-10 rounded-3xl card-borderless-glass space-y-6">
+                    <span class="text-fluid-tag text-[#D1A705]">GOOGLE FORMS LIVE QUIZ</span>
+                    <h3 class="text-fluid-h3 text-[#333333]">Flexural Stress Concepts Assessment</h3>
+                    <p class="text-fluid-body text-[#444444]">Scan the QR Code directly on screen using your mobile camera or click the access button below to launch the Google Forms quiz in a new tab.</p>
+                    
+                    <div class="pt-2">
+                        <a id="btn-quiz-direct-2-0" target="_blank" class="w-full py-4 px-8 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md min-h-[56px] flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-square-poll-vertical text-2xl text-[#D1A705]"></i>
+                            <span>Open Google Forms Quiz</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-lg ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- VISIBLE ENLARGED QR CODE FOR GOOGLE FORMS QUIZ -->
+                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white text-center space-y-4">
+                    <span class="text-fluid-tag text-[#D1A705] block">SCAN TO JOIN INSTANTLY</span>
+                    <div class="bg-white/90 backdrop-blur-md p-5 rounded-2xl max-w-[260px] sm:max-w-[320px] lg:max-w-[360px] mx-auto shadow-lg">
+                        <img id="qr-quiz-forms-2-0" alt="Google Forms Quiz QR Code" class="w-full h-auto rounded-lg">
+                    </div>
+                    <p class="text-fluid-meta text-[#DEDEDE]">Live results will be aggregated during class discussion.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE (3,0): REFERENCES & WEEKLY ASSIGNMENT GOOGLE FORMS QR CODE -->
+        <div id="slide-3-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
+            <header class="w-full flex justify-between items-center mb-4">
+                <div>
+                    <span class="text-fluid-tag text-[#901812]">CLOSING MODULE</span>
+                    <h2 class="text-fluid-h2">References & Weekly Assignment</h2>
+                </div>
+                <img id="img-logo-pms-3-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 my-auto w-full py-4 items-center">
+                <!-- Academic References List -->
+                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-4">
+                    <h3 class="text-fluid-h3 text-[#333333] border-b border-black/10 pb-2">Key Bibliographic References</h3>
+                    <ul class="space-y-4 text-fluid-body text-[#444444]">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-book text-[#901812] mt-1"></i>
+                            <span><strong>Beer, F. P., Johnston, E. R., Dewolf, J. T., & Mazurek, D. F.</strong> (2020). <em>Mechanics of Materials</em> (8th ed.). McGraw-Hill Education.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-book text-[#901812] mt-1"></i>
+                            <span><strong>Hibbeler, R. C.</strong> (2018). <em>Structural Analysis</em> (10th ed.). Pearson.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-file-pdf text-[#901812] mt-1"></i>
+                            <span><strong>PMS / DEC UFV Technical Notes:</strong> <em>Numerical Optimization of Bending Members in Composite Beams</em> (2025).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Weekly Assignment Google Forms QR Code Card -->
+                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white text-center space-y-4">
+                    <span class="text-fluid-tag text-[#D1A705] block">WEEKLY ASSIGNMENT</span>
+                    <div class="bg-white/90 backdrop-blur-md p-5 rounded-2xl max-w-[260px] sm:max-w-[320px] lg:max-w-[360px] mx-auto shadow-lg">
+                        <img id="qr-assignment-forms-3-0" alt="Weekly Assignment QR Code" class="w-full h-auto rounded-lg">
+                    </div>
+                    <h3 class="text-fluid-h3 text-white mb-1">Submit Problem Set #04</h3>
+                    <a id="btn-assignment-direct-3-0" target="_blank" class="inline-flex items-center space-x-2 text-fluid-body font-bold text-[#D1A705] hover:underline pt-2">
+                        <span>Open Assignment Form</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 3: JAVASCRIPT LOGIC, ANIMATIONS & INTERACTIVITY                  -->
+    <!-- Incremental Injection Point: Append new slide keys & functions below      -->
+    <!-- ========================================================================= -->
+    <script>
+        // GLOBAL SLIDE MATRIX MAPPING (X, Y)
+        const slideGrid = { 
+            '0,0': 'slide-0-0',
+            '1,0': 'slide-1-0',
+            '1,1': 'slide-1-1',
+            '2,0': 'slide-2-0',
+            '3,0': 'slide-3-0'
+        };
+
+        let currentX = 0, currentY = 0;
+
+        function hasSlide(x, y) { return !!slideGrid[`${x},${y}`]; }
+
+        // AUTOMATICALLY INITIALIZE ALL ASSETS FROM COURSE_ASSETS DIRECTORY
+        function initializeAssets() {
+            // 1. SET LOGOS ACROSS SLIDES
+            const logoUfv00 = document.getElementById('img-logo-ufv-0-0');
+            if (logoUfv00) logoUfv00.src = COURSE_ASSETS.logos.ufv;
+
+            const logoPms00 = document.getElementById('img-logo-pms-0-0');
+            if (logoPms00) logoPms00.src = COURSE_ASSETS.logos.pms;
+
+            const logoPms10 = document.getElementById('img-logo-pms-1-0');
+            if (logoPms10) logoPms10.src = COURSE_ASSETS.logos.pms;
+
+            const logoPms20 = document.getElementById('img-logo-pms-2-0');
+            if (logoPms20) logoPms20.src = COURSE_ASSETS.logos.pms;
+
+            const logoPms30 = document.getElementById('img-logo-pms-3-0');
+            if (logoPms30) logoPms30.src = COURSE_ASSETS.logos.pms;
+
+            const linkPortal00 = document.getElementById('link-pms-portal-0-0');
+            if (linkPortal00) linkPortal00.href = COURSE_ASSETS.externalLinks.pmsPortal;
+
+            // 2. SET DYNAMIC BACKGROUND IMAGES AND APPLY FADE GRADIENT SHADE
+            Object.keys(slideGrid).forEach(key => {
+                const bgKey = key.replace(',', '_');
+                const slideEl = document.getElementById(slideGrid[key]);
+                const bgUrl = COURSE_ASSETS.slideBackgrounds[bgKey];
+
+                if (slideEl) {
+                    if (bgUrl && bgUrl.trim() !== "") {
+                        slideEl.style.backgroundImage = `url('${bgUrl}')`;
+                        slideEl.classList.add('bg-right-fade');
+                    } else {
+                        slideEl.style.backgroundImage = 'none';
+                        slideEl.classList.remove('bg-right-fade');
+                    }
+                }
+            });
+
+            // 3. SET QR CODES AND DIRECT BUTTON LINKS
+            const qrCover00 = document.getElementById('qr-presentation-cover-0-0');
+            if (qrCover00) qrCover00.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.presentationAccess);
+
+            const qrQuiz20 = document.getElementById('qr-quiz-forms-2-0');
+            if (qrQuiz20) qrQuiz20.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.googleFormsQuiz);
+
+            const qrAssign30 = document.getElementById('qr-assignment-forms-3-0');
+            if (qrAssign30) qrAssign30.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.weeklyAssignment);
+
+            const btnQuiz20 = document.getElementById('btn-quiz-direct-2-0');
+            if (btnQuiz20) btnQuiz20.href = COURSE_ASSETS.externalLinks.googleFormsQuiz;
+
+            const btnAssign30 = document.getElementById('btn-assignment-direct-3-0');
+            if (btnAssign30) btnAssign30.href = COURSE_ASSETS.externalLinks.weeklyAssignment;
+        }
+
+        function updateUI() {
+            const keysHorizontal = Object.keys(slideGrid).filter(k => k.endsWith(',0'));
+            const totalH = keysHorizontal.length;
+            document.getElementById('progressBar').style.width = `${(currentX / Math.max(totalH - 1, 1)) * 100}%`;
+            document.getElementById('slideIndicator').innerText = `Slide (${currentX}, ${currentY})`;
+            
+            const arrows = { 'up': [0,-1], 'down': [0,1], 'left': [-1,0], 'right': [1,0] };
+            for (let d in arrows) {
+                const el = document.getElementById(`btn-nav-${d}`);
+                if (el) el.classList.toggle('nav-enabled', hasSlide(currentX + arrows[d][0], currentY + arrows[d][1]));
+            }
+        }
+
+        function moveInGrid(dx, dy) {
+            const nx = currentX + dx, ny = currentY + dy;
+            if (hasSlide(nx, ny)) {
+                const cur = document.getElementById(slideGrid[`${currentX},${currentY}`]);
+                const nxt = document.getElementById(slideGrid[`${nx},${ny}`]);
+                cur.classList.remove('slide-active');
+                
+                if (dx > 0) cur.classList.add('slide-hidden-left');
+                else if (dx < 0) cur.classList.add('slide-hidden-right');
+                else if (dy > 0) cur.classList.add('slide-hidden-down');
+                else if (dy < 0) cur.classList.add('slide-hidden-up');
+
+                nxt.classList.remove('slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+                nxt.classList.add('slide-active');
+                currentX = nx; currentY = ny;
+                updateUI();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+            if (e.key === 'ArrowRight' || e.key === ' ') moveInGrid(1, 0);
+            else if (e.key === 'ArrowLeft') moveInGrid(-1, 0);
+            else if (e.key === 'ArrowUp') moveInGrid(0, -1);
+            else if (e.key === 'ArrowDown') moveInGrid(0, 1);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeAssets();
+            updateUI();
+        });
+
+        // =====================================================================
+        // VIRTUAL LAB INTERACTION CALCULATOR (SLIDE 1,1)
+        // =====================================================================
+        function calcularTensao_1_1() {
+            const M = parseFloat(document.getElementById('input-momento-1-1').value);
+            const h = parseFloat(document.getElementById('input-altura-1-1').value);
+            const b = parseFloat(document.getElementById('input-largura-1-1').value);
+
+            document.getElementById('lbl-momento-1-1').innerText = `${M} kNm`;
+            document.getElementById('lbl-altura-1-1').innerText = `${h.toFixed(2)} m`;
+            document.getElementById('lbl-largura-1-1').innerText = `${b.toFixed(2)} m`;
+
+            // Moment of Inertia I = b * h^3 / 12
+            const I = (b * Math.pow(h, 3)) / 12;
+            const y = h / 2;
+            // Stress sigma = (M * y) / I (kNm -> MPa conversion)
+            const sigma = ((M * y) / I) / 1000;
+
+            document.getElementById('res-inercia-1-1').innerText = `${I.toFixed(6)} m⁴`;
+            document.getElementById('res-tensao-1-1').innerText = `${sigma.toFixed(2)} MPa`;
+        }
+    </script>
+</body>
+</html>

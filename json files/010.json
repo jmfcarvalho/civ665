@@ -1,0 +1,1660 @@
+{
+  "course_info": {
+    "title": "Eco-efficient Construction and Building Materials",
+    "class_number": 1,
+    "topic": "Natural Climate Cycles, Global Warming, and Environmental Impacts",
+    "level": "Postgraduate (Civil Engineering / Architecture)",
+    "architecture_note": "Linear main line (10 slides) with nested sub-slides (bifurcations) for interactive presentation"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "original_pages": [3],
+      "title": "Natural Climate Cycles vs. Global Warming",
+      "layout": "Styled_Bullet_Points",
+      "is_main_line": true,
+      "content": {
+        "main_question": "Is global warming purely a natural cycle?",
+        "summary": "Earth's climate is governed by multiple natural astronomical, oceanic, and atmospheric cycles. However, their timescales and forcing mechanisms differ fundamentally from modern warming."
+      },
+      "sub_slides": [
+        {
+  {
+  "sub_slide_id": "1.1",
+  "original_pages": [4],
+  "title": "Milankovitch Cycles",
+  "layout": "Two_Column_Cards_And_Graph",
+  "content": {
+    "description": "Mudanças periódicas nas características orbitais da Terra que controlam a insolação e os períodos glaciais/interglaciais ao longo de centenas de milhares de anos.",
+    "left_side_cards": [
+      {
+        "card_id": "card_eccentricity",
+        "title": "Excentricidade",
+        "short_description": "Variação na forma da órbita terrestre, alternando entre circular e elíptica.",
+        "gif_url": "eccentricity.gif",
+        "action": "open_popup:popup_eccentricity"
+      },
+      {
+        "card_id": "card_obliquity",
+        "title": "Obliquidade (Inclinação)",
+        "short_description": "Oscilação no ângulo de inclinação do eixo da Terra entre 22.5° e 24.5°.",
+        "gif_url": "obliquity.gif",
+        "action": "open_popup:popup_obliquity"
+      },
+      {
+        "card_id": "card_precession",
+        "title": "Precessão",
+        "short_description": "Movimento de pião (bamboleio) do eixo de rotação da Terra.",
+        "gif_url": "precession.gif",
+        "action": "open_popup:popup_precession"
+      }
+    ],
+    "right_side_graph": {
+      "image_url": "milankovitch_graph.png",
+      "alt_text": "Gráfico de variação temporal dos Ciclos de Milankovitch e insolação solar",
+      "action": "open_popup:popup_combined_graph_analysis"
+    }
+  },
+  "interactive_popups": [
+    {
+      "popup_id": "popup_eccentricity",
+      "trigger": "card_eccentricity",
+      "title": "Detalhes do Movimento: Excentricidade",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "A excentricidade mede o quanto a órbita da Terra se afasta de um círculo perfeito. Quando a órbita é mais elíptica, a distância Terra-Sol varia significativamente ao longo do ano, alterando a radiação solar sazonal recebida.",
+        "cycle_duration": "~100.000 anos (com ciclos secundários de 413.000 anos)",
+        "key_characteristics": [
+          "Variação entre órbita quase circular (0,005) e levemente elíptica (0,058)",
+          "Modula a amplitude da precessão"
+        ],
+        "climate_consequences": "Afeta a duração das estações do ano e é a principal responsável pela cadência dos grandes períodos glaciais de 100 mil anos no Quaternário recente.",
+        "media": {
+          "type": "image/gif",
+          "url": "eccentricity.gif",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_obliquity",
+      "trigger": "card_obliquity",
+      "title": "Detalhes do Movimento: Obliquidade",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "Trata-se da variação no ângulo do eixo de rotação da Terra em relação ao plano de sua órbita (plano da eclíptica). Quanto maior a inclinação, mais extremas são as estações do ano em altas latitudes.",
+        "cycle_duration": "~41.000 anos",
+        "key_characteristics": [
+          "Ângulo oscila estritamente entre 22,5° e 24,5° (atualmente em ~23,44° e diminuindo)"
+        ],
+        "climate_consequences": "Determina a severidade das estações (verões mais quentes e invernos mais frios em altas latitudes quando a inclinação é maior). Menor inclinação favorece a preservação do gelo polar no verão, promovendo glaciações.",
+        "media": {
+          "type": "image/gif",
+          "url": "obliquity.gif",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_precession",
+      "trigger": "card_precession",
+      "title": "Detalhes do Movimento: Precessão",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "É o movimento cônico de rotação do próprio eixo da Terra (semelhante ao bamboleio de um pião desacelerando). Ele altera a orientação do eixo em relação aos pontos de periélio (ponto mais próximo do Sol) e afélio.",
+        "cycle_duration": "~21.000 a 26.000 anos",
+        "key_characteristics": [
+          "Determina se o Hemisfério Norte ou Sul terá verões no periélio ou no afélio"
+        ],
+        "climate_consequences": "Cria variações contrastantes entre os hemisférios. Quando o verão no Hemisfério Norte coincide com o periélio, os verões são mais quentes e curtos, afetando o derretimento do gelo continental.",
+        "media": {
+          "type": "video/mp4",
+          "url": "precession.mp4",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_combined_graph_analysis",
+      "trigger": "right_side_graph",
+      "title": "Análise Combinada de Milankovitch e Proxies Paleoclimáticos",
+      "type": "graph_analysis_modal",
+      "content": {
+        "overview": "Análise detalhada do impacto concomitante dos três parâmetros orbitais e sua correlação com as observações empíricas paleoclimáticas.",
+        "concomitant_occurrence": {
+          "title": "Superposição dos Parâmetros",
+          "text": "A combinação das frequências de excentricidade, obliquidade e precessão resulta na curva de insolação solar efetiva (especialmente a 65°N no verão), a qual atua como o gatilho direto para o início e término das eras glaciais."
+        },
+        "proxy_techniques": [
+          {
+            "name": "Técnica dos Foraminíferos Bentônicos (δ18O)",
+            "description": "A análise da razão isotópica de oxigênio (δ18O) nas conchas de calcita de foraminíferos bentônicos (sedimentos marinhos profundos) permite reconstruir o volume total de gelo global e as temperaturas do fundo do oceano ao longo de milhões de anos.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Benthic_foraminifera.jpg",
+            "source": "Domínio Público"
+          },
+          {
+            "name": "Técnica do Testemunho de Gelo de Vostok",
+            "description": "A extração e análise das bolhas de ar atmosférico aprisionadas no gelo da Antártica (Vostok) fornecem uma medição direta da composição dos gases de efeito estufa (CO2, CH4) e das variações de temperatura local (via isótopos de deutério/oxigênio) nos últimos 400.000 a 800.000 anos.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Icecore_4.jpg",
+            "source": "Domínio Público"
+          }
+        ]
+      }
+    }
+  ]
+}
+        {
+  "sub_slide_id": "1.2",
+  "original_pages": [5],
+  "title": "El Niño Southern Oscillation (ENSO)",
+  "layout": "Two_Column_Cards_And_Graph",
+  "content": {
+    "description": "Fenômeno climático de curto prazo acoplado oceano-atmosfera, caracterizado por flutuações na temperatura da superfície do mar (SST) e nos ventos no Pacífico Equatorial (ciclos de 2 a 7 anos).",
+    "left_side_cards": [
+      {
+        "card_id": "card_el_nino",
+        "title": "El Niño (Fase Quente)",
+        "short_description": "Aquecimento anômalo das águas do Pacífico Equatorial e enfraquecimento dos ventos alísios.",
+        "gif_url": "el_nino_phase.gif",
+        "action": "open_popup:popup_el_nino"
+      },
+      {
+        "card_id": "card_la_nina",
+        "title": "La Niña (Fase Fria)",
+        "short_description": "Resfriamento anômalo no Pacífico e intensificação dos ventos alísios de leste para oeste.",
+        "gif_url": "la_nina_phase.gif",
+        "action": "open_popup:popup_la_nina"
+      },
+      {
+        "card_id": "card_neutral",
+        "title": "Fase Neutra",
+        "short_description": "Circulação Normal de Walker mantida, sem anomalias térmicas extremas.",
+        "gif_url": "neutral_phase.gif",
+        "action": "open_popup:popup_neutral"
+      }
+    ],
+    "right_side_graph": {
+      "image_url": "nino_34_index_chart.png",
+      "alt_text": "Gráfico histórico de variação do Índice Niño 3.4 entre 1990 e 2020",
+      "action": "open_popup:popup_enso_index_analysis"
+    }
+  },
+  "interactive_popups": [
+    {
+      "popup_id": "popup_el_nino",
+      "trigger": "card_el_nino",
+      "title": "Detalhes da Fase: El Niño",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "Durante o El Niño, os ventos alísios enfraquecem ou até invertem de sentido. A água quente acumulada no Pacífico Ocidental migra em direção à costa da América do Sul (Peru e Equador), bloqueando a ressurgência de águas profundas e frias ricas em nutrientes.",
+        "cycle_duration": "Geralmente dura de 9 a 12 meses (ocorre em intervalos irregulares de 2 a 7 anos)",
+        "key_characteristics": [
+          "Supressão da ressurgência de nutrientes ao longo da costa do Peru",
+          "Anomalia positiva de temperatura da superfície do mar (SST > +0.5°C)",
+          "Deslocamento do centro de convecção e chuvas para o Pacífico Central/Leste"
+        ],
+        "climate_consequences": "Provoca secas severas na Austrália, Indonésia e Norte/Nordeste do Brasil, enquanto causa fortes chuvas e enchentes no Sul do Brasil, Peru e Sul dos EUA.",
+        "media": {
+          "type": "image/gif",
+          "url": "https://www.climate.gov/sites/default/files/styles/embedded_gif_full_width/public/2023-06/ENSOblog_animation_SSTA_anom_weekly_2023_Jun.gif?itok=YocFEIlC",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_la_nina",
+      "trigger": "card_la_nina",
+      "title": "Detalhes da Fase: La Niña",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "Na fase fria, os ventos alísios soprarem com intensidade reforçada de leste para oeste. Isso empurra ainda mais a água quente para o oeste do Pacífico, enquanto intensifica a subida de água fria e rica em nutrientes no Pacífico Leste.",
+        "cycle_duration": "Tende a durar mais tempo que o El Niño, frequentemente persistindo de 1 a 3 anos consecutivos",
+        "key_characteristics": [
+          "Intensificação da ressurgência e aumento da produtividade marinha no Peru",
+          "Anomalia negativa de temperatura da superfície do mar (SST < -0.5°C)",
+          "Empurramento das massas quentes em direção à Ásia/Oceania"
+        ],
+        "climate_consequences": "Gera invernos mais frios e chuvosos no Norte/Nordeste do Brasil e secas prolongadas no Sul do Brasil, Argentina e sudoeste dos EUA.",
+        "media": {
+          "type": "image/gif",
+          "url": "https://www.climate.gov/sites/default/files/styles/embedded_gif/public/2022-09/SSTA.weekly.2022.06.06-09.04.color_.gif?itok=f5_R5vWZ",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_neutral",
+      "trigger": "card_neutral",
+      "title": "Detalhes da Fase: Neutra",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "Condição ideal da Circulação de Walker na atmosfera equatorial. Os ventos alísios sopram normalmente de leste para oeste, mantendo as águas quentes concentradas ao redor da Indonésia e mantendo uma ressurgência constante e moderada na América do Sul.",
+        "cycle_duration": "Período de transição entre eventos El Niño e La Niña",
+        "key_characteristics": [
+          "Índice Niño 3.4 mantido dentro da faixa neutra entre -0.5°C e +0.5°C",
+          "Distribuição média de precipitação sem extremos globais severos associados ao Pacífico"
+        ],
+        "climate_consequences": "Padrões climatológicos próximos às médias históricas sazonais regionais.",
+        "media": {
+          "type": "image/gif",
+          "url": "https://www.climate.gov/sites/default/files/styles/embedded_gif/public/SST-Animation_620_4%20copy.gif?itok=bGZklSwy",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_enso_index_analysis",
+      "trigger": "right_side_graph",
+      "title": "Análise Histórica do Índice Niño 3.4 & Monitoramento Oceanográfico",
+      "type": "graph_analysis_modal",
+      "content": {
+        "overview": "O Índice Niño 3.4 monitora as anomalias médias da temperatura da superfície do mar em uma região específica do Pacífico Equatorial. Valores acima de +0.5°C por 5 meses consecutivos caracterizam El Niño; valores abaixo de -0.5°C indicam La Niña.",
+        "concomitant_occurrence": {
+          "title": "Ciclicidade Irregular e Mudanças Climáticas",
+          "text": "Ao contrário dos ciclos milenares de Milankovitch, o ENSO atua em escala interanual. No entanto, estudos indicam que o aquecimento global antropogênico pode aumentar a frequência e a intensidade dos eventos extremos de El Niño e La Niña."
+        },
+        "proxy_techniques": [
+          {
+            "name": "Rede de Bóias TRITON/TAO e Altimetria por Satélite",
+            "description": "Redes de bóias ancoradas no Pacífico Equatorial aliadas a satélites (como a missão Sentinel/TOPEX) medem em tempo real a altura da superfície do mar, a temperatura em profundidade e a velocidade dos ventos.",
+            "image_url": "https://www.climate.gov/sites/default/files/styles/full_width_620_original_image/public/2023-04/buoy_array_locations_sphere_2023.jpg?itok=PtAnpqa4",
+            "source": "NOAA / Domínio Público"
+          },
+          {
+            "name": "Impacto Socioeconômico e na Construção Civil",
+            "description": "Variabilidades no ENSO alteram drasticamente os regimes de chuva regionais, impactando diretamente o planejamento de obras de infraestrutura, eventos de enchentes urbanas, disponibilidade hídrica para concreto e estabilidade de encostas.",
+            "image_url": "https://www.climate.gov/sites/default/files/2021-10/ElNinoDJF.jpg",
+            "source": "NOAA / Public Domain"
+          }
+        ]
+      }
+    }
+  ]
+}
+       {
+  "sub_slide_id": "1.3",
+  "original_pages": [6, 7, 8, 9],
+  "title": "Secondary Natural Forcings",
+  "layout": "Two_Column_Cards_And_Graph",
+  "content": {
+    "description": "Outros ciclos e fenômenos naturais atmosféricos, solares, geofísicos e astronômicos que influenciam a variabilidade climática terrestre em diferentes escalas de tempo.",
+    "left_side_cards": [
+      {
+        "card_id": "card_polar_vortex",
+        "title": "Vórtice Polar & Jet Streams",
+        "short_description": "Dinâmica da Célula Polar e Força de Coriolis contendo ar frio polar.",
+        "gif_url": "polar_vortex.gif",
+        "action": "open_popup:popup_polar_vortex"
+      },
+      {
+        "card_id": "card_solar_cycle",
+        "title": "Ciclo Solar (Schwabe)",
+        "short_description": "Variação periódica de ~11 anos na atividade e manchas solares.",
+        "gif_url": "solar_cycle.gif",
+        "action": "open_popup:popup_solar_cycle"
+      },
+      {
+        "card_id": "card_geomagnetic",
+        "title": "Reversão Geomagnética",
+        "short_description": "Inversão dos pólos magnéticos Norte-Sul registrada no paleomagnetismo.",
+        "gif_url": "geomagnetic_reversal.gif",
+        "action": "open_popup:popup_geomagnetic"
+      },
+      {
+        "card_id": "card_lunar_cycle",
+        "title": "Ciclo Nodal Lunar",
+        "short_description": "Oscilação de 18,61 anos no plano orbital da Lua influenciando marés.",
+        "gif_url": "lunar_nodal.gif",
+        "action": "open_popup:popup_lunar_cycle"
+      }
+    ],
+    "right_side_graph": {
+      "image_url": "natural_forcings_summary.png",
+      "alt_text": "Comparativo de escala de tempo e forçamento radiativo de ciclos naturais secundários",
+      "action": "open_popup:popup_forcings_comparison"
+    }
+  },
+  "interactive_popups": [
+    {
+      "popup_id": "popup_polar_vortex",
+      "trigger": "card_polar_vortex",
+      "title": "Vórtice Polar e Jato da Noite Polar",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "A Célula Polar tenta descer em direção ao equador, mas a Força de Coriolis impede o transporte direto de ar frio. A colisão de massas de ar com a Célula de Ferrel forma as correntes de jato (Jet Streams). Quando o Vórtice Polar está forte, aprisiona o ar frio no pólo; quando enfraquece, permite incursões severas de ar ártico em latitudes médias.",
+        "cycle_duration": "Sazonal (Inverno/Primavera)",
+        "key_characteristics": [
+          "Barreira de vento (Polar Night Jet) atua como uma 'parede' atmosférica",
+          "Configuração mais estável no Hemisfério Sul do que no Hemisfério Norte"
+        ],
+        "climate_consequences": "O enfraquecimento sazonal do vórtice provoca surtos extremos de frio e tempestades de neve em regiões populosas da América do Norte e Europa.",
+        "media": {
+          "type": "image/gif",
+          "url": "polar_vortex.gif",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_solar_cycle",
+      "trigger": "card_solar_cycle",
+      "title": "Ciclo Solar de Schwabe e Clima Terrestre",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "Ciclo periódico de atividade do Sol que afeta o número de manchas solares e a irradiação solar total (TSI). O Mínimo/Máximo solar altera a magnetosfera terrestre via ventos solares, podendo ocasionar tempestades geomagnéticas.",
+        "cycle_duration": "~11 anos",
+        "key_characteristics": [
+          "Variação da irradiação solar total é pequena (~0,1%)",
+          "Ocorrência de tempestades geomagnéticas durante máximos solares"
+        ],
+        "climate_consequences": "Apesar de influenciar ligeiramente a alta atmosfera e o tempo espacial, a variação da irradiação solar de 11 anos tem impacto negligenciável na tendência de aquecimento global de longo prazo.",
+        "media": {
+          "type": "image/gif",
+          "url": "solar_cycle.gif",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_geomagnetic",
+      "trigger": "card_geomagnetic",
+      "title": "Reversão Geomagnética e Paleomagnetismo",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "Alteração no campo magnético dipolar do planeta, trocando as posições do Norte e Sul magnéticos. A transição não é instantânea, levando de centenas a milhares de anos, período durante o qual o campo magnético enfraquece temporariamente.",
+        "cycle_duration": "Irregular (intervalos de centenas de milhares a milhões de anos)",
+        "key_characteristics": [
+          "Registrado em rochas através de estudos paleomagnéticos",
+          "Impossível de prever com precisão no estado atual"
+        ],
+        "climate_consequences": "Enfraquece a proteção contra raios cósmicos e radiação solar durante a transição, mas não há evidências geológicas diretas de que impulsione mudanças profundas na temperatura média global.",
+        "media": {
+          "type": "image/gif",
+          "url": "geomagnetic_reversal.gif",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_lunar_cycle",
+      "trigger": "card_lunar_cycle",
+      "title": "Ciclo Nodal Lunar e Modulação de Marés",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "Variação na posição orbital da Lua e na força gravitacional exercida sobre a Terra devido à precessão dos nós orbitais lunares. Isso altera a declinação do plano orbital da Lua em relação ao equador terrestre.",
+        "cycle_duration": "18,61 anos",
+        "key_characteristics": [
+          "Precessão nodal no ângulo de ±18,61 anos",
+          "Modulação da amplitude das marés oceânicas"
+        ],
+        "climate_consequences": "Gera pequenas variações no nível médio anual do mar local (~1-2 cm). Quando a fase alta do ciclo coincide com o aumento do nível do mar por mudanças climáticas, o risco de inundações costeiras de maré alta aumenta significativamente.",
+        "media": {
+          "type": "image/gif",
+          "url": "lunar_nodal.gif",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_forcings_comparison",
+      "trigger": "right_side_graph",
+      "title": "Análise Comparativa: Variabilidade Natural vs. Aquecimento Antropogênico",
+      "type": "graph_analysis_modal",
+      "content": {
+        "overview": "Embora os fenômenos atmosféricos, solares, geofísicos e lunares provoquem variações locais e flutuações de curto prazo no sistema climático, nenhum deles explica o aumento rápido e contínuo da temperatura média global observado no último século.",
+        "concomitant_occurrence": {
+          "title": "Forçamento Radiativo e Escalas de Tempo",
+          "text": "A irradiação solar e a dinâmica de ventos/marés oscilam em escalas curtas ou de impacto radiativo muito baixo. O aquecimento moderno apresenta uma taxa incomparavelmente mais rápida que o tempo característico dessas forçantes naturais secundárias."
+        },
+        "proxy_techniques": [
+          {
+            "name": "Medições de Radiação Solar e Satélites NOAA/NASA",
+            "description": "Satélites modernos medem a Irradiação Solar Total (TSI) desde a década de 1970, demonstrando que a energia solar recebida pela Terra permaneceu estável ou ligeiramente decrescente enquanto as temperaturas globais subiram acentuadamente.",
+            "image_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/esd/climate/internal_resources/2502/temperature_vs_solar_activity_2021.png?w=1696&h=1325&fit=clip&crop=faces%2Cfocalpoint",
+            "source": "NASA / Domínio Público"
+          },
+          {
+            "name": "Modelagem de Atribuição Climática do IPCC",
+            "description": "Modelos climáticos computacionais simulados apenas com forçantes naturais (ciclos solares, vulcões, orbital) falham em reproduzir o aquecimento atual. O aquecimento observado só é reproduzido quando as emissões antropogênicas de GEE são incluídas.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Climate_Change_Attribution.png",
+            "source": "IPCC AR6 / Domínio Público"
+          }
+        ]
+      }
+    }
+  ]
+}
+{
+  "slide_number": 2,
+  "original_pages": [10],
+  "title": "Geological Climate Timeline",
+  "layout": "Interactive_Timeline_Explorer",
+  "is_main_line": true,
+  "content": {
+    "heading": "500 Milhões de Anos de Transições Climáticas",
+    "description": "Registros paleoclimáticos reconstruídos a partir de sedimentos marinhos profundos e testemunhos de gelo, demonstrando as grandes alternâncias entre estados de 'Greenhouse' (Estufa) e 'Icehouse' (Glaciação) ao longo do tempo profundo.",
+    "main_graph": {
+      "image_url": "https://www.climate.gov/sites/default/files/styles/full_width_620_original_image/public/graph-from-scott-wing-620px.png?itok=Jgi659bn",
+      "alt_text": "Temperatura média global estimada nos últimos 500 milhões de anos",
+      "source_url": "https://www.climate.gov/sites/default/files/styles/full_width_620_original_image/public/graph-from-scott-wing-620px.png?itok=Jgi659bn",
+      "action": "open_popup:popup_500m_overview"
+    },
+    "timeline_zoom_navigation": [
+      {
+        "label": "500 M.a. (Phanerozoic)",
+        "target_sub_slide": "2.1"
+      },
+      {
+        "label": "65 M.a. (Cenozoic)",
+        "target_sub_slide": "2.2"
+      },
+      {
+        "label": "5 M.a. (Pliocene-Pleistocene)",
+        "target_sub_slide": "2.3"
+      },
+      {
+        "label": "800 mil anos (Vostok Core)",
+        "target_sub_slide": "2.4"
+      }
+    ]
+  },
+  "interactive_popups": [
+    {
+      "popup_id": "popup_500m_overview",
+      "trigger": "main_graph",
+      "title": "A Visão de Longo Prazo: Fases Greenhouse vs. Icehouse",
+      "type": "graph_analysis_modal",
+      "content": {
+        "overview": "Ao longo dos últimos 500 milhões de anos, a Terra alternou entre longos períodos sem gelo nas calotas polares (Mundo Estufa / Greenhouse) e períodos com calotas polares e glaciações periódicas (Mundo Glacial / Icehouse).",
+        "concomitant_occurrence": {
+          "title": "A Relevância para o Aquecimento Atual",
+          "text": "Embora a Terra já tenha sido mais quente no passado distante (como no Cretáceo ou Eoceno), essas transições levaram milhões de anos para ocorrer. O aquecimento antropogênico atual se destaca não pelo valor absoluto inicial, mas pela taxa incomparavelmente rápida de mudança."
+        },
+        "proxy_techniques": [
+          {
+            "name": "Análise Isotópica Carbonato Bentônico (δ18O)",
+            "description": "Utilização de razões isotópicas em microfósseis de foraminíferos preservados em testemunhos de sedimentos oceânicos para estimar o volume de gelo e a temperatura dos oceanos profundos.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Benthic_foraminifera.jpg",
+            "source": "Smithsonian Institution / NOAA / Domínio Público"
+          }
+        ]
+      }
+    }
+  ],
+  "sub_slides": [
+    {
+      "sub_slide_id": "2.1",
+      "original_pages": [10],
+      "title": "Escala de 500 Milhões de Anos (Fanerozoico)",
+      "layout": "Two_Column_Cards_And_Graph",
+      "content": {
+        "description": "Evolução da temperatura global desde o surgimento das plantas terrestres até o presente, destacando o Pangeia e o Cretáceo Quente.",
+        "left_side_cards": [
+          {
+            "card_id": "card_plants_pangea",
+            "title": "Surgimento das Plantas & Pangeia",
+            "short_description": "Emergência das plantas (~450 M.a.) e o Pangeia Equatorial seco e quente (~250 M.a.).",
+            "image_url": "pangea_climate.png",
+            "action": "open_popup:popup_pangea_detail"
+          },
+          {
+            "card_id": "card_cretaceous_hot",
+            "title": "Cretaceous Hot Greenhouse",
+            "short_description": "Pico de temperatura global há ~100 M.a. sem calotas polares.",
+            "image_url": "cretaceous_greenhouse.png",
+            "action": "open_popup:popup_cretaceous_detail"
+          }
+        ],
+        "right_side_graph": {
+          "image_url": "https://www.climate.gov/sites/default/files/styles/full_width_620_original_image/public/graph-from-scott-wing-620px.png?itok=Jgi659bn",
+          "alt_text": "Gráfico dos 500 milhões de anos adaptado do Smithsonian Institution",
+          "action": "open_popup:popup_500m_overview"
+        }
+      },
+      "interactive_popups": [
+        {
+          "popup_id": "popup_pangea_detail",
+          "trigger": "card_plants_pangea",
+          "title": "Surgimento da Florestas e Clima do Pangeia",
+          "type": "info_modal",
+          "content": {
+            "text": "O aparecimento das plantas terrestres retirou grandes volumes de CO2 da atmosfera, desencadeando um forte resfriamento no Carbonífero. Mais tarde, a formação do supercontinente Pangeia criou regiões interiores extremamente secas e quentes inviáveis para pântanos de turfa.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Pangea_animation_03.gif",
+            "source": "USGS / Domínio Público"
+          }
+        },
+        {
+          "popup_id": "popup_cretaceous_detail",
+          "trigger": "card_cretaceous_hot",
+          "title": "O Mundo Estufa do Cretáceo",
+          "type": "info_modal",
+          "content": {
+            "text": "Durante o Cretáceo (há ~100 milhões de anos), os níveis de CO2 eram significativamente mais elevados que os atuais devido ao intenso vulcanismo de fundo oceânico. Os oceanos eram mais quentes e não existiam calotas de gelo nos pólos.",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Cretaceous_render.png",
+            "source": "NOAA Climate.gov"
+          }
+        }
+      ]
+    },
+    {
+      "sub_slide_id": "2.2",
+      "original_pages": [10],
+      "title": "Escala de 65 Milhões de Anos (Era Cenozoica)",
+      "layout": "Two_Column_Cards_And_Graph",
+      "content": {
+        "description": "O resfriamento de longo prazo da Era Cenozoica: do Máximo Térmico do Paleoceno-Eoceno (PETM) até o surgimento das calotas de gelo continentais.",
+        "left_side_cards": [
+          {
+            "card_id": "card_petm",
+            "title": "Paleocene-Eocene Thermal Maximum (PETM)",
+            "short_description": "Pico térmico extremo há ~56 M.a. com aumento rápido de temperatura.",
+            "image_url": "petm_spike.png",
+            "action": "open_popup:popup_petm_detail"
+          },
+          {
+            "card_id": "card_polar_caps_formation",
+            "title": "Formação das Calotas Polares",
+            "short_description": "Transição de um mundo sem gelo para um mundo com calotas congeladas no Oligoceno/Mioceno.",
+            "image_url": "ice_caps_formation.png",
+            "action": "open_popup:popup_ice_caps_detail"
+          }
+        ],
+        "right_side_graph": {
+          "image_url": "https://www.climate.gov/sites/default/files/2023-01/climateqa_global_surface_temps_65million_years_2480.png",
+          "alt_text": "Temperaturas superficiais globais nos últimos 65 milhões de anos - Dados Zachos e Hansen",
+          "action": "open_popup:popup_65m_detail"
+        }
+      },
+      "interactive_popups": [
+        {
+          "popup_id": "popup_petm_detail",
+          "trigger": "card_petm",
+          "title": "O Máximo Térmico do Paleoceno-Eoceno (PETM)",
+          "type": "info_modal",
+          "content": {
+            "text": "O PETM (~56 M.a.) foi um evento de liberação massiva de carbono na atmosfera em poucas dezenas de milhares de anos. É frequentemente estudado como o análogo geológico mais próximo da injeção atual de CO2 pela atividade humana.",
+            "image_url": "https://www.climate.gov/sites/default/files/2023-01/climateqa_global_surface_temps_65million_years_2480.png",
+            "source": "NOAA Climate.gov / Data: Zachos & Hansen"
+          }
+        },
+        {
+          "popup_id": "popup_65m_detail",
+          "trigger": "right_side_graph",
+          "title": "Reconstrução dos 65 M.a. (Dados Zachos/Hansen)",
+          "type": "graph_analysis_modal",
+          "content": {
+            "overview": "O gráfico demonstra o longo declínio na temperatura média do planeta após o Eoceno, impulsionado pelo isolamento da Antártica (abertura da Passagem de Drake) e o sequestro tectônico de CO2 pelo erguimento do Himalaia.",
+            "concomitant_occurrence": {
+              "title": "Início da Glaciação Quaternária",
+              "text": "O resfriamento culminou na formação da calota da Antártica há ~34 M.a. e, posteriormente, no congelamento do Hemisfério Norte no Plioceno/Pleistoceno."
+            },
+            "proxy_techniques": [
+              {
+                "name": "Compilação Isotópica de Sedimentos Marinhos (Zachos et al.)",
+                "description": "Integração de milhares de amostras de perfurações oceânicas profundas do DSDP/ODP para construir a curva mestre de temperatura do Cenozoico.",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/MilankovitchCycles_OrbitandCores.png",
+                "source": "Zachos et al. / Wikimedia Commons"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sub_slide_id": "2.3",
+      "original_pages": [10],
+      "title": "Escala de 5 Milhões de Anos (Mudança de Frequência)",
+      "layout": "Two_Column_Cards_And_Graph",
+      "content": {
+        "description": "Detalhamento da transição do Plioceno ao Pleistoceno, evidenciando a mudança na periodicidade das glaciações de 41.000 para 100.000 anos.",
+        "left_side_cards": [
+          {
+            "card_id": "card_41k_cycle",
+            "title": "Domínio do Ciclo de 41 kyr",
+            "short_description": "Entre 5 M.a. e 1 M.a., o clima respondia predominantemente à obliquidade.",
+            "image_url": "41k_cycle_card.png",
+            "action": "open_popup:popup_41k_detail"
+          },
+          {
+            "card_id": "card_100k_cycle",
+            "title": "Transição para o Ciclo de 100 kyr",
+            "short_description": "No último milhão de anos, a excentricidade e feedbacks internos assumem o controle principal.",
+            "image_url": "100k_cycle_card.png",
+            "action": "open_popup:popup_100k_detail"
+          }
+        ],
+        "right_side_graph": {
+          "image_url": "sediment_core_5m_graph.png",
+          "alt_text": "Cinco milhões de anos de variação climática a partir de sedimentos de foraminíferos bentônicos",
+          "action": "open_popup:popup_5m_graph_detail"
+        }
+      },
+      "interactive_popups": [
+        {
+          "popup_id": "popup_5m_graph_detail",
+          "trigger": "right_side_graph",
+          "title": "A Grande Transição do Pleistoceno Médio",
+          "type": "graph_analysis_modal",
+          "content": {
+            "overview": "Exibição do registro de carbonato bentônico δ18O dos últimos 5 milhões de anos. O gráfico mostra o aumento progressivo da amplitude das glaciações e a mudança fundamental no ritmo do clima terrestre há aproximadamente 1 milhão de anos.",
+            "concomitant_occurrence": {
+              "title": "O Enigma dos 100 Mil Anos",
+              "text": "A transição do ciclo dominante de 41.000 anos (obliquidade) para 100.000 anos (excentricidade) ainda é tema de pesquisas, associada ao limite crítico de acúmulo de gelo e redução nos níveis de CO2."
+            },
+            "proxy_techniques": [
+              {
+                "name": "Sedimentos Oceânicos Profundos (Sediment Cores)",
+                "description": "Coleta de testemunhos cilíndricos no leito marinho por navios de perfuração científica (como o JOIDES Resolution). As camadas de conchas de microfósseis funcionam como um termômetro contínuo do passado.",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/MilankovitchCycles_OrbitandCores.png",
+                "source": "Wikimedia Commons / JOIDES Resolution"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sub_slide_id": "2.4",
+      "original_pages": [10],
+      "title": "Escala de 800.000 Anos (Testemunhos de Gelo)",
+      "layout": "Two_Column_Cards_And_Graph",
+      "content": {
+        "description": "Registro de alta resolução das oscilações glaciais e interglaciais obtido através de amostras profundas de gelo antártico.",
+        "left_side_cards": [
+          {
+            "card_id": "card_glacial_peaks",
+            "title": "Períodos Glaciais e Interglaciais",
+            "short_description": "Oscilações de dentes de serra com quedas lentas de temperatura e aquecimentos abruptos.",
+            "image_url": "glacial_cycles.png",
+            "action": "open_popup:popup_vostok_detail"
+          },
+          {
+            "card_id": "card_gas_trapping",
+            "title": "Gases de Efeito Estufa Aprisionados",
+            "short_description": "Medição direta do CO2 e CH4 contidos nas bolhas de ar fóssil no gelo.",
+            "image_url": "trapped_air_bubbles.png",
+            "action": "open_popup:popup_vostok_detail"
+          }
+        ],
+        "right_side_graph": {
+          "image_url": "vostok_ice_core_graph.png",
+          "alt_text": "Gráfico de anomalia de temperatura dos últimos 800 mil anos a partir dos dados do Vostok Ice Core",
+          "action": "open_popup:popup_vostok_detail"
+        }
+      },
+      "interactive_popups": [
+        {
+          "popup_id": "popup_vostok_detail",
+          "trigger": "card_glacial_peaks",
+          "title": "Análise dos Testemunhos de Gelo de Vostok e EPICA",
+          "type": "graph_analysis_modal",
+          "content": {
+            "overview": "O registro do gelo antártico cobre os últimos 800.000 anos e oferece a prova mais direta da estreita correlação entre as temperaturas globais e as concentrações atmosféricas de CO2 e CH4.",
+            "concomitant_occurrence": {
+              "title": "Limites Naturais do Quaternário",
+              "text": "Nos últimos 800.000 anos de ciclos naturais, o CO2 atmosférico oscilou estritamente entre ~180 ppm (picos glaciais frios) e ~280-300 ppm (picos interglaciais quentes). Hoje ultrapassamos 415-420 ppm devido à atividade humana."
+            },
+            "proxy_techniques": [
+              {
+                "name": "Técnica de Perfuração do Testemunho de Gelo de Vostok",
+                "description": "Extração de cilindros de gelo de mais de 3 km de profundidade na Antártica. A razão isotópica de Deutério (δD) revela a temperatura e as bolhas pré-históricas presas revelam a composição exata da atmosfera.",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Icecore_4.jpg",
+                "source": "US GS / NOAA / Domínio Público"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+   {
+  "slide_number": 3,
+  "original_pages": [11, 12],
+  "title": "Anthropogenic Warming & CO2 Correlation",
+  "layout": "Two_Column_Cards_And_Graph",
+  "is_main_line": true,
+  "content": {
+    "description": "Evidências do aquecimento global moderno e a correlação direta com o aumento das emissões de CO2, sob a ótica ética e a responsabilidade da indústria da construção.",
+    "left_side_cards": [
+      {
+        "card_id": "card_temp_anomaly",
+        "title": "Anomalia Térmica",
+        "short_description": "Aumento exponencial da temperatura global pós-Revolução Industrial.",
+        "image_url": "temp_anomaly_icon.png",
+        "action": "open_popup:popup_temp_detail"
+      },
+      {
+        "card_id": "card_co2_rise",
+        "title": "Concentração de CO2",
+        "short_description": "Níveis atmosféricos ultrapassando 415 ppm, sem precedentes no registro humano.",
+        "image_url": "co2_concentration_icon.png",
+        "action": "open_popup:popup_co2_detail"
+      },
+      {
+        "card_id": "card_mandarin_paradox",
+        "title": "Questão Moral",
+        "short_description": "O Paradoxo do Mandarim: as consequências de nossas ações para populações invisíveis.",
+        "image_url": "ethics_icon.png",
+        "action": "open_popup:popup_mandarin_detail"
+      },
+      {
+        "card_id": "card_construction_burden",
+        "title": "Carga da Construção",
+        "short_description": "O papel central do setor na emissão de CO2 e consumo de recursos não renováveis.",
+        "image_url": "construction_impact_icon.png",
+        "action": "open_popup:popup_construction_detail"
+      }
+    ],
+    "right_side_graph": {
+      "image_url": "https://www.climate.gov/sites/default/files/2023-01/climateqa_global_surface_temps_65million_years_2480.png",
+      "alt_text": "Gráfico de correlação entre anomalia de temperatura e concentração de CO2 (1880-2018)",
+      "action": "open_popup:popup_correlation_analysis"
+    }
+  },
+  "interactive_popups": [
+    {
+      "popup_id": "popup_correlation_analysis",
+      "trigger": "right_side_graph",
+      "title": "Análise de Correlação: CO2 vs. Temperatura",
+      "type": "graph_analysis_modal",
+      "content": {
+        "overview": "O gráfico demonstra uma coincidência temporal robusta entre a injeção massiva de CO2 na atmosfera e a quebra da estabilidade térmica do Holoceno.",
+        "concomitant_occurrence": {
+          "title": "Padrão de Aquecimento",
+          "text": "Diferente dos ciclos naturais lentos, o aquecimento atual (+1.0°C em apenas 140 anos) acompanha milimetricamente a curva de queima de combustíveis fósseis e produção de cimento."
+        },
+        "proxy_techniques": [
+          {
+            "name": "Medições Instrumentais (NOAA/NASA)",
+            "description": "Dados baseados em milhares de estações meteorológicas terrestres e bóias oceânicas, validados pela concordância entre o Met Office (Hadley Centre) e agências espaciais.",
+            "image_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/woc/images/globaltemp/global_gis_1890-1894.png?w=720&h=396&fit=crop&crop=faces%2Cfocalpoint",
+            "source": "NASA Earth Observatory"
+          }
+        ]
+      }
+    },
+    {
+      "popup_id": "popup_mandarin_detail",
+      "trigger": "card_mandarin_paradox",
+      "title": "Ética Climática: O Paradoxo do Mandarim",
+      "type": "info_modal",
+      "content": {
+        "text": "Citação de La Rochefoucauld: 'Podemos causar mal a pessoas que nunca veremos'. No contexto climático, as emissões de hoje afetam gerações futuras e nações vulneráveis que não participaram do consumo industrial, criando um dilema ético fundamental para o engenheiro e o arquiteto.",
+        "image_url": "mandarin_paradox_visual.png",
+        "source": "Filosofia Moral Aplicada ao Clima"
+      }
+    },
+    {
+      "popup_id": "popup_construction_detail",
+      "trigger": "card_construction_burden",
+      "title": "A Responsabilidade da Construção Civil",
+      "type": "info_modal",
+      "content": {
+        "text": "O setor da construção é responsável por aproximadamente 38% das emissões globais de CO2 (operacionais + energia incorporada nos materiais). O consumo de recursos não renováveis e a pegada de carbono do cimento e aço tornam a 'Eco-eficiência' uma obrigação técnica e não apenas uma opção estética.",
+        "image_url": "construction_sector_emissions.png",
+        "source": "IEA / Global Status Report for Buildings and Construction"
+      }
+    }
+  ],
+  "sub_slides": [
+    {
+      "sub_slide_id": "3.1",
+      "title": "A Curva de Keeling e o Limite dos 415 ppm",
+      "layout": "Image_Right_Text_Left",
+      "content": {
+        "description": "Análise detalhada da concentração de CO2 atmosférico medida em Mauna Loa e a aceleração pós-1950 (A Grande Aceleração).",
+        "key_points": [
+          "Superação do limite histórico de 300 ppm do Quaternário.",
+          "Relação entre industrialização e forçamento radiativo direto."
+        ]
+      }
+    }
+  ]
+}
+    {
+  "slide_number": 4,
+  "original_pages": [13, 14, 15, 16],
+  "title": "Extreme Weather Phenomena & Disasters",
+  "layout": "Two_Column_Cards_And_Graph",
+  "is_main_line": true,
+  "content": {
+    "description": "O aquecimento global acelerado intensifica os eventos atmosféricos extremos, gerando secas severas, incêndios, resfriamento regional por alteração de correntes e precipitações pluviométricas violentas com graves consequências geotécnicas e urbanas.",
+    "left_side_cards": [
+      {
+        "card_id": "card_ouro_preto",
+        "title": "Desabamento em Ouro Preto (MG)",
+        "short_description": "Desabamento do Morro da Força destruindo patrimônio histórico após chuvas intensas.",
+        "image_url": "ouro_preto_landslide_thumb.png",
+        "action": "open_popup:popup_ouro_preto"
+      },
+      {
+        "card_id": "card_sao_sebastiao",
+        "title": "Tragédia de São Sebastião (SP)",
+        "short_description": "Deslizamentos de encostas e destruição de moradias no litoral paulista (2023).",
+        "image_url": "sao_sebastiao_thumb.png",
+        "action": "open_popup:popup_sao_sebastiao"
+      },
+      {
+        "card_id": "card_pakistan_floods",
+        "title": "Enchentes no Paquistão (2022)",
+        "short_description": "Inundações catastróficas que afetaram metade das terras agrícolas e provocaram >1.200 mortes.",
+        "image_url": "pakistan_floods_thumb.png",
+        "action": "open_popup:popup_pakistan"
+      },
+      {
+        "card_id": "card_rs_floods",
+        "title": "Megainundação no RS (2024)",
+        "short_description": "Eventos de cheia histórica com 183 vítimas e impacto econômico estimado em R$ 97 bilhões.",
+        "image_url": "rs_floods_thumb.png",
+        "action": "open_popup:popup_rs_floods"
+      }
+    ],
+    "right_side_graph": {
+      "image_url": "extreme_weather_consequences_map.png",
+      "alt_text": "Resumo das consequências do aquecimento global: elevação do nível do mar, secas, incêndios e chuvas torrenciais",
+      "action": "open_popup:popup_extreme_weather_overview"
+    }
+  },
+  "interactive_popups": [
+    {
+      "popup_id": "popup_ouro_preto",
+      "trigger": "card_ouro_preto",
+      "title": "Desabamento do Morro da Força em Ouro Preto (MG)",
+      "type": "event_detail_modal",
+      "content": {
+        "detailed_description": "O colapso do Morro da Força em Ouro Preto exemplifica a vulnerabilidade de encostas históricas e urbanizadas a episódios de precipitação torrencial concentrada.",
+        "key_impacts": [
+          "Destruição total de casarões históricos e risco contínuo ao patrimônio cultural",
+          "Aumento da instabilidade geotécnica devido ao solo saturado por chuvas extremas"
+        ],
+        "media": {
+          "type": "image/jpeg",
+          "url": "https://www.otempo.com.br/cidades/imagem-aerea-mostra-momento-exato-do-desabamento-do-morro-da-forca-em-ouro-preto-1.2595629",
+          "source": "Jornal O Tempo",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_sao_sebastiao",
+      "trigger": "card_sao_sebastiao",
+      "title": "Deslizamentos no Litoral Norte de São Paulo (São Sebastião - 2023)",
+      "type": "event_detail_modal",
+      "content": {
+        "detailed_description": "Acúmulos pluviométricos recordes (mais de 600 mm em 24h) desencadearam corridas de lama e escorregamentos de encostas na Serra do Mar, atingindo em cheio comunidades vulneráveis ocupando encostas.",
+        "key_impacts": [
+          "Ruptura de vias de transporte e infraestrutura de saneamento/energia",
+          "Perda de dezenas de vidas e destruição maciça de residências"
+        ],
+        "media": {
+          "type": "image/jpeg",
+          "url": "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2023/02/22/tragedia-no-litoral-de-sp-alertas.htm",
+          "source": "UOL Cotidiano / Notícias",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_pakistan",
+      "trigger": "card_pakistan_floods",
+      "title": "Inundações sem Precedentes no Paquistão (2022)",
+      "type": "event_detail_modal",
+      "content": {
+        "detailed_description": "Chuvas de monção extraordinariamente intensificadas pelo aquecimento do oceano deixaram um terço do país debaixo d'água, demonstrando a escala com que eventos extremos afetam a segurança alimentar e a infraestrutura básica.",
+        "key_impacts": [
+          "Mais de 1.200 mortes confirmadas",
+          "Destruição de quase metade da área agrícola do país",
+          "Crise humanitária de grandes proporções e contaminação de fontes de água"
+        ],
+        "media": {
+          "type": "image/jpeg",
+          "url": "https://www.dw.com/en/pakistan-floods-international-aid-arrives-as-death-toll-tops-1200/a-63005125",
+          "source": "Foto: Fida Hussain / DW (Deutsche Welle)",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_rs_floods",
+      "trigger": "card_rs_floods",
+      "title": "Catástrofe Climática no Rio Grande do Sul (Maio de 2024)",
+      "type": "event_detail_modal",
+      "content": {
+        "detailed_description": "A inundação que atingiu mais de 90% dos municípios gaúchos tornou-se o maior desastre climático da história do estado, afetando fortemente centros urbanos densos como Porto Alegre, Canoas, Roca Sales e Cruzeiro do Sul.",
+        "key_impacts": [
+          "183 mortes confirmadas e milhares de desabrigados (>600 mil fora de casa)",
+          "Impacto financeiro e econômico nacional estimado em R$ 97 bilhões",
+          "Necessidade de reconstrução total do sistema de drenagem, diques e infraestrutura viária"
+        ],
+        "media": {
+          "type": "image/jpeg",
+          "url": "https://s2-g1.glbimg.com/Zi2EY3PkVh_xTtNxMtGgPFddvKo=/0x0:1920x1079/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/R/J/YOpXLsTC6ZZgexZOyq2A/rs.jpg",
+          "source": "G1 / Agência Brasil",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_extreme_weather_overview",
+      "trigger": "right_side_graph",
+      "title": "Visão Geral: Consequências do Aquecimento Global",
+      "type": "graph_analysis_modal",
+      "content": {
+        "overview": "O aumento da temperatura média global amplifica os processos de evaporação e altera a dinâmica atmosférica, aumentando simultaneamente a frequência de secas extremas e tempestades severas.",
+        "concomitant_occurrence": {
+          "title": "Principais Consequências Globais Mencionadas",
+          "text": "• Elevação do nível do mar: ~0.4 m por expansão térmica da água e até ~7 m por derretimento de calotas polares.\n• Secas de longo prazo e aumento de incêndios florestais.\n• Chuvas torrenciais concentradas e aumento da frequência/intensidade de furacões (↑0,5°C na TSM atinge aumento de ~40% em intensidade).\n• Risco de interrupção da circulação termohalina oceânica.\n• Desgelo do Permafrost com liberação de CO2 e CH4."
+        },
+        "proxy_techniques": [
+          {
+            "name": "Sistemas de Alerta e Mapeamento de Risco Geotécnico",
+            "description": "Utilização de radar meteorológico de alta precisão, pluviômetros automáticos e modelos digitais de elevação para identificação de áreas de risco suscetíveis a escorregamentos e corridas de detritos em áreas urbanas.",
+            "image_url": "https://noticias.uol.com.br/cotidiano/ultimas-noticias/2023/02/22/tragedia-no-litoral-de-sp-alertas.htm",
+            "source": "UOL / Defesa Civil"
+          }
+        ]
+      }
+    }
+  ],
+ {
+  "sub_slides": [
+   
+   {
+  "slide_number": 5,
+  "original_pages": [17],
+  "title": "Systemic Risks: Ocean Currents",
+  "layout": "Two_Column_Cards_And_Graph",
+  "is_main_line": true,
+  "content": {
+    "description": "Análise do risco sistêmico de interrupção ou desaceleração da circulação termohalina oceânica devido ao aporte massivo de água doce proveniente do derretimento do gelo polar [cite: 394, 450, 457-458].",
+    "left_side_cards": [
+      {
+        "card_id": "card_conveyor_belt",
+        "title": "Esteira Transportadora Oceânica",
+        "short_description": "Mecanismo global de transporte de calor através do fluxo superficial quente e subterrâneo frio .",
+        "image_url": "ocean_conveyor_thumb.png",
+        "action": "open_popup:popup_conveyor_belt"
+      },
+      {
+        "card_id": "card_freshwater_inflow",
+        "title": "Aporte de Água Doce & Salinidade",
+        "short_description": "O derretimento do gelo diminui a densidade da água no Atlântico Norte e enfraquece o afundamento[cite: 394, 450, 457].",
+        "image_url": "freshwater_melting_thumb.png",
+        "action": "open_popup:popup_freshwater_inflow"
+      },
+      {
+        "card_id": "card_thermal_disruption",
+        "title": "Desequilíbrio Térmico Regional",
+        "short_description": "Possível resfriamento acentuado no Norte da Europa paralelo ao superaquecimento das zonas tropicais.",
+        "image_url": "thermal_disruption_thumb.png",
+        "action": "open_popup:popup_thermal_disruption"
+      }
+    ],
+    "right_side_graph": {
+      "image_url": "https://www.ces.fau.edu/nasa/resources/global-ocean-conveyor.php",
+      "alt_text": "Mapa da circulação oceânica global (Esteira Transportadora) destacando o fluxo superficial quente e o fluxo subterrâneo frio [cite: 444, 462-464, 467-468]",
+      "action": "open_popup:popup_thermohaline_analysis"
+    }
+  },
+  "interactive_popups": [
+    {
+      "popup_id": "popup_conveyor_belt",
+      "trigger": "card_conveyor_belt",
+      "title": "A Esteira Transportadora Oceânica Global",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "A circulação termohalina é movida por diferenças de densidade da água do mar, controladas pela temperatura (termo) e pela salinidade (halina). O fluxo superficial de água quente se desloca dos trópicos para o Atlântico Norte, onde esfria, ganha densidade e afunda, retornando como um fluxo profundo e frio .",
+        "key_characteristics": [
+          "Fluxo superficial quente (Warm surface flow) aquecendo a bacia do Atlântico Norte [cite: 462-463].",
+          "Fluxo subterrâneo frio (Cool subsurface flow) redistribuindo nutrientes e massa de água pelos oceanos Índico e Pacífico[cite: 461, 464, 466]."
+        ],
+        "climate_consequences": "A circulação atua como um regulador térmico vital para o planeta, moderando as temperaturas entre o equador e as altas latitudes.",
+        "media": {
+          "type": "image/jpeg",
+          "url": "https://www.ces.fau.edu/nasa/resources/global-ocean-conveyor.php",
+          "source": "NASA / Florida Atlantic University [cite: 467-468]",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_freshwater_inflow",
+      "trigger": "card_freshwater_inflow",
+      "title": "Mecanismo de Desaceleração por Derretimento Polar",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "O aquecimento global acelera o derretimento da calota de gelo da Groenlândia e das geleiras polares, injetando enormes volumes de água doce e fria no Atlântico Norte [cite: 394, 450, 457-458]. Como a água doce é menos densa que a água salgada, ela impede o afundamento adequado das massas de água, colapsando o motor da esteira.",
+        "key_characteristics": [
+          "Redução drástica da salinidade nas zonas de formação de água profunda.",
+          "Risco de atingir um ponto de inflexão (tipping point) irreversível no sistema climático humano."
+        ],
+        "climate_consequences": "Enfraquecimento da Circulação Meridional do Atlântico (AMOC) com impactos diretos no regime global de monções e precipitações.",
+        "media": {
+          "type": "image/jpeg",
+          "url": "ocean_density_salinity_diagram.png",
+          "source": "NASA Earth Observatory [cite: 467-468]",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_thermal_disruption",
+      "trigger": "card_thermal_disruption",
+      "title": "Impactos Climáticos e Ecossistemas Marinhos",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "Caso a esteira transportadora pare ou enfraqueça severamente, o transporte de calor para o Hemisfério Norte diminuirá drasticamente, gerando cenários climáticos parabólicos e instabilidades na vida marinha.",
+        "key_characteristics": [
+          "Resfriamento significativo na Europa Ocidental e do Norte, contrastando com o aquecimento geral do planeta.",
+          "Acúmulo de calor nas águas tropicais do Atlântico Sul e do Caribe [cite: 389, 456-457]."
+        ],
+        "climate_consequences": "Alteração nas rotas migratórias marinhas, colapso de pescarias, intensificação de furacões nos trópicos e alteração radical no planejamento de edificações e cidades [cite: 389, 393, 456-457].",
+        "media": {
+          "type": "image/png",
+          "url": "amoc_collapse_climate_impacts.png",
+          "source": "NOAA Climate.gov",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_thermohaline_analysis",
+      "trigger": "right_side_graph",
+      "title": "Análise da Circulação Termohalina Global (NASA)",
+      "type": "graph_analysis_modal",
+      "content": {
+        "overview": "Exibição do modelo da esteira oceânica global desenvolvido pela NASA[cite: 467]. O gráfico mapeia as correntes quentes de superfície em vermelho e as correntes profundas frias em azul através dos oceanos Atlântico, Índico e Pacífico [cite: 449, 461, 463-466].",
+        "concomitant_occurrence": {
+          "title": "Ponto de Inflexão (Tipping Point)",
+          "text": "Estudos recentes apontam que a AMOC está em seu nível mais fraco em mais de mil anos. Uma interrupção completa alteraria permanentemente o clima do planeta, deslocando zonas de precipitação agrícola globais [cite: 389-394, 457]."
+        },
+        "proxy_techniques": [
+          {
+            "name": "Monitoramento por Séries de Boias RAPID e Satélites",
+            "description": "Redes de sensores subaquáticos ancorados no Atlântico medem continuamente a velocidade do fluxo, temperatura e salinidade em várias profundidades para detectar a desaceleração da corrente.",
+            "image_url": "https://www.ces.fau.edu/nasa/resources/global-ocean-conveyor.php",
+            "source": "NASA / FAU [cite: 467-468]"
+          }
+        ]
+      }
+    }
+  ],
+  "sub_slides": [
+    {
+      "sub_slide_id": "5.1",
+      "original_pages": [17],
+      "title": "Colapso da AMOC & Impactos no Setor da Construção",
+      "layout": "Bleed_Image_Right",
+      "content": {
+        "heading": "Desafios de Adaptação Infraestrutural",
+        "points": [
+          "Alteração drástica nas cargas de vento, neve e temperatura projetadas para edifícios na Europa e América do Norte.",
+          "Aumento do nível do mar na costa leste dos EUA devido ao represamento de água no Atlântico [cite: 386-388, 447-450].",
+          "Necessidade de inclusão de cenários de risco sistêmico oceânico nas normas de desempenho térmico e estrutural de edificações[cite: 381, 389, 457]."
+        ]
+      }
+    }
+  ]
+}
+    {
+  "slide_number": 6,
+  "original_pages": [18, 19, 20],
+  "title": "Permafrost Thaw & Positive Feedback Loops",
+  "layout": "Two_Column_Cards_And_Graph",
+  "is_main_line": true,
+  "content": {
+    "description": "O derretimento do permafrost — solo perenemente congelado que cobre 25% do Hemisfério Norte — libera quantidades massivas de CO2 e CH4, criando um ciclo de retroalimentação positiva que acelera irreversivelmente o aquecimento global [cite: 491-498, 517-518].",
+    "left_side_cards": [
+      {
+        "card_id": "card_permafrost_structure",
+        "title": "Estrutura do Permafrost",
+        "short_description": "Descongelamento da camada ativa sobre a cuia de gelo e deposição de lama [cite: 484-487].",
+        "image_url": "permafrost_structure_thumb.png",
+        "action": "open_popup:popup_permafrost_structure"
+      },
+      {
+        "card_id": "card_timebomb_feedback",
+        "title": "A Bomba de Tempo de Carbono",
+        "short_description": "1.500 bilhões de toneladas de carbono represadas (2x mais que a atmosfera atual)[cite: 518].",
+        "image_url": "permafrost_timebomb_thumb.png",
+        "action": "open_popup:popup_timebomb_detail"
+      },
+      {
+        "card_id": "card_methane_explosions",
+        "title": "Explosões de Metano na Sibéria",
+        "short_description": "Acúmulo e liberação explosiva de gás gerando crateras massivas na tundra .",
+        "image_url": "methane_explosions_thumb.png",
+        "action": "open_popup:popup_methane_explosions"
+      }
+    ],
+    "right_side_graph": {
+      "image_url": "https://www.civilsdaily.com/news/can-thawing-permafrost-cause-another-pandemic/",
+      "alt_text": "Diagrama do ciclo de retroalimentação positiva do derretimento do permafrost e emissões de CH4/CO2 [cite: 489-503, 520, 527]",
+      "action": "open_popup:popup_permafrost_feedback_analysis"
+    }
+  },
+  "interactive_popups": [
+    {
+      "popup_id": "popup_permafrost_structure",
+      "trigger": "card_permafrost_structure",
+      "title": "Perfil Geológico e Descongelamento do Permafrost",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "O permafrost é constituído por uma camada ativa superficial (sujeita ao congelamento e descongelamento sazonal) e camadas profundas com baixo ou alto teor de gelo de solo (ground ice) e cuias de gelo (ice wedges) [cite: 480-486]. Com o aumento da temperatura, o descongelamento atinge camadas profundas, transformando o solo firme em lama inconsistente.",
+        "key_characteristics": [
+          "Camada Ativa (Active layer): Zona superficial vulnerável às oscilações sazonais de temperatura[cite: 484].",
+          "Cuias de Gelo (Ice wedges) e Permafrost rico em gelo: Fusão gera colapso de relevo (termocarst) e lama de descongelamento[cite: 481, 485, 487]."
+        ],
+        "climate_consequences": "Decomposição de matéria orgânica fóssil antes congelada, liberando gases de efeito estufa e provocando instabilidade geotécnica estrutural severa em edifícios e estradas [cite: 495-498].",
+        "media": {
+          "type": "image/jpeg",
+          "url": "https://earth.org/data_visualization/what-is-permafrost/",
+          "source": "Earth.org [cite: 488]",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_timebomb_detail",
+      "trigger": "card_timebomb_feedback",
+      "title": "A Bomba de Retardamento: Estoque de Carbono e CH4",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "O permafrost estoca aproximadamente 1.500 bilhões de toneladas de carbono orgânico, o dobro do montante contido atualmente em toda a atmosfera terrestre[cite: 518]. Quando a matéria orgânica descongela e apodrece sob condições anaeróbicas, microrganismos produzem metano (CH4), um gás com potencial de aquecimento 25 vezes superior ao CO2 [cite: 497-502].",
+        "key_characteristics": [
+          "Potencial de Liberação: Previsões de 43 a 135 bilhões de toneladas de CH4 liberadas até 2100, e 246 a 415 bilhões até 2200 [cite: 521-526].",
+          "Mecanismo de Feedback: Mais aquecimento → Mais derretimento → Mais emissão → Mais aquecimento [cite: 491-494]."
+        ],
+        "climate_consequences": "Aceleração descontrolada da temperatura global além das projeções dos modelos climáticos convencionais[cite: 494].",
+        "media": {
+          "type": "image/jpeg",
+          "url": "https://www.civilsdaily.com/news/can-thawing-permafrost-cause-another-pandemic/",
+          "source": "AFP / LUNER / Woods Hole Research Center [cite: 519-520, 527]",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_methane_explosions",
+      "trigger": "card_methane_explosions",
+      "title": "Explosões de Metano e Formação de Crateras na Sibéria",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "Em regiões de permafrost na Sibéria (como a Península de Yamal), a decomposição rápida cria bolsões subterrâneos de gás metano pressurizado sob domos de gelo. Quando a pressão excede a resistência da camada superior, ocorrem explosões violentas de gás que lançam blocos de solo e criam crateras circulares gigantescas [cite: 527, 541-543].",
+        "key_characteristics": [
+          "Ejeção explosiva de solo congelado e liberação imediata de vazões massivas de metano na atmosfera[cite: 527, 541].",
+          "Surgimento de dezenas de crateras profundas identificadas por monitoramento aéreo e de satélite [cite: 540-543]."
+        ],
+        "climate_consequences": "Sinal visível e dramático da degradação avançada do permafrost ártico e de outgassing acelerado[cite: 540, 543].",
+        "media": {
+          "type": "image/jpeg",
+          "url": "https://www.severe-weather.eu/global-weather/siberia-massive-craters-frozen-ground-permafrost-methane-gas-explosion-rrc/",
+          "source": "South China Morning Post / Severe Weather Europe [cite: 540, 543]",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_permafrost_feedback_analysis",
+      "trigger": "right_side_graph",
+      "title": "Análise da Retroalimentação Positiva do Permafrost",
+      "type": "graph_analysis_modal",
+      "content": {
+        "overview": "O infográfico demonstra como o aumento das temperaturas da superfície derrete o solo perenemente congelado [cite: 491-493], desencadeando a decomposição orgânica e a liberação de CO2 e CH4 [cite: 495-498], realimentando continuamente o aquecimento global[cite: 494].",
+        "concomitant_occurrence": {
+          "title": "Projeções para os Próximos Séculos",
+          "text": "Estimativas do Woods Hole Research Center indicam a liberação de até 415 bilhões de toneladas de metano nos próximos 200 anos [cite: 520-526], representando um risco iminente de ultrapassagem irrecuperável dos limites do Acordo de Paris."
+        },
+        "proxy_techniques": [
+          {
+            "name": "Mapeamento Térmico por Satélite e Sondagem de Solos Árticos",
+            "description": "Utilização de radiômetros espaciais para medir a temperatura da superfície do solo e sensores de sondagem geotécnica para quantificar a profundidade de fusão da camada ativa.",
+            "image_url": "https://earth.org/data_visualization/what-is-permafrost/",
+            "source": "Earth.org / Woods Hole Research Center [cite: 488, 520]"
+          }
+        ]
+      }
+    }
+  ],
+  "sub_slides": [
+    {
+      "sub_slide_id": "6.1",
+      "original_pages": [18],
+      "title": "Perfil Geológico & Perda de Capacidade de Carga do Solo",
+      "layout": "Two_Column_Cards_And_Graph",
+      "content": {
+        "description": "Detalhamento da estratigrafia do permafrost e as consequências do descongelamento para a estabilidade do solo e fundações de engenharia civil [cite: 479-487].",
+        "left_side_cards": [
+          {
+            "card_id": "card_stratigraphy",
+            "title": "Estratigrafia do Solo Congelado",
+            "short_description": "Interação entre a camada ativa de superfície e as cuias de gelo profundas [cite: 484-486].",
+            "image_url": "stratigraphy_thumb.png",
+            "action": "open_popup:popup_sub_stratigraphy"
+          },
+          {
+            "card_id": "card_geotechnical_failure",
+            "title": "Impactos em Infraestruturas",
+            "short_description": "Perda de suporte mecânico e recalques severos em edifícios e tubulações de gás/óleo.",
+            "image_url": "geotechnical_failure_thumb.png",
+            "action": "open_popup:popup_sub_geotechnical"
+          }
+        ],
+        "right_side_graph": {
+          "image_url": "https://earth.org/data_visualization/what-is-permafrost/",
+          "alt_text": "Corte geológico mostrando camada ativa, cuia de gelo (ice wedge) e lama de descongelamento [cite: 484-488]",
+          "action": "open_popup:popup_permafrost_structure"
+        }
+      },
+      "interactive_popups": [
+        {
+          "popup_id": "popup_sub_stratigraphy",
+          "trigger": "card_stratigraphy",
+          "title": "Estratigrafia Detalhada do Permafrost",
+          "type": "event_detail_modal",
+          "content": {
+            "detailed_description": "Composição típica do solo ártico evidenciando a camada ativa vulnerável na superfície, cuias de gelo verticais e permafrost com alto/baixo teor de gelo .",
+            "key_points": [
+              "A fusão do gelo subterrâneo causa perda instantânea da coesão do solo[cite: 481, 487].",
+              "Transformação do terreno sólido em depósitos móveis de lama (mud deposited by thawing)."
+            ],
+            "media": {
+              "type": "image/jpeg",
+              "url": "https://earth.org/data_visualization/what-is-permafrost/",
+              "source": "Earth.org [cite: 488]",
+              "position": "right_highlight"
+            }
+          }
+        },
+        {
+          "popup_id": "popup_sub_geotechnical",
+          "trigger": "card_geotechnical_failure",
+          "title": "Desafios de Engenharia Geotécnica no Ártico",
+          "type": "event_detail_modal",
+          "content": {
+            "detailed_description": "Infraestruturas em regiões polares foram dimensionadas assumindo a rigidez permanente do solo congelado. O derretimento provoca recalques diferenciais severos, rachaduras em edifícios e colapso de estradas e oleodutos.",
+            "key_points": [
+              "Necessidade de estacas termo-sifão ativas para manter o solo resfriado sob as fundações.",
+              "Redesenho de padrões normativos de projeto geotécnico para o hemisfério norte."
+            ],
+            "media": {
+              "type": "image/jpeg",
+              "url": "https://earth.org/data_visualization/what-is-permafrost/",
+              "source": "Earth.org [cite: 488]",
+              "position": "right_highlight"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sub_slide_id": "6.2",
+      "original_pages": [20],
+      "title": "Mapeamento e Impacto das Crateras de Metano",
+      "layout": "Two_Column_Cards_And_Graph",
+      "content": {
+        "description": "Análise da formação de crateras por explosão de metano e a intensificação do outgassing na Sibéria [cite: 527, 540-543].",
+        "left_side_cards": [
+          {
+            "card_id": "card_outgassing_mechanics",
+            "title": "Mecânica das Explosões",
+            "short_description": "Acúmulo de gás pressurizado até a ruptura da camada de solo congelado[cite: 527, 541].",
+            "image_url": "outgassing_mechanics_thumb.png",
+            "action": "open_popup:popup_sub_outgassing"
+          },
+          {
+            "card_id": "card_satellite_crater_monitoring",
+            "title": "Monitoramento por Satélite",
+            "short_description": "Identificação visual de novas crateras e deformações no relevo da tundra russa[cite: 540, 543].",
+            "image_url": "satellite_craters_thumb.png",
+            "action": "open_popup:popup_sub_craters"
+          }
+        ],
+        "right_side_graph": {
+          "image_url": "https://www.severe-weather.eu/global-weather/siberia-massive-craters-frozen-ground-permafrost-methane-gas-explosion-rrc/",
+          "alt_text": "Mapeamento topográfico e visual de crateras de emissão de metano na Sibéria [cite: 527, 540-543]",
+          "action": "open_popup:popup_methane_explosions"
+        }
+      },
+      "interactive_popups": [
+        {
+          "popup_id": "popup_sub_outgassing",
+          "trigger": "card_outgassing_mechanics",
+          "title": "Processo de Formação de Crateras de Emissão",
+          "type": "event_detail_modal",
+          "content": {
+            "detailed_description": "Análise da formação de pingo-likes (domos de gelo/gás) que explodem ao atingirem pressões críticas de metano aprisionado[cite: 527, 541].",
+            "key_points": [
+              "Liberação pontual massiva de CH4 na atmosfera em curtos intervalos de tempo[cite: 527, 541].",
+              "Risco direto para instalações industriais e comunidades locais na Sibéria."
+            ],
+            "media": {
+              "type": "image/jpeg",
+              "url": "https://www.scmp.com/video/world/3154670/look-siberias-methane-emitting-craters-amid-pledge-cut-global-methane-emissions",
+              "source": "South China Morning Post [cite: 540]",
+              "position": "right_highlight"
+            }
+          }
+        },
+        {
+          "popup_id": "popup_sub_craters",
+          "trigger": "card_satellite_crater_monitoring",
+          "title": "Detecção Espacial de Deformações na Tundra",
+          "type": "event_detail_modal",
+          "content": {
+            "detailed_description": "Sensoriamento remoto radar (InSAR) utilizado para monitorar a elevação e subsequente colapso do solo antes das explosões[cite: 540, 543].",
+            "key_points": [
+              "Identificação de centenas de pontos potenciais de desgaseificação na Península de Yamal [cite: 527, 541-543].",
+              "Uso de dados geespaciais para mapeamento de riscos e mitigação de emissões não contabilizadas nos inventários nacionais."
+            ],
+            "media": {
+              "type": "image/jpeg",
+              "url": "https://www.severe-weather.eu/global-weather/siberia-massive-craters-frozen-ground-permafrost-methane-gas-explosion-rrc/",
+              "source": "Severe Weather Europe [cite: 543]",
+              "position": "right_highlight"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+    {
+  "slide_number": 7,
+  "original_pages": [21, 22],
+  "title": "Global Environmental & Ecosystem Pressures",
+  "layout": "Two_Column_Cards_And_Graph",
+  "is_main_line": true,
+  "content": {
+    "description": "Além das mudanças climáticas, a crise ambiental abrange a contaminação e escassez hídrica, geração massiva de resíduos, acidificação dos oceanos, esgotamento de matérias-primas e perda drástica de biodiversidade e serviços ecossistêmicos essenciais [cite: 545-566].",
+    "left_side_cards": [
+      {
+        "card_id": "card_water_eutrophication",
+        "title": "Crise Hídrica & Acidificação",
+        "short_description": "Escassez de água, eutrofização de rios/mares e acidificação por absorção de CO2 .",
+        "image_url": "water_acidification_thumb.png",
+        "action": "open_popup:popup_water_eutrophication"
+      },
+      {
+        "card_id": "card_waste_toxicity",
+        "title": "Resíduos, Toxicidade & Matérias-Primas",
+        "short_description": "Poluição por plásticos, toxicidade terrestre e extração de recursos não renováveis .",
+        "image_url": "plastic_waste_albatross_thumb.png",
+        "action": "open_popup:popup_waste_toxicity"
+      },
+      {
+        "card_id": "card_biodiversity_services",
+        "title": "Biodiversidade & Serviços Ecossistêmicos",
+        "short_description": "Valor intrínseco vs. serviços da natureza validados em US$ 33 trilhões/ano (Costanza) [cite: 558-570].",
+        "image_url": "pollinator_bee_thumb.png",
+        "action": "open_popup:popup_biodiversity_services"
+      }
+    ],
+    "right_side_graph": {
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Albatross_at_Midway_Atoll_Refuge_%282290472378%29.jpg/800px-Albatross_at_Midway_Atoll_Refuge_%282290472378%29.jpg",
+      "alt_text": "Fotografia de necropsia de albatroz mostrando ingestão de plásticos e resíduos sintéticos ",
+      "action": "open_popup:popup_waste_toxicity"
+    }
+  },
+  "interactive_popups": [
+    {
+      "popup_id": "popup_water_eutrophication",
+      "trigger": "card_water_eutrophication",
+      "title": "Recursos Hídricos, Eutrofização e Acidificação Oceânica",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "A pressão sobre os ecossistemas hídricos manifesta-se no suprimento de água potável (escassez e crescimento populacional), na demanda acelerada para irrigação e na degradação da qualidade da água .",
+        "key_characteristics": [
+          "Eutrofização: O excesso de nutrientes em mares e rios gera proliferação de algas que consomem o oxigênio e sufocam a vida aquática[cite: 549].",
+          "Acidificação por CO2: A dissolução do excesso de dióxido de carbono na água do mar reduz o pH dos oceanos, impedindo a calcificação de corais, moluscos e plâncton base da cadeia alimentar[cite: 549]."
+        ],
+        "climate_consequences": "Colapso de pescarias comerciais, comprometimento do abastecimento urbano de água e perda da capacidade dos oceanos de atuar como sumidouro de carbono .",
+        "media": {
+          "type": "image/jpeg",
+          "url": "water_acidification_diagram.png",
+          "source": "Pacheco-Torgal & Jalali (2010) [cite: 555]",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_waste_toxicity",
+      "trigger": "card_waste_toxicity",
+      "title": "Geração de Resíduos, Toxicidade Terrestre e Consumo de Matérias-Primas",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "O modelo econômico linear 'extrair-fabricar-descartar' gera volumes massivos de resíduos sólidos não biodegradáveis e ecotoxidade . A poluição por plásticos atinge regiões remotas do planeta, sendo fatalmente ingerida pela fauna marinha e terrestre.",
+        "key_characteristics": [
+          "Geração e Descarte Indiscriminado: Ingestão mortal de detritos por aves e mamíferos marinhas (ex: restos de lixo plástico em esqueletos de albatrozes) [cite: 543, 550-551].",
+          "Toxicidade Terrestre e Ecotoxicidade: Bioacumulação de metais pesados e compostos sintéticos no solo e lençóis freáticos[cite: 552].",
+          "Aumento do Consumo Primário: Esgotamento acelerado de matérias-primas primárias não renováveis [cite: 553-554]."
+        ],
+        "climate_consequences": "Degradação da fertilidade do solo, contaminação de cadeias tróficas e urgência de substituição por materiais reciclados/ecoeficientes [cite: 552-555].",
+        "media": {
+          "type": "image/jpeg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Albatross_at_Midway_Atoll_Refuge_%282290472378%29.jpg/800px-Albatross_at_Midway_Atoll_Refuge_%282290472378%29.jpg",
+          "source": "Chris Jordan / USFWS (Pacheco-Torgal & Jalali, 2010) [cite: 543, 555]",
+          "position": "right_highlight"
+        }
+      }
+    },
+    {
+      "popup_id": "popup_biodiversity_services",
+      "trigger": "card_biodiversity_services",
+      "title": "Valor da Biodiversidade e Serviços Ecossistêmicos (Costanza et al.)",
+      "type": "movement_detail_modal",
+      "content": {
+        "detailed_description": "A biodiversidade possui tanto um valor ético intrínseco (o direito de existência das espécies) quanto benefícios utilitários diretos e vitais para a economia, saúde e bem-estar humano [cite: 557-564].",
+        "key_characteristics": [
+          "Serviços Gratuitos da Natureza: Purificação do ar e da água, estabilização do clima, recursos alimentares, controle de pragas e fontes medicinais [cite: 562-564].",
+          "Valoração Econômica: Robert Costanza et al. (1998) estimaram os serviços ecossistêmicos mundiais em US$ 33 trilhões por ano, valor superior ao PIB mundial da época [cite: 565-570].",
+          "Polinizadores: Insetos (como abelhas e vespas) sustentam diretamente a produção de mais de 70% das culturas agrícolas usadas na alimentação humana."
+        ],
+        "climate_consequences": "A extinção em massa de espécies ameaça a resiliência dos biomas e compromete o suporte de vida das sociedades humanas [cite: 557-566].",
+        "media": {
+          "type": "image/jpeg",
+          "url": "https://en.wikipedia.org/wiki/Pollinator#/media/File:Lipotriches_sp..jpg",
+          "source": "Foto: Muhammad Mahdi Karim / Wikipedia (Costanza et al., 1998) [cite: 567-570]",
+          "position": "right_highlight"
+        }
+      }
+    }
+  ],
+  "sub_slides": [
+    {
+      "sub_slide_id": "7.1",
+      "original_pages": [21],
+      "title": "Poluição por Resíduos, Eutrofização & Reciclagem",
+      "layout": "Two_Column_Cards_And_Graph",
+      "content": {
+        "description": "Exame das pressões decorrentes do consumo de matérias-primas primárias, descarte inadequado de lixo e contaminação de águas fluviais e marinhas [cite: 546-555].",
+        "left_side_cards": [
+          {
+            "card_id": "card_sub_eutrophication",
+            "title": "Eutrofização & Oxigênio Aquático",
+            "short_description": "Impacto de efluentes urbanos e agrícolas na criação de zonas mortas[cite: 549].",
+            "image_url": "eutrophication_card.png",
+            "action": "open_popup:popup_sub_eutrophication"
+          },
+          {
+            "card_id": "card_sub_non_renewable",
+            "title": "Consumo de Recursos Não Renováveis",
+            "short_description": "Extração desenfreada de agregação e minérios no setor de construção [cite: 553-554].",
+            "image_url": "raw_materials_card.png",
+            "action": "open_popup:popup_sub_non_renewable"
+          }
+        ],
+        "right_side_graph": {
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Albatross_at_Midway_Atoll_Refuge_%282290472378%29.jpg/800px-Albatross_at_Midway_Atoll_Refuge_%282290472378%29.jpg",
+          "alt_text": "Aves marinhas vitimadas por plásticos no ecossistema oceânico ",
+          "action": "open_popup:popup_waste_toxicity"
+        }
+      },
+      "interactive_popups": [
+        {
+          "popup_id": "popup_sub_eutrophication",
+          "trigger": "card_sub_eutrophication",
+          "title": "Mecanismo de Eutrofização das Águas",
+          "type": "event_detail_modal",
+          "content": {
+            "detailed_description": "O descarte de efluentes ricos em fósforo e nitrogênio desencadeia o florescimento algal maciço. Ao morrerem, a decomposição dessas algas esgota o oxigênio dissolvido, dizimando os peixes e a fauna aquática[cite: 549].",
+            "key_points": [
+              "Perda de biodiversidade em rios, estuários e áreas costeiras[cite: 549].",
+              "Aumento no custo do tratamento de água para consumo público e industrial [cite: 546-547]."
+            ],
+            "media": {
+              "type": "image/jpeg",
+              "url": "eutrophication_diagram.png",
+              "source": "Pacheco-Torgal & Jalali (2010) [cite: 555]",
+              "position": "right_highlight"
+            }
+          }
+        },
+        {
+          "popup_id": "popup_sub_non_renewable",
+          "trigger": "card_sub_non_renewable",
+          "title": "Esgotamento de Recursos não Renováveis",
+          "type": "event_detail_modal",
+          "content": {
+            "detailed_description": "A extração de rochas, areia e minérios para a construção civil consome volumes colossais da crosta terrestre [cite: 553-554]. A substituição por resíduos industriais e agregados reciclados é um requisito indispensável para a sustentabilidade do setor[cite: 555].",
+            "key_points": [
+              "Consumo de matérias-primas primárias e geração desproporcional de rejeitos[cite: 551, 554].",
+              "Urgência de transição para a economia circular[cite: 555]."
+            ],
+            "media": {
+              "type": "image/jpeg",
+              "url": "mining_extraction_waste.png",
+              "source": "TecMinho / Guimarães (Pacheco-Torgal & Jalali, 2010) [cite: 555]",
+              "position": "right_highlight"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sub_slide_id": "7.2",
+      "original_pages": [22],
+      "title": "Serviços Ecossistêmicos & Valoração Econômica",
+      "layout": "Two_Column_Cards_And_Graph",
+      "content": {
+        "description": "Análise da contribuição insubstituível dos ecossistemas para a sobrevivência humana e a economia global [cite: 556-570].",
+        "left_side_cards": [
+          {
+            "card_id": "card_sub_pollination",
+            "title": "Serviços de Polinização e Alimentos",
+            "short_description": "O papel vital dos insetos polinizadores na garantia da produção agrícola e segurança alimentar[cite: 563, 567].",
+            "image_url": "pollination_card.png",
+            "action": "open_popup:popup_sub_pollination"
+          },
+          {
+            "card_id": "card_sub_costanza_valuing",
+            "title": "Estudo de Costanza et al. (1998)",
+            "short_description": "Valoração em US$ 33 trilhões/ano dos serviços providos gratuitamente pela natureza [cite: 565-570].",
+            "image_url": "costanza_study_card.png",
+            "action": "open_popup:popup_sub_costanza"
+          }
+        ],
+        "right_side_graph": {
+          "image_url": "https://en.wikipedia.org/wiki/Pollinator#/media/File:Lipotriches_sp..jpg",
+          "alt_text": "Polinizador Lipotriches sp. atuando sobre floração ",
+          "action": "open_popup:popup_biodiversity_services"
+        }
+      },
+      "interactive_popups": [
+        {
+          "popup_id": "popup_sub_pollination",
+          "trigger": "card_sub_pollination",
+          "title": "A Crise dos Polinizadores e a Segurança Alimentar",
+          "type": "event_detail_modal",
+          "content": {
+            "detailed_description": "A destruição de hábitats e o uso excessivo de pesticidas ameaçam polinizadores fundamentais [cite: 560-563, 567]. A perda desses serviços compromete diretamente o abastecimento mundial de alimentos e fármacos naturais [cite: 563-564].",
+            "key_points": [
+              "Garantia irrestrita de polinização de lavouras e vegetação nativa [cite: 562-563, 567].",
+              "Sustentação direta da saúde humana e equilíbrio dos biomas[cite: 561, 564]."
+            ],
+            "media": {
+              "type": "image/jpeg",
+              "url": "https://en.wikipedia.org/wiki/Pollinator#/media/File:Lipotriches_sp..jpg",
+              "source": "Foto: Muhammad Mahdi Karim / Wikipedia ",
+              "position": "right_highlight"
+            }
+          }
+        },
+        {
+          "popup_id": "popup_sub_costanza",
+          "trigger": "card_sub_costanza_valuing",
+          "title": "O Valor do Capital Natural (Nature, 1998)",
+          "type": "event_detail_modal",
+          "content": {
+            "detailed_description": "A publicação clássica de Costanza et al. na revista Nature demonstrou que a economia humana é um subconjunto inteiramente dependente dos ecossistemas globais [cite: 568-570].",
+            "key_points": [
+              "Avaliação de 17 serviços ecossistêmicos em 16 biomas planetários [cite: 565-570].",
+              "Mostra que substituir serviços naturais por tecnologia humana é financeiramente inviável ou impossível [cite: 561-566]."
+            ],
+            "media": {
+              "type": "image/jpeg",
+              "url": "costanza_nature_paper_cover.png",
+              "source": "Costanza et al. (1998) - Nature Vol. 387, pp. 253-260 [cite: 568-570]",
+              "position": "right_highlight"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+   {
+  "interactive_components": {
+    "in_class_quiz_slide": {
+      "slide_number": 8,
+      "title": "📝 In-Class Quiz: Assessment 010",
+      "layout": "Interactive_Action_Slide",
+      "is_main_line": true,
+      "content": {
+        "heading": "Ready to Test Your Knowledge?",
+        "description": "Scan the QR code or click the button below to access today's in-class quiz on Earth Systems, Climate Dynamics, and Environmental Impacts.",
+        "call_to_action": {
+          "button_text": "🚀 Open In-Class Quiz (Google Forms)",
+          "form_url": "https://docs.google.com/forms/d/e/1FAIpQLSd1WGSHVWAshnAaxh4EEp992qupWo728MYYuXxtmFD7wQxiRg/viewform?usp=header",
+          "qr_code": {
+            "api_url": "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://docs.google.com/forms/d/e/1FAIpQLSd1WGSHVWAshnAaxh4EEp992qupWo728MYYuXxtmFD7wQxiRg/viewform?usp=header",
+            "alt_text": "QR Code to access In-Class Quiz"
+          }
+        },
+        "instructions": [
+          "⏱️ Estimated Time: 10–15 minutes",
+          "🎯 Submit before the end of class",
+          "💡 Instant feedback will be provided upon submission"
+        ]
+      }
+    },
+    "weekly_report_final_slide": {
+      "slide_number": 9,
+      "title": "📋 Weekly Off-Class Report Submission",
+      "layout": "Interactive_Action_Slide",
+      "is_main_line": true,
+      "content": {
+        "heading": "Weekly Assignment & Off-Class Log",
+        "description": "Please complete and submit your weekly report before the deadline. Use the link or QR code below to submit your progress.",
+        "call_to_action": {
+          "button_text": "📤 Submit Weekly Report (Google Forms)",
+          "form_url": "https://docs.google.com/forms/d/e/1FAIpQLSedhyjaDIZXtE_LHUJTe1WwVBGx5LUKKnKINpv38BgUOEa4nQ/viewform?usp=header",
+          "qr_code": {
+            "api_url": "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://docs.google.com/forms/d/e/1FAIpQLSedhyjaDIZXtE_LHUJTe1WwVBGx5LUKKnKINpv38BgUOEa4nQ/viewform?usp=header",
+            "alt_text": "QR Code to access Weekly Report Form"
+          }
+        },
+        "submission_details": [
+          "📅 Due Date: Check course schedule for weekly deadline",
+          "📌 Ensure all required attachments and reflections are uploaded",
+          "💬 Contact your professor if you encounter any submission issues"
+        ]
+      }
+    }
+  }
+}
+    
+    
+  ]
+}
