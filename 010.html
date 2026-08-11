@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CIV 665 | Eco-efficient Construction & Building Materials - PMS UFV</title>
+    <title>CIV 665 | Eco-Efficient Construction Materials - PMS UFV</title>
     
     <!-- ESSENTIAL CDNs -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,54 +14,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- ========================================================================= -->
-    <!-- CENTRAL RESOURCE DIRECTORY (EASY IDENTIFICATION AND QUICK EDITS)           -->
-    <!-- ========================================================================= -->
+    <!-- CENTRAL RESOURCE DIRECTORY -->
     <script>
         const COURSE_ASSETS = {
             logos: {
                 ufv: "https://dci.ufv.br/wp-content/themes/diretorias/assets/images/estrutura/logotipoUFV.png",
                 pms: "https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png"
             },
+            
             slideBackgrounds: {
-                "0_0": "bg-nature1.png",
-                "1_0": "bg-geometric1.png",
-                "1_1": "bg-blocks1.png",
-                "1_2": "bg-nature2.png",
-                "1_3": "bg-nature3.png",
-                "2_0": "bg-clay1.png",
-                "2_1": "bg-clay2.png",
-                "2_2": "bg-clay3.png",
-                "2_3": "bg-clay4.png",
-                "2_4": "bg-clay5.png",
-                "3_0": "bg-concrete1.png",
-                "3_1": "bg-blocks2.png",
-                "4_0": "bg-nature4.png",
-                "5_0": "bg-polymer1.png",
-                "5_1": "bg-polymer2.png",
-                "6_0": "bg-polymer3.png",
-                "6_1": "bg-polymer4.png",
-                "6_2": "bg-paint1.png",
-                "7_0": "bg-blocks3.png",
-                "7_1": "bg-blocks4.png",
-                "7_2": "bg-geometric2.png",
-                "8_0": "",
-                "9_0": ""
+                "0_0": "bg-blocks3.png",
+                "1_0": "bg-clay4.png",
+                "2_0": "bg-geometric1.png",
+                "3_0": "bg-geometric2.png",
+                "4_0": "bg-nature3.png",
+                "5_0": "bg-blocks4.png",
+                "6_0": "bg-nature4.png",
+                "7_0": "bg-paint1.png",
+                "8_0": "bg-polymer1.png"
             },
+
             externalLinks: {
-                presentationAccess: "https://pms.ufv.br",
-                googleFormsQuiz: "https://docs.google.com/forms/d/e/1FAIpQLSd1WGSHVWAshnAaxh4EEp992qupWo728MYYuXxtmFD7wQxiRg/viewform?usp=header",
-                weeklyAssignment: "https://docs.google.com/forms/d/e/1FAIpQLSedhyjaDIZXtE_LHUJTe1WwVBGx5LUKKnKINpv38BgUOEa4nQ/viewform?usp=header",
+                presentationAccess: "https://drive.google.com/drive/folders/1lrlm32HUiPbvwrDZsI3Vr3CcnAWixd8l?usp=sharing",
+                sharedFolder: "https://drive.google.com/drive/folders/1lrlm32HUiPbvwrDZsI3Vr3CcnAWixd8l?usp=sharing",
+                googleFormsQuiz: "https://docs.google.com/forms/d/e/1FAIpQLSf6rIoT2YIH5Rq9NeRT86UgcsjG6zMKoYOL1WPB7k05YnHwHw/viewform?usp=header",
+                videoPitchSubmission: "https://forms.google.com",
+                paperSubmission: "https://forms.google.com",
+                defenseMeet: "https://meet.google.com/yhd-gjrp-xck",
                 pmsPortal: "https://pms.ufv.br"
             },
+
             qrCodeGenerator: (url, color = "901812") => 
                 `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}&color=${color}`
         };
     </script>
 
-    <!-- ========================================================================= -->
-    <!-- SECTION 1: STYLES & IMMUTABLE CSS VARIABLES                               -->
-    <!-- ========================================================================= -->
+    <!-- SECTION 1: STYLES & IMMUTABLE CSS VARIABLES -->
     <style>
         :root {
             --pms-red: #901812;
@@ -75,12 +63,12 @@
             --font-title: 'Montserrat', sans-serif;
             --font-body: 'PT Sans Narrow', sans-serif;
 
-            --fluid-h1: clamp(2.5rem, 5.5vw, 4.5rem);
-            --fluid-h2: clamp(2.0rem, 4.0vw, 3.2rem);
-            --fluid-h3: clamp(1.5rem, 3.0vw, 2.2rem);
-            --fluid-body: clamp(1.2rem, 2.0vw, 1.6rem);
-            --fluid-meta: clamp(1.0rem, 1.5vw, 1.35rem);
-            --fluid-tag: clamp(0.9rem, 1.3vw, 1.15rem);
+            --fluid-h1: clamp(2.8rem, 6.0vw, 5.0rem);
+            --fluid-h2: clamp(2.2rem, 4.5vw, 3.5rem);
+            --fluid-h3: clamp(1.7rem, 3.2vw, 2.4rem);
+            --fluid-body: clamp(1.3rem, 2.2vw, 1.75rem);
+            --fluid-meta: clamp(1.1rem, 1.6vw, 1.45rem);
+            --fluid-tag: clamp(1.0rem, 1.4vw, 1.25rem);
         }
 
         html, body {
@@ -95,6 +83,12 @@
         .text-fluid-body { font-family: var(--font-body); font-size: var(--fluid-body); font-weight: 500; line-height: 1.4; }
         .text-fluid-meta { font-family: var(--font-body); font-size: var(--fluid-meta); color: var(--pms-text-muted); font-weight: 600; }
         .text-fluid-tag { font-family: var(--font-body); font-size: var(--fluid-tag); font-weight: 700; }
+
+        .katex-display {
+            font-size: clamp(1.6rem, 3.5vw, 2.8rem) !important;
+            margin: 1rem 0 !important;
+        }
+        .katex { font-size: 1.15em; }
 
         .card-borderless-glass {
             border: none !important;
@@ -159,28 +153,17 @@
         .control-arrow.nav-right { top: 43px; right: 0; }
         .control-arrow.nav-enabled { color: var(--pms-red); opacity: 1; pointer-events: auto; }
         .control-arrow.nav-enabled:hover { background: var(--pms-red); color: #FFFFFF; transform: scale(1.15); }
-
-        .modal-backdrop {
-            position: fixed; inset: 0; background-color: rgba(0,0,0,0.6);
-            backdrop-filter: blur(8px); z-index: 2000; display: flex;
-            align-items: center; justify-content: center; opacity: 0; pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-        .modal-backdrop.modal-open { opacity: 1; pointer-events: auto; }
     </style>
 </head>
 <body class="w-screen h-screen relative bg-[#F4F6F5]">
 
-    <!-- TOP PROGRESS BAR -->
     <div class="fixed top-0 left-0 h-2 bg-[#D1A705] transition-all duration-500 z-[1000]" id="progressBar" style="width: 0%;"></div>
 
-    <!-- RESPONSIVE SLIDE INDICATOR -->
     <div class="fixed bottom-4 left-4 sm:bottom-6 sm:left-8 text-fluid-meta font-bold text-[#333333] bg-white/80 backdrop-blur-md px-4 py-2 rounded-full shadow-md z-[1000] flex items-center space-x-3">
         <span class="w-3 h-3 rounded-full bg-[#901812]"></span>
         <span id="slideIndicator">Slide (0,0)</span>
     </div>
 
-    <!-- TOUCH CONTROLS -->
     <div class="reveal-controls">
         <button id="btn-nav-up" onclick="moveInGrid(0, -1)" class="control-arrow nav-up" aria-label="Up"><i class="fa-solid fa-chevron-up"></i></button>
         <button id="btn-nav-left" onclick="moveInGrid(-1, 0)" class="control-arrow nav-left" aria-label="Left"><i class="fa-solid fa-chevron-left"></i></button>
@@ -188,22 +171,10 @@
         <button id="btn-nav-down" onclick="moveInGrid(0, 1)" class="control-arrow nav-down" aria-label="Down"><i class="fa-solid fa-chevron-down"></i></button>
     </div>
 
-    <!-- GLOBAL POPUP MODAL CONTAINER -->
-    <div id="globalModal" class="modal-backdrop p-4 sm:p-6" onclick="closePopup(event)">
-        <div class="card-borderless-glass-dark text-white max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-3xl p-6 sm:p-8 relative shadow-2xl space-y-4" onclick="event.stopPropagation()">
-            <button onclick="closePopupDirect()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center transition-colors">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
-            <div id="modalContent"></div>
-        </div>
-    </div>
-
-    <!-- ========================================================================= -->
-    <!-- SECTION 2: HTML BODY & SLIDE STRUCTURE                                    -->
-    <!-- ========================================================================= -->
+    <!-- SECTION 2: HTML BODY & SLIDE STRUCTURE -->
     <main class="w-full h-full relative">
 
-        <!-- SLIDE (0,0): COVER -->
+        <!-- SLIDE (0,0): TITLE COVER -->
         <div id="slide-0-0" class="slide-screen slide-active flex flex-col justify-between p-6 sm:p-10 md:p-12">
             <header class="w-full flex justify-between items-center gap-4">
                 <div class="flex items-center space-x-4 sm:space-x-6 bg-white/75 backdrop-blur-md px-6 py-3.5 rounded-2xl shadow-sm">
@@ -219,794 +190,306 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full my-auto py-6">
                 <div class="lg:col-span-7 space-y-6">
                     <div class="p-8 sm:p-12 rounded-3xl card-borderless-glass border-l-[16px] border-[#901812]">
-                        <span class="text-fluid-tag text-[#D1A705] tracking-wider block mb-2">POSTGRADUATE COURSE — CLASS 1</span>
-                        <h1 class="text-fluid-h1 mb-4">ECO-EFFICIENT CONSTRUCTION<span class="block text-fluid-h2 text-[#333333] font-bold mt-2">Natural Climate Cycles & Global Impacts</span></h1>
-                        <p class="text-fluid-body text-[#444444]">Earth Systems, Paleoclimatic Timeline, Anthropogenic Forcings & Environmental Responsibilities.</p>
+                        <span class="text-fluid-tag text-[#D1A705] tracking-wider block mb-2">CIV 665 — GRADUATE PROGRAM (DEC/UFV)</span>
+                        <h1 class="text-fluid-h1 mb-4">ECO-EFFICIENT CONSTRUCTION & BUILDING MATERIALS<span class="block text-fluid-h2 text-[#333333] font-bold mt-2">Course Overview & Structural Dynamics</span></h1>
+                        <p class="text-fluid-body text-[#444444]">Methodological rigor, life-cycle analysis, eco-efficiency indicators, and research-driven seminars.</p>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-6">
                     <div class="bg-white/85 backdrop-blur-md p-6 rounded-2xl text-center shadow-md">
-                        <img id="qr-presentation-cover-0-0" alt="Slide Access QR Code" class="w-full max-w-[220px] sm:max-w-[280px] lg:max-w-[320px] mx-auto rounded-lg">
-                        <span class="text-fluid-tag text-[#333333] font-bold mt-3 block">Follow On Smartphone</span>
+                        <img id="qr-presentation-cover-0-0" alt="Course Repository QR" class="w-full max-w-[220px] sm:max-w-[280px] lg:max-w-[320px] mx-auto rounded-lg">
+                        <span class="text-fluid-tag text-[#333333] font-bold mt-3 block">Course Repository (Shared Drive)</span>
                     </div>
                     <div class="text-center space-y-1">
-                        <span class="text-fluid-tag text-[#D1A705] block">Course Instructor</span>
-                        <p class="text-fluid-body font-bold text-white">Prof. José Maria Franco de Carvalho</p>
+                        <span class="text-fluid-tag text-[#D1A705] block">Department of Civil Engineering</span>
+                        <p class="text-fluid-body font-bold text-white">Universidade Federal de Viçosa (UFV)</p>
                     </div>
                 </div>
             </div>
         </div>
 
-<!-- SLIDE (1,0): REVISED MODULE 1 MAIN LINE -->
-<div id="slide-1-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
-    <header class="w-full flex justify-between items-center mb-4">
-        <div>
-            <span class="text-fluid-tag text-[#901812]">MODULE 1: CLIMATE CYCLES</span>
-            <h2 class="text-fluid-h2">Natural Climate Cycles vs. Global Warming</h2>
-        </div>
-        <img id="img-logo-pms-1-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
-    </header>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 my-auto w-full py-4 items-stretch">
-        <div class="lg:col-span-7 p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-6 flex flex-col justify-between">
-            <div class="space-y-4">
-                <span class="text-fluid-tag text-[#D1A705] block">CORE SCIENTIFIC QUESTION</span>
-                <h3 class="text-fluid-h3 text-[#333333] border-b border-black/10 pb-2">Is global warming purely a natural cycle?</h3>
-                <p class="text-fluid-body text-[#444444] leading-relaxed">
-                    Earth's climate is governed by multiple natural astronomical, oceanic, and atmospheric cycles. However, their timescales and forcing mechanisms differ fundamentally from modern warming.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                <button onclick="moveInGrid(0, 1)" class="p-4 bg-white/80 hover:bg-[#901812] hover:text-white rounded-2xl text-left transition-all group shadow-sm">
-                    <span class="text-fluid-tag text-[#901812] group-hover:text-[#D1A705] block font-bold">SUB 1.1</span>
-                    <span class="text-fluid-meta font-bold block mt-1">Milankovitch Cycles <i class="fa-solid fa-arrow-down ml-1 text-xs"></i></span>
-                </button>
-                <button onclick="moveInGrid(0, 2)" class="p-4 bg-white/80 hover:bg-[#901812] hover:text-white rounded-2xl text-left transition-all group shadow-sm">
-                    <span class="text-fluid-tag text-[#901812] group-hover:text-[#D1A705] block font-bold">SUB 1.2</span>
-                    <span class="text-fluid-meta font-bold block mt-1">ENSO Dynamics <i class="fa-solid fa-arrow-down ml-1 text-xs"></i></span>
-                </button>
-                <button onclick="moveInGrid(0, 3)" class="p-4 bg-white/80 hover:bg-[#901812] hover:text-white rounded-2xl text-left transition-all group shadow-sm">
-                    <span class="text-fluid-tag text-[#901812] group-hover:text-[#D1A705] block font-bold">SUB 1.3</span>
-                    <span class="text-fluid-meta font-bold block mt-1">Secondary Forcings <i class="fa-solid fa-arrow-down ml-1 text-xs"></i></span>
-                </button>
-            </div>
-        </div>
-
-        <div class="lg:col-span-5 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white space-y-6 flex flex-col justify-between">
-            <div>
-                <span class="text-fluid-tag text-[#D1A705] block mb-2">EXPLORE SUB-MODULES</span>
-                <h3 class="text-fluid-h3 text-white mb-3">Natural Forcings & Mechanisms</h3>
-                <p class="text-fluid-body text-[#DEDEDE] leading-relaxed">
-                    Use vertical branching (↓) to inspect Milankovitch Cycles, ENSO, and Secondary Natural Forcings.
-                </p>
-            </div>
-
-            <div class="space-y-3">
-                <button onclick="moveInGrid(0, 1)" class="w-full py-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
-                    <span>Explore Milankovitch Cycles (Press ↓)</span>
-                    <i class="fa-solid fa-chevron-down text-sm"></i>
-                </button>
-                <button onclick="moveInGrid(1, 0)" class="w-full py-3 bg-white/10 hover:bg-white/20 text-white font-bold rounded-2xl transition-all text-fluid-meta flex items-center justify-center space-x-2">
-                    <span>Next Module: Paleoclimatology (Press →)</span>
-                    <i class="fa-solid fa-chevron-right text-sm"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- SLIDE (1,1): REVISED SUB-SLIDE 1.1 (MILANKOVITCH CYCLES) -->
-<div id="slide-1-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-    <header class="w-full flex justify-between items-center mb-4">
-        <div>
-            <span class="text-fluid-tag text-[#D1A705]">SUB-MODULE 1.1</span>
-            <h2 class="text-fluid-h2 text-[#333333]">Milankovitch Cycles</h2>
-        </div>
-        <button onclick="moveInGrid(0, -1)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
-            <i class="fa-solid fa-arrow-up"></i>
-            <span>Return to Module 1</span>
-        </button>
-    </header>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-auto w-full py-2 items-stretch">
-        <div class="lg:col-span-6 space-y-3 flex flex-col justify-between">
-            <p class="text-fluid-meta text-[#444444]">
-                Periodic changes in Earth's orbital characteristics that control insolation and glacial/interglacial periods over hundreds of thousands of years.
-            </p>
-            
-            <div id="card_eccentricity_1_1" class="p-4 rounded-2xl card-borderless-glass cursor-pointer flex justify-between items-center hover:bg-white/90 transition-all" onclick="openPopup('Movement Details: Eccentricity', '<strong>Description:</strong> Eccentricity measures how much Earth\'s orbit deviates from a perfect circle. When the orbit is more elliptical, the Earth-Sun distance varies significantly throughout the year, altering seasonal solar radiation received.<br><br><strong>Cycle Duration:</strong> ~100,000 years (with secondary cycles of 413,000 years).<br><br><strong>Key Characteristics:</strong><br>• Variation between a nearly circular orbit ($0.005$) and slightly elliptical orbit ($0.058$).<br>• Modulates the amplitude of precession.<br><br><strong>Climate Consequences:</strong> Affects the duration of the seasons and is primarily responsible for the 100,000-year cadence of major glacial periods in the recent Quaternary.', 'eccentricity.gif')">
-                <div class="space-y-1">
-                    <span class="text-fluid-tag text-[#901812] block">ORBITAL SHAPE</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">Eccentricity</h4>
-                    <p class="text-fluid-meta text-[#444444]">Variation in the shape of Earth's orbit, alternating between circular and elliptical.</p>
+        <!-- SLIDE (1,0): COURSE STRUCTURE -->
+        <div id="slide-1-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
+            <header class="w-full flex justify-between items-center mb-4">
+                <div>
+                    <span class="text-fluid-tag text-[#901812]">PROGRAM STRUCTURE</span>
+                    <h2 class="text-fluid-h2">Course Architecture & Three-Part Design</h2>
                 </div>
-                <div class="w-10 h-10 rounded-full bg-[#901812]/10 text-[#901812] flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-circle-info text-xl"></i>
-                </div>
-            </div>
+                <img id="img-logo-pms-1-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
+            </header>
 
-            <div id="card_obliquity_1_1" class="p-4 rounded-2xl card-borderless-glass cursor-pointer flex justify-between items-center hover:bg-white/90 transition-all" onclick="openPopup('Movement Details: Obliquity', '<strong>Description:</strong> This is the variation in the angle of Earth\'s axis of rotation relative to the plane of its orbit (ecliptic plane). The greater the tilt, the more extreme the seasons are at high latitudes.<br><br><strong>Cycle Duration:</strong> ~41,000 years.<br><br><strong>Key Characteristics:</strong><br>• Angle oscillates strictly between $22.5^\circ$ and $24.5^\circ$ (currently at ~$23.44^\circ$ and decreasing).<br><br><strong>Climate Consequences:</strong> Determines seasonal severity (hotter summers and colder winters at high latitudes when tilt is greater). Lower tilt favors summer polar ice preservation, promoting glaciation.', 'obliquity.gif')">
-                <div class="space-y-1">
-                    <span class="text-fluid-tag text-[#901812] block">AXIAL TILT</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">Obliquity (Tilt)</h4>
-                    <p class="text-fluid-meta text-[#444444]">Oscillation in the tilt angle of Earth's axis between 22.5° and 24.5°.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-auto w-full py-4">
+                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-4 border-t-8 border-[#901812]">
+                    <span class="text-fluid-tag text-[#901812] block">PART ONE</span>
+                    <h3 class="text-fluid-h3 text-[#333333]">Contextualization & Concepts</h3>
+                    <ul class="text-fluid-body text-[#444444] space-y-2">
+                        <li>• Part 1: Introduction</li>
+                        <li>• Part 2: Material Toxicity</li>
+                        <li>• Part 3: Energy</li>
+                        <li>• Part 4: Life Cycle Assessment (LCA)</li>
+                    </ul>
                 </div>
-                <div class="w-10 h-10 rounded-full bg-[#901812]/10 text-[#901812] flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-circle-info text-xl"></i>
-                </div>
-            </div>
 
-            <div id="card_precession_1_1" class="p-4 rounded-2xl card-borderless-glass cursor-pointer flex justify-between items-center hover:bg-white/90 transition-all" onclick="openPopup('Movement Details: Precession', '<strong>Description:</strong> It is the conical rotational wobble of Earth\'s axis (similar to a slowing top). It alters axial orientation relative to perihelion (closest point to the Sun) and aphelion.<br><br><strong>Cycle Duration:</strong> ~21,000 to 26,000 years.<br><br><strong>Key Characteristics:</strong><br>• Determines whether the Northern or Southern Hemisphere experiences summer at perihelion or aphelion.<br><br><strong>Climate Consequences:</strong> Creates contrasting variations between hemispheres. When Northern Hemisphere summer coincides with perihelion, summers are hotter and shorter, affecting continental ice sheet melting.', 'precession.gif')">
-                <div class="space-y-1">
-                    <span class="text-fluid-tag text-[#901812] block">AXIAL WOBBLE</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">Precession</h4>
-                    <p class="text-fluid-meta text-[#444444]">Top-like rotational wobble of Earth's axis of rotation.</p>
+                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-4 border-t-8 border-[#D1A705]">
+                    <span class="text-fluid-tag text-[#D1A705] block">PART TWO</span>
+                    <h3 class="text-fluid-h3 text-[#333333]">Literature Seminars</h3>
+                    <ul class="text-fluid-body text-[#444444] space-y-2">
+                        <li>• Subject 1: Performance & Microstructure</li>
+                        <li>• Subject 2: Utilization of Waste in Construction Materials</li>
+                    </ul>
                 </div>
-                <div class="w-10 h-10 rounded-full bg-[#901812]/10 text-[#901812] flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-circle-info text-xl"></i>
+
+                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white space-y-4 border-t-8 border-white">
+                    <span class="text-fluid-tag text-[#D1A705] block">PART THREE</span>
+                    <h3 class="text-fluid-h3 text-white">Scientific Paper</h3>
+                    <p class="text-fluid-body text-[#DEDEDE]">Continuous development along the semester, culminating in formal article production and defense seminars.</p>
                 </div>
             </div>
         </div>
 
-        <div id="right_side_graph_1_1" class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-6">
-            <div class="space-y-4">
-                <span class="text-fluid-tag text-[#D1A705] block">GRAPHICAL & PROXY ANALYSIS</span>
-                <h3 class="text-fluid-h3 text-white">Combined Milankovitch Analysis & Paleoclimatic Proxies</h3>
-                <p class="text-fluid-body text-[#DEDEDE] leading-relaxed">
-                    Detailed analysis of the concomitant impact of the three orbital parameters and their correlation with empirical paleoclimatic observations.
-                </p>
-                
-                <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-md space-y-2 border-l-4 border-[#D1A705]">
-                    <span class="text-fluid-tag text-[#D1A705] block font-bold">Parameter Superposition:</span>
-                    <p class="text-fluid-meta text-[#DEDEDE]">
-                        Combining eccentricity, obliquity, and precession frequencies results in the effective solar insolation curve (especially at $65^\circ\text{N}$ in summer), acting as the direct trigger for ice age onset and termination.
-                    </p>
-                </div>
-            </div>
-
-            <button onclick="openPopup('Combined Analysis of Milankovitch & Paleoclimatic Proxies', '<strong>Overview:</strong><br>Detailed analysis of the concomitant impact of the three orbital parameters and their correlation with empirical paleoclimatic observations.<br><br><strong>Parameter Superposition:</strong><br>The combination of eccentricity, obliquity, and precession frequencies results in the effective solar insolation curve (especially at 65°N in summer), acting as the direct trigger for the onset and end of ice ages.<br><br><strong>Proxy Technique 1: Benthic Foraminifera ($\delta^{18}\text{O}$):</strong><br>Analysis of oxygen isotope ratios ($\delta^{18}\text{O}$) in benthic foraminifera calcite shells (deep marine sediments) allows reconstruction of total global ice volume and deep ocean temperatures over millions of years.<br><br><strong>Proxy Technique 2: Vostok Ice Core Technique:</strong><br>Extraction and analysis of atmospheric air bubbles trapped in Antarctic ice (Vostok) provide direct measurement of greenhouse gas composition ($CO_2$, $CH_4$) and local temperature variations (via deuterium/oxygen isotopes) over the past 400,000 to 800,000 years.', 'milankovitch_graph.png')" class="w-full py-4 bg-[#D1A705] hover:bg-white hover:text-[#333333] text-[#333333] font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
-                <span>View Combined Graph & Proxy Analysis</span>
-                <i class="fa-solid fa-chart-line"></i>
-            </button>
-        </div>
-    </div>
-</div>
-
-<!-- SLIDE (1,2): REVISED SUB-SLIDE 1.2 (ENSO DYNAMICS) -->
-<div id="slide-1-2" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-    <header class="w-full flex justify-between items-center mb-4">
-        <div>
-            <span class="text-fluid-tag text-[#D1A705]">SUB-MODULE 1.2</span>
-            <h2 class="text-fluid-h2 text-[#333333]">El Niño Southern Oscillation (ENSO)</h2>
-        </div>
-        <button onclick="moveInGrid(0, -1)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
-            <i class="fa-solid fa-arrow-up"></i>
-            <span>Return to Module 1</span>
-        </button>
-    </header>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-auto w-full py-2 items-stretch">
-        <div class="lg:col-span-6 space-y-3 flex flex-col justify-between">
-            <p class="text-fluid-meta text-[#444444]">
-                Short-term coupled ocean-atmosphere climate phenomenon characterized by fluctuations in sea surface temperature (SST) and winds in the Equatorial Pacific (2 to 7 year cycles).
-            </p>
-
-            <div id="card_el_nino_1_2" class="p-4 rounded-2xl card-borderless-glass cursor-pointer flex justify-between items-center hover:bg-white/90 transition-all" onclick="openPopup('Phase Details: El Niño', '<strong>Description:</strong> During El Niño, trade winds weaken or even reverse direction. Warm water accumulated in the Western Pacific migrates toward the coast of South America (Peru and Ecuador), blocking deep, cold, nutrient-rich upwelling.<br><br><strong>Cycle Duration:</strong> Generally lasts 9 to 12 months (occurs at irregular intervals of 2 to 7 years).<br><br><strong>Key Characteristics:</strong><br>• Suppression of nutrient upwelling along the Peruvian coast.<br>• Positive sea surface temperature anomaly ($\text{SST} > +0.5^\circ\text{C}$).<br>• Displacement of convection center and rainfall toward Central/Eastern Pacific.<br><br><strong>Climate Consequences:</strong> Causes severe droughts in Australia, Indonesia, and North/Northeast Brazil, while driving heavy rains and floods in Southern Brazil, Peru, and Southern USA.', 'https://www.climate.gov/sites/default/files/styles/embedded_gif_full_width/public/2023-06/ENSOblog_animation_SSTA_anom_weekly_2023_Jun.gif?itok=YocFEIlC')">
-                <div class="space-y-1">
-                    <span class="text-fluid-tag text-[#901812] block">WARM PHASE</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">El Niño (Warm Phase)</h4>
-                    <p class="text-fluid-meta text-[#444444]">Anomalous warming of Equatorial Pacific waters and weakening of trade winds.</p>
-                </div>
-                <div class="w-10 h-10 rounded-full bg-[#901812]/10 text-[#901812] flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-circle-info text-xl"></i>
-                </div>
-            </div>
-
-            <div id="card_la_nina_1_2" class="p-4 rounded-2xl card-borderless-glass cursor-pointer flex justify-between items-center hover:bg-white/90 transition-all" onclick="openPopup('Phase Details: La Niña', '<strong>Description:</strong> In the cold phase, trade winds blow with enhanced intensity from east to west. This pushes warm water further west into the Pacific while intensifying cold, nutrient-rich deep water upwelling in the East Pacific.<br><br><strong>Cycle Duration:</strong> Tends to last longer than El Niño, often persisting for 1 to 3 consecutive years.<br><br><strong>Key Characteristics:</strong><br>• Upwelling intensification and increased marine productivity in Peru.<br>• Negative sea surface temperature anomaly ($\text{SST} < -0.5^\circ\text{C}$).<br>• Pushing of warm masses toward Asia/Oceania.<br><br><strong>Climate Consequences:</strong> Generates colder, rainier winters in North/Northeast Brazil and prolonged droughts in Southern Brazil, Argentina, and Southwest USA.', 'https://www.climate.gov/sites/default/files/styles/embedded_gif/public/2022-09/SSTA.weekly.2022.06.06-09.04.color_.gif?itok=f5_R5vWZ')">
-                <div class="space-y-1">
-                    <span class="text-fluid-tag text-[#901812] block">COLD PHASE</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">La Niña (Cold Phase)</h4>
-                    <p class="text-fluid-meta text-[#444444]">Anomalous cooling in the Pacific and intensification of easterly trade winds.</p>
-                </div>
-                <div class="w-10 h-10 rounded-full bg-[#901812]/10 text-[#901812] flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-circle-info text-xl"></i>
-                </div>
-            </div>
-
-            <div id="card_neutral_1_2" class="p-4 rounded-2xl card-borderless-glass cursor-pointer flex justify-between items-center hover:bg-white/90 transition-all" onclick="openPopup('Phase Details: Neutral Phase', '<strong>Description:</strong> Ideal condition of Walker Circulation in the equatorial atmosphere. Trade winds blow normally from east to west, keeping warm waters concentrated around Indonesia and maintaining constant, moderate upwelling in South America.<br><br><strong>Cycle Duration:</strong> Transition period between El Niño and La Niña events.<br><br><strong>Key Characteristics:</strong><br>• Niño 3.4 Index maintained within neutral range between $-0.5^\circ\text{C}$ and $+0.5^\circ\text{C}$.<br>• Average precipitation distribution without severe global extremes associated with the Pacific.<br><br><strong>Climate Consequences:</strong> Climatological patterns close to regional historical seasonal averages.', 'https://www.climate.gov/sites/default/files/styles/embedded_gif/public/SST-Animation_620_4%20copy.gif?itok=bGZklSwy')">
-                <div class="space-y-1">
-                    <span class="text-fluid-tag text-[#901812] block">BASELINE</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">Neutral Phase</h4>
-                    <p class="text-fluid-meta text-[#444444]">Normal Walker Circulation maintained, without extreme thermal anomalies.</p>
-                </div>
-                <div class="w-10 h-10 rounded-full bg-[#901812]/10 text-[#901812] flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-circle-info text-xl"></i>
-                </div>
-            </div>
-        </div>
-
-        <div id="right_side_graph_1_2" class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-6">
-            <div class="space-y-4">
-                <span class="text-fluid-tag text-[#D1A705] block">INDEX MONITORING & IMPACTS</span>
-                <h3 class="text-fluid-h3 text-white">Niño 3.4 Index & Oceanographic Monitoring</h3>
-                <p class="text-fluid-body text-[#DEDEDE] leading-relaxed">
-                    The Niño 3.4 Index tracks mean sea surface temperature anomalies. Values above $+0.5^\circ\text{C}$ for 5 consecutive months define El Niño; below $-0.5^\circ\text{C}$ indicate La Niña.
-                </p>
-
-                <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-md space-y-2 border-l-4 border-[#D1A705]">
-                    <span class="text-fluid-tag text-[#D1A705] block font-bold">Irregular Cyclicity & Climate Change:</span>
-                    <p class="text-fluid-meta text-[#DEDEDE]">
-                        Unlike millennial Milankovitch cycles, ENSO acts on interannual scales. Anthropogenic warming may increase the frequency and severity of extreme El Niño and La Niña events.
-                    </p>
-                </div>
-            </div>
-
-            <button onclick="openPopup('Historical Analysis of Niño 3.4 Index & Oceanographic Monitoring', '<strong>Overview:</strong><br>The Niño 3.4 Index monitors mean SST anomalies in a specific region of the Equatorial Pacific. Values above +0.5°C for 5 consecutive months characterize El Niño; values below -0.5°C indicate La Niña.<br><br><strong>Irregular Cyclicity & Climate Change:</strong><br>Unlike millennial Milankovitch cycles, ENSO operates on interannual scales. Studies indicate anthropogenic global warming may increase the frequency and intensity of extreme El Niño and La Niña events.<br><br><strong>Monitoring Technique: TRITON/TAO Buoy Array & Satellite Altimetry:</strong><br>Moored buoy arrays in the Equatorial Pacific combined with satellites measure sea surface height, subsurface temperature, and wind speed in real time.<br><br><strong>Socioeconomic & Civil Engineering Impact:</strong><br>ENSO variability alters regional rainfall regimes, directly impacting infrastructure planning, urban flood events, water availability for concrete, and slope stability.', 'nino_34_index_chart.png')" class="w-full py-4 bg-[#D1A705] hover:bg-white hover:text-[#333333] text-[#333333] font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
-                <span>View Index & Infrastructure Analysis</span>
-                <i class="fa-solid fa-chart-line"></i>
-            </button>
-        </div>
-    </div>
-</div>
-
-<!-- SLIDE (1,3): REVISED SUB-SLIDE 1.3 (SECONDARY NATURAL FORCINGS) -->
-<div id="slide-1-3" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-    <header class="w-full flex justify-between items-center mb-4">
-        <div>
-            <span class="text-fluid-tag text-[#D1A705]">SUB-MODULE 1.3</span>
-            <h2 class="text-fluid-h2 text-[#333333]">Secondary Natural Forcings</h2>
-        </div>
-        <button onclick="moveInGrid(0, -1)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
-            <i class="fa-solid fa-arrow-up"></i>
-            <span>Return to Module 1</span>
-        </button>
-    </header>
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-auto w-full py-2 items-stretch">
-        <div class="lg:col-span-6 space-y-3 flex flex-col justify-between">
-            <p class="text-fluid-meta text-[#444444]">
-                Other atmospheric, solar, geophysical, and astronomical natural cycles influencing Earth's climate variability across different timescales.
-            </p>
-
-            <div id="card_polar_vortex_1_3" class="p-4 rounded-2xl card-borderless-glass cursor-pointer flex justify-between items-center hover:bg-white/90 transition-all" onclick="openPopup('Mechanism Details: Polar Vortex & Jet Streams', '<strong>Description:</strong> The Polar Cell attempts to move equatorward, but the Coriolis Force prevents direct cold air transport. Colliding air masses with the Ferrel Cell form Jet Streams. A strong Polar Vortex traps cold air at the pole; when it weakens, it allows severe arctic air outbreaks into mid-latitudes.<br><br><strong>Cycle Duration:</strong> Seasonal (Winter/Spring).<br><br><strong>Key Characteristics:</strong><br>• Wind barrier (Polar Night Jet) acts as an atmospheric wall.<br>• More stable configuration in Southern Hemisphere than Northern Hemisphere.<br><br><strong>Climate Consequences:</strong> Seasonal weakening causes extreme cold snaps and snowstorms in populated areas of North America and Europe.', 'polar_vortex.gif')">
-                <div class="space-y-1">
-                    <span class="text-fluid-tag text-[#901812] block">ATMOSPHERIC DYNAMICS</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">Polar Vortex & Jet Streams</h4>
-                    <p class="text-fluid-meta text-[#444444]">Polar Cell dynamics and Coriolis Force containing polar cold air.</p>
-                </div>
-                <div class="w-10 h-10 rounded-full bg-[#901812]/10 text-[#901812] flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-circle-info text-xl"></i>
-                </div>
-            </div>
-
-            <div id="card_solar_cycle_1_3" class="p-4 rounded-2xl card-borderless-glass cursor-pointer flex justify-between items-center hover:bg-white/90 transition-all" onclick="openPopup('Mechanism Details: Schwabe Solar Cycle', '<strong>Description:</strong> Periodic solar activity cycle affecting sunspot numbers and Total Solar Irradiance (TSI). Solar minima/maxima alter Earth\'s magnetosphere via solar winds, causing geomagnetic storms.<br><br><strong>Cycle Duration:</strong> ~11 years.<br><br><strong>Key Characteristics:</strong><br>• Total Solar Irradiance variation is small (~0.1%).<br>• Occurrence of geomagnetic storms during solar maxima.<br><br><strong>Climate Consequences:</strong> Despite slightly influencing the upper atmosphere and space weather, 11-year solar irradiance variations have a negligible impact on long-term global warming trends.', 'solar_cycle.gif')">
-                <div class="space-y-1">
-                    <span class="text-fluid-tag text-[#901812] block">SOLAR ACTIVITY</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">Solar Cycle (Schwabe)</h4>
-                    <p class="text-fluid-meta text-[#444444]">Periodic ~11-year variation in sunspot activity and irradiance.</p>
-                </div>
-                <div class="w-10 h-10 rounded-full bg-[#901812]/10 text-[#901812] flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-circle-info text-xl"></i>
-                </div>
-            </div>
-
-            <div id="card_geomagnetic_1_3" class="p-4 rounded-2xl card-borderless-glass cursor-pointer flex justify-between items-center hover:bg-white/90 transition-all" onclick="openPopup('Mechanism Details: Geomagnetic Reversal', '<strong>Description:</strong> Reversal in Earth\'s dipolar magnetic field, swapping magnetic North and South positions. The transition is not instantaneous, taking hundreds to thousands of years, during which the magnetic field temporarily weakens.<br><br><strong>Cycle Duration:</strong> Irregular (intervals of hundreds of thousands to millions of years).<br><br><strong>Key Characteristics:</strong><br>• Recorded in rocks through paleomagnetic studies.<br>• Impossible to predict accurately in its current state.<br><br><strong>Climate Consequences:</strong> Weakens cosmic ray and solar radiation shielding during transition, but there is no direct geological evidence that it drives profound changes in global mean temperature.', 'geomagnetic_reversal.gif')">
-                <div class="space-y-1">
-                    <span class="text-fluid-tag text-[#901812] block">GEOPHYSICAL FIELD</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">Geomagnetic Reversal</h4>
-                    <p class="text-fluid-meta text-[#444444]">North-South magnetic pole inversion recorded in paleomagnetism.</p>
-                </div>
-                <div class="w-10 h-10 rounded-full bg-[#901812]/10 text-[#901812] flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-circle-info text-xl"></i>
-                </div>
-            </div>
-
-            <div id="card_lunar_cycle_1_3" class="p-4 rounded-2xl card-borderless-glass cursor-pointer flex justify-between items-center hover:bg-white/90 transition-all" onclick="openPopup('Mechanism Details: Lunar Nodal Cycle', '<strong>Description:</strong> Variation in Moon\'s orbital position and gravitational force on Earth due to precession of lunar orbital nodes. This alters the declination of the lunar orbital plane relative to Earth\'s equator.<br><br><strong>Cycle Duration:</strong> 18.61 years.<br><br><strong>Key Characteristics:</strong><br>• Nodal precession angle variation of $\\pm 18.61$ years.<br>• Modulation of oceanic tidal amplitudes.<br><br><strong>Climate Consequences:</strong> Generates small variations in local annual mean sea level (~1-2 cm). When the high phase coincides with climate-driven sea level rise, high-tide coastal flooding risk increases significantly.', 'lunar_nodal.gif')">
-                <div class="space-y-1">
-                    <span class="text-fluid-tag text-[#901812] block">ASTRONOMICAL TIDES</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">Lunar Nodal Cycle</h4>
-                    <p class="text-fluid-meta text-[#444444]">18.61-year oscillation in the Moon\'s orbital plane influencing tides.</p>
-                </div>
-                <div class="w-10 h-10 rounded-full bg-[#901812]/10 text-[#901812] flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-circle-info text-xl"></i>
-                </div>
-            </div>
-        </div>
-
-        <div id="right_side_graph_1_3" class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-6">
-            <div class="space-y-4">
-                <span class="text-fluid-tag text-[#D1A705] block">ATTRIBUTION & RADIATIVE FORCING</span>
-                <h3 class="text-fluid-h3 text-white">Natural Variability vs. Anthropogenic Warming</h3>
-                <p class="text-fluid-body text-[#DEDEDE] leading-relaxed">
-                    Although atmospheric, solar, geophysical, and lunar phenomena cause local variations and short-term climate fluctuations, none explain the rapid and continuous global temperature rise observed over the last century.
-                </p>
-
-                <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-md space-y-2 border-l-4 border-[#D1A705]">
-                    <span class="text-fluid-tag text-[#D1A705] block font-bold">Radiative Forcing & Timescales:</span>
-                    <p class="text-fluid-meta text-[#DEDEDE]">
-                        Solar irradiance and atmospheric/tidal dynamics oscillate over short cycles or low radiative impacts. Modern warming exhibits an incomparably faster rate than secondary natural forcings.
-                    </p>
-                </div>
-            </div>
-
-            <button onclick="openPopup('Comparative Analysis: Natural Variability vs. Anthropogenic Warming', '<strong>Overview:</strong><br>While atmospheric, solar, geophysical, and lunar phenomena cause local variations and short-term fluctuations, none explain the continuous global mean temperature rise observed over the last century.<br><br><strong>Radiative Forcing & Timescales:</strong><br>Solar irradiance and wind/tidal dynamics oscillate over short cycles or low radiative impacts. Modern warming exhibits an incomparably faster rate than these secondary natural drivers.<br><br><strong>Solar Radiation Measurements (NOAA/NASA Satellites):</strong><br>Satellites measuring Total Solar Irradiance (TSI) since the 1970s show solar energy received has remained stable or slightly decreased while global temperatures rose sharply.<br><br><strong>IPCC Climate Attribution Modeling:</strong><br>Climate models simulated only with natural forcings (solar, volcanic, orbital) fail to reproduce current warming. Observed warming is only reproduced when anthropogenic GHG emissions are included.', 'natural_forcings_summary.png')" class="w-full py-4 bg-[#D1A705] hover:bg-white hover:text-[#333333] text-[#333333] font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
-                <span>View Comparative Forcings Analysis</span>
-                <i class="fa-solid fa-chart-line"></i>
-            </button>
-        </div>
-    </div>
-</div>
-
-        <!-- SLIDE (2,0): GEOLOGICAL TIMELINE MAIN LINE -->
+        <!-- SLIDE (2,0): EVALUATION SYSTEM -->
         <div id="slide-2-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
             <header class="w-full flex justify-between items-center mb-4">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">MODULE 2: PALEOCLIMATOLOGY</span>
-                    <h2 class="text-fluid-h2">Geological Climate Timeline</h2>
+                    <span class="text-fluid-tag text-[#901812]">GRADING SYSTEM</span>
+                    <h2 class="text-fluid-h2">Assessment Breakdown</h2>
                 </div>
                 <img id="img-logo-pms-2-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
             </header>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-auto w-full py-4">
-                <div class="lg:col-span-7 p-6 rounded-3xl card-borderless-glass space-y-4">
-                    <h3 class="text-fluid-h3 text-[#333333]">500 Million Years of Climate Transitions</h3>
-                    <p class="text-fluid-body text-[#444444]">Deep-time paleoclimatic records reconstructed from benthic sediment cores ($\delta^{18}\text{O}$) and polar ice cores reveal major Greenhouse to Icehouse transitions.</p>
-                    <div class="grid grid-cols-2 gap-3 pt-2">
-                        <button onclick="moveInGrid(0, 1)" class="p-3 bg-[#333333] text-white rounded-xl text-fluid-tag font-bold">2.1: 500 Ma (Phanerozoic)</button>
-                        <button onclick="moveInGrid(0, 2)" class="p-3 bg-[#333333] text-white rounded-xl text-fluid-tag font-bold">2.2: 65 Ma (Cenozoic)</button>
-                        <button onclick="moveInGrid(0, 3)" class="p-3 bg-[#333333] text-white rounded-xl text-fluid-tag font-bold">2.3: 5 Ma (Pliocene)</button>
-                        <button onclick="moveInGrid(0, 4)" class="p-3 bg-[#333333] text-white rounded-xl text-fluid-tag font-bold">2.4: 800kyr (Vostok Core)</button>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-auto w-full py-4">
+                <div class="p-8 rounded-3xl card-borderless-glass space-y-4 text-center">
+                    <span class="text-fluid-h1 text-[#901812] block">40%</span>
+                    <h3 class="text-fluid-h3 text-[#333333]">Quizzes & Weekly Pitches</h3>
+                    <p class="text-fluid-body text-[#444444]">In-class interactive quizzes (attendance tracking) + weekly off-class quizzes with 3-minute video pitch submissions.</p>
                 </div>
 
-                <div class="lg:col-span-5 p-6 rounded-3xl card-borderless-glass-dark text-white space-y-4 flex flex-col justify-between">
-                    <div>
-                        <span class="text-fluid-tag text-[#D1A705]">DEEP TIME OVERVIEW</span>
-                        <h3 class="text-fluid-h3 text-white mt-1">Greenhouse vs. Icehouse</h3>
-                        <p class="text-fluid-body text-[#DEDEDE] mt-2">While Earth experienced warmer periods in the distant past, modern warming rate is unprecedented.</p>
-                    </div>
-                    <button onclick="openPopup('Deep Time Overview', 'Phanerozoic climate alternated between ice-free Greenhouse states and glaciated Icehouse states. The rate of current warming, rather than absolute initial temperature, poses the primary ecological and structural threat.', 'https://www.climate.gov/sites/default/files/styles/full_width_620_original_image/public/graph-from-scott-wing-620px.png?itok=Jgi659bn')" class="w-full py-3 bg-[#901812] text-white font-bold rounded-2xl">Examine 500M Chart</button>
+                <div class="p-8 rounded-3xl card-borderless-glass space-y-4 text-center">
+                    <span class="text-fluid-h1 text-[#D1A705] block">30%</span>
+                    <h3 class="text-fluid-h3 text-[#333333]">Literature Seminars</h3>
+                    <p class="text-fluid-body text-[#444444]">Executed in trios. Presentation of conceptual core + critical analysis of at least two recent scientific papers.</p>
+                </div>
+
+                <div class="p-8 rounded-3xl card-borderless-glass-dark text-white space-y-4 text-center">
+                    <span class="text-fluid-h1 text-[#D1A705] block">30%</span>
+                    <h3 class="text-fluid-h3 text-white">Final Scientific Paper</h3>
+                    <p class="text-fluid-body text-[#DEDEDE]">Group project (max 6 authors). Submission of full manuscript PDF + 30-minute video defense with mandatory full team participation.</p>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE (2,1): 500 Ma -->
-        <div id="slide-2-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#D1A705]">SUB-SLIDE 2.1</span>
-                    <h2 class="text-fluid-h2 text-[#333333]">500 Million Years Scale (Phanerozoic)</h2>
-                </div>
-                <button onclick="moveInGrid(0, -1)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px]">
-                    <i class="fa-solid fa-arrow-up mr-2"></i> Return
-                </button>
-            </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto w-full py-4">
-                <div class="p-6 rounded-3xl card-borderless-glass space-y-3 cursor-pointer" onclick="openPopup('Plant Emergence & Pangea', 'Land plant expansion sequestered massive CO2, inducing Carboniferous cooling. Subsequent Pangea formation created hyper-arid interior climates.', 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Pangea_animation_03.gif')">
-                    <h3 class="text-fluid-h3 text-[#901812]">Land Plants & Pangea</h3>
-                    <p class="text-fluid-body text-[#444444]">Plant emergence (~450 Ma) and Pangea supercontinent climate dynamics (~250 Ma).</p>
-                </div>
-                <div class="p-6 rounded-3xl card-borderless-glass space-y-3 cursor-pointer" onclick="openPopup('Cretaceous Hot Greenhouse', 'Extensive seafloor volcanism elevated atmospheric CO2, resulting in an ice-free globe and elevated sea levels ~100 Ma.', 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Cretaceous_render.png')">
-                    <h3 class="text-fluid-h3 text-[#901812]">Cretaceous Hot Greenhouse</h3>
-                    <p class="text-fluid-body text-[#444444]">Thermal peak ~100 Ma with zero polar ice caps and high CO2 levels.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE (2,2): 65 Ma -->
-        <div id="slide-2-2" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#D1A705]">SUB-SLIDE 2.2</span>
-                    <h2 class="text-fluid-h2 text-[#333333]">65 Million Years Scale (Cenozoic Era)</h2>
-                </div>
-                <button onclick="moveInGrid(0, -2)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px]">
-                    <i class="fa-solid fa-arrow-up mr-2"></i> Return
-                </button>
-            </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto w-full py-4">
-                <div class="p-6 rounded-3xl card-borderless-glass space-y-3 cursor-pointer" onclick="openPopup('Paleocene-Eocene Thermal Maximum', 'Rapid carbon injection ~56 Ma served as the closest geological analogue to modern industrial emissions.', 'https://www.climate.gov/sites/default/files/2023-01/climateqa_global_surface_temps_65million_years_2480.png')">
-                    <h3 class="text-fluid-h3 text-[#901812]">PETM Thermal Spike</h3>
-                    <p class="text-fluid-body text-[#444444]">Abrupt warming event ~56 Ma driven by massive carbon release.</p>
-                </div>
-                <div class="p-6 rounded-3xl card-borderless-glass space-y-3 cursor-pointer" onclick="openPopup('Polar Glaciation Initiation', 'Himalayan uplift and Drake Passage opening isolated Antarctica, initiating continental glaciation ~34 Ma.', 'https://upload.wikimedia.org/wikipedia/commons/5/53/MilankovitchCycles_OrbitandCores.png')">
-                    <h3 class="text-fluid-h3 text-[#901812]">Polar Cap Formation</h3>
-                    <p class="text-fluid-body text-[#444444]">Cooling trend leading to Antarctic ice sheet establishment in Oligocene.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE (2,3): 5 Ma -->
-        <div id="slide-2-3" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#D1A705]">SUB-SLIDE 2.3</span>
-                    <h2 class="text-fluid-h2 text-[#333333]">5 Million Years Scale (Frequency Transition)</h2>
-                </div>
-                <button onclick="moveInGrid(0, -3)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px]">
-                    <i class="fa-solid fa-arrow-up mr-2"></i> Return
-                </button>
-            </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto w-full py-4">
-                <div class="p-6 rounded-3xl card-borderless-glass space-y-3">
-                    <h3 class="text-fluid-h3 text-[#901812]">41kyr Obliquity Dominance</h3>
-                    <p class="text-fluid-body text-[#444444]">Between 5 Ma and 1 Ma, glacial rhythms responded directly to axial tilt oscillations.</p>
-                </div>
-                <div class="p-6 rounded-3xl card-borderless-glass space-y-3">
-                    <h3 class="text-fluid-h3 text-[#901812]">100kyr Mid-Pleistocene Transition</h3>
-                    <p class="text-fluid-body text-[#444444]">Over the past 1 Ma, eccentricity and ice internal feedbacks took control of glacial cycles.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE (2,4): 800kyr -->
-        <div id="slide-2-4" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#D1A705]">SUB-SLIDE 2.4</span>
-                    <h2 class="text-fluid-h2 text-[#333333]">800,000 Years Scale (Vostok Ice Core)</h2>
-                </div>
-                <button onclick="moveInGrid(0, -4)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px]">
-                    <i class="fa-solid fa-arrow-up mr-2"></i> Return
-                </button>
-            </header>
-            <div class="p-8 rounded-3xl card-borderless-glass-dark text-white space-y-4 my-auto">
-                <span class="text-fluid-tag text-[#D1A705]">ICE CORE ATMOSPHERIC RECORD</span>
-                <h3 class="text-fluid-h3 text-white">Quaternary Natural CO2 Limits</h3>
-                <p class="text-fluid-body text-[#DEDEDE]">Antarctic ice core air bubbles prove that over 800,000 years, atmospheric CO2 natural bounds strictly ranged between ~180 ppm (glacials) and ~280-300 ppm (interglacials). Modern concentrations (>415 ppm) completely break this natural boundary.</p>
-                <button onclick="openPopup('Vostok Ice Core Record', 'Trapped atmospheric bubbles provide direct measurements of past greenhouse gases. CO2 and deuterium temperature proxies demonstrate total co-variance over 800kyr, establishing 300 ppm as the upper natural interglacial ceiling.', 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Icecore_4.jpg')" class="py-3 px-6 bg-[#D1A705] text-[#333333] font-bold rounded-2xl">View Vostok Correlation</button>
-            </div>
-        </div>
-
-        <!-- SLIDE (3,0): ANTHROPOGENIC WARMING -->
+        <!-- SLIDE (3,0): CLASS DYNAMICS & MODALITIES -->
         <div id="slide-3-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
             <header class="w-full flex justify-between items-center mb-4">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">MODULE 3: ANTHROPOGENIC FORCING</span>
-                    <h2 class="text-fluid-h2">Anthropogenic Warming & CO2 Correlation</h2>
+                    <span class="text-fluid-tag text-[#901812]">OPERATIONAL DYNAMICS</span>
+                    <h2 class="text-fluid-h2">Class Execution & Modalities</h2>
                 </div>
                 <img id="img-logo-pms-3-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
             </header>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-auto w-full py-4">
-                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="p-5 rounded-2xl card-borderless-glass" onclick="openPopup('Thermal Anomaly', 'Exponential post-Industrial surface temperature rise (+1.0°C in 140 yrs) tracked by global meteorological networks.', 'https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/woc/images/globaltemp/global_gis_1890-1894.png?w=720&h=396&fit=crop&crop=faces%2Cfocalpoint')">
-                        <h4 class="text-fluid-h3 text-[#901812]">Thermal Anomaly</h4>
-                        <p class="text-fluid-meta">Exponential post-industrial warming</p>
-                    </div>
-                    <div class="p-5 rounded-2xl card-borderless-glass" onclick="openPopup('CO2 Concentration', 'Atmospheric CO2 exceeding 415 ppm, unprecedented in human geological history.', 'https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/woc/images/globaltemp/global_gis_1890-1894.png?w=720&h=396&fit=crop&crop=faces%2Cfocalpoint')">
-                        <h4 class="text-fluid-h3 text-[#901812]">CO2 Rise (>415 ppm)</h4>
-                        <p class="text-fluid-meta">Keeling Curve acceleration</p>
-                    </div>
-                    <div class="p-5 rounded-2xl card-borderless-glass" onclick="openPopup('Mandarin Paradox (Ethics)', 'Moral dilemma: actions today harm distant or future populations who did not participate in industrial emissions.', 'https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/woc/images/globaltemp/global_gis_1890-1894.png?w=720&h=396&fit=crop&crop=faces%2Cfocalpoint')">
-                        <h4 class="text-fluid-h3 text-[#901812]">Mandarin Paradox</h4>
-                        <p class="text-fluid-meta">Intergenerational ethics</p>
-                    </div>
-                    <div class="p-5 rounded-2xl card-borderless-glass" onclick="openPopup('Construction Burden', 'The built environment accounts for ~38% of global CO2 emissions (operational + embodied in concrete/steel).', 'https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/woc/images/globaltemp/global_gis_1890-1894.png?w=720&h=396&fit=crop&crop=faces%2Cfocalpoint')">
-                        <h4 class="text-fluid-h3 text-[#901812]">Construction Sector</h4>
-                        <p class="text-fluid-meta">38% global CO2 footprint</p>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-auto w-full py-4">
+                <div class="p-8 rounded-3xl card-borderless-glass space-y-4">
+                    <h3 class="text-fluid-h3 text-[#333333] border-b border-black/10 pb-2"><i class="fa-solid fa-users text-[#901812] mr-2"></i> Hybrid Course Delivery</h3>
+                    <ul class="text-fluid-body text-[#444444] space-y-3">
+                        <li><strong>In-Person Lectures:</strong> Mandatory for UFV full-time scholarship/regular students.</li>
+                        <li><strong>Synchronous Online Access:</strong> Dedicated for international students and non-scholarship part-time UFV students.</li>
+                    </ul>
                 </div>
 
-                <div class="lg:col-span-5 p-6 rounded-3xl card-borderless-glass-dark text-white space-y-4 flex flex-col justify-between">
-                    <div>
-                        <span class="text-fluid-tag text-[#D1A705]">CORRELATION ANALYSIS</span>
-                        <h3 class="text-fluid-h3 text-white">Industrial Forcing vs. Holocene</h3>
-                        <p class="text-fluid-body text-[#DEDEDE] mt-2">Modern warming breaks 10,000 years of Holocene climate stability, strictly matching fossil fuel combustion.</p>
-                    </div>
-                    <button onclick="moveInGrid(0, 1)" class="w-full py-3 bg-[#901812] text-white font-bold rounded-2xl">Keeling Curve Sub-slide (Press ↓)</button>
+                <div class="p-8 rounded-3xl card-borderless-glass-dark text-white space-y-4">
+                    <h3 class="text-fluid-h3 text-white border-b border-white/10 pb-2"><i class="fa-solid fa-[#D1A705] fa-chalkboard-user text-[#D1A705] mr-2"></i> Class Structure (Parts 1, 2, 3)</h3>
+                    <ul class="text-fluid-body text-[#DEDEDE] space-y-3">
+                        <li><strong>Part 1:</strong> Expository lectures delivered by the professor.</li>
+                        <li><strong>Part 2:</strong> Student-led seminars, featuring conceptual synthesis + critical review of two recent papers, followed by professor-guided debate.</li>
+                        <li><strong>Part 3:</strong> Supervised research paper development in teams (up to 6 authors).</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE (3,1): KEELING CURVE -->
-        <div id="slide-3-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#D1A705]">SUB-SLIDE 3.1</span>
-                    <h2 class="text-fluid-h2 text-[#333333]">Keeling Curve & Great Acceleration</h2>
-                </div>
-                <button onclick="moveInGrid(0, -1)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px]">
-                    <i class="fa-solid fa-arrow-up mr-2"></i> Return
-                </button>
-            </header>
-            <div class="p-8 rounded-3xl card-borderless-glass space-y-4 my-auto">
-                <h3 class="text-fluid-h3 text-[#333333]">Mauna Loa Continuous Atmospheric Record</h3>
-                <p class="text-fluid-body text-[#444444]">Continuous measurements since 1958 document the post-1950 'Great Acceleration'. The rate of CO2 increase is 100 times faster than any natural post-glacial recovery.</p>
-            </div>
-        </div>
-
-        <!-- SLIDE (4,0): EXTREME WEATHER -->
+        <!-- SLIDE (4,0): ANALYTICAL PROGRAM OVERVIEW -->
         <div id="slide-4-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
             <header class="w-full flex justify-between items-center mb-4">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">MODULE 4: DISASTERS</span>
-                    <h2 class="text-fluid-h2">Extreme Weather & Geotechnical Impacts</h2>
+                    <span class="text-fluid-tag text-[#901812]">ANALYTICAL PROGRAMME</span>
+                    <h2 class="text-fluid-h2">Module Workload Overview (60h Total)</h2>
                 </div>
                 <img id="img-logo-pms-4-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
             </header>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-auto w-full py-4">
-                <div class="p-5 rounded-2xl card-borderless-glass space-y-2 cursor-pointer" onclick="openPopup('Ouro Preto Landslide', 'Slope failure destroying historic heritage after extreme rainfall saturation.', 'https://www.otempo.com.br/cidades/imagem-aerea-mostra-momento-exato-do-desabamento-do-morro-da-forca-em-ouro-preto-1.2595629')">
-                    <span class="text-fluid-tag text-[#901812]">OURO PRETO, MG</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">Morro da Força</h4>
-                    <p class="text-fluid-meta">Geotechnical slope collapse</p>
-                </div>
-
-                <div class="p-5 rounded-2xl card-borderless-glass space-y-2 cursor-pointer" onclick="openPopup('São Sebastião Tragedy (2023)', 'Record 600mm/24h rainfall triggering widespread debris flows in Serra do Mar.', 'https://noticias.uol.com.br/cotidiano/ultimas-noticias/2023/02/22/tragedia-no-litoral-de-sp-alertas.htm')">
-                    <span class="text-fluid-tag text-[#901812]">SÃO SEBASTIÃO, SP</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">Serra do Mar Flows</h4>
-                    <p class="text-fluid-meta">Torrential debris flows</p>
-                </div>
-
-                <div class="p-5 rounded-2xl card-borderless-glass space-y-2 cursor-pointer" onclick="openPopup('Pakistan Floods (2022)', 'Monsoon intensification inundating 1/3 of the country with >1,200 fatalities.', 'https://www.dw.com/en/pakistan-floods-international-aid-arrives-as-death-toll-tops-1200/a-63005125')">
-                    <span class="text-fluid-tag text-[#901812]">PAKISTAN (2022)</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">Monsoon Flooding</h4>
-                    <p class="text-fluid-meta">Agricultural & urban inundation</p>
-                </div>
-
-                <div class="p-5 rounded-2xl card-borderless-glass space-y-2 cursor-pointer" onclick="openPopup('RS Megaflood (2024)', 'Historic flooding affecting >90% of municipalities with R$ 97B economic loss.', 'https://s2-g1.glbimg.com/Zi2EY3PkVh_xTtNxMtGgPFddvKo=/0x0:1920x1079/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/R/J/YOpXLsTC6ZZgexZOyq2A/rs.jpg')">
-                    <span class="text-fluid-tag text-[#901812]">RIO GRANDE DO SUL (2024)</span>
-                    <h4 class="text-fluid-h3 text-[#333333]">Statewide Flood</h4>
-                    <p class="text-fluid-meta">Infrastructure collapse</p>
+            <div class="my-auto w-full py-4">
+                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass overflow-x-auto">
+                    <table class="w-full text-left text-fluid-body">
+                        <thead>
+                            <tr class="border-b border-black/20 text-[#901812]">
+                                <th class="pb-3 font-bold">Unit / Topic</th>
+                                <th class="pb-3 font-bold text-center">Theoretical (T)</th>
+                                <th class="pb-3 font-bold text-center">Practical (P)</th>
+                                <th class="pb-3 font-bold text-center">Total Hours</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-black/5 text-[#444444]">
+                            <tr><td class="py-2.5 font-bold">1. Introduction to Sustainable Construction</td><td class="text-center">4h</td><td class="text-center">0h</td><td class="text-center font-bold">4h</td></tr>
+                            <tr><td class="py-2.5 font-bold">2. Toxicity of Building Materials</td><td class="text-center">4h</td><td class="text-center">0h</td><td class="text-center font-bold">4h</td></tr>
+                            <tr><td class="py-2.5 font-bold">3. Energy & Embodied Energy</td><td class="text-center">4h</td><td class="text-center">0h</td><td class="text-center font-bold">4h</td></tr>
+                            <tr><td class="py-2.5 font-bold">4. Life Cycle Assessment (LCA) & Eco-Labelling</td><td class="text-center">12h</td><td class="text-center">0h</td><td class="text-center font-bold">12h</td></tr>
+                            <tr><td class="py-2.5 font-bold">5. Microstructural & Performance Assessment</td><td class="text-center">16h</td><td class="text-center">0h</td><td class="text-center font-bold">12h</td></tr>
+                            <tr><td class="py-2.5 font-bold">6. State-of-the-Art Residue & Waste Utilization</td><td class="text-center">16h</td><td class="text-center">0h</td><td class="text-center font-bold">12h</td></tr>
+                            <tr><td class="py-2.5 font-bold">7. Final Seminars</td><td class="text-center">4h</td><td class="text-center">0h</td><td class="text-center font-bold">12h</td></tr>
+                            <tr class="bg-[#901812]/10 font-bold text-[#901812]"><td class="py-3">TOTAL SEMESTER HOURS</td><td class="text-center">60h</td><td class="text-center">0h</td><td class="text-center">60h</td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE (5,0): OCEAN CURRENTS -->
+        <!-- SLIDE (5,0): ASSESSMENT DETAILS & SUBMISSIONS -->
         <div id="slide-5-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
             <header class="w-full flex justify-between items-center mb-4">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">MODULE 5: OCEAN DYNAMICS</span>
-                    <h2 class="text-fluid-h2">Systemic Risks: Ocean Currents</h2>
+                    <span class="text-fluid-tag text-[#901812]">SUBMISSION WORKFLOW</span>
+                    <h2 class="text-fluid-h2">Quizzes, Pitches & Final Defense</h2>
                 </div>
                 <img id="img-logo-pms-5-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
             </header>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-auto w-full py-4">
-                <div class="lg:col-span-7 space-y-4">
-                    <div class="p-6 rounded-3xl card-borderless-glass cursor-pointer" onclick="openPopup('Global Conveyor Belt', 'Thermohaline circulation driving global heat transport via warm surface and cold deep flows.', 'https://www.ces.fau.edu/nasa/resources/global-ocean-conveyor.php')">
-                        <h3 class="text-fluid-h3 text-[#901812]">Ocean Conveyor Belt</h3>
-                        <p class="text-fluid-body text-[#444444]">Thermohaline density-driven global heat distribution network.</p>
-                    </div>
-                    <div class="p-6 rounded-3xl card-borderless-glass cursor-pointer" onclick="openPopup('Freshwater Inflow & AMOC', 'Melting Greenland ice reduces North Atlantic salinity, weakening deep water formation.', 'https://www.ces.fau.edu/nasa/resources/global-ocean-conveyor.php')">
-                        <h3 class="text-fluid-h3 text-[#901812]">Freshwater Inflow & AMOC</h3>
-                        <p class="text-fluid-body text-[#444444]">Polar melt freshwater injection risking AMOC tipping point.</p>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-auto w-full py-4">
+                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-4">
+                    <h3 class="text-fluid-h3 text-[#333333]"><i class="fa-solid fa-video text-[#901812] mr-2"></i> Weekly Video Pitch Dynamics</h3>
+                    <p class="text-fluid-body text-[#444444]">Submitted via Google Forms alongside off-class questionnaires:</p>
+                    <ul class="text-fluid-body text-[#444444] space-y-2">
+                        <li>• Maximum duration: <strong>3 minutes</strong>.</li>
+                        <li>• Video hosted in student's personal repository (Drive/YouTube/Vimeo) with accessible link provided.</li>
+                        <li>• In-class quizzes verify real-time conceptual comprehension and attendance.</li>
+                    </ul>
                 </div>
 
-                <div class="lg:col-span-5 p-6 rounded-3xl card-borderless-glass-dark text-white space-y-4 flex flex-col justify-between">
-                    <div>
-                        <span class="text-fluid-tag text-[#D1A705]">STRUCTURAL ADAPTATION</span>
-                        <h3 class="text-fluid-h3 text-white">AMOC Collapse Risk</h3>
-                        <p class="text-fluid-body text-[#DEDEDE] mt-2">Alters global thermal baselines, wind patterns, and sea level along Atlantic coasts.</p>
-                    </div>
-                    <button onclick="moveInGrid(0, 1)" class="w-full py-3 bg-[#D1A705] text-[#333333] font-bold rounded-2xl">Adaptation Sub-slide (Press ↓)</button>
+                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white space-y-4">
+                    <h3 class="text-fluid-h3 text-white"><i class="fa-solid fa-file-lines text-[#D1A705] mr-2"></i> Final Paper Defense (Part 3)</h3>
+                    <p class="text-fluid-body text-[#DEDEDE]">Single Google Forms submission per group:</p>
+                    <ul class="text-fluid-body text-[#DEDEDE] space-y-2">
+                        <li>• Full manuscript PDF (complete formatting, citations, references).</li>
+                        <li>• <strong>30-minute video presentation/defense</strong> featuring all team members in a single video link.</li>
+                        <li>• Hosted on student repository, permanently accessible for professor evaluation.</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE (5,1): AMOC SUB-SLIDE -->
-        <div id="slide-5-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#D1A705]">SUB-SLIDE 5.1</span>
-                    <h2 class="text-fluid-h2 text-[#333333]">Infrastructure Adaptation to AMOC Shifts</h2>
-                </div>
-                <button onclick="moveInGrid(0, -1)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px]">
-                    <i class="fa-solid fa-arrow-up mr-2"></i> Return
-                </button>
-            </header>
-            <div class="p-8 rounded-3xl card-borderless-glass space-y-4 my-auto">
-                <h3 class="text-fluid-h3 text-[#333333]">Engineering Norm Adjustments</h3>
-                <p class="text-fluid-body text-[#444444]">Changes in design thermal loads, coastal surge flooding defenses, and severe wind design speeds across North America and Europe.</p>
-            </div>
-        </div>
-
-        <!-- SLIDE (6,0): PERMAFROST THAW -->
+        <!-- SLIDE (6,0): BIBLIOGRAPHIC REFERENCES -->
         <div id="slide-6-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
             <header class="w-full flex justify-between items-center mb-4">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">MODULE 6: FEEDBACK LOOPS</span>
-                    <h2 class="text-fluid-h2">Permafrost Thaw & Carbon Feedback</h2>
+                    <span class="text-fluid-tag text-[#901812]">COURSE LITERATURE</span>
+                    <h2 class="text-fluid-h2">Fundamental & Complementary Bibliography</h2>
                 </div>
                 <img id="img-logo-pms-6-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
             </header>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-auto w-full py-4">
-                <div class="lg:col-span-7 space-y-4">
-                    <div class="p-5 rounded-2xl card-borderless-glass cursor-pointer" onclick="openPopup('Permafrost Structure', 'Active layer thaw over deep ice wedges, degrading soil shear strength.', 'https://earth.org/data_visualization/what-is-permafrost/')">
-                        <h4 class="text-fluid-h3 text-[#901812]">Geological Stratigraphy</h4>
-                        <p class="text-fluid-meta">Active layer vs Ground Ice wedges</p>
-                    </div>
-                    <div class="p-5 rounded-2xl card-borderless-glass cursor-pointer" onclick="openPopup('Carbon Timebomb', '1,500 billion tons of organic carbon stored (2x atmospheric pool) releasing CO2/CH4.', 'https://www.civilsdaily.com/news/can-thawing-permafrost-cause-another-pandemic/')">
-                        <h4 class="text-fluid-h3 text-[#901812]">1,500 Gt Carbon Pool</h4>
-                        <p class="text-fluid-meta">Positive climate feedback loop</p>
-                    </div>
-                    <div class="p-5 rounded-2xl card-borderless-glass cursor-pointer" onclick="openPopup('Siberian Methane Craters', 'Explosive release of pressurized methane gas creating giant tundra craters.', 'https://www.severe-weather.eu/global-weather/siberia-massive-craters-frozen-ground-permafrost-methane-gas-explosion-rrc/')">
-                        <h4 class="text-fluid-h3 text-[#901812]">Methane Explosions</h4>
-                        <p class="text-fluid-meta">Yamal Peninsula crater formation</p>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-auto w-full py-4">
+                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-3">
+                    <h3 class="text-fluid-h3 text-[#333333] border-b border-black/10 pb-2">Fundamental References</h3>
+                    <ul class="text-fluid-meta text-[#444444] space-y-2">
+                        <li>• <strong>Pacheco-Torgal, F. et al.</strong> (2014). <em>Eco-efficient Construction and Building Materials: LCA, Eco-labelling and Case Studies</em>. Woodhead Publishing.</li>
+                        <li>• <strong>Pacheco-Torgal, F. & Jalali, S.</strong> (2014). <em>Eco-efficient Construction and Building Materials</em>. Springer London.</li>
+                        <li>• <strong>ABNT NBR ISO 14040 / 14044 / 14045 / 14067</strong>. Environmental Management, LCA, Eco-efficiency, and Carbon Footprint Standards.</li>
+                        <li>• <strong>Callister, W. D. & Rethwisch, D. G.</strong> (2020). <em>Materials Science and Engineering: An Introduction</em>. Wiley.</li>
+                    </ul>
                 </div>
 
-                <div class="lg:col-span-5 p-6 rounded-3xl card-borderless-glass-dark text-white space-y-4 flex flex-col justify-between">
-                    <div>
-                        <span class="text-fluid-tag text-[#D1A705]">GEOTECHNICAL FAILURE</span>
-                        <h3 class="text-fluid-h3 text-white">Bearing Capacity Loss</h3>
-                        <p class="text-fluid-body text-[#DEDEDE] mt-2">Thawing ice converts solid ground into slurry, causing differential foundation settlements.</p>
-                    </div>
-                    <div class="space-y-2">
-                        <button onclick="moveInGrid(0, 1)" class="w-full py-3 bg-[#901812] text-white font-bold rounded-2xl">Geotechnical Sub-slide (Press ↓)</button>
-                        <button onclick="moveInGrid(0, 2)" class="w-full py-3 bg-[#D1A705] text-[#333333] font-bold rounded-2xl">Methane Mapping (Press ↓↓)</button>
-                    </div>
+                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-3">
+                    <h3 class="text-fluid-h3 text-[#333333] border-b border-black/10 pb-2">Complementary References</h3>
+                    <ul class="text-fluid-meta text-[#444444] space-y-2">
+                        <li>• <strong>Scrivener, K., Snellings, R., & Lothenbach, B.</strong> (2018). <em>A Practical Guide to Microstructural Analysis of Cementitious Materials</em>. CRC Press.</li>
+                        <li>• <strong>Mehta, P. K. & Monteiro, P. J. M.</strong> (2014). <em>Concrete: Microstructure, Properties, and Materials</em>. McGraw-Hill.</li>
+                        <li>• <strong>ABNT NBR 10004 / 10005 / 10006</strong>. Solid Waste Classification and Leaching Extraction Procedures.</li>
+                        <li>• <strong>Young, J. F. et al.</strong> (1998). <em>The Science and Technology of Civil Engineering Materials</em>. Prentice Hall.</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE (6,1): GEOTECHNICAL SUB-SLIDE -->
-        <div id="slide-6-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#D1A705]">SUB-SLIDE 6.1</span>
-                    <h2 class="text-fluid-h2 text-[#333333]">Permafrost Geotechnical Engineering</h2>
-                </div>
-                <button onclick="moveInGrid(0, -1)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px]">
-                    <i class="fa-solid fa-arrow-up mr-2"></i> Return
-                </button>
-            </header>
-            <div class="p-8 rounded-3xl card-borderless-glass space-y-4 my-auto">
-                <h3 class="text-fluid-h3 text-[#333333]">Thermosyphon Piling & Foundation Redesign</h3>
-                <p class="text-fluid-body text-[#444444]">Loss of soil cohesion requires active thermosyphon pile foundations to maintain subfreezing ground temperatures under Arctic infrastructure.</p>
-            </div>
-        </div>
-
-        <!-- SLIDE (6,2): CRATER SUB-SLIDE -->
-        <div id="slide-6-2" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#D1A705]">SUB-SLIDE 6.2</span>
-                    <h2 class="text-fluid-h2 text-[#333333]">Methane Outgassing & Crater Mapping</h2>
-                </div>
-                <button onclick="moveInGrid(0, -2)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px]">
-                    <i class="fa-solid fa-arrow-up mr-2"></i> Return
-                </button>
-            </header>
-            <div class="p-8 rounded-3xl card-borderless-glass-dark text-white space-y-4 my-auto">
-                <h3 class="text-fluid-h3 text-white">Satellite Radar InSAR Monitoring</h3>
-                <p class="text-fluid-body text-[#DEDEDE]">Geospatial tracking detects surface heave prior to explosive gas venting, mapping unquantified Arctic greenhouse emissions.</p>
-            </div>
-        </div>
-
-        <!-- SLIDE (7,0): ECOSYSTEM PRESSURES -->
+        <!-- SLIDE (7,0): REPOSITORY ACCESS & SUBMISSION CENTER -->
         <div id="slide-7-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
             <header class="w-full flex justify-between items-center mb-4">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">MODULE 7: ECOSYSTEMS</span>
-                    <h2 class="text-fluid-h2">Global Environmental Pressures</h2>
+                    <span class="text-fluid-tag text-[#901812]">CLOSING MODULE</span>
+                    <h2 class="text-fluid-h2">Shared Repository & Portal Access</h2>
                 </div>
                 <img id="img-logo-pms-7-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
             </header>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-auto w-full py-4">
-                <div class="lg:col-span-7 space-y-4">
-                    <div class="p-5 rounded-2xl card-borderless-glass cursor-pointer" onclick="openPopup('Water Crisis & Acidification', 'Ocean CO2 absorption lowers pH while river eutrophication destroys aquatic oxygen.', 'water_acidification_diagram.png')">
-                        <h4 class="text-fluid-h3 text-[#901812]">Water Crisis & Acidification</h4>
-                        <p class="text-fluid-meta">Eutrophication and pH decline</p>
-                    </div>
-                    <div class="p-5 rounded-2xl card-borderless-glass cursor-pointer" onclick="openPopup('Plastic & Raw Materials', 'Linear economy waste generation and virgin mineral depletion.', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Albatross_at_Midway_Atoll_Refuge_%282290472378%29.jpg/800px-Albatross_at_Midway_Atoll_Refuge_%282290472378%29.jpg')">
-                        <h4 class="text-fluid-h3 text-[#901812]">Waste, Toxicity & Raw Materials</h4>
-                        <p class="text-fluid-meta">Plastic ingestion & virgin material drain</p>
-                    </div>
-                    <div class="p-5 rounded-2xl card-borderless-glass cursor-pointer" onclick="openPopup('Ecosystem Services ($33T/yr)', 'Costanza et al. valuation of nature free services ($33 Trillion/year) exceeding global GDP.', 'https://en.wikipedia.org/wiki/Pollinator#/media/File:Lipotriches_sp..jpg')">
-                        <h4 class="text-fluid-h3 text-[#901812]">Biodiversity Services</h4>
-                        <p class="text-fluid-meta">$33 Trillion/yr Costanza valuation</p>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 my-auto w-full py-4 items-center">
+                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-6">
+                    <span class="text-fluid-tag text-[#D1A705]">SHARED GOOGLE DRIVE FOLDER</span>
+                    <h3 class="text-fluid-h3 text-[#333333]">Access Course Material & Lecture Notes</h3>
+                    <p class="text-fluid-body text-[#444444]">All course slides, reading assignments, templates, and analytical guidelines are deposited in the official CIV 665 shared drive folder.</p>
+                    
+                    <div class="pt-2">
+                        <a id="btn-folder-direct-7-0" target="_blank" class="w-full py-4 px-8 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md min-h-[56px] flex items-center justify-center space-x-3">
+                            <i class="fa-solid fa-folder-open text-2xl text-[#D1A705]"></i>
+                            <span>Open CIV 665 Shared Folder</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-lg ml-1"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 p-6 rounded-3xl card-borderless-glass-dark text-white space-y-4 flex flex-col justify-between">
-                    <div>
-                        <span class="text-fluid-tag text-[#D1A705]">CIRCULAR ECONOMY</span>
-                        <h3 class="text-fluid-h3 text-white">Eco-efficient Materials</h3>
-                        <p class="text-fluid-body text-[#DEDEDE] mt-2">Replacing virgin aggregates with industrial by-products is mandatory for sector survival.</p>
+                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white text-center space-y-4">
+                    <span class="text-fluid-tag text-[#D1A705] block">SCAN TO ACCESS FOLDER DIRECTLY</span>
+                    <div class="bg-white/90 backdrop-blur-md p-5 rounded-2xl max-w-[260px] sm:max-w-[320px] lg:max-w-[360px] mx-auto shadow-lg">
+                        <img id="qr-shared-folder-7-0" alt="CIV 665 Shared Drive QR Code" class="w-full h-auto rounded-lg">
                     </div>
-                    <div class="space-y-2">
-                        <button onclick="moveInGrid(0, 1)" class="w-full py-3 bg-[#901812] text-white font-bold rounded-2xl">Waste & Eutrophication (Press ↓)</button>
-                        <button onclick="moveInGrid(0, 2)" class="w-full py-3 bg-[#D1A705] text-[#333333] font-bold rounded-2xl">Valuation Study (Press ↓↓)</button>
-                    </div>
+                    <p class="text-fluid-meta text-[#DEDEDE]">Department of Civil Engineering — UFV 2026</p>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE (7,1): WASTE SUB-SLIDE -->
-        <div id="slide-7-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#D1A705]">SUB-SLIDE 7.1</span>
-                    <h2 class="text-fluid-h2 text-[#333333]">Waste Pollution & Non-Renewable Extraction</h2>
-                </div>
-                <button onclick="moveInGrid(0, -1)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px]">
-                    <i class="fa-solid fa-arrow-up mr-2"></i> Return
-                </button>
-            </header>
-            <div class="p-8 rounded-3xl card-borderless-glass space-y-4 my-auto">
-                <h3 class="text-fluid-h3 text-[#333333]">Raw Material Depletion</h3>
-                <p class="text-fluid-body text-[#444444]">Civil construction extracts billions of tons of sand and rock annually. Recycling aggregates and utilizing alkali-activated slag binders directly mitigates this footprint.</p>
-            </div>
-        </div>
-
-        <!-- SLIDE (7,2): VALUATION SUB-SLIDE -->
-        <div id="slide-7-2" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#D1A705]">SUB-SLIDE 7.2</span>
-                    <h2 class="text-fluid-h2 text-[#333333]">Economic Valuation of Natural Capital</h2>
-                </div>
-                <button onclick="moveInGrid(0, -2)" class="px-5 py-3 bg-white/75 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px]">
-                    <i class="fa-solid fa-arrow-up mr-2"></i> Return
-                </button>
-            </header>
-            <div class="p-8 rounded-3xl card-borderless-glass-dark text-white space-y-4 my-auto">
-                <h3 class="text-fluid-h3 text-white">Costanza et al. (Nature, 1998)</h3>
-                <p class="text-fluid-body text-[#DEDEDE]">Demonstrated that human economy is a strictly dependent subsystem of global ecosystem services (valued at $33 Trillion/year).</p>
-            </div>
-        </div>
-
-        <!-- SLIDE (8,0): IN-CLASS QUIZ -->
+        <!-- SLIDE (8,0): DEFENSE SESSION & IN-CLASS QUIZZ ACCESS -->
         <div id="slide-8-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
             <header class="w-full flex justify-between items-center mb-4">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">SYNCHRONOUS ASSESSMENT</span>
-                    <h2 class="text-fluid-h2">In-Class Assessment Quiz</h2>
+                    <span class="text-fluid-tag text-[#901812]">SYNCHRONOUS INTERACTIONS</span>
+                    <h2 class="text-fluid-h2">Defense Session & In-Class Quiz Access</h2>
                 </div>
                 <img id="img-logo-pms-8-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
             </header>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-auto w-full py-4 items-center">
-                <div class="lg:col-span-6 p-8 rounded-3xl card-borderless-glass space-y-6">
-                    <span class="text-fluid-tag text-[#D1A705]">GOOGLE FORMS QUIZ</span>
-                    <h3 class="text-fluid-h3 text-[#333333]">Assessment 010: Climate & Material Dynamics</h3>
-                    <p class="text-fluid-body text-[#444444]">Complete the 10-15 minute synchronous quiz covering today's lecture on Earth Systems and environmental impacts.</p>
-                    <a id="btn-quiz-direct-8-0" target="_blank" class="w-full py-4 px-8 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md flex items-center justify-center space-x-3 min-h-[56px]">
-                        <i class="fa-solid fa-pen-to-square text-2xl text-[#D1A705]"></i>
-                        <span>Open In-Class Quiz</span>
-                    </a>
-                </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 my-auto w-full py-4 items-center">
+                <!-- Google Meet Defense Session Card -->
+                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white text-center space-y-4">
+                    <span class="text-fluid-tag text-[#D1A705] block">LIVE VIRTUAL ROOM</span>
+                    <h3 class="text-fluid-h3 text-white">Online Defense & Synchronous Class</h3>
+                    
+                    <div class="bg-white/90 backdrop-blur-md p-4 rounded-2xl max-w-[220px] sm:max-w-[260px] mx-auto shadow-lg">
+                        <img id="qr-defense-meet-8-0" alt="Google Meet QR Code" class="w-full h-auto rounded-lg">
+                    </div>
 
-                <div class="lg:col-span-6 p-8 rounded-3xl card-borderless-glass-dark text-white text-center space-y-4">
-                    <span class="text-fluid-tag text-[#D1A705] block">SCAN TO START QUIZ</span>
-                    <div class="bg-white/90 backdrop-blur-md p-5 rounded-2xl max-w-[280px] mx-auto shadow-lg">
-                        <img id="qr-quiz-forms-8-0" alt="Quiz QR Code" class="w-full h-auto rounded-lg">
+                    <div class="pt-2">
+                        <a id="btn-defense-meet-8-0" target="_blank" class="w-full py-3.5 px-6 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-video text-xl"></i>
+                            <span>Join Google Meet Session</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-sm ml-1"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- SLIDE (9,0): WEEKLY ASSIGNMENT -->
-        <div id="slide-9-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#901812]">CLOSING MODULE</span>
-                    <h2 class="text-fluid-h2">Weekly Off-Class Submission</h2>
-                </div>
-                <img id="img-logo-pms-9-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
-            </header>
+                <!-- In-Class Quiz Google Form Card -->
+                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass text-center space-y-4">
+                    <span class="text-fluid-tag text-[#901812] block">SYNCHRONOUS EVALUATION</span>
+                    <h3 class="text-fluid-h3 text-[#333333]">In-Class Interactive Quiz</h3>
+                    
+                    <div class="bg-white/90 backdrop-blur-md p-4 rounded-2xl max-w-[220px] sm:max-w-[260px] mx-auto shadow-lg border border-black/5">
+                        <img id="qr-inclass-quiz-8-0" alt="In-Class Quiz QR Code" class="w-full h-auto rounded-lg">
+                    </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-auto w-full py-4 items-center">
-                <div class="lg:col-span-6 p-8 rounded-3xl card-borderless-glass space-y-4">
-                    <h3 class="text-fluid-h3 text-[#333333]">Weekly Report Instructions</h3>
-                    <p class="text-fluid-body text-[#444444]">Submit your off-class log and material life cycle reflection prior to the upcoming weekly deadline.</p>
-                    <a id="btn-assignment-direct-9-0" target="_blank" class="inline-flex items-center space-x-2 text-fluid-body font-bold text-[#901812] hover:underline pt-2">
-                        <span>Open Submission Form</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-                    </a>
-                </div>
-
-                <div class="lg:col-span-6 p-8 rounded-3xl card-borderless-glass-dark text-white text-center space-y-4">
-                    <span class="text-fluid-tag text-[#D1A705] block">SUBMIT WEEKLY LOG</span>
-                    <div class="bg-white/90 backdrop-blur-md p-5 rounded-2xl max-w-[280px] mx-auto shadow-lg">
-                        <img id="qr-assignment-forms-9-0" alt="Assignment QR Code" class="w-full h-auto rounded-lg">
+                    <div class="pt-2">
+                        <a id="btn-inclass-quiz-8-0" target="_blank" class="w-full py-3.5 px-6 bg-[#333333] text-white font-bold rounded-2xl hover:bg-[#901812] transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-square-poll-vertical text-xl text-[#D1A705]"></i>
+                            <span>Submit In-Class Quiz</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-sm ml-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1014,21 +497,18 @@
 
     </main>
 
-    <!-- ========================================================================= -->
-    <!-- SECTION 3: JAVASCRIPT LOGIC                                               -->
-    <!-- ========================================================================= -->
+    <!-- SECTION 3: JAVASCRIPT LOGIC, ANIMATIONS & INTERACTIVITY -->
     <script>
         const slideGrid = { 
             '0,0': 'slide-0-0',
-            '1,0': 'slide-1-0', '1,1': 'slide-1-1', '1,2': 'slide-1-2', '1,3': 'slide-1-3',
-            '2,0': 'slide-2-0', '2,1': 'slide-2-1', '2,2': 'slide-2-2', '2,3': 'slide-2-3', '2,4': 'slide-2-4',
-            '3,0': 'slide-3-0', '3,1': 'slide-3-1',
+            '1,0': 'slide-1-0',
+            '2,0': 'slide-2-0',
+            '3,0': 'slide-3-0',
             '4,0': 'slide-4-0',
-            '5,0': 'slide-5-0', '5,1': 'slide-5-1',
-            '6,0': 'slide-6-0', '6,1': 'slide-6-1', '6,2': 'slide-6-2',
-            '7,0': 'slide-7-0', '7,1': 'slide-7-1', '7,2': 'slide-7-2',
-            '8,0': 'slide-8-0',
-            '9,0': 'slide-9-0'
+            '5,0': 'slide-5-0',
+            '6,0': 'slide-6-0',
+            '7,0': 'slide-7-0',
+            '8,0': 'slide-8-0'
         };
 
         let currentX = 0, currentY = 0;
@@ -1039,7 +519,10 @@
             const logoUfv00 = document.getElementById('img-logo-ufv-0-0');
             if (logoUfv00) logoUfv00.src = COURSE_ASSETS.logos.ufv;
 
-            ['0_0', '1_0', '2_0', '3_0', '4_0', '5_0', '6_0', '7_0', '8_0', '9_0'].forEach(id => {
+            const logoPms00 = document.getElementById('img-logo-pms-0-0');
+            if (logoPms00) logoPms00.src = COURSE_ASSETS.logos.pms;
+
+            ['1-0', '2-0', '3-0', '4-0', '5-0', '6-0', '7-0', '8-0'].forEach(id => {
                 const el = document.getElementById(`img-logo-pms-${id}`);
                 if (el) el.src = COURSE_ASSETS.logos.pms;
             });
@@ -1064,19 +547,25 @@
             });
 
             const qrCover00 = document.getElementById('qr-presentation-cover-0-0');
-            if (qrCover00) qrCover00.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.presentationAccess);
+            if (qrCover00) qrCover00.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.sharedFolder);
 
-            const qrQuiz80 = document.getElementById('qr-quiz-forms-8-0');
-            if (qrQuiz80) qrQuiz80.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.googleFormsQuiz);
+            const qrFolder70 = document.getElementById('qr-shared-folder-7-0');
+            if (qrFolder70) qrFolder70.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.sharedFolder);
 
-            const qrAssign90 = document.getElementById('qr-assignment-forms-9-0');
-            if (qrAssign90) qrAssign90.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.weeklyAssignment);
+            const btnFolder70 = document.getElementById('btn-folder-direct-7-0');
+            if (btnFolder70) btnFolder70.href = COURSE_ASSETS.externalLinks.sharedFolder;
 
-            const btnQuiz80 = document.getElementById('btn-quiz-direct-8-0');
+            const qrMeet80 = document.getElementById('qr-defense-meet-8-0');
+            if (qrMeet80) qrMeet80.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.defenseMeet, "901812");
+
+            const btnMeet80 = document.getElementById('btn-defense-meet-8-0');
+            if (btnMeet80) btnMeet80.href = COURSE_ASSETS.externalLinks.defenseMeet;
+
+            const qrQuiz80 = document.getElementById('qr-inclass-quiz-8-0');
+            if (qrQuiz80) qrQuiz80.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.googleFormsQuiz, "333333");
+
+            const btnQuiz80 = document.getElementById('btn-inclass-quiz-8-0');
             if (btnQuiz80) btnQuiz80.href = COURSE_ASSETS.externalLinks.googleFormsQuiz;
-
-            const btnAssign90 = document.getElementById('btn-assignment-direct-9-0');
-            if (btnAssign90) btnAssign90.href = COURSE_ASSETS.externalLinks.weeklyAssignment;
         }
 
         function updateUI() {
@@ -1111,29 +600,8 @@
             }
         }
 
-        function openPopup(title, description, imgUrl = '') {
-            const modal = document.getElementById('globalModal');
-            const content = document.getElementById('modalContent');
-            let imgHTML = imgUrl ? `<img src="${imgUrl}" class="w-full h-auto rounded-xl max-h-[300px] object-cover my-3 shadow-md">` : '';
-            content.innerHTML = `
-                <h3 class="text-fluid-h2 text-[#D1A705] mb-2">${title}</h3>
-                <p class="text-fluid-body text-[#DEDEDE] leading-relaxed">${description}</p>
-                ${imgHTML}
-            `;
-            modal.classList.add('modal-open');
-        }
-
-        function closePopup(e) {
-            if (e.target.id === 'globalModal') closePopupDirect();
-        }
-
-        function closePopupDirect() {
-            document.getElementById('globalModal').classList.remove('modal-open');
-        }
-
         document.addEventListener('keydown', (e) => {
             if (['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
-            if (e.key === 'Escape') closePopupDirect();
             if (e.key === 'ArrowRight' || e.key === ' ') moveInGrid(1, 0);
             else if (e.key === 'ArrowLeft') moveInGrid(-1, 0);
             else if (e.key === 'ArrowUp') moveInGrid(0, -1);
