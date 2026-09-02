@@ -1,0 +1,2227 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full overflow-hidden select-none">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CIV 665 | Eco-Efficient Construction and Building Materials - PMS UFV</title>
+    
+    <!-- ESSENTIAL CDNs -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], throwOnError: false });"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Preset PMS */
+            --color-primary: #901812;
+            --color-secondary: #D1A705;
+            --color-dark: #333333;
+            --color-bg: #F4F6F5;
+            --bg-shade-left: rgba(244,246,245,0.96);
+            --bg-shade-mid: rgba(244,246,245,0.70);
+            --bg-shade-right: rgba(244,246,245,0.15);
+            --card-light: rgba(255, 255, 255, 0.76);
+            --card-dark: rgba(51, 51, 51, 0.82);
+
+            /* Tipografia Super-Ampliada (Calibração Nativa Full HD / 4k) */
+            --fluid-h1: clamp(2.8rem, 6.2vw, 5.5rem);
+            --fluid-h2: clamp(2.2rem, 4.6vw, 4.0rem);
+            --fluid-h3: clamp(1.75rem, 3.2vw, 2.8rem);
+            --fluid-body: clamp(1.35rem, 2.2vw, 1.95rem);
+            --fluid-meta: clamp(1.15rem, 1.6vw, 1.55rem);
+            --fluid-tag: clamp(1.05rem, 1.4vw, 1.35rem);
+        }
+
+        html, body { 
+            width: 100vw; 
+            height: 100vh; 
+            overflow: hidden; 
+            background-color: var(--color-bg); 
+            font-family: 'PT Sans Narrow', sans-serif; 
+            color: var(--color-dark); 
+        }
+
+        .text-fluid-h1 { font-family: 'Montserrat', sans-serif; font-size: var(--fluid-h1); font-weight: 900; line-height: 1.08; letter-spacing: -0.02em; }
+        .text-fluid-h2 { font-family: 'Montserrat', sans-serif; font-size: var(--fluid-h2); font-weight: 800; line-height: 1.15; }
+        .text-fluid-h3 { font-size: var(--fluid-h3); font-weight: 700; line-height: 1.25; }
+        .text-fluid-body { font-size: var(--fluid-body); font-weight: 500; line-height: 1.45; }
+        .text-fluid-meta { font-size: var(--fluid-meta); font-weight: 600; }
+        .text-fluid-tag { font-size: var(--fluid-tag); font-weight: 700; letter-spacing: 0.04em; }
+
+        .katex-display { font-size: clamp(2.2rem, 4.5vw, 3.8rem) !important; margin: 1.2rem 0 !important; }
+        .katex { font-size: 1.15em; }
+
+        .slide-screen {
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            top: 0; 
+            left: 0;
+            opacity: 0; 
+            pointer-events: none; 
+            z-index: 0;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+        .slide-active { opacity: 1; transform: translate3d(0, 0, 0); pointer-events: auto; z-index: 10; }
+        .slide-hidden-left  { opacity: 0; transform: translate3d(-100%, 0, 0); }
+        .slide-hidden-right { opacity: 0; transform: translate3d(100%, 0, 0); }
+        .slide-hidden-up    { opacity: 0; transform: translate3d(0, -100%, 0); }
+        .slide-hidden-down  { opacity: 0; transform: translate3d(0, 100%, 0); }
+
+        .card-glass { 
+            border: none !important; 
+            background-color: var(--card-light); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            box-shadow: 0 12px 36px rgba(0,0,0,0.06); 
+        }
+        .card-glass-dark { 
+            border: none !important; 
+            background-color: var(--card-dark); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            color: white; 
+            box-shadow: 0 14px 40px rgba(0,0,0,0.18); 
+        }
+
+        .reveal-controls { 
+            position: fixed; 
+            bottom: 1.25rem; 
+            right: 1.25rem; 
+            width: 110px; 
+            height: 110px; 
+            z-index: 1000; 
+            pointer-events: none; 
+        }
+        .control-arrow {
+            position: absolute; 
+            width: 38px; 
+            height: 38px; 
+            background: rgba(255, 255, 255, 0.40);
+            backdrop-filter: blur(6px); 
+            border-radius: 50%; 
+            color: #888888; 
+            cursor: pointer;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            opacity: 0.15; 
+            pointer-events: none;
+            transition: all 0.2s ease; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+            font-size: 0.95rem;
+        }
+        .control-arrow.nav-up { top: 0; left: 36px; }
+        .control-arrow.nav-down { bottom: 0; left: 36px; }
+        .control-arrow.nav-left { top: 36px; left: 0; }
+        .control-arrow.nav-right { top: 36px; right: 0; }
+        .control-arrow.nav-enabled { color: var(--color-primary); opacity: 0.65; pointer-events: auto; }
+        .control-arrow.nav-enabled:hover { background: var(--color-primary); color: #FFF; opacity: 1; transform: scale(1.1); }
+    </style>
+</head>
+<body class="w-screen h-screen relative">
+
+    <div class="fixed top-0 left-0 h-2 bg-[var(--color-secondary)] transition-all duration-300 z-[1000]" id="progressBar" style="width: 0%;"></div>
+
+    <div class="fixed bottom-3 left-3 text-[0.80rem] sm:text-[0.90rem] font-bold text-[var(--color-dark)] bg-white/70 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-sm z-[1000] flex items-center space-x-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-[var(--color-primary)]"></span>
+        <span id="slideIndicator">Slide (0,0) | 1 of 5</span>
+    </div>
+
+    <div class="reveal-controls">
+        <button id="btn-nav-up" onclick="moveInGrid(0, -1)" class="control-arrow nav-up" aria-label="Up"><i class="fa-solid fa-chevron-up"></i></button>
+        <button id="btn-nav-left" onclick="moveInGrid(-1, 0)" class="control-arrow nav-left" aria-label="Left"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="btn-nav-right" onclick="moveInGrid(1, 0)" class="control-arrow nav-right" aria-label="Right"><i class="fa-solid fa-chevron-right"></i></button>
+        <button id="btn-nav-down" onclick="moveInGrid(0, 1)" class="control-arrow nav-down" aria-label="Down"><i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+
+    <main class="w-full h-full relative" id="slideDeck">
+
+         <!-- SLIDE (0,0): TITLE & COURSE COVER -->
+<div id="slide-0-0" class="slide-screen slide-active flex flex-col justify-between p-6 sm:p-10 md:p-12" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric1.png') center right / cover fixed no-repeat;">
+    <header class="w-full flex justify-between items-center gap-4 flex-shrink-0">
+        <div class="flex items-center space-x-4 sm:space-x-6 bg-white/75 backdrop-blur-md px-6 py-3.5 rounded-2xl shadow-sm">
+            <img src="Logo UFV oficial horizontal.png" alt="UFV Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://dci.ufv.br/wp-content/themes/diretorias/assets/images/estrutura/logotipoUFV.png'">
+            <div class="h-10 w-[1px] bg-black/10"></div>
+            <span class="text-fluid-tag text-[#333333]">CIV 665 • SICon / UFV</span>
+        </div>
+        <a href="https://pms.ufv.br" target="_blank" class="block bg-[#333333]/75 backdrop-blur-md p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+            <img src="pms.png" alt="PMS Logo" class="h-12 sm:h-16 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+        </a>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full my-auto py-4">
+        <div class="lg:col-span-7 space-y-4">
+            <div class="p-8 sm:p-12 rounded-3xl card-glass border-l-[16px] border-[#901812]">
+                <span class="text-fluid-tag text-[#D1A705] tracking-wider block mb-2 font-bold uppercase">CIV 665 — ECO-EFFICIENT CONSTRUCTION AND BUILDING MATERIALS</span>
+                <h1 class="text-fluid-h1 mb-3 text-[#901812]">TOXICITY OF BUILDING MATERIALS<span class="block text-fluid-h2 text-[#333333] font-bold mt-2">Part 1: Chemical Hazards & Health Exposure</span></h1>
+                <p class="text-fluid-body text-[#444444]">Overview of Hazardous Substances, Volatile Organic Compounds (VOCs), Heavy Metals, and Indoor Environmental Quality.</p>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5 p-6 sm:p-10 rounded-3xl card-glass-dark text-white flex flex-col justify-between space-y-6">
+            <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl text-center shadow-md">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fjmfcarvalho.github.io%2Fciv665%2F050.html&color=901812" alt="Slide Access QR Code" class="w-full max-w-[200px] sm:max-w-[240px] mx-auto rounded-lg">
+                <span class="text-fluid-tag text-[#333333] font-bold mt-3 block">Follow On Smartphone</span>
+            </div>
+            <div class="text-center space-y-1">
+                <span class="text-fluid-tag text-[#D1A705] block font-bold">Course Instructor</span>
+                <p class="text-fluid-body font-bold text-white">Prof. José Maria Franco de Carvalho</p>
+                <p class="text-fluid-meta text-[#DEDEDE]">SICon / DEC — Universidade Federal de Viçosa</p>
+                <div class="pt-2 border-t border-white/10 mt-2">
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold">Revision</span>
+                    <p class="text-fluid-meta text-white font-semibold">Paul Oluwaseun Oke</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-3 flex-shrink-0">
+        <span class="font-bold">CIV 665: Toxicity of Construction Materials — Part 1</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for Objectives | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Frameworks</span>
+    </footer>
+</div>
+
+<!-- SLIDE (1,0): PART 1 CONTENT & LEARNING OBJECTIVES -->
+<div id="slide-1-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks1.png') center right / cover fixed no-repeat;">
+    <header class="w-full flex justify-between items-center mb-4 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 01 — CLASS STRUCTURE & OVERVIEW</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Part 1: Theory & Overview</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-auto w-full py-4 items-stretch">
+        <!-- Card 1: Part 1 - Theory & Overview -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div>
+                <div class="flex items-center space-x-3 text-[#901812] mb-3">
+                    <i class="fa-solid fa-book-open-reader text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Part 1: Theory & Overview</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Detailed examination of hazardous compounds, toxicological mechanisms, and human exposure in built environments.</p>
+            </div>
+            <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>VOCs, Phthalates & Heavy Metals in Paints</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Plastics, PVC & Synthetic Adhesives</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Combustion Products & Toxic Fumes in Fires</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Radioactive Byproducts, Asbestos & Nanoparticles</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Part 2 - Standards & Tests (Roadmap Preview) -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div>
+                <div class="flex items-center space-x-3 text-[#D1A705] mb-3">
+                    <i class="fa-solid fa-[#D1A705] fa-vial-circle-check text-3xl text-[#D1A705]"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Part 2: Standards & Tests</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Normative frameworks, environmental characterization, and laboratory protocols for waste analysis.</p>
+            </div>
+            <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                <li class="flex items-start"><i class="fa-solid fa-flask text-[#D1A705] mt-1 mr-2 text-xs"></i>Leaching & Eco-toxicity Testing Principles</li>
+                <li class="flex items-start"><i class="fa-solid fa-file-contract text-[#D1A705] mt-1 mr-2 text-xs"></i>ABNT NBR 10004: Solid Waste Classification</li>
+                <li class="flex items-start"><i class="fa-solid fa-filter text-[#D1A705] mt-1 mr-2 text-xs"></i>ABNT NBR 10005: Leached Extract Procedures</li>
+                <li class="flex items-start"><i class="fa-solid fa-water text-[#D1A705] mt-1 mr-2 text-xs"></i>ABNT NBR 10006: Solubilized Extract Procedures</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Learning Objectives for Part 1 -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-white">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block mb-2 uppercase">GOALS FOR PART 1</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-3">Part 1 Learning Objectives</h3>
+                <div class="space-y-3 text-fluid-meta text-[#DEDEDE]">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Understand</strong> the transition from ancient natural materials to chemical-heavy synthetic materials.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Classify</strong> indoor pollutants (VOCs, organochlorines, heavy metals) and health impacts.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Assess</strong> severe hazard risks from fire gases, Radon, asbestos fibers, and emerging nanomaterials.</span>
+                    </div>
+                </div>
+            </div>
+            <button onclick="moveInGrid(1, 0)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Begin Part 1: Theory (Press →)</span>
+                <i class="fa-solid fa-arrow-right text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-3 flex-shrink-0">
+        <span class="font-bold">CIV 665 • Toxicity of Construction Materials — Part 1: Theory & Overview</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to proceed to General Context</span>
+    </footer>
+</div>
+
+
+
+<!-- SLIDE (2,0): GENERAL OVERVIEW & CHEMICAL POLLUTANTS (REFACTORED MODALS WITH NATURAL PROPORTIONS) -->
+<div id="slide-2-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 h-screen overflow-hidden" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks2.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 01 — OVERVIEW & CONTEXT</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Chemical Hazards & Toxicity in Modern Materials</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full items-stretch">
+            <!-- Card 1: Historical Paradigm Shift -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#901812] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#901812] mb-3">
+                        <i class="fa-solid fa-industry text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Historical Paradigm Shift</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Transition from natural, minimally processed earthen materials to complex chemical formulations in modern engineering.</p>
+                </div>
+                
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-deep-ancient').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Ancient vs. Modern Construction</strong>
+                            <span class="text-fluid-tag text-[#666666]">Natural baseline vs. synthetic chemical burden</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+
+                    <button onclick="document.getElementById('modal-deep-lifecycle').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Lifecycle Toxicity Vectors</strong>
+                            <span class="text-fluid-tag text-[#666666]">Production, off-gassing, fire, and waste</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Featured Pollutants -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#D1A705] mb-3">
+                        <i class="fa-solid fa-biohazard text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Featured Pollutants</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Key toxic agents embedded in synthetic building components, polymers, paints, and surface finishes.</p>
+                </div>
+
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-deep-chlorine').showModal()" class="w-full p-2.5 bg-white/80 hover:bg-white text-left rounded-xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Organochlorines (Dioxins/Furans)</strong>
+                            <span class="text-fluid-tag text-[#666666]">Persistent, bio-cumulative byproducts</span>
+                        </div>
+                        <i class="fa-solid fa-circle-plus text-[#D1A705] text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+
+                    <button onclick="document.getElementById('modal-deep-phthalates').showModal()" class="w-full p-2.5 bg-white/80 hover:bg-white text-left rounded-xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Phthalate Plasticizers</strong>
+                            <span class="text-fluid-tag text-[#666666]">Endocrine-disrupting softening additives</span>
+                        </div>
+                        <i class="fa-solid fa-circle-plus text-[#D1A705] text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+
+                    <button onclick="document.getElementById('modal-deep-vocs').showModal()" class="w-full p-2.5 bg-white/80 hover:bg-white text-left rounded-xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Volatile Organics (VOCs)</strong>
+                            <span class="text-fluid-tag text-[#666666]">Pervasive indoor off-gassing and solvents</span>
+                        </div>
+                        <i class="fa-solid fa-circle-plus text-[#D1A705] text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3: Systemic Health Impacts -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-white">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#D1A705] mb-3">
+                        <i class="fa-solid fa-notes-medical text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-white font-bold">Health Consequences</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#DEDEDE]">Clinical outcomes documented from prolonged or intense exposure to hazardous indoor contaminants.</p>
+                </div>
+                <ul class="text-fluid-meta space-y-2 text-[#DEDEDE] border-t border-white/15 pt-3 font-semibold">
+                    <li class="flex items-start"><i class="fa-solid fa-triangle-exclamation text-[#D1A705] mt-1 mr-2 text-xs"></i><span><strong>Irritations & Malaise:</strong> Eye, nose, throat inflammation, skin rash, headaches.</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-triangle-exclamation text-[#D1A705] mt-1 mr-2 text-xs"></i><span><strong>Organ Systems:</strong> Liver, kidney, heart, and digestive disorders.</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-triangle-exclamation text-[#D1A705] mt-1 mr-2 text-xs"></i><span><strong>Nervous System:</strong> Memory degradation, anxiety, and speech issues.</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-skull text-[#901812] mt-1 mr-2 text-xs"></i><span><strong>Chronic Pathology:</strong> Fetal/hormonal disorders, nasal and lung cancers.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Técnico -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665 • Toxicity of Construction Materials — Part 1</span>
+        <span class="font-semibold">Click cards for deep dive | Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Paints & Solvents</span>
+    </footer>
+
+    <!-- MODAL 1: Ancient vs Modern Construction -->
+    <dialog id="modal-deep-ancient" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">HISTORICAL PARADIGM DEEP DIVE</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Evolution of Construction Matrices</h3>
+            </div>
+            <button onclick="document.getElementById('modal-deep-ancient').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://amazingarchitecture.com/storage/2687/ancient_aqueduct.jpg" alt="Ancient Aqueduct Construction" class="rounded-xl max-w-full max-h-[320px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Natural stone and masonry engineering: Chemical inertness vs modern synthetic burden</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>Natural Baseline:</strong> Historical civil construction relied exclusively on raw, earthen materials like stone, timber, thatch, and earth mortars. Chemical off-gassing in traditional structures was nonexistent, governed solely by intrinsic geological characteristics such as background radon.</p>
+                <p><strong>Synthetic Proliferation:</strong> Post-industrial civil engineering shifted toward petrochemistry, synthetic polymers, engineered chemical coatings, and toxic plasticizers. Modern building envelopes seal these pollutants indoors, causing direct occupant exposure via continuous inhalation and dermal contact.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 2: Lifecycle Toxicity Vectors -->
+    <dialog id="modal-deep-lifecycle" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">LIFECYCLE VECTORS</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Exposure Pathways</h3>
+            </div>
+            <button onclick="document.getElementById('modal-deep-lifecycle').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Material Lifecycle Assessment" class="rounded-xl max-w-full max-h-[300px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Full lifecycle exposure boundary conditions: Manufacturing to Final Disposal</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p>Material toxicity manifests across specific lifecycle stages:</p>
+                <ul class="list-disc list-inside space-y-1 text-fluid-meta">
+                    <li><strong>Manufacturing:</strong> Occupational handling of monomers, reactive catalysts, and solvents.</li>
+                    <li><strong>In-Service Life:</strong> Passive continuous release of VOCs, phthalates, and formaldehyde.</li>
+                    <li><strong>Thermal Failure / Fire:</strong> Pyrolysis generating deadly cyanide, CO, and halogenated acid fumes.</li>
+                    <li><strong>End-of-Life:</strong> Leaching of heavy metals into soils and toxic runoff into groundwaters.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 3: Organochlorines -->
+    <dialog id="modal-deep-chlorine" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">FEATURED POLLUTANT 01</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Organochlorines: Dioxins & Furans</h3>
+            </div>
+            <button onclick="document.getElementById('modal-deep-chlorine').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80" alt="PVC and Chlorine Industrial Chemical Waste" class="rounded-xl max-w-full max-h-[300px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">PVC production and thermal processing generate persistent organochlorines.</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>Industrial Origin:</strong> Organochlorine residues (dioxins and furans) emerge from industrial chlorine synthesis, primarily linked to polyvinyl chloride (PVC) manufacturing and its uncontrolled combustion.</p>
+                <p><strong>Persistence & Ecotoxicity:</strong> Highly lipophilic compounds that resist environmental degradation, resulting in massive bioaccumulation along aquatic and terrestrial biological chains, alongside proven carcinogenic activity.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 4: Phthalates -->
+    <dialog id="modal-deep-phthalates" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">FEATURED POLLUTANT 02</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Phthalate Plasticizers</h3>
+            </div>
+            <button onclick="document.getElementById('modal-deep-phthalates').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://www.chemicalsafetyfacts.org/wp-content/uploads/Screen-Shot-2022-08-19-at-1.19.58-PM.png" alt="Flexible Plastic Polymers and Additives" class="rounded-xl max-w-full max-h-[300px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Phthalates migrate out of vinyl membranes, resilient floors, and synthetic conduits.</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>Chemical Function:</strong> Esters of phthalic acid added to rigid polymers (principally PVC) to increase chain flexibility and lower material stiffness.</p>
+                <p><strong>Endocrine Pathology:</strong> Not chemically bonded to the polymer backbone, phthalates continuously migrate into indoor air and settled dust. Ingestion and inhalation trigger endocrine disruption, impacting reproductive systems and fetal development.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 5: VOCs -->
+    <dialog id="modal-deep-vocs" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">FEATURED POLLUTANT 03</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Volatile Organic Compounds (VOCs)</h3>
+            </div>
+            <button onclick="document.getElementById('modal-deep-vocs').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80" alt="Paints, Solvents, and VOC Emitting Agents" class="rounded-xl max-w-full max-h-[300px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Architectural coatings and solvents emit volatile compounds during drying and curing.</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>Indoor Atmospheric Risk:</strong> Organic chemicals with high room-temperature vapor pressures found extensively in architectural paints, varnishes, sealants, and thinners.</p>
+                <p><strong>Clinical Manifestations:</strong> Exposure provokes throat and eye irritation, dizziness, and chronic central nervous system or liver/kidney damage. High-risk aromatic components (e.g., benzene, styrene) are proven carcinogens.</p>
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (3,0): PAINTS, VARNISHES & WOOD IMPREGNATING AGENTS -->
+<div id="slide-3-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 h-screen overflow-hidden" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-paint1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 02 — COATINGS & SURFACE FINISHES</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Paints, Varnishes & Wood Impregnating Agents</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full items-stretch">
+            <!-- Card 1: Solvents & VOC Emissions -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#901812] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#901812] mb-3">
+                        <i class="fa-solid fa-fill-drip text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Solvents & VOCs</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Off-gassing during curing and drying degrades indoor air quality and damages human respiratory tracts.</p>
+                </div>
+                
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-voc-limits').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Water vs. Solvent Matrices</strong>
+                            <span class="text-fluid-tag text-[#666666]">Regulatory thresholds & VOC limits (BA vs. BS)</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <button onclick="document.getElementById('modal-carcinogens').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Heavy Metals & Carcinogens</strong>
+                            <span class="text-fluid-tag text-[#666666]">Lead, Cadmium, Chromium, and Benzene</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Wood Preservatives & Biocides -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#D1A705] mb-3">
+                        <i class="fa-solid fa-tree text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Wood Protection</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Fungicidal and insecticidal treatments to inhibit biological degradation introduce persistent toxic residues.</p>
+                </div>
+
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-cca-creosote').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">CCA Salts & Creosote</strong>
+                            <span class="text-fluid-tag text-[#666666]">Copper-Chromium-Arsenic & coal tar</span>
+                        </div>
+                        <i class="fa-solid fa-circle-plus text-[#D1A705] text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-meta text-[#444444]">
+                        <strong class="text-[#901812] block mb-0.5"><i class="fa-solid fa-recycle mr-1"></i> Demolition Wood Hazard:</strong>
+                        Recycling and incineration of CCA/creosote treated timber release airborne arsenic and dioxins.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Interactive Indoor Dispersion Lab Trigger -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-white">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold mb-1 uppercase">INDOOR AIR MODELING</span>
+                    <h3 class="text-fluid-h3 text-white font-bold mb-2">VOC Indoor Dispersion</h3>
+                    <p class="text-fluid-body text-[#DEDEDE]">Quantify dynamic indoor TVOC accumulation as a function of application surface area, solvent load, and ventilation rate.</p>
+                </div>
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE] border-t border-white/15 pt-3 font-semibold">
+                    <div class="flex items-center"><i class="fa-solid fa-wind text-[#D1A705] mr-2"></i> Air Change Rate ($ACH$)</div>
+                    <div class="flex items-center"><i class="fa-solid fa-layer-group text-[#D1A705] mr-2"></i> Specific VOC Emission Factor ($E_s$)</div>
+                    <div class="flex items-center"><i class="fa-solid fa-triangle-exclamation text-[#D1A705] mr-2"></i> WHO & LEED Exposure Thresholds</div>
+                </div>
+                <button onclick="moveInGrid(0, 1)" class="w-full py-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[56px] flex items-center justify-center space-x-2">
+                    <span>Simulate Indoor VOCs (Press ↓)</span>
+                    <i class="fa-solid fa-calculator text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Técnico -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665 • Eco-Efficient Building Materials</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for VOC Lab | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Polymers & PVC</span>
+    </footer>
+
+    <!-- MODAL 1: VOC CONTENT LIMITS & EU DIRECTIVE -->
+    <dialog id="modal-voc-limits" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">REGULATORY FRAMEWORK</span>
+                <h3 class="text-fluid-h2 text-white font-bold">VOC Concentration Limits (Directive 2004/42/EC)</h3>
+            </div>
+            <button onclick="document.getElementById('modal-voc-limits').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80" alt="Paint Formulations and Solvent Bases" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Water-borne (BA) vs. Organic Solvent-borne (BS) paint formulations</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p>Architectural coatings are categorized based on their primary carrier solvent: <strong>BA</strong> (water-adjusted viscosity) and <strong>BS</strong> (organic solvent-adjusted viscosity). Regulations enforced aggressive reductions in maximum allowable VOC content ($g/L$):</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-fluid-meta border-collapse">
+                        <thead>
+                            <tr class="border-b border-white/20 text-[#D1A705]">
+                                <th class="py-2">Product Category</th>
+                                <th class="py-2">Type</th>
+                                <th class="py-2">Limit 2007 ($g/L$)</th>
+                                <th class="py-2">Limit 2010 ($g/L$)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/10">
+                            <tr><td>Interior matte walls & ceilings</td><td>BA / BS</td><td>75 / 400</td><td>30 / 30</td></tr>
+                            <tr><td>Interior glossy walls & ceilings</td><td>BA / BS</td><td>150 / 400</td><td>100 / 100</td></tr>
+                            <tr><td>Exterior mineral substrate walls</td><td>BA / BS</td><td>75 / 450</td><td>40 / 30</td></tr>
+                            <tr><td>Wood & metal trim paints</td><td>BA / BS</td><td>150 / 400</td><td>130 / 300</td></tr>
+                            <tr><td>Trim varnishes & lasures</td><td>BA / BS</td><td>150 / 500</td><td>130 / 400</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 2: CARCINOGENIC AGENTS IN PAINTS -->
+    <dialog id="modal-carcinogens" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">TOXICOLOGICAL AUDIT</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Carcinogens & Heavy Metals in Coatings</h3>
+            </div>
+            <button onclick="document.getElementById('modal-carcinogens').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80" alt="Industrial Paint Pigments and Chemical Primers" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Heavy metal pigments and volatile curing agents</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p>Heavy metals and aromatic compounds are added to pigments, anti-corrosive primers, driers, and paint strippers:</p>
+                <ul class="space-y-2 text-fluid-meta">
+                    <li><strong class="text-[#D1A705]">Lead ($\text{Pb}$):</strong> Used as driers and pigments; causes severe neurotoxicity and systemic organ failure.</li>
+                    <li><strong class="text-[#D1A705]">Chromium ($\text{Cr}^{6+}$):</strong> Primary rust-inhibiting primers; potent lung and nasal carcinogen.</li>
+                    <li><strong class="text-[#D1A705]">Cadmium ($\text{Cd}$):</strong> High-temperature color pigments; renal accumulation and carcinogenicity.</li>
+                    <li><strong class="text-[#D1A705]">Benzene & Methylene Chloride:</strong> Solvents and strippers; direct bone marrow toxicity, leukemia, and CNS depression.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 3: WOOD PRESERVATIVES (CCA & CREOSOTE) -->
+    <dialog id="modal-cca-creosote" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">WOOD PRESERVATION PATHOLOGY</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Biocidal Treatments: Creosote & CCA Salts</h3>
+            </div>
+            <button onclick="document.getElementById('modal-cca-creosote').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="Timber Deterioration and Preservative Impregnation" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Wood impregnation to resist fungi, termites, and woodworms</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p>Natural timber is biodegradable; chemical treatments prevent premature decay by fungi, subterranean termites, and woodboring beetles:</p>
+                <div class="p-3 bg-white/10 rounded-2xl border-l-4 border-[#901812]">
+                    <strong class="text-white block">Creosote (Coal-Tar Distillate):</strong>
+                    Rich in polycyclic aromatic hydrocarbons (PAHs). Highly toxic, persistent, bio-accumulative, and classified as an IARC carcinogen.
+                </div>
+                <div class="p-3 bg-white/10 rounded-2xl border-l-4 border-[#D1A705]">
+                    <strong class="text-[#D1A705] block">CCA (Chromated Copper Arsenate):</strong>
+                    Copper acts as a fungicide, arsenic serves as an insecticide, and chromium fixes elements to cellulose. Handling or burning treated wood releases airborne inorganic arsenic, a major public health hazard.
+                </div>
+            </div>
+        </div>
+    </dialog>
+</div>
+
+<!-- SLIDE (3,1): INDOOR VOC EMISSION & DISPERSION SIMULATOR (BRANCH Y=1) -->
+<div id="slide-3-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 h-screen overflow-hidden" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-paint1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold">VIRTUAL LAB (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Indoor VOC Concentration Dynamics</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-6 py-3.5 bg-white/80 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[50px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Theory</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 w-full items-center">
+            <!-- Painel de Variáveis / Sliders -->
+            <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-glass space-y-4">
+                <div class="border-b border-black/10 pb-2 flex justify-between items-baseline">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Room & Coating Parameters</h3>
+                    <span class="text-fluid-tag text-[#901812] font-bold">Mass-Balance Model</span>
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-fluid-meta font-bold block flex justify-between">
+                        <span>Coating Surface Area ($A$):</span>
+                        <span id="lbl-voc-area-3-1" class="text-[#901812] font-bold">40 m²</span>
+                    </label>
+                    <input type="range" id="input-voc-area-3-1" min="10" max="150" step="5" value="40" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularVOC_3_1()">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-fluid-meta font-bold block flex justify-between">
+                        <span>Coating VOC Content:</span>
+                        <span id="lbl-voc-content-3-1" class="text-[#901812] font-bold">130 g/L (BS Solvent)</span>
+                    </label>
+                    <input type="range" id="input-voc-content-3-1" min="10" max="400" step="10" value="130" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularVOC_3_1()">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-fluid-meta font-bold block flex justify-between">
+                        <span>Room Volume ($V$):</span>
+                        <span id="lbl-voc-vol-3-1" class="text-[#901812] font-bold">60 m³</span>
+                    </label>
+                    <input type="range" id="input-voc-vol-3-1" min="20" max="250" step="10" value="60" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularVOC_3_1()">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-fluid-meta font-bold block flex justify-between">
+                        <span>Ventilation Rate ($ACH$ - air changes/hr):</span>
+                        <span id="lbl-voc-ach-3-1" class="text-[#901812] font-bold">0.5 ACH (Closed Windows)</span>
+                    </label>
+                    <input type="range" id="input-voc-ach-3-1" min="0.2" max="6.0" step="0.1" value="0.5" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularVOC_3_1()">
+                </div>
+            </div>
+
+            <!-- Painel de Resultados & Diagnóstico -->
+            <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-6 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold mb-1 uppercase">EQUILIBRIUM AIR QUALITY</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                        <div class="bg-white/10 p-5 rounded-2xl backdrop-blur-md">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Emission Rate ($E$)</span>
+                            <span id="res-voc-rate-3-1" class="text-fluid-h3 text-white font-mono">144.4 mg/h</span>
+                        </div>
+                        <div class="bg-white/10 p-5 rounded-2xl backdrop-blur-md">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Steady Concentration ($C_{ss}$)</span>
+                            <span id="res-voc-css-3-1" class="text-fluid-h3 text-[#D1A705] font-mono">4.81 mg/m³</span>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-md mt-4 text-center">
+                        <span class="text-fluid-meta text-[#DEDEDE] block">LEED / WHO Guideline Threshold: $\le 0.50\text{ mg/m³}$</span>
+                        <span id="res-voc-status-3-1" class="text-fluid-tag font-bold uppercase block mt-2 text-white bg-[#901812] py-2 px-6 rounded-full mx-auto max-w-[280px] shadow-md">DANGEROUS / TOXIC</span>
+                    </div>
+                </div>
+                <div class="p-4 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm">
+                    <i class="fa-solid fa-fan text-[#D1A705] text-xl"></i>
+                    <span>Equilibrium concentration follows $C_{ss} = \frac{E}{ACH \cdot V}$. Switching to water-borne paints (BA $\le 30\text{ g/L}$) coupled with mechanical ventilation ($ACH \ge 3.0$) restores healthy indoor air.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Técnico -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665 • Dynamic Mass Balance VOC Model</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return to Theory</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (3,1) -->
+    <script>
+        function calcularVOC_3_1() {
+            const area = parseFloat(document.getElementById('input-voc-area-3-1').value);
+            const vocGPerL = parseFloat(document.getElementById('input-voc-content-3-1').value);
+            const volume = parseFloat(document.getElementById('input-voc-vol-3-1').value);
+            const ach = parseFloat(document.getElementById('input-voc-ach-3-1').value);
+
+            let typeDesc = vocGPerL <= 30 ? "Low-VOC Water (BA)" : (vocGPerL <= 130 ? "Standard Water (BA)" : "Solvent-Borne (BS)");
+            document.getElementById('lbl-voc-area-3-1').innerText = `${area} m²`;
+            document.getElementById('lbl-voc-content-3-1').innerText = `${vocGPerL} g/L (${typeDesc})`;
+            document.getElementById('lbl-voc-vol-3-1').innerText = `${volume} m³`;
+            document.getElementById('lbl-voc-ach-3-1').innerText = `${ach.toFixed(1)} ACH (${ach < 1.0 ? 'Poor' : (ach < 3.0 ? 'Moderate' : 'High')})`;
+
+            // Estimated in-service continuous emission factor over early curing: Es ~ (vocGPerL * 0.0277) mg/(m²·h)
+            const Es = vocGPerL * 0.0277;
+            const E = Es * area; // mg/h
+            const Css = E / (ach * volume); // mg/m³
+
+            document.getElementById('res-voc-rate-3-1').innerText = `${E.toFixed(1)} mg/h`;
+            document.getElementById('res-voc-css-3-1').innerText = `${Css.toFixed(2)} mg/m³`;
+
+            const statusEl = document.getElementById('res-voc-status-3-1');
+            if (Css <= 0.5) {
+                statusEl.innerText = "SAFE / EXCELLENT IEQ";
+                statusEl.className = "text-fluid-tag font-bold uppercase block mt-2 text-white bg-green-700 py-2 px-6 rounded-full mx-auto max-w-[280px] shadow-md";
+            } else if (Css <= 1.5) {
+                statusEl.innerText = "MODERATE / IRRITATION RISK";
+                statusEl.className = "text-fluid-tag font-bold uppercase block mt-2 text-[#333333] bg-[#D1A705] py-2 px-6 rounded-full mx-auto max-w-[280px] shadow-md";
+            } else {
+                statusEl.innerText = "DANGEROUS / TOXIC";
+                statusEl.className = "text-fluid-tag font-bold uppercase block mt-2 text-white bg-[#901812] py-2 px-6 rounded-full mx-auto max-w-[280px] shadow-md";
+            }
+        }
+
+        if (document.getElementById('input-voc-area-3-1')) calcularVOC_3_1();
+    </script>
+</div>
+
+
+
+<!-- SLIDE (4,0): PLASTICS, POLYMERS & SYNTHETIC ADHESIVES -->
+<div id="slide-4-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 h-screen overflow-hidden" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-polymer1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 03 — SYNTHETIC POLYMERS</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Plastics, PVC & Synthetic Adhesives</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full items-stretch">
+            <!-- Card 1: Polymer Taxonomy & Commodity Thermoplastics -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#901812] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#901812] mb-3">
+                        <i class="fa-solid fa-shapes text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Thermoplastics & Foams</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Petrochemical polymers used widely for conduits, moisture barriers, and thermal insulation foams.</p>
+                </div>
+                
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-poly-ps-pe').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">EPS, XPS & Polyolefins</strong>
+                            <span class="text-fluid-tag text-[#666666]">Polystyrene, PE/PP additives, and flame retardants</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <button onclick="document.getElementById('modal-poly-additives').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Functional Additives Burden</strong>
+                            <span class="text-fluid-tag text-[#666666]">UV stabilizers, chloroparaffins, and colorants</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Polyvinyl Chloride (PVC) Pathology -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#D1A705] mb-3">
+                        <i class="fa-solid fa-faucet-drip text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Polyvinyl Chloride (PVC)</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Global consumption exceeds 30 Mt/year, representing the predominant source of industrial organochlorines.</p>
+                </div>
+
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-poly-pvc').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Thermal Degradation & Stabilizers</strong>
+                            <span class="text-fluid-tag text-[#666666]">Organotin compounds, ecotoxicity, and chlorine chain</span>
+                        </div>
+                        <i class="fa-solid fa-circle-plus text-[#D1A705] text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-meta text-[#444444]">
+                        <strong class="text-[#901812] block mb-0.5"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Organotin Risk:</strong>
+                        Used at 150–200°C to inhibit PVC thermal breakdown; presents intense ecotoxicity in aquatic ecosystems.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Thermosets & Reactive Adhesives -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-white">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#D1A705] mb-3">
+                        <i class="fa-solid fa-paste text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-white font-bold">Thermosets & Adhesives</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#DEDEDE]">High-performance structural binders, structural laminates, and concrete rehabilitation resins.</p>
+                </div>
+
+                <div class="space-y-2 border-t border-white/15 pt-3">
+                    <button onclick="document.getElementById('modal-poly-thermosets').showModal()" class="w-full p-3 bg-white/10 hover:bg-white/20 text-left rounded-2xl border border-white/10 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#D1A705] block text-fluid-meta">Polyurethanes & Isocyanates</strong>
+                            <span class="text-fluid-tag text-[#DEDEDE]">Severe occupational asthma, phenol, and CFCs</span>
+                        </div>
+                        <i class="fa-solid fa-circle-plus text-white text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <button onclick="document.getElementById('modal-poly-resins').showModal()" class="w-full p-3 bg-white/10 hover:bg-white/20 text-left rounded-2xl border border-white/10 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#D1A705] block text-fluid-meta">Epoxies & Formaldehyde Resins</strong>
+                            <span class="text-fluid-tag text-[#DEDEDE]">Eczema, contact dermatitis, and carcinogenesis</span>
+                        </div>
+                        <i class="fa-solid fa-circle-plus text-white text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Técnico -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665 • Toxicity of Construction Materials — Part 1</span>
+        <span class="font-semibold">Click cards for deep dive | Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Fire Gases & Fumes</span>
+    </footer>
+
+    <!-- MODAL 1: PS, PE & PP FOAMS -->
+    <dialog id="modal-poly-ps-pe" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">COMMODITY THERMOPLASTICS</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Polystyrene (EPS/XPS) & Polyolefins</h3>
+            </div>
+            <button onclick="document.getElementById('modal-poly-ps-pe').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80" alt="Polystyrene Thermal Insulation Foams" class="rounded-xl max-w-full max-h-[280px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Expanded (EPS) and Extruded (XPS) rigid thermal boards</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>Polystyrene Dynamics:</strong> Synthesized by polymerizing styrene monomer. Thermal boards (EPS/XPS) incorporate halogenated flame retardants and antioxidants. During production and hot-wire cutting, traces of monomeric styrene, residual benzene, and historical CFC/HCFC blowing agents escape into air shed boundaries.</p>
+                <p><strong>Polyethylene (PE) & Polypropylene (PP):</strong> Standard moisture-proof membranes and conduits contain ~0.5% functional additive matrices, including phenol-based antioxidants, UV blockers, and chlorinated paraffin flame retardants.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 2: ADDITIVES & ECO-BURDEN -->
+    <dialog id="modal-poly-additives" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">POLYMER COMPOUNDING</span>
+                <h3 class="text-fluid-h2 text-white font-bold">The Chemical Additives Burden</h3>
+            </div>
+            <button onclick="document.getElementById('modal-poly-additives').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80" alt="Plastic Granules and Chemical Additives" class="rounded-xl max-w-full max-h-[280px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Compounding masterbatches: Plasticizers, UV blockers, and anti-statics</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p>Pure polymers rarely perform alone; engineering compounds require heavy additive chemistry:</p>
+                <ul class="list-disc list-inside space-y-1 text-fluid-meta">
+                    <li><strong>Plasticizers & Stiffness Reducers:</strong> Phthalates that leach gradually over decades.</li>
+                    <li><strong>Smoke Suppressants & Flame Retardants:</strong> Chloroparaffins, antimony trioxide, and metal hydroxides.</li>
+                    <li><strong>Pigments & Anti-statics:</strong> Incorporation of heavy metal salts and conductive organic compounds.</li>
+                    <li><strong>End-of-Life:</strong> Non-biodegradable frameworks; municipal incineration generates halogenated acid vapors.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 3: PVC LIFE CYCLE PATHOLOGY -->
+    <dialog id="modal-poly-pvc" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">ORGANOCHLORINE VECTOR</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Polyvinyl Chloride (PVC) Chemistry</h3>
+            </div>
+            <button onclick="document.getElementById('modal-poly-pvc').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80" alt="PVC Pipes and Hydraulic Fittings" class="rounded-xl max-w-full max-h-[280px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Global plumbing infrastructure dominated by PVC pipework</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>Feedstock & Synthesis:</strong> Produced through the polymerization of vinyl chloride monomer (VCM), derived 57% by weight from chlorine and 43% from petroleum. It constitutes the single largest industrial consumer of chlorine worldwide.</p>
+                <p><strong>Thermal Degradation & Stabilizers:</strong> Unmodified PVC begins unzipping dehydrochlorination between 150°C and 200°C. Manufacturers introduce organotin, lead, or barium-zinc stabilizers. Leaching of organotins into municipal drinking water causes endocrine toxicity and bioaccumulation.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 4: POLYURETHANES & ISOCYANATES -->
+    <dialog id="modal-poly-thermosets" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">THERMOSETTING POLYMERS</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Polyurethanes & Isocyanate Toxicity</h3>
+            </div>
+            <button onclick="document.getElementById('modal-poly-thermosets').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Spray Polyurethane Foam Application" class="rounded-xl max-w-full max-h-[280px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">On-site spray polyurethane foam (SPF) insulation</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>Chemical Reaction:</strong> Exothermic addition reaction between diisocyanates (e.g., MDI, TDI) and polyols. Isocyanates represent powerful respiratory sensitizers.</p>
+                <p><strong>Occupational Pathology:</strong> Spray foam operators and jobsite trades suffer documented cases of acute chemical asthma, severe dyspnea, eye irritation, and chronic pulmonary impairment. Manufacture involves hazardous phenol compounds and halogenated blowing auxiliaries.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 5: EPOXIES & REACTIVE RESINS -->
+    <dialog id="modal-poly-resins" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">STRUCTURAL ADHESIVES</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Epoxies, Formaldehyde & Solvents</h3>
+            </div>
+            <button onclick="document.getElementById('modal-poly-resins').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80" alt="Structural Epoxies and Concrete Bonding Adhesives" class="rounded-xl max-w-full max-h-[280px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Epoxy adhesives used for structural rehabilitation and composites</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>Epoxy Systems:</strong> Formulated with bisphenol A epichlorohydrin resins and polyamine hardeners. Dermal exposure induces high rates of severe contact dermatitis, acute allergic sensitization, and long-term carcinogenic risk.</p>
+                <p><strong>Urea & Melamine Formaldehyde:</strong> Found in engineered timber glues and laminates. Continuous indoor outgassing of free formaldehyde is classified as an IARC Group 1 nasopharyngeal human carcinogen.</p>
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (5,0): MATERIALS RELEASING TOXIC FUMES DURING FIRE -->
+<div id="slide-5-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 h-screen overflow-hidden" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks3.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 04 — FIRE TOXICOLOGY & SAFETY</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Toxic Fumes & Combustion Products in Fires</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full items-stretch">
+            <!-- Card 1: Toxic Gases & Lethality Vectors -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#901812] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#901812] mb-3">
+                        <i class="fa-solid fa-fire-smoke text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Inhalation Lethality</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">The vast majority of fire casualties stem from inhalation of toxic pyrolysis gases rather than direct burns.</p>
+                </div>
+                
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-fire-kiss').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">The Kiss Nightclub Fire (2013)</strong>
+                            <span class="text-fluid-tag text-[#666666]">Polyurethane acoustic foam & lethal cyanide</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <button onclick="document.getElementById('modal-fire-chemistry').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Key Pyrolysis Gases</strong>
+                            <span class="text-fluid-tag text-[#666666]">$HCN$, $CO$, $NO_x$, $HCHO$, and $CH_2CHCN$</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Empirical Toxicity Index Comparison -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#D1A705] mb-3">
+                        <i class="fa-solid fa-chart-column text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Toxicity Index Analysis</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Evaluation of 14 toxic gas concentrations fatal within 30 minutes of acute exposure (Liang & Ho, 2007).</p>
+                </div>
+
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-fire-index').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Comparative Toxicity Indices</strong>
+                            <span class="text-fluid-tag text-[#666666]">Glass fiber vs Polyethylene ($PE$) & Polyurethane ($PU$)</span>
+                        </div>
+                        <i class="fa-solid fa-circle-plus text-[#D1A705] text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-meta text-[#444444]">
+                        <strong class="text-[#901812] block mb-0.5"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Threshold Exceeded ($\text{Index} > 10$):</strong>
+                        Polymers with toxicity index $>10$ mandate physical encapsulation by noncombustible cladding.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Design Constraints & Cladding Rules -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-white">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold mb-1 uppercase">PASSIVE FIRE PROTECTION</span>
+                    <h3 class="text-fluid-h3 text-white font-bold mb-2">Encapsulation & Safety</h3>
+                    <p class="text-fluid-body text-[#DEDEDE]">Architectural fire strategies to mitigate combustible polymer flashover and toxic effluent dispersion in compartments.</p>
+                </div>
+
+                <ul class="text-fluid-meta space-y-2 text-[#DEDEDE] border-t border-white/15 pt-3 font-semibold">
+                    <li class="flex items-start"><i class="fa-solid fa-shield text-[#D1A705] mt-1 mr-2 text-xs"></i><span><strong>Mineral Core Shields:</strong> Rockwool/fiberglass layers retard thermal degradation of organic foams.</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-shield text-[#D1A705] mt-1 mr-2 text-xs"></i><span><strong>Fire Barriers:</strong> Fire-rated gypsum board barriers prevent direct flame impingement.</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-shield text-[#D1A705] mt-1 mr-2 text-xs"></i><span><strong>Regulatory Mandate:</strong> Prohibition of exposed combustible organic foams on egress paths.</span></li>
+                </ul>
+
+                <button onclick="document.getElementById('modal-fire-index').showModal()" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                    <span>Inspect Toxicity Chart</span>
+                    <i class="fa-solid fa-chart-pie text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Técnico -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665 • Toxicity of Construction Materials — Part 1</span>
+        <span class="font-semibold">Click cards for deep dive | Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Radioactive Materials</span>
+    </footer>
+
+    <!-- MODAL 1: KISS NIGHTCLUB FIRE CASE STUDY -->
+    <dialog id="modal-fire-kiss" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">FORENSIC CASE STUDY</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Kiss Nightclub Fire Disaster (2013)</h3>
+            </div>
+            <button onclick="document.getElementById('modal-fire-kiss').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://aacrimesc.org.br/wp-content/uploads/2021/12/o-caso-da-boate-kiss-entre-a-perplexidade-e-o-desassossego.jpeg" alt="Boate Kiss Fire Facade" class="rounded-xl max-w-full max-h-[280px] w-auto h-auto object-contain mb-2 shadow-md" onerror="this.src='https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80'">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Santa Maria (RS), 2013: 242 fatalities caused by toxic gas asphyxiation</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>The Incident:</strong> Ignition of unrated acoustic polyurethane ($PU$) ceiling foam by outdoor fireworks inside an enclosed nightclub caused rapid fire propagation and total compartment smoke filling.</p>
+                <p><strong>Toxicological Forensic Findings:</strong> 242 deaths were attributed primarily to chemical asphyxiation caused by hydrogen cyanide ($HCN$) and carbon monoxide ($CO$) inhalation rather than cutaneous thermal burns. Polyurethane pyrolysis under ventilation-limited combustion releases lethal levels of cyanide in under 3 minutes.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 2: PYROLYSIS GASES & MECHANISMS -->
+    <dialog id="modal-fire-chemistry" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">PYROLYSIS CHEMISTRY</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Lethal Combustion Gases in Built Spaces</h3>
+            </div>
+            <button onclick="document.getElementById('modal-fire-chemistry').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Combustion and Smoke Release" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Incomplete combustion generates lethal asphyxiant and irritant mixtures</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p>Combustion of architectural polymers produces hazardous chemical effluents:</p>
+                <ul class="space-y-2 text-fluid-meta">
+                    <li><strong class="text-[#D1A705]">Hydrogen Cyanide ($HCN$):</strong> Cellular asphyxiant generated by nitrogenous polymers (polyurethanes, polyacrylonitrile, melamines). Halts cellular respiration via cytochrome c oxidase inhibition.</li>
+                    <li><strong class="text-[#D1A705]">Carbon Monoxide ($CO$):</strong> Binds hemoglobin with $200\times$ higher affinity than oxygen, inducing rapid tissue hypoxia.</li>
+                    <li><strong class="text-[#D1A705]">Acrylonitrile ($CH_2CHCN$) & Formaldehyde ($HCHO$):</strong> Severe lacrimators causing bronchospasm, mucosal destruction, and blinding.</li>
+                    <li><strong class="text-[#D1A705]">Hydrogen Chloride ($HCl$):</strong> Produced during PVC combustion; forms corrosive hydrochloric acid upon contact with moist respiratory tissue.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 3: TOXICITY INDEX COMPARISON TABLE & CHART -->
+    <dialog id="modal-fire-index" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">EXPERIMENTAL BENCHMARK</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Insulation Materials Toxicity Index</h3>
+            </div>
+            <button onclick="document.getElementById('modal-fire-index').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-4 rounded-2xl border border-white/10 w-full">
+                <div class="text-center mb-3">
+                    <span class="text-fluid-meta text-[#D1A705] font-bold block">Mean Toxicity Index for Commercial Thermal Insulators (Liang & Ho, 2007)</span>
+                </div>
+                <!-- Gráfico de Barras em Tailwind / CSS Puro -->
+                <div class="space-y-3 font-semibold text-fluid-meta">
+                    <div>
+                        <div class="flex justify-between text-fluid-tag mb-1">
+                            <span>Glass Fiber (Fibra de Vidro)</span>
+                            <span class="font-mono text-white">5.386</span>
+                        </div>
+                        <div class="w-full bg-white/10 h-6 rounded-full overflow-hidden flex">
+                            <div class="bg-emerald-600 h-full" style="width: 27%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-fluid-tag mb-1">
+                            <span>Mineral Wool (Lã Mineral)</span>
+                            <span class="font-mono text-white">6.949</span>
+                        </div>
+                        <div class="w-full bg-white/10 h-6 rounded-full overflow-hidden flex">
+                            <div class="bg-yellow-600 h-full" style="width: 35%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-fluid-tag mb-1">
+                            <span class="text-[#D1A705]">Polyurethane Foam (Poliuretano)</span>
+                            <span class="font-mono text-[#D1A705]">12.350 (Hazardous)</span>
+                        </div>
+                        <div class="w-full bg-white/10 h-6 rounded-full overflow-hidden flex">
+                            <div class="bg-orange-600 h-full" style="width: 62%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-fluid-tag mb-1">
+                            <span class="text-[#901812]">Polyethylene Foam (Polietileno)</span>
+                            <span class="font-mono text-[#901812]">18.239 (Critical)</span>
+                        </div>
+                        <div class="w-full bg-white/10 h-6 rounded-full overflow-hidden flex">
+                            <div class="bg-[#901812] h-full" style="width: 91%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p>The Toxicity Index is computed from 14 distinct toxic gas yields normalized by their 30-minute lethal concentration thresholds. Polyethylene and Polyurethane exceed the critical safety limit of 10, underscoring why building codes restrict exposed synthetic foams unless physically isolated by noncombustible assemblies.</p>
+                <div class="p-3 bg-white/5 rounded-xl border border-white/10 text-fluid-meta font-mono">
+                    Reference: Liang, H.; Ho, M. (2007). Toxicity characteristics of commercially manufactured insulation materials for building applications. Construction and Building Materials, 21(6), 1254-1261.
+                </div>
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (6,0): RADIOACTIVE MATERIALS & RADON GAS EXPOSURE -->
+<div id="slide-6-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 h-screen overflow-hidden" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric2.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 05 — RADIOLOGICAL HAZARDS</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Radioactive Building Materials & Radon Gas</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full items-stretch">
+            <!-- Card 1: Naturally Occurring Radionuclides (NORM) -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#901812] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#901812] mb-3">
+                        <i class="fa-solid fa-radiation text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Radionuclides in CBMs</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Natural stone and ceramic clays host background decay chains ($^{226}\text{Ra}$, $^{232}\text{Th}$, $^{40}\text{K}$) with chronic low-dose cancer risks.</p>
+                </div>
+                
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-rad-benchmark').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Activity Concentration Index</strong>
+                            <span class="text-fluid-tag text-[#666666]">Concrete, brick, and natural stone limits</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <button onclick="document.getElementById('modal-rad-decay').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Physical Decay Fundamentals</strong>
+                            <span class="text-fluid-tag text-[#666666]">1 Bq = 1 nuclear disintegration per second</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Industrial Byproducts & Phosphogypsum -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#D1A705] mb-3">
+                        <i class="fa-solid fa-industry text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Industrial Byproducts</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Recycling industrial residues (phosphogypsum, blast furnace slag, fly ash) introduces elevated radionuclides.</p>
+                </div>
+
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-rad-phospho').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Phosphogypsum & Slags</strong>
+                            <span class="text-fluid-tag text-[#666666]">Radium ($^{226}\text{Ra}$), Lead ($^{210}\text{Pb}$), and Uranium</span>
+                        </div>
+                        <i class="fa-solid fa-circle-plus text-[#D1A705] text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-meta text-[#444444]">
+                        <strong class="text-[#901812] block mb-0.5"><i class="fa-solid fa-scale-balanced mr-1"></i> Regulatory Ceilings:</strong>
+                        EPA threshold $< 370\text{ Bq/kg}$ | EURATOM recommendation $< 500\text{ Bq/kg}$. Brazilian phosphate rock presents low background radioactivity.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Indoor Radon Gas Exposure -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-white">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold mb-1 uppercase">INDOOR CARCINOGEN</span>
+                    <h3 class="text-fluid-h3 text-white font-bold mb-2">Radon Gas ($^{222}\text{Rn}$)</h3>
+                    <p class="text-fluid-body text-[#DEDEDE]">Colorless, odorless, noble alpha-emitter diffusing from subsoils, granitic rock, and phosphogypsum boards.</p>
+                </div>
+
+                <div class="space-y-2 border-t border-white/15 pt-3 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-2xl border border-white/10">
+                        <strong class="text-[#D1A705] block mb-0.5">EURATOM Reference Levels:</strong>
+                        Existing Dwellings: $< 400\text{ Bq/m}^3$ | New Dwellings: $< 200\text{ Bq/m}^3$.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-2xl border border-white/10">
+                        <strong class="text-white block mb-0.5">Mitigation Engineering:</strong>
+                        Sub-slab depressurization systems, radon membranes, and positive mechanical ventilation.
+                    </div>
+                </div>
+
+                <button onclick="document.getElementById('modal-rad-benchmark').showModal()" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                    <span>Inspect Radionuclide Table</span>
+                    <i class="fa-solid fa-table text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Técnico -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665 • Toxicity of Construction Materials — Part 1</span>
+        <span class="font-semibold">Click cards for deep dive | Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Asbestos & Mineral Fibers</span>
+    </footer>
+
+    <!-- MODAL 1: RADIONUCLIDE CONCENTRATIONS BENCHMARK -->
+    <dialog id="modal-rad-benchmark" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">RADIOLOGICAL DATA AUDIT</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Activity Concentrations in CBMs & Byproducts</h3>
+            </div>
+            <button onclick="document.getElementById('modal-rad-benchmark').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-3 rounded-2xl border border-white/10 w-full overflow-x-auto">
+                <table class="w-full text-left text-fluid-meta border-collapse">
+                    <thead>
+                        <tr class="border-b border-white/20 text-[#D1A705]">
+                            <th class="py-2">Material / Byproduct</th>
+                            <th class="py-2 text-center" colspan="3">Typical Concentration ($\text{Bq/kg}$)</th>
+                            <th class="py-2 text-center" colspan="3">Maximum Concentration ($\text{Bq/kg}$)</th>
+                        </tr>
+                        <tr class="border-b border-white/10 text-fluid-tag text-[#DEDEDE]">
+                            <th class="py-1">Matrix</th>
+                            <th class="py-1 text-center">$^{226}\text{Ra}$</th>
+                            <th class="py-1 text-center">$^{232}\text{Th}$</th>
+                            <th class="py-1 text-center">$^{40}\text{K}$</th>
+                            <th class="py-1 text-center">$^{226}\text{Ra}$</th>
+                            <th class="py-1 text-center">$^{232}\text{Th}$</th>
+                            <th class="py-1 text-center">$^{40}\text{K}$</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/10 font-mono text-fluid-meta">
+                        <tr><td>Concrete (Betão)</td><td class="text-center">40</td><td class="text-center">30</td><td class="text-center">400</td><td class="text-center">190</td><td class="text-center">240</td><td class="text-center">1600</td></tr>
+                        <tr><td>Ceramic Bricks</td><td class="text-center">50</td><td class="text-center">50</td><td class="text-center">670</td><td class="text-center">200</td><td class="text-center">200</td><td class="text-center">2000</td></tr>
+                        <tr><td>Natural Stone (Granite)</td><td class="text-center">60</td><td class="text-center">60</td><td class="text-center">640</td><td class="text-center">310</td><td class="text-center">500</td><td class="text-center">4000</td></tr>
+                        <tr><td>Natural Gypsum</td><td class="text-center">10</td><td class="text-center">10</td><td class="text-center">80</td><td class="text-center">70</td><td class="text-center">100</td><td class="text-center">200</td></tr>
+                        <tr class="text-[#D1A705]"><td>Phosphogypsum (Fosfogesso)</td><td class="text-center font-bold">390</td><td class="text-center">20</td><td class="text-center">60</td><td class="text-center font-bold">1100</td><td class="text-center">160</td><td class="text-center">300</td></tr>
+                        <tr class="text-[#D1A705]"><td>Blast Furnace Slag (Escórias)</td><td class="text-center">70</td><td class="text-center font-bold">270</td><td class="text-center">240</td><td class="text-center">340</td><td class="text-center font-bold">2100</td><td class="text-center">1000</td></tr>
+                        <tr class="text-[#D1A705]"><td>Coal Fly Ash (Cinzas de Carvão)</td><td class="text-center">180</td><td class="text-center">100</td><td class="text-center">650</td><td class="text-center">300</td><td class="text-center">1100</td><td class="text-center">1500</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="space-y-2 text-fluid-body text-[#DEDEDE]">
+                <p>Standardized radiological indexing relies on the Activity Concentration Index ($I$):</p>
+                <div class="bg-white/10 p-3 rounded-xl font-mono text-center text-[#D1A705]">
+                    $$I = \frac{C_{\text{Ra}}}{300} + \frac{C_{\text{Th}}}{200} + \frac{C_{\text{K}}}{3000} \le 1.0$$
+                </div>
+                <p class="text-fluid-meta text-[#A0AEC0]">Values of $I \le 1$ ensure an excess indoor annual effective dose below $1\text{ mSv/year}$. Note that raw phosphogypsum and some blast furnace slags exhibit maximum concentrations exceeding reference thresholds by an order of magnitude.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 2: RADIOLOGICAL FUNDAMENTALS & DOSIMETRY -->
+    <dialog id="modal-rad-decay" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">NUCLEAR PHYSICS BASIS</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Units, Disintegration & Health Physics</h3>
+            </div>
+            <button onclick="document.getElementById('modal-rad-decay').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" alt="Ionizing Radiation and Nuclear Physics" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Continuous alpha ($\alpha$), beta ($\beta$), and gamma ($\gamma$) emission pathways</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>Becquerel ($\text{Bq}$):</strong> The SI unit of radioactivity, defined as one spontaneous nuclear disintegration transformation per second ($1\text{ Bq} = 1\text{ s}^{-1}$).</p>
+                <p><strong>Biological Damage:</strong> External gamma irradiation causes whole-body systemic cellular damage, whereas inhaled alpha emitters ($^{222}\text{Rn}$ progeny) deliver localized high Linear Energy Transfer ($\text{LET}$) radiation to bronchial epithelial cells, inducing DNA strand breaks and bronchogenic carcinoma.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 3: PHOSPHOGYPSUM & INDUSTRIAL RESIDUES -->
+    <dialog id="modal-rad-phospho" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">BYPRODUCT VALORIZATION RISKS</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Phosphogypsum & Fertilizer Residues</h3>
+            </div>
+            <button onclick="document.getElementById('modal-rad-phospho').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80" alt="Industrial Slag and Gypsum Processing" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Chemical synthesis byproduct stockpiles and valorization barriers</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>Generation Mechanism:</strong> Phosphogypsum ($\text{CaSO}_4 \cdot 2\text{H}_2\text{O}$) is generated during wet-process phosphoric acid production for agricultural fertilizers ($\sim 4.5\text{ to } 5.5\text{ tons}$ of phosphogypsum per ton of acid produced).</p>
+                <p><strong>Concentration of Heavy Metals & Radionuclides:</strong> Natural trace constituents of sedimentary phosphate rock (apatite) partition into the gypsum matrix, concentrating $^{226}\text{Ra}$, $^{210}\text{Pb}$, and isotopes of uranium ($^{238}\text{U}$, $^{234}\text{U}$). While Brazilian igneous phosphate rock exhibits lower natural background levels, international sedimentary sources routinely require radioactive dilution before incorporation into indoor plasterboards.</p>
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (7,0): ASBESTOS-BASED MATERIALS: MINERALOGY, RISKS & WASTE CLASSIFICATION -->
+<div id="slide-7-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 h-screen overflow-hidden" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 06 — FIBROUS SILICATE HAZARDS</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Asbestos-Based Building Materials</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full items-stretch">
+            <!-- Card 1: Mineralogy & Engineering Properties -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#901812] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#901812] mb-3">
+                        <i class="fa-solid fa-mountain text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Mineralogy & Utility</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Natural fibrous silicates celebrated for fire resistance, tensile strength, and low cost (25–90 wt.% in fiber cement).</p>
+                </div>
+                
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-asb-mineralogy').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Serpentine vs. Amphibole</strong>
+                            <span class="text-fluid-tag text-[#666666]">Chrysotile, crocidolite, amosite, and tremolite</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <button onclick="document.getElementById('modal-asb-morphology').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">WHO Critical Fiber Geometry</strong>
+                            <span class="text-fluid-tag text-[#666666]">Length $\ge 5\ \mu\text{m}$, $\text{D} \le 3\ \mu\text{m}$, Aspect Ratio $\ge 3:1$</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Severe Pulmonary Pathology -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#D1A705] mb-3">
+                        <i class="fa-solid fa-lungs text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Pulmonary Pathology</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Inhalation of microscopic respirable fibrils triggers progressive pulmonary diseases with long latency periods.</p>
+                </div>
+
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-asb-pathology').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Malignant Mesothelioma & Asbestosis</strong>
+                            <span class="text-fluid-tag text-[#666666]">Fibrosis, pleural plaque, and lung cancer</span>
+                        </div>
+                        <i class="fa-solid fa-circle-plus text-[#D1A705] text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-meta text-[#444444]">
+                        <strong class="text-[#901812] block mb-0.5"><i class="fa-solid fa-gavel mr-1"></i> Regulatory Timeline:</strong>
+                        1960s: First cancer links | 1990s: Confirmed IARC Group 1 carcinogen | Brazil: Federal Law 9.055/1995 & 2017 STF ban.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Waste Management & Treatment (CONAMA 348) -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-white">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold mb-1 uppercase">CLASS D HAZARDOUS WASTE</span>
+                    <h3 class="text-fluid-h3 text-white font-bold mb-2">Management & Disposal</h3>
+                    <p class="text-fluid-body text-[#DEDEDE]">Asbestos-containing waste must be segregated, packaged, and disposed of under strict environmental criteria (CONAMA 348).</p>
+                </div>
+
+                <div class="space-y-2 border-t border-white/15 pt-3 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-2xl border border-white/10">
+                        <strong class="text-[#D1A705] block mb-0.5">Remediation Protocols:</strong>
+                        Controlled removal under negative pressure, surface encapsulation, and physical confinement.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-2xl border border-white/10">
+                        <strong class="text-white block mb-0.5">Waste Treatment:</strong>
+                        Fiber stabilization (emission reduction) and thermal/chemical inertization into harmless mineral phases.
+                    </div>
+                </div>
+
+                <button onclick="document.getElementById('modal-asb-waste').showModal()" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                    <span>Inspect CONAMA 348 Guidelines</span>
+                    <i class="fa-solid fa-dumpster text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Técnico -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665 • Toxicity of Construction Materials — Part 1</span>
+        <span class="font-semibold">Click cards for deep dive | Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Nanoparticles & Nanotechnology</span>
+    </footer>
+
+    <!-- MODAL 1: ASBESTOS MINERALOGY & FAMILIES -->
+    <dialog id="modal-asb-mineralogy" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">MINERALOGICAL TAXONOMY</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Serpentine vs. Amphibole Asbestos</h3>
+            </div>
+            <button onclick="document.getElementById('modal-asb-mineralogy').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" alt="Fibrous Tremolite and Asbestos Minerals" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Natural fibrous silicates with flexible, high tensile crystalline fibrils</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p>Asbestos comprises six regulated natural fibrous silicate minerals divided into two distinct crystallographic groups:</p>
+                <div class="p-3 bg-white/10 rounded-2xl border-l-4 border-[#D1A705]">
+                    <strong class="text-[#D1A705] block">Serpentine Group (Chrysotile - White Asbestos):</strong>
+                    Sheet silicate rolled into hollow tubular fibers. Represents ~95% of historical commercial use in fiber cement corrugated sheets, water reservoirs, and drywall joint compounds.
+                </div>
+                <div class="p-3 bg-white/10 rounded-2xl border-l-4 border-[#901812]">
+                    <strong class="text-white block">Amphibole Group:</strong>
+                    Double-chain silicates with straight, needle-like brittle fibers:
+                    <ul class="list-disc list-inside mt-1 text-fluid-meta">
+                        <li><strong>Crocidolite:</strong> Blue asbestos, extreme biopersistence and highest carcinogenic potency.</li>
+                        <li><strong>Amosite (Grunerite):</strong> Brown asbestos, widely used in thermal spray insulation.</li>
+                        <li><strong>Tremolite, Actinolite & Anthophyllite:</strong> Often occur as contaminants in talc and vermiculite ore bodies.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 2: CRITICAL FIBER MORPHOLOGY (WHO CRITERIA) -->
+    <dialog id="modal-asb-morphology" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">RESPIRABLE FIBER METROLOGY</span>
+                <h3 class="text-fluid-h2 text-white font-bold">WHO Dimensional Exposure Criteria</h3>
+            </div>
+            <button onclick="document.getElementById('modal-asb-morphology').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80" alt="Microscopic Respirable Asbestos Fibers" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Aerodynamic diameter determines deep alveolar penetration and clearance failure</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p>According to the World Health Organization (WHO), airborne fibers capable of inducing pulmonary damage are classified under strict geometric criteria:</p>
+                <div class="p-4 bg-white/10 rounded-2xl font-mono text-center space-y-1 border border-white/10">
+                    <div class="text-[#D1A705] text-fluid-h3">$$\text{Length } (L) \ge 5\ \mu\text{m}$$</div>
+                    <div class="text-[#D1A705] text-fluid-h3">$$\text{Diameter } (D) \le 3\ \mu\text{m}$$</div>
+                    <div class="text-[#D1A705] text-fluid-h3">$$\text{Aspect Ratio } (L:D) \ge 3:1$$</div>
+                </div>
+                <p class="text-fluid-meta text-[#DEDEDE]">Fibers with diameters below $3\ \mu\text{m}$ remain suspended in ambient air indefinitely and penetrate deep into pulmonary alveoli. Alveolar macrophages cannot phagocytize fibers longer than $\sim 15\ \mu\text{m}$ ("frustrated phagocytosis"), triggering chronic cytokine release, reactive oxygen species ($\text{ROS}$), and irreversible cellular damage.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 3: PULMONARY CLINICAL PATHOLOGY -->
+    <dialog id="modal-asb-pathology" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">CLINICAL TOXICOLOGY</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Asbestos-Induced Diseases</h3>
+            </div>
+            <button onclick="document.getElementById('modal-asb-pathology').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Worker Exposure in Roofing Removal" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Handling degraded fiber cement tiles without adequate respiratory protection</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p>Pathologies manifest after a latency period of 15 to 45 years following initial airborne fibril exposure:</p>
+                <ul class="space-y-2 text-fluid-meta">
+                    <li><strong class="text-[#D1A705]">Asbestosis:</strong> Diffuse interstitial pulmonary fibrosis caused by persistent inflammation, resulting in restrictive lung disease and severe hypoxemia.</li>
+                    <li><strong class="text-[#901812]">Malignant Mesothelioma:</strong> Incurable cancer of the mesothelial lining of the pleura or peritoneum; uniquely linked to asbestos inhalation with zero safe threshold.</li>
+                    <li><strong class="text-white">Bronchogenic Carcinoma:</strong> Lung cancer with exponentially synergistic lethality when combined with tobacco smoke exposure.</li>
+                    <li><strong class="text-white">Pleural Plaques & Effusions:</strong> Thickened calcified collagen sheets lining the parietal pleura, marking chronic internal fiber migration.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 4: WASTE MANAGEMENT & CONAMA 348 -->
+    <dialog id="modal-asb-waste" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">NORMATIVE COMPLIANCE</span>
+                <h3 class="text-fluid-h2 text-white font-bold">CONAMA Resolution 348: Class D Hazardous Waste</h3>
+            </div>
+            <button onclick="document.getElementById('modal-asb-waste').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=800&q=80" alt="Asbestos Waste Disposal and Packaging" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Hazardous Class D construction waste requires specialized encapsulation</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p>CONAMA Resolution 348 amended CONAMA 307, altering the classification of asbestos and contaminated construction debris from Class C to <strong>Class D (Hazardous to Public Health)</strong>:</p>
+                <div class="p-3 bg-white/10 rounded-2xl border-l-4 border-[#901812]">
+                    <strong class="text-white block mb-1">Handling & Removal Guidelines:</strong>
+                    Demolition timber or roofs containing asbestos must NOT be crushed, cut, or recycled into aggregate. Material must be sprayed with wetting agents, hermetically sealed in heavy-duty polyethylene bags ($\ge 200\ \mu\text{m}$), labelled with hazard warnings, and consigned to licensed hazardous waste landfills (Class I ABNT).
+                </div>
+                <div class="p-3 bg-white/10 rounded-2xl border-l-4 border-[#D1A705]">
+                    <strong class="text-[#D1A705] block mb-1">Treatment Strategies:</strong>
+                    <strong>Encapsulation/Stabilization:</strong> Penetrating polymeric binders prevent fiber release. <strong>Inertization:</strong> High-temperature thermal treatment ($>1200^\circ\text{C}$) recrystallizes asbestos fibrils into harmless forsterite and enstatite silicate phases.
+                </div>
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (8,0): NANOMATERIALS & NANOTECHNOLOGY IN CONSTRUCTION -->
+<div id="slide-8-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 h-screen overflow-hidden" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric2.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 07 — EMERGING MATERIALS</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Nanoparticles & Nanotechnology in CBMs</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full items-stretch">
+            <!-- Card 1: Functional Nanoparticles in CBMs -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#901812] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#901812] mb-3">
+                        <i class="fa-solid fa-atom text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Applications in CBMs</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Ultrafine engineered particles ($1 < D < 100\text{ nm}$) modifying cementitious hydration, strength, and durability.</p>
+                </div>
+                
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-nano-apps').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Nanomaterial Typologies</strong>
+                            <span class="text-fluid-tag text-[#666666]">Nano-$\text{SiO}_2$, $\text{TiO}_2$, CNTs, and nano-clays</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <button onclick="document.getElementById('modal-nano-analogy').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">The Asbestos Analogy</strong>
+                            <span class="text-fluid-tag text-[#666666]">Early technological adoption vs. delayed toxicity awareness</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Cellular & Systemic Pathology -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#D1A705] mb-3">
+                        <i class="fa-solid fa-dna text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Cellular Toxicology</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">High specific surface area promotes cellular penetration, systemic translocation, and oxidative stress.</p>
+                </div>
+
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-nano-health').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Health Implications Matrix</strong>
+                            <span class="text-fluid-tag text-[#666666]">DNA damage, pulmonary inflammation, and cytotoxicity</span>
+                        </div>
+                        <i class="fa-solid fa-circle-plus text-[#D1A705] text-lg group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-meta text-[#444444]">
+                        <strong class="text-[#901812] block mb-0.5"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Translocation Threat:</strong>
+                        Inhaled nanoparticles cross alveolar-capillary barriers into blood circulation, reaching liver, kidneys, and brain tissues.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Environmental Fate & Regulation -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-white">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold mb-1 uppercase">RISK GOVERNANCE</span>
+                    <h3 class="text-fluid-h3 text-white font-bold mb-2">Life-Cycle & Regulation</h3>
+                    <p class="text-fluid-body text-[#DEDEDE]">Release during abrasive cutting, weathering degradation, demolition dust, and normative oversights.</p>
+                </div>
+
+                <div class="space-y-2 border-t border-white/15 pt-3 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-2xl border border-white/10">
+                        <strong class="text-[#D1A705] block mb-0.5">Ecotoxicity Shift:</strong>
+                        Bulk-safe minerals exhibit ecotoxicity at nanoscale (e.g., nano-Ag toxicity to aquatic biota and soils).
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-2xl border border-white/10">
+                        <strong class="text-white block mb-0.5">Regulatory Protocols:</strong>
+                        US TSCA notifications, EU REACH chemical release rules, and OECD WPMN working groups.
+                    </div>
+                </div>
+
+                <button onclick="document.getElementById('modal-nano-health').showModal()" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                    <span>Inspect Toxicology Table</span>
+                    <i class="fa-solid fa-table-list text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Técnico -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665 • Toxicity of Construction Materials — Part 1</span>
+        <span class="font-semibold">Click cards for deep dive | Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Lead Plumbing Systems</span>
+    </footer>
+
+    <!-- MODAL 1: NANOMATERIALS APPLICATIONS IN CBM -->
+    <dialog id="modal-nano-apps" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">ENGINEERING PERFORMANCE MATRIX</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Nanomaterials in Construction (Mohajerani et al., 2019)</h3>
+            </div>
+            <button onclick="document.getElementById('modal-nano-apps').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" alt="Nanoparticle Microscopic Structure" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">TEM imaging of ultrafine spherical and tubular nanomaterial morphologies</span>
+            </div>
+            <div class="bg-black/30 p-3 rounded-2xl border border-white/10 w-full overflow-x-auto">
+                <table class="w-full text-left text-fluid-meta border-collapse">
+                    <thead>
+                        <tr class="border-b border-white/20 text-[#D1A705]">
+                            <th class="py-2">Matrix</th>
+                            <th class="py-2">Nanomaterial</th>
+                            <th class="py-2">Engineering Enhancements</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/10 text-fluid-tag">
+                        <tr>
+                            <td class="font-bold py-1.5">Concrete</td>
+                            <td>Silica ($\text{nano-SiO}_2$)</td>
+                            <td>Accelerated hydration kinetics, densified C-S-H, high early compressive strength.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold py-1.5">Concrete / Glass</td>
+                            <td>Titania ($\text{nano-TiO}_2$)</td>
+                            <td>Photocatalytic $\text{NO}_x$ degradation, surface self-cleaning, and antimicrobial action.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold py-1.5">Cement Composites</td>
+                            <td>Carbon Nanotubes (CNTs)</td>
+                            <td>Nano-crack bridging, mechanical fracture energy increase, piezoresistive sensing.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold py-1.5">Timber / Asphalt</td>
+                            <td>Alumina ($\text{Al}_2\text{O}_3$)</td>
+                            <td>Enhanced surface abrasion hardness and UV degradation resistance.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold py-1.5">Bricks / Mortar</td>
+                            <td>Nano-clays / Iron Oxide</td>
+                            <td>Pore refining, increased compressive modulus, enhanced pigment durability.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 2: THE ASBESTOS ANALOGY -->
+    <dialog id="modal-nano-analogy" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">HISTORICAL PRECEDENT</span>
+                <h3 class="text-fluid-h2 text-white font-bold">The Asbestos Paradox & Nano-Safety</h3>
+            </div>
+            <button onclick="document.getElementById('modal-nano-analogy').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80" alt="High-Tech Materials and Industrial Safety" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">High aspect-ratio multi-walled carbon nanotubes share aerodynamic similarities with amphiboles</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>A Historical Warning:</strong> Asbestos was heralded as a "miracle mineral" for six decades due to its extraordinary tensile strength, chemical inertness, and thermal stability before its catastrophic carcinogenic effects were recognized and regulated.</p>
+                <p><strong>Carbon Nanotube Pathogenicity:</strong> Rigid multi-walled carbon nanotubes (MWCNTs) exhibit needle-like geometry and high aspect ratios identical to pathogenic asbestos fibrils. Inhaled MWCNTs provoke "frustrated phagocytosis" in alveolar macrophages, inducing chronic pleural inflammation, granulomas, and mesothelial fibrosis.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 3: HUMAN HEALTH IMPLICATIONS TABLE -->
+    <dialog id="modal-nano-health" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">TOXICOLOGICAL EVIDENCE</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Health Implications of Nanoparticles (Mohajerani et al., 2019)</h3>
+            </div>
+            <button onclick="document.getElementById('modal-nano-health').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-3 rounded-2xl border border-white/10 w-full overflow-x-auto">
+                <table class="w-full text-left text-fluid-meta border-collapse">
+                    <thead>
+                        <tr class="border-b border-white/20 text-[#D1A705]">
+                            <th class="py-2">Nanoparticle Type</th>
+                            <th class="py-2">Target Cell / Organ / System</th>
+                            <th class="py-2">Documented Pathological Effects</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/10 text-fluid-tag font-mono">
+                        <tr>
+                            <td class="text-[#D1A705] font-bold py-1.5">Silver ($\text{Ag NP}$)</td>
+                            <td>Immune, lungs, liver, brain, vascular, reproductive</td>
+                            <td>Crosses blood-brain barrier, induces oxidative DNA damage, cellular apoptosis.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-[#D1A705] font-bold py-1.5">Titania ($\text{TiO}_2\text{ NP}$)</td>
+                            <td>Respiratory tract, bronchial epithelium</td>
+                            <td>Persistent pulmonary inflammation, metabolic alterations, potential carcinogenesis.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-[#D1A705] font-bold py-1.5">Zinc Oxide ($\text{ZnO NP}$)</td>
+                            <td>Epithelial cells, fibroblasts</td>
+                            <td>Direct cytotoxicity, loss of cell membrane integrity, acute cell death.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-[#D1A705] font-bold py-1.5">Carbon Nanotubes (CNT)</td>
+                            <td>Pleura, alveolar macrophages, DNA</td>
+                            <td>Oxidative stress, progressive fibrosis, genotoxic strand breaks.</td>
+                        </tr>
+                        <tr>
+                            <td class="text-[#D1A705] font-bold py-1.5">Silica ($\text{SiO}_2\text{ NP}$)</td>
+                            <td>Bronchoalveolar cells, hepatocytes</td>
+                            <td>Lysosomal damage, release of inflammatory cytokines, reactive oxygen species ($\text{ROS}$).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="space-y-2 text-fluid-body text-[#DEDEDE]">
+                <p>Toxicological analysis confirms that nanoscale reactivity cannot be inferred from bulk material safety data. Due to particle sizes smaller than cellular organelles, engineered nanoparticles easily breach defensive biological membranes, triggering systemic oxidative stress and mutagenesis.</p>
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (9,0): LEAD PLUMBING SYSTEMS & TRANSITION TO PART 2 -->
+<div id="slide-9-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 h-screen overflow-hidden" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks4.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 08 — HYDRAULIC HEAVY METALS</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Lead Plumbing & Module Synthesis</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full items-stretch">
+            <!-- Card 1: Lead Metallurgy & Plumbing History -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#901812] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#901812] mb-3">
+                        <i class="fa-solid fa-faucet text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Lead Water Conduits</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">High ductility, malleability, and near-zero apparent corrosion favored historical lead ($Pb$) piping worldwide.</p>
+                </div>
+                
+                <div class="space-y-2 border-t border-black/10 pt-3">
+                    <button onclick="document.getElementById('modal-lead-corrosion').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Passivation & Leaching</strong>
+                            <span class="text-fluid-tag text-[#666666]">Inner scale breakdown and drinking water contamination</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    <button onclick="document.getElementById('modal-lead-health').showModal()" class="w-full p-3 bg-white/80 hover:bg-white text-left rounded-2xl border border-black/5 shadow-sm transition-all flex items-center justify-between group">
+                        <div>
+                            <strong class="text-[#901812] block text-fluid-meta">Pediatric Neurotoxicity</strong>
+                            <span class="text-fluid-tag text-[#666666]">Blood concentrations $>0\ \mu\text{g/dL}$ and cognitive deficits</span>
+                        </div>
+                        <i class="fa-solid fa-circle-arrow-right text-[#901812] text-xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Part 1 Theoretical Summary -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705] hover:shadow-xl transition-shadow">
+                <div>
+                    <div class="flex items-center space-x-3 text-[#D1A705] mb-3">
+                        <i class="fa-solid fa-clipboard-check text-3xl"></i>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold">Part 1 Synthesis</h3>
+                    </div>
+                    <p class="text-fluid-body text-[#444444]">Comprehensive mapping of chemical, physical, and gaseous vectors embedded within modern civil infrastructure.</p>
+                </div>
+
+                <div class="space-y-2 border-t border-black/10 pt-3 text-fluid-meta text-[#444444] font-semibold">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-check text-[#D1A705] mt-1 mr-2 text-xs"></i>
+                        <span><strong>Organic & Volatiles:</strong> Off-gassing VOCs, phthalates, and organochlorines.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-check text-[#D1A705] mt-1 mr-2 text-xs"></i>
+                        <span><strong>Pyrolysis Gases:</strong> Lethal $HCN$, $CO$, and acid fumes during fires.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-check text-[#D1A705] mt-1 mr-2 text-xs"></i>
+                        <span><strong>Inorganic & Physical:</strong> Radon decay, asbestos fibrils, and engineered NPs.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Transition to Part 2: Standards & Tests -->
+            <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-white">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold mb-1 uppercase">ROADMAP TRANSITION</span>
+                    <h2 class="text-fluid-h3 text-white font-bold mb-2">Ahead: Part 2 Standards</h2>
+                    <p class="text-fluid-body text-[#DEDEDE]">Quantifying leaching dynamics, ecotoxicity bio-tests, and regulatory solid waste classification protocols.</p>
+                </div>
+
+                <div class="space-y-2 border-t border-white/15 pt-3 text-fluid-meta text-[#DEDEDE] font-semibold">
+                    <div class="p-3 bg-white/10 rounded-2xl border border-white/10 flex items-center space-x-3">
+                        <i class="fa-solid fa-vial-circle-check text-[#D1A705] text-xl"></i>
+                        <span><strong>Leaching Tests:</strong> Extraction media, pH thresholds, and L/S ratios.</span>
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-2xl border border-white/10 flex items-center space-x-3">
+                        <i class="fa-solid fa-book-bookmark text-[#D1A705] text-xl"></i>
+                        <span><strong>ABNT NBR Standards:</strong> NBR 10004, 10005, and 10006 compliance.</span>
+                    </div>
+                </div>
+
+                <button onclick="moveInGrid(1, 0)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                    <span>Review References & Problem Set (Press →)</span>
+                    <i class="fa-solid fa-arrow-right text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Técnico -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665 • Toxicity of Construction Materials — Part 1: Theory & Overview</span>
+        <span class="font-semibold">Click cards for deep dive | Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for References & Assignment</span>
+    </footer>
+
+    <!-- MODAL 1: LEAD PLUMBING & CORROSION DYNAMICS -->
+    <dialog id="modal-lead-corrosion" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">HYDRAULIC METALLURGY</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Corrosion Passivation & Lead Leaching</h3>
+            </div>
+            <button onclick="document.getElementById('modal-lead-corrosion').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80" alt="Lead and Copper Domestic Water Pipes" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Internal passivation mineral scale (carbonate/phosphate) vs active lead leaching</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p><strong>Historical Utility:</strong> Lead ($Pb$) was the preferred material for urban drinking water distribution networks from the Roman era until late 20th-century bans due to its exceptional cold-working ductility and low corrosion rates in neutral waters.</p>
+                <p><strong>Mechanism of Leaching:</strong> Lead pipes rely on an internal passivation scale of lead carbonate ($\text{PbCO}_3$) or lead phosphate ($\text{Pb}_5(\text{PO}_4)_3\text{OH}$). Destabilization of water chemistry—such as changes in pH, disinfectant switches (e.g., free chlorine to chloramines), or low dissolved inorganic carbon—causes scale dissolution and severe particulate and dissolved lead leaching into potable tap water.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL 2: SYSTEMIC HEALTH IMPACTS OF LEAD -->
+    <dialog id="modal-lead-health" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-2xl w-full shadow-2xl border border-white/15 max-h-[90vh] overflow-y-auto">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">TOXICOLOGICAL DOSIMETRY</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Pediatric Plumbism & Systemic Poisoning</h3>
+            </div>
+            <button onclick="document.getElementById('modal-lead-health').close()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-lg transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <div class="bg-black/30 p-2 rounded-2xl border border-white/10 text-center w-full flex flex-col items-center">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" alt="Laboratory Blood Testing for Heavy Metals" class="rounded-xl max-w-full max-h-[260px] w-auto h-auto object-contain mb-2 shadow-md">
+                <span class="text-fluid-meta text-[#D1A705] font-semibold block">Blood lead levels (BLL) induce multi-organ disruption with zero safe biological threshold</span>
+            </div>
+            <div class="space-y-3 text-fluid-body text-[#DEDEDE]">
+                <p>Lead is a cumulative multi-organ toxin that mimics calcium ($\text{Ca}^{2+}$), disrupting neurotransmitter release and cellular energetics:</p>
+                <ul class="space-y-2 text-fluid-meta">
+                    <li><strong class="text-[#D1A705]">Neurodevelopmental Impairment:</strong> Blood concentrations above $0\ \mu\text{g/dL}$ cause irreversible reductions in IQ, attention deficit hyperactivity disorder (ADHD), and severe learning deficits in children and infants.</li>
+                    <li><strong class="text-[#901812]">Cardiovascular Pathology:</strong> Chronic low-level exposure in adults directly correlates with severe hypertension, renal disease, ischemic heart mortality, and carcinogenesis.</li>
+                    <li><strong class="text-white">Biological Retention:</strong> Ingested lead accumulates in skeletal mineral matrices, with an elimination half-life exceeding 20 to 30 years in calcified bone tissue.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (10,0): REFERENCES & WEEKLY IN-CLASS ASSESSMENT (QUIZ 050) -->
+<div id="slide-10-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 h-screen overflow-hidden" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks3.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">CLOSING MODULE — PART 1</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Academic References & Problem Set Assessment</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 w-full items-center">
+            <!-- Coluna 1: Academic References List -->
+            <div class="lg:col-span-7 p-6 sm:p-8 rounded-3xl card-glass space-y-4 border-l-[12px] border-[#901812]">
+                <div class="border-b border-black/10 pb-2">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase block mb-1">FOUNDATIONAL LITERATURE</span>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Key Bibliographic References</h3>
+                </div>
+                <ul class="space-y-2.5 text-fluid-meta text-[#444444] font-semibold">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-book-bookmark text-[#901812] mt-1.5 mr-3 flex-shrink-0"></i>
+                        <span><strong>Pacheco-Torgal, F., & Jalali, S.</strong> (2010). <em>A sustentabilidade dos materiais de construção</em>. TecMinho, Guimarães, Portugal.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-file-pdf text-[#901812] mt-1.5 mr-3 flex-shrink-0"></i>
+                        <span><strong>Liang, H., & Ho, M.</strong> (2007). Toxicity characteristics of commercially manufactured insulation materials for building applications. <em>Construction and Building Materials</em>, 21(6), 1254-1261.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-atom text-[#901812] mt-1.5 mr-3 flex-shrink-0"></i>
+                        <span><strong>Mohajerani, A., Burnett, L., et al.</strong> (2019). Nanoparticles in construction materials and other applications, and implications of nanoparticle use. <em>Materials</em>, 12(19), 3052.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-radiation text-[#901812] mt-1.5 mr-3 flex-shrink-0"></i>
+                        <span><strong>Kovler, K., et al.</strong> (2002; 2009). Naturally occurring radioactivity in building materials and industrial byproducts: Radiological benchmarking and exposure indices.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-gavel text-[#901812] mt-1.5 mr-3 flex-shrink-0"></i>
+                        <span><strong>CONAMA & ABNT.</strong> Resolução CONAMA nº 348/2004 (Amianto como Resíduo Classe D) e ABNT NBR 10004/2004 (Classificação de Resíduos Sólidos Perigosos).</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Coluna 2: Assignment Form & QR Code Card -->
+            <div class="lg:col-span-5 p-6 sm:p-8 rounded-3xl card-glass-dark text-white text-center space-y-5 border-l-[12px] border-[#D1A705]">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold uppercase tracking-wider">EVALUATION ASSIGNMENT</span>
+                    <h3 class="text-fluid-h3 text-white font-bold mt-1">Submit In-Class Quiz 050</h3>
+                    <p class="text-fluid-meta text-[#DEDEDE] mt-1">Multi-variable assessment on toxicity, VOC emissions, fire effluents, and normative thresholds.</p>
+                </div>
+                
+                <div class="bg-white/90 backdrop-blur-md p-4 sm:p-5 rounded-2xl max-w-[220px] sm:max-w-[250px] mx-auto shadow-lg">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLScSlLlz3-eMO8OytGCHYnWQNHEDC7g0cTHqNkgrtaFzQYkwfg%2Fviewform%3Fusp%3Dheader&color=901812" alt="Quiz 050 Form QR Code" class="w-full h-auto rounded-lg">
+                    <span class="text-fluid-tag text-[#333333] font-bold mt-2 block">Scan with Smartphone</span>
+                </div>
+                
+                <div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScSlLlz3-eMO8OytGCHYnWQNHEDC7g0cTHqNkgrtaFzQYkwfg/viewform?usp=header" target="_blank" class="w-full py-3.5 px-6 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md inline-flex items-center justify-center space-x-3 min-h-[52px]">
+                        <i class="fa-solid fa-pen-to-square text-[#D1A705] text-xl"></i>
+                        <span>Open Quiz 050 Form</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-sm ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Técnico -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665 • Eco-Efficient Construction & Building Materials — Part 1 Complete</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">←</kbd> to review modules | Complete submission via QR Code</span>
+    </footer>
+</div>
+
+    
+
+    </main>
+
+    <!-- MOTOR DE NAVEGAÇÃO MATRICIAL 2D -->
+    <script>
+        let currentX = 0, currentY = 0;
+        let slideGrid = {};
+
+        function updateSlideGrid() {
+            slideGrid = {};
+            document.querySelectorAll('[id^="slide-"]').forEach(slide => {
+                const parts = slide.id.replace('slide-', '').split('-');
+                if (parts.length === 2) slideGrid[`${parts[0]},${parts[1]}`] = slide.id;
+            });
+        }
+
+        function hasSlide(x, y) { return !!slideGrid[`${x},${y}`]; }
+
+        function updateUI() {
+            updateSlideGrid();
+            const keysH = Object.keys(slideGrid).filter(k => k.endsWith(',0'));
+            const maxH = Math.max(...keysH.map(k => parseInt(k.split(',')[0])), 0);
+            const totalMainSlides = keysH.length;
+            
+            document.getElementById('progressBar').style.width = `${maxH === 0 ? 100 : (currentX / maxH) * 100}%`;
+            document.getElementById('slideIndicator').innerText = `Slide (${currentX},${currentY}) | ${currentX + 1} of ${totalMainSlides}`;
+
+            const dirs = { 'up': [0,-1], 'down': [0,1], 'left': [-1,0], 'right': [1,0] };
+            for (let d in dirs) {
+                const btn = document.getElementById(`btn-nav-${d}`);
+                if (btn) btn.classList.toggle('nav-enabled', hasSlide(currentX + dirs[d][0], currentY + dirs[d][1]));
+            }
+        }
+
+        function moveInGrid(dx, dy) {
+            updateSlideGrid();
+            const nx = currentX + dx, ny = currentY + dy;
+            if (hasSlide(nx, ny)) {
+                const cur = document.getElementById(slideGrid[`${currentX},${currentY}`]);
+                const nxt = document.getElementById(slideGrid[`${nx},${ny}`]);
+                
+                cur.classList.remove('slide-active', 'slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+                nxt.classList.remove('slide-active', 'slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+
+                if (dx > 0) cur.classList.add('slide-hidden-left');
+                else if (dx < 0) cur.classList.add('slide-hidden-right');
+                else if (dy > 0) cur.classList.add('slide-hidden-down');
+                else if (dy < 0) cur.classList.add('slide-hidden-up');
+
+                nxt.classList.add('slide-active');
+
+                currentX = nx; currentY = ny;
+                updateUI();
+                if (window.renderMathInElement) renderMathInElement(nxt);
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (['INPUT','TEXTAREA','DIALOG'].includes(document.activeElement.tagName)) return;
+            if (e.key === 'ArrowRight' || e.key === ' ') moveInGrid(1, 0);
+            else if (e.key === 'ArrowLeft') moveInGrid(-1, 0);
+            else if (e.key === 'ArrowUp') moveInGrid(0, -1);
+            else if (e.key === 'ArrowDown') moveInGrid(0, 1);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => { 
+            updateUI(); 
+        });
+    </script>
+</body>
+</html>
