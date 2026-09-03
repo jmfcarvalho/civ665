@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full overflow-hidden select-none">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CIV 665 | Eco-Efficient Construction and Building Materials - PMS UFV</title>
+    
+    <!-- ESSENTIAL CDNs -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], throwOnError: false });"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Preset PMS */
+            --color-primary: #901812;
+            --color-secondary: #D1A705;
+            --color-dark: #333333;
+            --color-bg: #F4F6F5;
+            --bg-shade-left: rgba(244,246,245,0.96);
+            --bg-shade-mid: rgba(244,246,245,0.70);
+            --bg-shade-right: rgba(244,246,245,0.15);
+            --card-light: rgba(255, 255, 255, 0.58);
+            --card-dark: rgba(51, 51, 51, 0.65);
+
+            /* Tipografia Super-Ampliada (Calibração Nativa Full HD / 4k) */
+            --fluid-h1: clamp(2.8rem, 6.2vw, 5.5rem);
+            --fluid-h2: clamp(2.2rem, 4.6vw, 4.0rem);
+            --fluid-h3: clamp(1.75rem, 3.2vw, 2.8rem);
+            --fluid-body: clamp(1.35rem, 2.2vw, 1.95rem);
+            --fluid-meta: clamp(1.15rem, 1.6vw, 1.55rem);
+            --fluid-tag: clamp(1.05rem, 1.4vw, 1.35rem);
+        }
+
+        html, body { 
+            width: 100vw; 
+            height: 100vh; 
+            overflow: hidden; 
+            background-color: var(--color-bg); 
+            font-family: 'PT Sans Narrow', sans-serif; 
+            color: var(--color-dark); 
+        }
+
+        .text-fluid-h1 { font-family: 'Montserrat', sans-serif; font-size: var(--fluid-h1); font-weight: 900; line-height: 1.08; letter-spacing: -0.02em; }
+        .text-fluid-h2 { font-family: 'Montserrat', sans-serif; font-size: var(--fluid-h2); font-weight: 800; line-height: 1.15; }
+        .text-fluid-h3 { font-size: var(--fluid-h3); font-weight: 700; line-height: 1.25; }
+        .text-fluid-body { font-size: var(--fluid-body); font-weight: 500; line-height: 1.45; }
+        .text-fluid-meta { font-size: var(--fluid-meta); font-weight: 600; }
+        .text-fluid-tag { font-size: var(--fluid-tag); font-weight: 700; letter-spacing: 0.04em; }
+
+        .katex-display { font-size: clamp(2.2rem, 4.5vw, 3.8rem) !important; margin: 1.2rem 0 !important; }
+        .katex { font-size: 1.15em; }
+
+        .slide-screen {
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            top: 0; 
+            left: 0;
+            opacity: 0; 
+            pointer-events: none; 
+            z-index: 0;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+        .slide-active { opacity: 1; transform: translate3d(0, 0, 0); pointer-events: auto; z-index: 10; }
+        .slide-hidden-left  { opacity: 0; transform: translate3d(-100%, 0, 0); }
+        .slide-hidden-right { opacity: 0; transform: translate3d(100%, 0, 0); }
+        .slide-hidden-up    { opacity: 0; transform: translate3d(0, -100%, 0); }
+        .slide-hidden-down  { opacity: 0; transform: translate3d(0, 100%, 0); }
+
+        .slide-screen::-webkit-scrollbar {
+            width: 6px;
+        }
+        .slide-screen::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .slide-screen::-webkit-scrollbar-thumb {
+            background: rgba(144, 24, 18, 0.25);
+            border-radius: 9999px;
+        }
+        .slide-screen::-webkit-scrollbar-thumb:hover {
+            background: rgba(144, 24, 18, 0.65);
+        }
+
+        .card-glass { 
+            border: none !important; 
+            background-color: var(--card-light); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.25s ease,
+                border-color 0.25s ease;
+            will-change: transform, box-shadow; 
+        }
+        .card-glass-dark { 
+            border: none !important; 
+            background-color: var(--card-dark); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            color: white; 
+            box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.25s ease,
+                border-color 0.25s ease;
+            will-change: transform, box-shadow; 
+        }
+
+        .card-glass:hover {
+            transform: translateY(-4px);
+            background-color: rgba(255, 255, 255, 0.72);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-glass-dark:hover {
+            transform: translateY(-4px);
+            background-color: rgba(51, 51, 51, 0.78);
+            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+        }
+
+        .reveal-controls { 
+            position: fixed; 
+            bottom: 1.25rem; 
+            right: 1.25rem; 
+            width: 110px; 
+            height: 110px; 
+            z-index: 1000; 
+            pointer-events: none; 
+        }
+        .control-arrow {
+            position: absolute; 
+            width: 38px; 
+            height: 38px; 
+            background: rgba(255, 255, 255, 0.40);
+            backdrop-filter: blur(6px); 
+            border-radius: 50%; 
+            color: #888888; 
+            cursor: pointer;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            opacity: 0.15; 
+            pointer-events: none;
+            transition: all 0.2s ease; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+            font-size: 0.95rem;
+        }
+        .control-arrow.nav-up { top: 0; left: 36px; }
+        .control-arrow.nav-down { bottom: 0; left: 36px; }
+        .control-arrow.nav-left { top: 36px; left: 0; }
+        .control-arrow.nav-right { top: 36px; right: 0; }
+        .control-arrow.nav-enabled { color: var(--color-primary); opacity: 0.65; pointer-events: auto; }
+        .control-arrow.nav-enabled:hover { background: var(--color-primary); color: #FFF; opacity: 1; transform: scale(1.1); }
+    </style>
+</head>
+<body class="w-screen h-screen relative">
+
+    <div class="fixed top-0 left-0 h-2 bg-[var(--color-secondary)] transition-all duration-300 z-[1000]" id="progressBar" style="width: 0%;"></div>
+
+    <div class="fixed bottom-3 left-3 text-[0.80rem] sm:text-[0.90rem] font-bold text-[var(--color-dark)] bg-white/70 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-sm z-[1000] flex items-center space-x-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-[var(--color-primary)]"></span>
+        <span id="slideIndicator">Slide (0,0) | 1 of 5</span>
+    </div>
+
+    <div class="reveal-controls">
+        <button id="btn-nav-up" onclick="moveInGrid(0, -1)" class="control-arrow nav-up" aria-label="Up"><i class="fa-solid fa-chevron-up"></i></button>
+        <button id="btn-nav-left" onclick="moveInGrid(-1, 0)" class="control-arrow nav-left" aria-label="Left"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="btn-nav-right" onclick="moveInGrid(1, 0)" class="control-arrow nav-right" aria-label="Right"><i class="fa-solid fa-chevron-right"></i></button>
+        <button id="btn-nav-down" onclick="moveInGrid(0, 1)" class="control-arrow nav-down" aria-label="Down"><i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+
+    <main class="w-full h-full relative" id="slideDeck">
+
+         
+        
+<!-- SLIDE (0,0): TITLE & COURSE COVER - PART 2 -->
+<div id="slide-0-0" class="slide-screen slide-active flex flex-col justify-between p-6 sm:p-10 md:p-12 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center gap-4 flex-shrink-0">
+        <div class="flex items-center space-x-4 sm:space-x-6 bg-white/75 backdrop-blur-md px-6 py-3.5 rounded-2xl shadow-sm">
+            <img src="Logo UFV oficial horizontal.png" alt="UFV Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://dci.ufv.br/wp-content/themes/diretorias/assets/images/estrutura/logotipoUFV.png'">
+            <div class="h-10 w-[1px] bg-black/10"></div>
+            <span class="text-fluid-tag text-[#333333]">CIV 665 • SICon / UFV</span>
+        </div>
+        <a href="https://pms.ufv.br" target="_blank" class="block bg-[#333333]/75 backdrop-blur-md p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+            <img src="pms.png" alt="PMS Logo" class="h-12 sm:h-16 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+        </a>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full my-auto py-4">
+        <div class="lg:col-span-7 space-y-4">
+            <div class="p-8 sm:p-12 rounded-3xl card-glass border-l-[16px] border-[#901812]">
+                <span class="text-fluid-tag text-[#D1A705] tracking-wider block mb-2 font-bold uppercase">CIV 665 — ECO-EFFICIENT CONSTRUCTION AND BUILDING MATERIALS</span>
+                <h1 class="text-fluid-h1 mb-3 text-[#901812]">TOXICITY OF BUILDING MATERIALS<span class="block text-fluid-h2 text-[#333333] font-bold mt-2">Part 2: Normative Frameworks & Leaching Protocols</span></h1>
+                <p class="text-fluid-body text-[#444444]">Environmental Characterization, ABNT NBR 10004/10005/10006 Normative Criteria, EPA Standards, and Laboratory Waste Extraction.</p>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5 p-6 sm:p-10 rounded-3xl card-glass-dark text-white flex flex-col justify-between space-y-6">
+            <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl text-center shadow-md">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fjmfcarvalho.github.io%2Fciv665%2F050.html&color=901812" alt="Slide Access QR Code" class="w-full max-w-[200px] sm:max-w-[240px] mx-auto rounded-lg">
+                <span class="text-fluid-tag text-[#333333] font-bold mt-3 block">Follow On Smartphone</span>
+            </div>
+            <div class="text-center space-y-1">
+                <span class="text-fluid-tag text-[#D1A705] block font-bold">Course Instructor</span>
+                <p class="text-fluid-body font-bold text-white">Prof. José Maria Franco de Carvalho</p>
+                <p class="text-fluid-meta text-[#DEDEDE]">SICon / DEC — Universidade Federal de Viçosa</p>
+                <div class="pt-2 border-t border-white/10 mt-2">
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold">Revision</span>
+                    <p class="text-fluid-meta text-white font-semibold">Paul Oluwaseun Oke</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-3 flex-shrink-0">
+        <span class="font-bold">CIV 665: Toxicity of Construction Materials — Part 2</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to Begin Module 01 (Waste Classification)</span>
+    </footer>
+</div>
+
+
+
+<!-- SLIDE (1,0): PART 2 CONTENT & LEARNING OBJECTIVES -->
+<div id="slide-1-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-4 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 01 — CLASS STRUCTURE & OVERVIEW</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Part 2: Standards & Protocols</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-auto w-full py-4 items-stretch">
+        <!-- Card 1: Part 1 Summary (Foundational Context) -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div>
+                <div class="flex items-center space-x-3 text-[#901812] mb-3">
+                    <i class="fa-solid fa-check-double text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Part 1 Recap: Hazards</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Comprehensive assessment of toxic compounds, toxicological mechanisms, and health exposure in built environments.</p>
+            </div>
+            <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>VOCs, Heavy Metals & Phthalates in Coatings</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>PVC Organochlorines & Synthetic Adhesives</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Toxic Fumes, Cyanide & Fire Combustion</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Radon, Phosphogypsum, Asbestos & Nanoparticles</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Part 2 Focus (Normative & Lab Protocols) -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div>
+                <div class="flex items-center space-x-3 text-[#D1A705] mb-3">
+                    <i class="fa-solid fa-flask-vial text-3xl text-[#D1A705]"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Part 2 Focus: Standards</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Regulatory frameworks, environmental characterization, and laboratory protocols for waste analysis and immobilization.</p>
+            </div>
+            <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                <li class="flex items-start"><i class="fa-solid fa-vial text-[#D1A705] mt-1 mr-2 text-xs"></i>Leaching & Eco-toxicity Testing Fundamentals</li>
+                <li class="flex items-start"><i class="fa-solid fa-file-contract text-[#D1A705] mt-1 mr-2 text-xs"></i>ABNT NBR 10004: Solid Waste Classification</li>
+                <li class="flex items-start"><i class="fa-solid fa-filter text-[#D1A705] mt-1 mr-2 text-xs"></i>ABNT NBR 10005: Leached Extract Procedures</li>
+                <li class="flex items-start"><i class="fa-solid fa-water text-[#D1A705] mt-1 mr-2 text-xs"></i>ABNT NBR 10006: Solubilized Extract Procedures</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Learning Objectives for Part 2 -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-white">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block mb-2 uppercase">GOALS FOR PART 2</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-3">Part 2 Learning Objectives</h3>
+                <div class="space-y-3 text-fluid-meta text-[#DEDEDE]">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Master</strong> solid waste classification criteria (Class I - Hazardous, Class IIA - Non-inert, Class IIB - Inert).</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Apply</strong> standard extraction procedures for leached (NBR 10005) and solubilized (NBR 10006) extracts.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Interpret</strong> laboratory analytical outputs against ABNT NBR 10004 and US EPA regulatory thresholds.</span>
+                    </div>
+                </div>
+            </div>
+            <button onclick="moveInGrid(1, 0)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Begin Part 2: Standards (Press →)</span>
+                <i class="fa-solid fa-arrow-right text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-3 flex-shrink-0">
+        <span class="font-bold">CIV 665 • Toxicity of Construction Materials — Part 2: Standards & Protocols</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to proceed to Normative Frameworks</span>
+    </footer>
+</div>
+
+
+
+<!-- SLIDE (2,0): ENVIRONMENTAL CHARACTERIZATION & SOLID WASTE CLASSIFICATION (ABNT NBR 10004) -->
+<div id="slide-2-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-concrete1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 02 — NORMATIVE FRAMEWORK & ENVIRONMENTAL CHARACTERIZATION</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Solid Waste Classification (ABNT NBR 10004)</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-auto w-full py-2 items-stretch">
+        <!-- Card 1: Class I - Hazardous Waste -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#901812] cursor-pointer" onclick="document.getElementById('modal-class-i-2-0').showModal()">
+            <div>
+                <div class="flex items-center space-x-3 text-[#901812] mb-2">
+                    <i class="fa-solid fa-triangle-exclamation text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Class I: Hazardous</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Presents intrinsic risks to public health and the environment due to critical physicochemical properties.</p>
+            </div>
+            <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                <li class="flex items-start"><i class="fa-solid fa-skull-crossbones text-[#901812] mt-1 mr-2 text-xs"></i>Flammability, Corrosivity or Reactivity</li>
+                <li class="flex items-start"><i class="fa-solid fa-skull-crossbones text-[#901812] mt-1 mr-2 text-xs"></i>Toxicity or Pathogenicity criteria</li>
+                <li class="flex items-start"><i class="fa-solid fa-radiation text-[#901812] mt-1 mr-2 text-xs"></i>CNEN governs radioactive waste exclusion</li>
+            </ul>
+            <div class="pt-2 text-fluid-tag text-[#901812] font-bold flex items-center">
+                <i class="fa-solid fa-circle-info mr-1.5"></i><span>Tap to inspect hazardous mechanisms</span>
+            </div>
+        </div>
+
+        <!-- Card 2: Class II - Non-Hazardous Waste (II A & II B) -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705] cursor-pointer" onclick="document.getElementById('modal-class-ii-2-0').showModal()">
+            <div>
+                <div class="flex items-center space-x-3 text-[#D1A705] mb-2">
+                    <i class="fa-solid fa-boxes-packing text-3xl text-[#D1A705]"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Class II: Non-Hazardous</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Segregated by degradation behavior and leaching/solubilization resistance into subcategories II A and II B.</p>
+            </div>
+            <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                <li class="flex items-start"><i class="fa-solid fa-layer-group text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>Class II A (Non-Inert):</strong> Biodegradable, combustible, or soluble</li>
+                <li class="flex items-start"><i class="fa-solid fa-shield-halved text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>Class II B (Inert):</strong> Stable in water without toxic dissolution</li>
+                <li class="flex items-start"><i class="fa-solid fa-vial-circle-check text-[#D1A705] mt-1 mr-2 text-xs"></i>Evaluated via ABNT NBR 10006 solubilization</li>
+            </ul>
+            <div class="pt-2 text-fluid-tag text-[#D1A705] font-bold flex items-center">
+                <i class="fa-solid fa-circle-info mr-1.5"></i><span>Tap to inspect subcategories II A &amp; II B</span>
+            </div>
+        </div>
+
+        <!-- Card 3: Normative Suite & Interactive Bifurcation -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-white">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block mb-1 uppercase">ABNT RESIDUE FRAMEWORK</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-2">Normative Suite Overview</h3>
+                <ul class="text-fluid-meta space-y-2 text-[#DEDEDE] font-semibold">
+                    <li class="flex items-start"><i class="fa-solid fa-book text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>NBR 10004:</strong> Solid waste classification rules</li>
+                    <li class="flex items-start"><i class="fa-solid fa-filter text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>NBR 10005:</strong> Leached extract protocol</li>
+                    <li class="flex items-start"><i class="fa-solid fa-water text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>NBR 10006:</strong> Solubilized extract protocol</li>
+                    <li class="flex items-start"><i class="fa-solid fa-vials text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>NBR 10007:</strong> Solid waste sampling standard</li>
+                </ul>
+            </div>
+            <button onclick="moveInGrid(0, 1)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Test Classification Tree (Press ↓)</span>
+                <i class="fa-solid fa-diagram-project text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-3 flex-shrink-0">
+        <span class="font-bold">ABNT NBR 10004:2004 — Resíduos Sólidos: Classificação</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for Classification Simulator | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Leaching (NBR 10005)</span>
+    </footer>
+
+    <!-- MODAL NATIVO 1: CLASS I DETALHADA -->
+    <dialog id="modal-class-i-2-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">REGULATORY CLASSIFICATION: CLASS I</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Hazardous Solid Residues (NBR 10004)</h3>
+            </div>
+            <button onclick="document.getElementById('modal-class-i-2-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <!-- Single-line structure: picture + description -->
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-4 bg-white/10 rounded-2xl border border-white/10 mb-4">
+            <img src="bg-clay1.png" alt="Hazardous Residue" class="w-32 h-32 rounded-xl object-cover flex-shrink-0 border border-white/20">
+            <p class="text-fluid-body text-[#EAEAEA]">Materials that pose direct threats to human health (morbidity/mortality) or environmental equilibrium due to flammability, corrosivity, reactivity, toxicity (Annex F), or pathogenicity.</p>
+        </div>
+        <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#901812]">
+                <strong class="text-white block mb-0.5">Management Mandate:</strong> Requires strict chain of custody, manifest tracking, specialized containment, and cannot be co-disposed with ordinary construction debris.
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL NATIVO 2: CLASS II A & II B DETALHADA -->
+    <dialog id="modal-class-ii-2-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">REGULATORY CLASSIFICATION: CLASS II</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Non-Hazardous Residues (NBR 10004)</h3>
+            </div>
+            <button onclick="document.getElementById('modal-class-ii-2-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <!-- Single-line structure: picture + description -->
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-4 bg-white/10 rounded-2xl border border-white/10 mb-4">
+            <img src="bg-blocks2.png" alt="Inert Concrete Debris" class="w-32 h-32 rounded-xl object-cover flex-shrink-0 border border-white/20">
+            <p class="text-fluid-body text-[#EAEAEA]">Non-hazardous materials subclassified into <strong>Class II A (Non-Inert)</strong> exhibiting solubility or biodegradability, and <strong>Class II B (Inert)</strong> which undergo no chemical transfer above potable standards.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-fluid-meta text-[#DEDEDE]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                <strong class="text-[#D1A705] block">Class II A (Non-Inert):</strong> Exceeds Annex G solubilization thresholds (e.g., taste, odor, iron, sulfates) without acute toxicity.
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                <strong class="text-white block">Class II B (Inert):</strong> Clears all Annex G potable thresholds; suitable for recycled aggregates in structural elements.
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (2,1): SOLID WASTE CLASSIFICATION DECISION SIMULATOR (BRANCH Y=1) -->
+<div id="slide-2-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-concrete1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">DECISION SIMULATOR (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Waste Classification Engine (ABNT NBR 10004)</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Module 02</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 w-full items-stretch">
+            <!-- Painel Interativo de Triagem de Critérios -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                <div class="border-b border-black/10 pb-2">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Residue Property Matrix</h3>
+                    <p class="text-fluid-meta text-[#555555] font-semibold">Toggle sample physicochemical characteristics to evaluate classification pathways:</p>
+                </div>
+
+                <div class="space-y-2.5">
+                    <label class="flex items-center justify-between p-3 bg-white/80 rounded-2xl border border-black/5 cursor-pointer hover:bg-white transition-colors">
+                        <span class="text-fluid-meta text-[#333333] font-bold flex items-center">
+                            <i class="fa-solid fa-fire text-[#901812] mr-2 text-base"></i>Flammable / Corrosive / Reactive
+                        </span>
+                        <input type="checkbox" id="chk-hazard-props-2-1" class="w-5 h-5 accent-[#901812] cursor-pointer" onchange="avaliarResiduo_2_1()">
+                    </label>
+
+                    <label class="flex items-center justify-between p-3 bg-white/80 rounded-2xl border border-black/5 cursor-pointer hover:bg-white transition-colors">
+                        <span class="text-fluid-meta text-[#333333] font-bold flex items-center">
+                            <i class="fa-solid fa-skull-crossbones text-[#901812] mr-2 text-base"></i>Exceeds Annex F (Leaching Toxicity)
+                        </span>
+                        <input type="checkbox" id="chk-annex-f-2-1" class="w-5 h-5 accent-[#901812] cursor-pointer" onchange="avaliarResiduo_2_1()">
+                    </label>
+
+                    <label class="flex items-center justify-between p-3 bg-white/80 rounded-2xl border border-black/5 cursor-pointer hover:bg-white transition-colors">
+                        <span class="text-fluid-meta text-[#333333] font-bold flex items-center">
+                            <i class="fa-solid fa-water text-[#D1A705] mr-2 text-base"></i>Exceeds Annex G (Solubilization Limits)
+                        </span>
+                        <input type="checkbox" id="chk-annex-g-2-1" class="w-5 h-5 accent-[#D1A705] cursor-pointer" onchange="avaliarResiduo_2_1()">
+                    </label>
+
+                    <label class="flex items-center justify-between p-3 bg-white/80 rounded-2xl border border-black/5 cursor-pointer hover:bg-white transition-colors">
+                        <span class="text-fluid-meta text-[#333333] font-bold flex items-center">
+                            <i class="fa-solid fa-recycle text-[#D1A705] mr-2 text-base"></i>Biodegradable or Combustible
+                        </span>
+                        <input type="checkbox" id="chk-biodegradable-2-1" class="w-5 h-5 accent-[#D1A705] cursor-pointer" onchange="avaliarResiduo_2_1()">
+                    </label>
+                </div>
+
+                <div class="pt-2 border-t border-black/10 flex justify-between items-center text-fluid-tag text-[#777777] font-semibold">
+                    <span>Target: Solid residues and industrial byproducts</span>
+                    <button type="button" onclick="resetarSimulador_2_1()" class="text-[#901812] hover:underline font-bold">Reset Filters</button>
+                </div>
+            </div>
+
+            <!-- Painel de Diagnóstico e Destinação Técnica -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-1">REGULATORY DIAGNOSIS</span>
+                    <div class="p-5 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10 my-2">
+                        <span class="text-fluid-meta text-[#DEDEDE] block">Normative Outcome</span>
+                        <span id="res-class-name-2-1" class="text-fluid-h2 text-white font-mono font-bold leading-tight block my-2">CLASS II B</span>
+                        <span id="res-badge-2-1" class="text-fluid-tag font-bold uppercase inline-block py-1.5 px-5 rounded-full text-white bg-green-700 shadow-md">INERT RESIDUE</span>
+                    </div>
+
+                    <div class="space-y-2 text-fluid-meta text-[#DEDEDE] mt-3">
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-green-500" id="res-desc-box-2-1">
+                            <strong class="text-white block mb-0.5" id="res-dest-title-2-1">Management & Application:</strong>
+                            <span id="res-dest-desc-2-1">Material does not solubilize above drinking water thresholds. Fully eligible for circular aggregates, road base substitution, and unconfined recycling.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-scale-balanced text-[#D1A705] text-xl"></i>
+                    <span id="res-standard-note-2-1">Standard Reference: ABNT NBR 10004:2004, Section 4.2.2 (Classe II B - Inertes).</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">ABNT NBR 10004: Classification Flowchart Logic</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to go to Slide 3,0</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (2,1) -->
+    <script>
+        function avaliarResiduo_2_1() {
+            const isHazardProps = document.getElementById('chk-hazard-props-2-1').checked;
+            const isAnnexF = document.getElementById('chk-annex-f-2-1').checked;
+            const isAnnexG = document.getElementById('chk-annex-g-2-1').checked;
+            const isBio = document.getElementById('chk-biodegradable-2-1').checked;
+
+            const nameEl = document.getElementById('res-class-name-2-1');
+            const badgeEl = document.getElementById('res-badge-2-1');
+            const descBoxEl = document.getElementById('res-desc-box-2-1');
+            const descEl = document.getElementById('res-dest-desc-2-1');
+            const noteEl = document.getElementById('res-standard-note-2-1');
+
+            if (isHazardProps || isAnnexF) {
+                nameEl.innerText = "CLASS I";
+                nameEl.style.color = "#FF6B6B";
+                badgeEl.innerText = "HAZARDOUS RESIDUE";
+                badgeEl.className = "text-fluid-tag font-bold uppercase inline-block py-1.5 px-5 rounded-full text-white bg-[#901812] shadow-md";
+                descBoxEl.className = "p-3 bg-white/5 rounded-xl border-l-4 border-[#901812]";
+                descEl.innerText = "Poses critical environmental and public health hazards (toxicity, flammability, reactivity). Prohibited from ordinary recycling; requires Class I landfill containment or thermal inertization.";
+                noteEl.innerText = "Governed by ABNT NBR 10004 Section 4.2.1 & Annex F (Limites para ensaio de lixiviação).";
+            } else if (isAnnexG || isBio) {
+                nameEl.innerText = "CLASS II A";
+                nameEl.style.color = "#D1A705";
+                badgeEl.innerText = "NON-INERT RESIDUE";
+                badgeEl.className = "text-fluid-tag font-bold uppercase inline-block py-1.5 px-5 rounded-full text-[#333333] bg-[#D1A705] shadow-md";
+                descBoxEl.className = "p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]";
+                descEl.innerText = "Non-hazardous, but exhibits water solubility (Annex G) or biodegradability/combustibility. Can be incorporated into bound matrices (e.g., concrete) only after immobilization verification.";
+                noteEl.innerText = "Governed by ABNT NBR 10004 Section 4.2.2.1 & Annex G (Padrões para ensaio de solubilização).";
+            } else {
+                nameEl.innerText = "CLASS II B";
+                nameEl.style.color = "#4ADE80";
+                badgeEl.innerText = "INERT RESIDUE";
+                badgeEl.className = "text-fluid-tag font-bold uppercase inline-block py-1.5 px-5 rounded-full text-white bg-green-700 shadow-md";
+                descBoxEl.className = "p-3 bg-white/5 rounded-xl border-l-4 border-green-500";
+                descEl.innerText = "Material does not solubilize above drinking water thresholds. Fully eligible for circular aggregates, road base substitution, and unconfined recycling.";
+                noteEl.innerText = "Governed by ABNT NBR 10004 Section 4.2.2.2 (Resíduos Inertes).";
+            }
+        }
+
+        function resetarSimulador_2_1() {
+            document.getElementById('chk-hazard-props-2-1').checked = false;
+            document.getElementById('chk-annex-f-2-1').checked = false;
+            document.getElementById('chk-annex-g-2-1').checked = false;
+            document.getElementById('chk-biodegradable-2-1').checked = false;
+            avaliarResiduo_2_1();
+        }
+
+        if (document.getElementById('chk-hazard-props-2-1')) {
+            avaliarResiduo_2_1();
+        }
+    </script>
+</div>
+
+
+
+<!-- SLIDE (3,0): LEACHING EXTRACTION PROCEDURE (ABNT NBR 10005) -->
+<div id="slide-3-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-clay1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 03 — LEACHING EXTRACTION PROTOCOLS</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Leached Extract Procedure (ABNT NBR 10005)</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Princípio Físico-Químico e Equações de Sólidos (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-flask-vial text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Mass Transfer & Extract Phase Separation</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Simulates leaching under aggressive landfill conditions to differentiate <strong>Class I (Hazardous)</strong> from <strong>Class II</strong> through controlled acetic extraction.</p>
+
+                <!-- Equação KaTeX com Contêiner com Rolagem Horizontal Calibrada -->
+                <div class="bg-white/85 backdrop-blur-md p-3 sm:p-4 rounded-2xl text-center shadow-inner overflow-x-auto overflow-y-hidden border border-black/5">
+                    $$\% \, \text{Sólidos Secos} = \frac{(m_{\text{resíduo + filtro}} - m_{\text{filtro}})}{m_{\text{inicial do resíduo}}} \times 100$$
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-fluid-meta text-[#444444] font-semibold">
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Granulometric Cut:</strong>
+                        Must pass through a $9.5\text{ mm}$ sieve before extraction ($T \le 4^\circ\text{C}$ for volatiles).
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Agitation Dynamics:</strong>
+                        End-over-end agitation ($30 \pm 2\text{ rpm}$) for $18 \pm 2\text{ h}$ at liquid/solid ratio of $20:1$.
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>Governed by ABNT NBR 10005:2004</span>
+                <span class="text-[#901812] font-bold">Liquid/Solid Ratio: 20:1</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Soluções Extratoras e Chamada para o Laboratório Virtual (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">EXTRACTION MEDIA CRITERIA</span>
+                    <button onclick="document.getElementById('modal-extract-media-3-0').showModal()" class="text-fluid-tag text-white hover:text-[#D1A705] font-bold underline flex items-center gap-1">
+                        <i class="fa-solid fa-circle-info"></i> Reagents
+                    </button>
+                </div>
+                
+                <h3 class="text-fluid-h3 text-white font-bold">Acid Solution Selection</h3>
+
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#D1A705]">
+                        <strong class="text-[#D1A705] block mb-0.5">Solution #1 ($\text{pH } 4.93 \pm 0.05$):</strong>
+                        Glacial acetic acid ($5.7\text{ mL}$) + $1.0\text{ N NaOH}$ ($64.3\text{ mL}$) made up to $1\text{ L}$. Used if preliminary test $\text{pH} \le 5.0$.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-white">
+                        <strong class="text-white block mb-0.5">Solution #2 ($\text{pH } 2.88 \pm 0.05$):</strong>
+                        Glacial acetic acid ($5.7\text{ mL}$) diluted with deionized water to $1\text{ L}$. Applied when preliminary $\text{pH} > 5.0$.
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="moveInGrid(0, 1)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Launch pH Titration Simulator (Press ↓)</span>
+                <i class="fa-solid fa-vial-circle-check text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">ABNT NBR 10005:2004 — Obtenção de Extrato Lixiviado de Resíduos Sólidos</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for pH Extraction Lab | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Solubilization (NBR 10006)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: COMPOSIÇÃO DETALHADA DOS REAGENTES -->
+    <dialog id="modal-extract-media-3-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">LABORATORY SPECIFICATIONS</span>
+                <h3 class="text-fluid-h2 text-white font-bold">NBR 10005 Chemical Reagents & Glassware</h3>
+            </div>
+            <button onclick="document.getElementById('modal-extract-media-3-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <!-- Single-line structure: picture + description -->
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-4 bg-white/10 rounded-2xl border border-white/10 mb-4">
+            <img src="bg-clay3.png" alt="Laboratory Reagents" class="w-28 h-28 rounded-xl object-cover flex-shrink-0 border border-white/20">
+            <p class="text-fluid-body text-[#EAEAEA]">Leaching solutions utilize pure analytical grade glacial acetic acid ($\text{CH}_3\text{COOH}$) and $1.0\text{ N NaOH}$ to test residue buffer resistance under acidic percolation.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-fluid-meta text-[#DEDEDE]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                <strong class="text-[#D1A705] block">Filtration Apparatus:</strong>
+                Pressurized borosilicate device with fiberglass or nitrocellulose filters ($0.6\text{ to }0.8\,\mu\text{m}$ pore size).
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                <strong class="text-white block">Volatile Extractions (ZHE):</strong>
+                Zero Headspace Extractor prevents loss of volatile organics during the 18-hour continuous extraction run.
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (3,1): VIRTUAL LAB - NBR 10005 EXTRACTION FLUID DECISION & PH TITRATION (BRANCH Y=1) -->
+<div id="slide-3-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-clay2.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">VIRTUAL LAB (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">NBR 10005 Extraction Fluid Titration Engine</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Module 03</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 w-full items-stretch">
+            <!-- Painel de Variáveis e Titulação de Amostra -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                <div class="border-b border-black/10 pb-2">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Preliminary Slurry & Buffer Screening</h3>
+                    <p class="text-fluid-meta text-[#555555] font-semibold">Standard test: $5.0\text{ g}$ sample ($< 9.5\text{ mm}$) $+ 96.5\text{ mL}$ deionized water, agitated for $5\text{ min}$:</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Slurry Baseline $\text{pH}$ (Initial):</span>
+                            <span id="lbl-ph-init-3-1" class="text-[#901812] font-bold font-mono">7.80</span>
+                        </label>
+                        <input type="range" id="input-ph-init-3-1" min="1.0" max="13.0" step="0.1" value="7.8" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularExtracao_3_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>$1.0\,\text{N HCl}$ Acid Added ($V_{\text{acid}}$ to challenge buffer capacity):</span>
+                            <span id="lbl-acid-vol-3-1" class="text-[#901812] font-bold font-mono">3.5 mL</span>
+                        </label>
+                        <input type="range" id="input-acid-vol-3-1" min="0.0" max="10.0" step="0.5" value="3.5" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularExtracao_3_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Sample Dry Solids Fraction ($\% \, \text{Solids}$):</span>
+                            <span id="lbl-solids-pct-3-1" class="text-[#901812] font-bold font-mono">100.0%</span>
+                        </label>
+                        <input type="range" id="input-solids-pct-3-1" min="0.1" max="100.0" step="0.5" value="100.0" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularExtracao_3_1()">
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-tag text-[#555555] font-semibold flex items-center justify-between">
+                    <span>Protocol threshold: $\text{pH} \le 5.0 \to \text{Fluid \#1} \mid \text{pH} > 5.0 \to \text{Fluid \#2}$</span>
+                    <button type="button" onclick="resetarLab_3_1()" class="text-[#901812] hover:underline font-bold">Reset Lab</button>
+                </div>
+            </div>
+
+            <!-- Painel de Decisão Regulatória e Parâmetros Operacionais -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-1">AUTOMATED FLUID SELECTION</span>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-2">
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Equilibrium $\text{pH}$</span>
+                            <span id="res-eq-ph-3-1" class="text-fluid-h2 text-white font-mono font-bold leading-tight block my-1">5.35</span>
+                            <span class="text-fluid-tag text-[#DEDEDE]">Slurry + Acid Challenge</span>
+                        </div>
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Designated Media</span>
+                            <span id="res-fluid-title-3-1" class="text-fluid-h2 text-[#D1A705] font-mono font-bold leading-tight block my-1">FLUID #2</span>
+                            <span id="res-fluid-ph-target-3-1" class="text-fluid-tag font-bold uppercase inline-block py-0.5 px-3 rounded-full text-[#333333] bg-[#D1A705]">pH 2.88 ± 0.05</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-fluid-meta text-[#DEDEDE] mt-3">
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]" id="res-desc-card-3-1">
+                            <strong class="text-white block mb-0.5" id="res-recipe-title-3-1">Reagent Formulation:</strong>
+                            <span id="res-recipe-desc-3-1">Dilute $5.7\text{ mL}$ of glacial acetic acid ($\text{CH}_3\text{COOH}$) in deionized water to complete $1\text{ L}$ volume. Do not add $\text{NaOH}$.</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                            <strong class="text-white block mb-0.5">Rotational Agitation Command:</strong>
+                            <span id="res-rot-regime-3-1">Load into zero-headspace extractor (ZHE) or rotary tumbler at $30 \pm 2\text{ rpm}$ for $18 \pm 2\text{ hours}$ at $20:1$ liquid-to-solid ratio.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-flask-vial text-[#D1A705] text-xl"></i>
+                    <span id="res-normative-note-3-1">Regulatory rule: Waste alkalinity overcame acid challenge ($\text{pH} > 5.0$), triggering the more aggressive unbuffered fluid.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">ABNT NBR 10005:2004 — Seção 5: Determinação da Solução Extratora</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Solubilization (NBR 10006)</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (3,1) -->
+    <script>
+        function calcularExtracao_3_1() {
+            const phInit = parseFloat(document.getElementById('input-ph-init-3-1').value);
+            const acidVol = parseFloat(document.getElementById('input-acid-vol-3-1').value);
+            const solidsPct = parseFloat(document.getElementById('input-solids-pct-3-1').value);
+
+            document.getElementById('lbl-ph-init-3-1').innerText = phInit.toFixed(1);
+            document.getElementById('lbl-acid-vol-3-1').innerText = `${acidVol.toFixed(1)} mL`;
+            document.getElementById('lbl-solids-pct-3-1').innerText = `${solidsPct.toFixed(1)}%`;
+
+            // Modelo matemático simplificado do buffer ácido
+            // Amostras cimentícias/alcalinas amortecem o pH; acidVol neutraliza gradualmente
+            let deltaPh = (acidVol * 0.70);
+            let eqPh = Math.max(1.0, phInit - deltaPh);
+
+            document.getElementById('res-eq-ph-3-1').innerText = eqPh.toFixed(2);
+
+            const titleEl = document.getElementById('res-fluid-title-3-1');
+            const phTargetEl = document.getElementById('res-fluid-ph-target-3-1');
+            const descCardEl = document.getElementById('res-desc-card-3-1');
+            const recipeDescEl = document.getElementById('res-recipe-desc-3-1');
+            const noteEl = document.getElementById('res-normative-note-3-1');
+            const rotEl = document.getElementById('res-rot-regime-3-1');
+
+            if (eqPh <= 5.0) {
+                titleEl.innerText = "FLUID #1";
+                titleEl.className = "text-fluid-h2 text-[#4ADE80] font-mono font-bold leading-tight block my-1";
+                phTargetEl.innerText = "pH 4.93 ± 0.05";
+                phTargetEl.className = "text-fluid-tag font-bold uppercase inline-block py-0.5 px-3 rounded-full text-white bg-green-700";
+                descCardEl.className = "p-3 bg-white/5 rounded-xl border-l-4 border-green-500";
+                recipeDescEl.innerText = "5.7 mL glacial acetic acid + 64.3 mL 1.0 N NaOH diluted with deionized water up to 1.0 L volume (buffered acetate system).";
+                noteEl.innerText = "Slurry pH neutralized below 5.0; buffered Solution #1 preserves target acidity during extraction.";
+            } else {
+                titleEl.innerText = "FLUID #2";
+                titleEl.className = "text-fluid-h2 text-[#D1A705] font-mono font-bold leading-tight block my-1";
+                phTargetEl.innerText = "pH 2.88 ± 0.05";
+                phTargetEl.className = "text-fluid-tag font-bold uppercase inline-block py-0.5 px-3 rounded-full text-[#333333] bg-[#D1A705]";
+                descCardEl.className = "p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]";
+                recipeDescEl.innerText = "5.7 mL glacial acetic acid diluted with deionized water up to 1.0 L volume without caustic soda (unbuffered aggressive acid).";
+                noteEl.innerText = "High alkaline buffer capacity detected (pH > 5.0); unbuffered Solution #2 is mandated by NBR 10005.";
+            }
+
+            if (solidsPct < 0.5) {
+                rotEl.innerText = "Solids content < 0.5%: Filter directly; the liquid phase itself constitutes the leached extract without mechanical extraction.";
+            } else {
+                rotEl.innerText = "Solids content >= 0.5%: Continuous end-over-end agitation at 30 ± 2 rpm for 18 ± 2 h at 20:1 liquid-to-solid extraction ratio.";
+            }
+        }
+
+        function resetarLab_3_1() {
+            document.getElementById('input-ph-init-3-1').value = 7.8;
+            document.getElementById('input-acid-vol-3-1').value = 3.5;
+            document.getElementById('input-solids-pct-3-1').value = 100.0;
+            calcularExtracao_3_1();
+        }
+
+        if (document.getElementById('input-ph-init-3-1')) {
+            calcularExtracao_3_1();
+        }
+    </script>
+</div>
+
+
+
+<!-- SLIDE (4,0): SOLUBILIZED EXTRACT PROCEDURE (ABNT NBR 10006) -->
+<div id="slide-4-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-concrete1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 04 — WATER EXTRACTION & SOLUBILIZATION</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Solubilized Extract Protocol (ABNT NBR 10006)</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Protocolo de Ensaios e Cinética de Solubilização (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-water text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Static Dissolution & Inertness Assessment</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Standardized protocol to differentiate <strong>Class II A (Non-Inert)</strong> from <strong>Class II B (Inert)</strong> by determining transfer of chemical species into pure deionized water.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-fluid-meta text-[#444444] font-semibold">
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Sample Preparation:</strong>
+                        Dry sample at $\le 42^\circ\text{C}$ in forced-air oven. Granulometric cut passes $9.5\text{ mm}$ sieve.
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Mass & Solvent Ratio:</strong>
+                        $250\text{ g}$ dry residue $+ 1000\text{ mL}$ organic-free deionized water in $1500\text{ mL}$ flask ($4:1$ ratio).
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Static Contact Horizon:</strong>
+                        Covered with PVC film; left undisturbed for <strong>7 days ($168\text{ h}$)</strong> at $\le 25^\circ\text{C}$.
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Membrane Filtration:</strong>
+                        Vacuum-filtered through $0.45\,\mu\text{m}$ porosity membrane to extract dissolved ions.
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>Governed by ABNT NBR 10006:2004</span>
+                <span class="text-[#901812] font-bold">Liquid/Solid Ratio: 4:1 (Static)</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Anexo G e Chamada para o Simulador (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">REGULATORY CRITERIA</span>
+                    <button onclick="document.getElementById('modal-annex-g-4-0').showModal()" class="text-fluid-tag text-white hover:text-[#D1A705] font-bold underline flex items-center gap-1">
+                        <i class="fa-solid fa-circle-info"></i> Annex G
+                    </button>
+                </div>
+
+                <h3 class="text-fluid-h3 text-white font-bold">Potability Standards Benchmark</h3>
+
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#D1A705]">
+                        <strong class="text-[#D1A705] block mb-0.5">Annex G Drinking Water Limits:</strong>
+                        Element concentrations in solubilized extract are cross-checked against strict drinking water parameters ($As, Pb, Cr, Fe, Al, Mn, Zn, Cu$).
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-white">
+                        <strong class="text-white block mb-0.5">Classification Threshold:</strong>
+                        Any element exceeding Annex G automatically classifies residue as <strong>Class II A (Non-Inert)</strong>; compliance with all limits qualifies it as <strong>Class II B (Inert)</strong>.
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="moveInGrid(0, 1)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Inspect Solubilization Lab (Press ↓)</span>
+                <i class="fa-solid fa-flask text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">ABNT NBR 10006:2004 — Procedimento para Obtenção de Extrato Solubilizado de Resíduos Sólidos</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for Annex G Simulator | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Lab Apparatus (Slide 5,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: ANEXO G & LIMITES REGULATÓRIOS -->
+    <dialog id="modal-annex-g-4-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">ABNT NBR 10004:2004</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Annex G Standards for Solubilization</h3>
+            </div>
+            <button onclick="document.getElementById('modal-annex-g-4-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <!-- Single-line structure: picture + description -->
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-4 bg-white/10 rounded-2xl border border-white/10 mb-4">
+            <img src="bg-concrete1.png" alt="Solubilization Extract Test" class="w-28 h-28 rounded-xl object-cover flex-shrink-0 border border-white/20">
+            <p class="text-fluid-body text-[#EAEAEA]">The 7-day extraction reveals whether solid waste or byproducts dissolve secondary contaminants, altering potable water parameters like taste, appearance, or trace toxicity.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-fluid-meta text-[#DEDEDE]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                <strong class="text-[#D1A705] block">Heavy Metal Limits:</strong>
+                $As \le 0.01\,\text{mg/L}$, $Pb \le 0.01\,\text{mg/L}$, $Cr \le 0.05\,\text{mg/L}$, $Cu \le 2.0\,\text{mg/L}$.
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                <strong class="text-white block">Secondary Cation Limits:</strong>
+                $Fe \le 0.3\,\text{mg/L}$, $Al \le 0.2\,\text{mg/L}$, $Mn \le 0.1\,\text{mg/L}$, $Zn \le 5.0\,\text{mg/L}$.
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (4,1): VIRTUAL LAB - NBR 10006 SOLUBILIZATION COMPLIANCE ENGINE (BRANCH Y=1) -->
+<div id="slide-4-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-concrete1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">VIRTUAL LAB (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">NBR 10006 / Annex G Solubilization Compliance</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Module 04</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 w-full items-stretch">
+            <!-- Painel de Concentrações Analíticas (Sliders) -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                <div class="border-b border-black/10 pb-2">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Filtrate ICP-OES Element Concentrations</h3>
+                    <p class="text-fluid-meta text-[#555555] font-semibold">Calibrate elemental release after 7 days static extraction ($0.45\,\mu\text{m}$ membrane):</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Arsenic ($As$) [Annex G limit: $0.010\text{ mg/L}$]:</span>
+                            <span id="lbl-as-4-1" class="text-[#901812] font-bold font-mono">0.008 mg/L</span>
+                        </label>
+                        <input type="range" id="input-as-4-1" min="0.000" max="0.060" step="0.002" value="0.008" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularSolubilizacao_4_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Aluminum ($Al$) [Annex G limit: $0.200\text{ mg/L}$]:</span>
+                            <span id="lbl-al-4-1" class="text-[#901812] font-bold font-mono">0.140 mg/L</span>
+                        </label>
+                        <input type="range" id="input-al-4-1" min="0.000" max="0.600" step="0.010" value="0.140" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularSolubilizacao_4_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Iron ($Fe$) [Annex G limit: $0.300\text{ mg/L}$]:</span>
+                            <span id="lbl-fe-4-1" class="text-[#901812] font-bold font-mono">0.180 mg/L</span>
+                        </label>
+                        <input type="range" id="input-fe-4-1" min="0.000" max="0.800" step="0.020" value="0.180" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularSolubilizacao_4_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Chromium ($Cr$) [Annex G limit: $0.050\text{ mg/L}$]:</span>
+                            <span id="lbl-cr-4-1" class="text-[#901812] font-bold font-mono">0.012 mg/L</span>
+                        </label>
+                        <input type="range" id="input-cr-4-1" min="0.000" max="0.100" step="0.005" value="0.012" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularSolubilizacao_4_1()">
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-tag text-[#555555] font-semibold flex items-center justify-between">
+                    <span>Protocol: Static 7-day contact at $25^\circ\text{C}$ in deionized water (4:1 L/S)</span>
+                    <button type="button" onclick="resetarSolubilizacao_4_1()" class="text-[#901812] hover:underline font-bold">Reset Parameters</button>
+                </div>
+            </div>
+
+            <!-- Painel de Decisão Class II A vs Class II B -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-1">ANNEX G INERTNESS AUDIT</span>
+                    
+                    <div class="p-5 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10 my-2">
+                        <span class="text-fluid-meta text-[#DEDEDE] block">Assigned Classification</span>
+                        <span id="res-class-name-4-1" class="text-fluid-h2 text-[#4ADE80] font-mono font-bold leading-tight block my-1">CLASS II B</span>
+                        <span id="res-badge-4-1" class="text-fluid-tag font-bold uppercase inline-block py-1.5 px-5 rounded-full text-white bg-green-700 shadow-md">INERT MATERIAL</span>
+                    </div>
+
+                    <div class="space-y-2 text-fluid-meta text-[#DEDEDE] mt-3">
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-green-500" id="res-desc-box-4-1">
+                            <strong class="text-white block mb-0.5" id="res-title-box-4-1">Compliance Status:</strong>
+                            <span id="res-desc-text-4-1">All chemical elements remain strictly below ABNT NBR 10004 Annex G potability limits. Material exhibits zero significant ionic transfer.</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                            <strong class="text-white block mb-0.5">Civil Engineering Recommendation:</strong>
+                            <span id="res-recom-text-4-1">Approved for unbound granular sub-bases, structural concrete aggregate substitution, and unconfined landfilling.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-water text-[#D1A705] text-xl"></i>
+                    <span id="res-trigger-note-4-1">Annex G Check: Maximum relative concentration ratio $C / C_{\text{limit}} \le 1.00$.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">ABNT NBR 10006:2004 — Seção 6: Interpretação de Resultados e Anexo G</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Lab Apparatus (Slide 5,0)</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (4,1) -->
+    <script>
+        function calcularSolubilizacao_4_1() {
+            const asVal = parseFloat(document.getElementById('input-as-4-1').value);
+            const alVal = parseFloat(document.getElementById('input-al-4-1').value);
+            const feVal = parseFloat(document.getElementById('input-fe-4-1').value);
+            const crVal = parseFloat(document.getElementById('input-cr-4-1').value);
+
+            document.getElementById('lbl-as-4-1').innerText = `${asVal.toFixed(3)} mg/L`;
+            document.getElementById('lbl-al-4-1').innerText = `${alVal.toFixed(3)} mg/L`;
+            document.getElementById('lbl-fe-4-1').innerText = `${feVal.toFixed(3)} mg/L`;
+            document.getElementById('lbl-cr-4-1').innerText = `${crVal.toFixed(3)} mg/L`;
+
+            // Limites normativos do Anexo G (ABNT NBR 10004)
+            const LIM_AS = 0.010;
+            const LIM_AL = 0.200;
+            const LIM_FE = 0.300;
+            const LIM_CR = 0.050;
+
+            let violations = [];
+            if (asVal > LIM_AS) violations.push(`As (${asVal.toFixed(3)} > ${LIM_AS})`);
+            if (alVal > LIM_AL) violations.push(`Al (${alVal.toFixed(3)} > ${LIM_AL})`);
+            if (feVal > LIM_FE) violations.push(`Fe (${feVal.toFixed(3)} > ${LIM_FE})`);
+            if (crVal > LIM_CR) violations.push(`Cr (${crVal.toFixed(3)} > ${LIM_CR})`);
+
+            const nameEl = document.getElementById('res-class-name-4-1');
+            const badgeEl = document.getElementById('res-badge-4-1');
+            const boxEl = document.getElementById('res-desc-box-4-1');
+            const descEl = document.getElementById('res-desc-text-4-1');
+            const recomEl = document.getElementById('res-recom-text-4-1');
+            const noteEl = document.getElementById('res-trigger-note-4-1');
+
+            if (violations.length > 0) {
+                nameEl.innerText = "CLASS II A";
+                nameEl.className = "text-fluid-h2 text-[#D1A705] font-mono font-bold leading-tight block my-1";
+                badgeEl.innerText = "NON-INERT MATERIAL";
+                badgeEl.className = "text-fluid-tag font-bold uppercase inline-block py-1.5 px-5 rounded-full text-[#333333] bg-[#D1A705] shadow-md";
+                boxEl.className = "p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]";
+                descEl.innerText = `Annex G limits exceeded for: ${violations.join(', ')}. Soluble ion transfer alters potable water standards.`;
+                recomEl.innerText = "Restricted application. Requires hydraulic binder encapsulation (solidification/stabilization) or Class II A regulated repository.";
+                noteEl.innerText = `Annex G Violation: Element transfer alters drinking water parameters ($C > C_{\\text{limit}}$).`;
+            } else {
+                nameEl.innerText = "CLASS II B";
+                nameEl.className = "text-fluid-h2 text-[#4ADE80] font-mono font-bold leading-tight block my-1";
+                badgeEl.innerText = "INERT MATERIAL";
+                badgeEl.className = "text-fluid-tag font-bold uppercase inline-block py-1.5 px-5 rounded-full text-white bg-green-700 shadow-md";
+                boxEl.className = "p-3 bg-white/5 rounded-xl border-l-4 border-green-500";
+                descEl.innerText = "All chemical elements remain strictly below ABNT NBR 10004 Annex G potability limits. Material exhibits zero significant ionic transfer.";
+                recomEl.innerText = "Approved for unbound granular sub-bases, structural concrete aggregate substitution, and unconfined recycling.";
+                noteEl.innerText = "Annex G Cleared: All parameters satisfy drinking water thresholds ($C \\le C_{\\text{limit}}$).";
+            }
+        }
+
+        function resetarSolubilizacao_4_1() {
+            document.getElementById('input-as-4-1').value = 0.008;
+            document.getElementById('input-al-4-1').value = 0.140;
+            document.getElementById('input-fe-4-1').value = 0.180;
+            document.getElementById('input-cr-4-1').value = 0.012;
+            calcularSolubilizacao_4_1();
+        }
+
+        if (document.getElementById('input-as-4-1')) {
+            calcularSolubilizacao_4_1();
+        }
+    </script>
+</div>
+
+
+
+<!-- SLIDE (5,0): LABORATORY APPARATUS & GLASSWARE SPECIFICATIONS -->
+<div id="slide-5-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric2.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 05 — EXPERIMENTAL APPARATUS & INSTRUMENTATION</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Laboratory Hardware & Glassware Protocols</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente (3 Cards com Disposição Focada) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Card 1: Agitação e Termodinâmica -->
+        <div class="p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812] cursor-pointer" onclick="document.getElementById('modal-agitator-5-0').showModal()">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-arrows-rotate text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Agitation & Conditioning</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Calibrated mechanical equipment ensuring boundary layer mass transfer and steady temperature kinetics.</p>
+
+                <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                    <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i><strong>Rotary Agitator:</strong> End-over-end dynamic tumbler ($30 \pm 2\text{ rpm}$).</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i><strong>Forced-Air Oven:</strong> Sample drying at $\le 42^\circ\text{C}$ without volatile loss.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i><strong>Precision Balance:</strong> $\pm 0.01\text{ g}$ resolution gravimetric measurement.</li>
+                </ul>
+            </div>
+            <div class="pt-2 text-fluid-tag text-[#901812] font-bold flex items-center">
+                <i class="fa-solid fa-circle-info mr-1.5"></i><span>Inspect mechanical tolerances</span>
+            </div>
+        </div>
+
+        <!-- Card 2: Sistemas de Filtração & Retenção -->
+        <div class="p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#D1A705] cursor-pointer" onclick="document.getElementById('modal-filtration-5-0').showModal()">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#D1A705] mb-1">
+                    <i class="fa-solid fa-filter text-3xl text-[#D1A705]"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Separation & Filtration</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Pressure devices and calibrated porous membranes preventing fine particulate contamination in leachates.</p>
+
+                <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                    <li class="flex items-start"><i class="fa-solid fa-layer-group text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>Pressurized Filter Holder:</strong> Positive pressure up to $350\text{ kPa}$.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-layer-group text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>$0.45\,\mu\text{m}$ Membrane:</strong> Distinguishes true dissolved ions from colloids.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-layer-group text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>Büchner & Kitasato Assembly:</strong> Rapid vacuum-assisted clarification.</li>
+                </ul>
+            </div>
+            <div class="pt-2 text-fluid-tag text-[#D1A705] font-bold flex items-center">
+                <i class="fa-solid fa-circle-info mr-1.5"></i><span>Inspect membrane specs</span>
+            </div>
+        </div>
+
+        <!-- Card 3: Instrumentação Química e ZHE -->
+        <div class="p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-3 flex flex-col justify-between border-l-[12px] border-white cursor-pointer" onclick="document.getElementById('modal-instrumentation-5-0').showModal()">
+            <div class="space-y-2">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">TRACE PURITY</span>
+                    <span class="text-fluid-tag text-[#DEDEDE]"><i class="fa-solid fa-microscope text-lg"></i></span>
+                </div>
+                <h3 class="text-fluid-h3 text-white font-bold">Analytical Instrumentation</h3>
+                <p class="text-fluid-body text-[#DEDEDE]">Inert glassware, automated sensors, and zero-headspace vessels preventing environmental bias.</p>
+
+                <ul class="text-fluid-meta space-y-2 text-[#DEDEDE] border-t border-white/15 pt-3 font-semibold">
+                    <li class="flex items-start"><i class="fa-solid fa-vial text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>Digital pH Meter:</strong> Multi-point slope calibration ($\pm 0.05\text{ units}$).</li>
+                    <li class="flex items-start"><i class="fa-solid fa-vial text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>Borosilicate 3.3 Flasks:</strong> Alkali-leaching resistant chemical bodies.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-vial text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>Zero-Headspace (ZHE):</strong> Piston vessel preventing volatile escape.</li>
+                </ul>
+            </div>
+            <div class="pt-2 text-fluid-tag text-[#D1A705] font-bold flex items-center">
+                <i class="fa-solid fa-circle-info mr-1.5"></i><span>Inspect sensor & vessel protocols</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">ABNT NBR 10005 / NBR 10006 Hardware Standard Requirements</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Leaching Kinetics (Slide 6,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO 1: AGITADOR E ESTUFA -->
+    <dialog id="modal-agitator-5-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">EQUIPMENT STANDARD</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Rotary Tumbler & Drying Ovens</h3>
+            </div>
+            <button onclick="document.getElementById('modal-agitator-5-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <!-- Single-line structure: picture + description -->
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-4 bg-white/10 rounded-2xl border border-white/10 mb-4">
+            <img src="bg-clay4.png" alt="Rotary Agitator" class="w-28 h-28 rounded-xl object-cover flex-shrink-0 border border-white/20">
+            <p class="text-fluid-body text-[#EAEAEA]">End-over-end rotational tumbler prevents dead-zone sedimentation during the 18-hour continuous extraction. Forced aeration ovens preserve thermally unstable contaminants.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-fluid-meta text-[#DEDEDE]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#901812]">
+                <strong class="text-white block">Kinetic Speed:</strong> Calibrated strictly to $30 \pm 2\text{ rpm}$ to maintain liquid-solid interfacial equilibrium without attrition.
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                <strong class="text-white block">Thermal Cap:</strong> Drying temperatures must never exceed $42^\circ\text{C}$ to avoid volatile stripping or pyrolytic transformations.
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL NATIVO 2: DISPOSITIVOS DE FILTRAÇÃO -->
+    <dialog id="modal-filtration-5-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">FILTRATION ARCHITECTURE</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Membrane Selection & Pressure Systems</h3>
+            </div>
+            <button onclick="document.getElementById('modal-filtration-5-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <!-- Single-line structure: picture + description -->
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-4 bg-white/10 rounded-2xl border border-white/10 mb-4">
+            <img src="bg-concrete1.png" alt="Filtration Assembly" class="w-28 h-28 rounded-xl object-cover flex-shrink-0 border border-white/20">
+            <p class="text-fluid-body text-[#EAEAEA]">Filtration isolates true chemical species in solution from suspended sub-micrometer mineral particulates that would artificially distort leachate spectrometry.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-fluid-meta text-[#DEDEDE]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                <strong class="text-[#D1A705] block">NBR 10005 Cut-Off:</strong> Borosilicate fiber or PTFE membranes with nominal pore diameters between $0.6\,\mu\text{m}$ and $0.8\,\mu\text{m}$.
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                <strong class="text-white block">NBR 10006 Cut-Off:</strong> Strict hydrophilic cellulose ester membranes with $0.45\,\mu\text{m}$ pore rating for drinking water analogies.
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL NATIVO 3: INSTRUMENTAÇÃO QUÍMICA & ZHE -->
+    <dialog id="modal-instrumentation-5-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">TRACE CONTAINMENT</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Zero-Headspace Extraction & Potentiometry</h3>
+            </div>
+            <button onclick="document.getElementById('modal-instrumentation-5-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <!-- Single-line structure: picture + description -->
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-4 bg-white/10 rounded-2xl border border-white/10 mb-4">
+            <img src="bg-clay3.png" alt="Chemical Sensors" class="w-28 h-28 rounded-xl object-cover flex-shrink-0 border border-white/20">
+            <p class="text-fluid-body text-[#EAEAEA]">Specialized Zero-Headspace Extractor (ZHE) systems completely eliminate the air-liquid interface to contain volatile organic compounds (VOCs) during rigorous mechanical tumbling.</p>
+        </div>
+        <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                <strong class="text-[#D1A705] block">Pre-Cooling Requirement:</strong> When testing for volatiles, residues must be cooled to $4^\circ\text{C}$ prior to milling to preserve BTEX and chlorinated solvents.
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (6,0): LEACHING KINETICS, INFLUENCING FACTORS & ECOTOXICITY -->
+<div id="slide-6-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-clay1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 06 — MASS TRANSFER & TOXICOLOGICAL RISK</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Leaching Dynamics & Ecotoxicity Testing</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Card 1: Fatores Determinantes da Cinética -->
+        <div class="p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812] cursor-pointer" onclick="document.getElementById('modal-kinetics-6-0').showModal()">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-gauge-high text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Leaching Governing Factors</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Mass transfer rate is dictated by boundary layer equilibrium and interfacial exposure variables.</p>
+
+                <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                    <li class="flex items-start"><i class="fa-solid fa-flask text-[#901812] mt-1 mr-2 text-xs"></i><strong>Leaching Agent:</strong> Deionized water vs. acetic acid buffer.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-ruler-combined text-[#901812] mt-1 mr-2 text-xs"></i><strong>Particle Size ($< 9.5\text{ mm}$):</strong> Specific surface controls ionic flux.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-arrows-spin text-[#901812] mt-1 mr-2 text-xs"></i><strong>Agitation & L/S Ratio:</strong> Hydrodynamic regime and cumulative stage extractions ($L/S = 20:1$).</li>
+                </ul>
+            </div>
+            <div class="pt-2 text-fluid-tag text-[#901812] font-bold flex items-center">
+                <i class="fa-solid fa-circle-info mr-1.5"></i><span>Inspect transfer mechanisms</span>
+            </div>
+        </div>
+
+        <!-- Card 2: Matrizes Cimentícias e Imobilização -->
+        <div class="p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#D1A705] cursor-pointer" onclick="document.getElementById('modal-immobilization-6-0').showModal()">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#D1A705] mb-1">
+                    <i class="fa-solid fa-cubes-stacked text-3xl text-[#D1A705]"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Immobilization in Composites</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Residue safety verification in blended cements, geopolymer precursors, and concrete matrices.</p>
+
+                <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                    <li class="flex items-start"><i class="fa-solid fa-shield-halved text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>Alkaline Buffer:</strong> Composite matrix neutralizes acid percolation agents.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-lock text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>Hydration Trapping:</strong> Heavy metals locked in C-S-H / ettringite phases.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-triangle-exclamation text-[#D1A705] mt-1 mr-2 text-xs"></i>Standard Inconsistency: Lack of realistic monolithic protocols raises industry confusion.</li>
+                </ul>
+            </div>
+            <div class="pt-2 text-fluid-tag text-[#D1A705] font-bold flex items-center">
+                <i class="fa-solid fa-circle-info mr-1.5"></i><span>Inspect chemical fixation</span>
+            </div>
+        </div>
+
+        <!-- Card 3: Ecotoxicologia Além da Composição Química -->
+        <div class="p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-3 flex flex-col justify-between border-l-[12px] border-white cursor-pointer" onclick="document.getElementById('modal-ecotox-6-0').showModal()">
+            <div class="space-y-2">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">BIOASSAYS VS CHEMISTRY</span>
+                    <i class="fa-solid fa-dna text-xl text-[#D1A705]"></i>
+                </div>
+                <h3 class="text-fluid-h3 text-white font-bold">Ecotoxicity & Bio-Reactivity</h3>
+                <p class="text-fluid-body text-[#DEDEDE]">Bulk chemical quantification does not predict real bio-availability, chronic eco-toxicity, or cellular synergies.</p>
+
+                <ul class="text-fluid-meta space-y-2 text-[#DEDEDE] border-t border-white/15 pt-3 font-semibold">
+                    <li class="flex items-start"><i class="fa-solid fa-vial-circle-check text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>Bioassays:</strong> Standard toxicity testing using <em>Daphnia magna</em>, microalgae, and bioluminescent bacteria.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-vial-circle-check text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>Cocktail Effect:</strong> Synergistic toxicity of multiple trace heavy metals under variable pH.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-vial-circle-check text-[#D1A705] mt-1 mr-2 text-xs"></i><strong>Bio-accumulation:</strong> Environmental migration pathways in soils and surface waters.</li>
+                </ul>
+            </div>
+            <div class="pt-2 text-fluid-tag text-[#D1A705] font-bold flex items-center">
+                <i class="fa-solid fa-circle-info mr-1.5"></i><span>Inspect bioassay criteria</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">Environmental Evaluation: Physical Leaching Parameters vs. Biological Toxicity</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for International Leaching Comparison (Slide 7,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO 1: CINÉTICA E PARÂMETROS FÍSICOS -->
+    <dialog id="modal-kinetics-6-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">MASS TRANSFER PHENOMENOLOGY</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Leaching Kinetic Variables</h3>
+            </div>
+            <button onclick="document.getElementById('modal-kinetics-6-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-4 bg-white/10 rounded-2xl border border-white/10 mb-4">
+            <img src="bg-clay1.png" alt="Leaching Column Assay" class="w-28 h-28 rounded-xl object-cover flex-shrink-0 border border-white/20">
+            <p class="text-fluid-body text-[#EAEAEA]">Leaching is governed by diffusion, surface dissolution, and chemical complexation. Accelerated batch tests force high surface-to-volume exposure that may exaggerate unconfined environmental release.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-fluid-meta text-[#DEDEDE]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#901812]">
+                <strong class="text-white block">Particle Granulometry:</strong> Milling materials below $9.5\text{ mm}$ (or $4\text{ mm}$ in EN 12457) breaks protective mineral crusts, exposing encapsulated phases to immediate attack.
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                <strong class="text-white block">Extraction Fluid:</strong> Glacial acetic acid simulates municipal solid waste codisposal, while deionized water reflects real-world meteoric rainwater leaching.
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL NATIVO 2: IMOBILIZAÇÃO EM MATRIZES CIMENTÍCIAS -->
+    <dialog id="modal-immobilization-6-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">SOLIDIFICATION / STABILIZATION (S/S)</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Immobilization Mechanisms in Binders</h3>
+            </div>
+            <button onclick="document.getElementById('modal-immobilization-6-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-4 bg-white/10 rounded-2xl border border-white/10 mb-4">
+            <img src="bg-concrete1.png" alt="Hydrated Cement Composite" class="w-28 h-28 rounded-xl object-cover flex-shrink-0 border border-white/20">
+            <p class="text-fluid-body text-[#EAEAEA]">Hydraulic cement matrices chemically encapsulate toxic ions within stable crystalline lattices and physically isolate contaminants behind dense, low-permeability hydration products.</p>
+        </div>
+        <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                <strong class="text-[#D1A705] block mb-0.5">Buffering Dynamics:</strong> When crushed concrete is subjected to acid extractors, Portlandite ($\text{Ca(OH)}_2$) buffers the acid solution, elevating the pH and precipitating heavy metals as insoluble hydroxides.
+            </div>
+        </div>
+    </dialog>
+
+    <!-- MODAL NATIVO 3: ECOTOXICOLOGIA E BIOENSAIOS -->
+    <dialog id="modal-ecotox-6-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">BIOLOGICAL RISK EVALUATION</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Ecotoxicological Assays vs Chemical Spectra</h3>
+            </div>
+            <button onclick="document.getElementById('modal-ecotox-6-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-4 bg-white/10 rounded-2xl border border-white/10 mb-4">
+            <img src="bg-nature1.png" alt="Aquatic Toxicity Bioassay" class="w-28 h-28 rounded-xl object-cover flex-shrink-0 border border-white/20">
+            <p class="text-fluid-body text-[#EAEAEA]">Comparing leachate element concentrations to regulatory thresholds is insufficient to rule out toxicity because speciation, bioavailability, and antagonistic/synergistic cellular reactions govern true ecological damage.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-fluid-meta text-[#DEDEDE]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                <strong class="text-[#D1A705] block">Organism Responses:</strong> Tests on indicator species evaluate acute mortality ($LC_{50}$), enzyme inhibition, and chronic reproductive disruption from minute leachate traces.
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                <strong class="text-white block">Composite Compatibilization:</strong> Modern sustainable construction research requires coupling standard NBR 10005/6 chemistry with microbiological screening.
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (7,0): INTERNATIONAL LEACHING STANDARDS BENCHMARK -->
+<div id="slide-7-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 07 — INTERNATIONAL REGULATORY FRAMEWORKS</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Global Leaching Protocols & Standards Matrix</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Tabela Comparativa Internacional Formatada com Rolagem -->
+        <div class="lg:col-span-8 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-table-list text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Standard Testing Methodologies Comparison</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Cross-comparison of leaching extract methods across distinct geographic and regulatory jurisdictions:</p>
+
+                <!-- Tabela com rolagem e tipografia legível calibrada -->
+                <div class="overflow-x-auto rounded-2xl border border-black/10 bg-white/80 shadow-sm">
+                    <table class="w-full text-left border-collapse text-fluid-meta">
+                        <thead>
+                            <tr class="bg-[#901812] text-white">
+                                <th class="p-3 border-b border-black/10 font-bold">Standard</th>
+                                <th class="p-3 border-b border-black/10 font-bold">Origin / Year</th>
+                                <th class="p-3 border-b border-black/10 font-bold">Liquid/Solid Ratio</th>
+                                <th class="p-3 border-b border-black/10 font-bold">Leaching Agent</th>
+                                <th class="p-3 border-b border-black/10 font-bold">Granulometry</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-black/5 text-[#333333]">
+                            <tr class="hover:bg-white/90 transition-colors">
+                                <td class="p-3 font-bold text-[#901812]">ABNT NBR 10005</td>
+                                <td class="p-3">Brazil (2004)</td>
+                                <td class="p-3 font-mono">20:1</td>
+                                <td class="p-3">Acetic Acid Buffer</td>
+                                <td class="p-3 font-mono">&lt; 9.5 mm</td>
+                            </tr>
+                            <tr class="hover:bg-white/90 transition-colors">
+                                <td class="p-3 font-bold text-[#901812]">US EPA 1311 (TCLP)</td>
+                                <td class="p-3">USA (1992)</td>
+                                <td class="p-3 font-mono">20:1</td>
+                                <td class="p-3">Acetic Acid Buffer</td>
+                                <td class="p-3 font-mono">&lt; 9.5 mm</td>
+                            </tr>
+                            <tr class="hover:bg-white/90 transition-colors">
+                                <td class="p-3 font-bold text-[#D1A705]">EN 12457-3</td>
+                                <td class="p-3">Europe (2002)</td>
+                                <td class="p-3 font-mono">2:1 &amp; 8:1 (Two-stage)</td>
+                                <td class="p-3">Deionized Water</td>
+                                <td class="p-3 font-mono">&lt; 4.0 mm</td>
+                            </tr>
+                            <tr class="hover:bg-white/90 transition-colors">
+                                <td class="p-3 font-bold text-[#333333]">DIN 38414-S4</td>
+                                <td class="p-3">Germany (1984)</td>
+                                <td class="p-3 font-mono">10:1</td>
+                                <td class="p-3">Deionized Water</td>
+                                <td class="p-3 font-mono">&lt; 10.0 mm</td>
+                            </tr>
+                            <tr class="hover:bg-white/90 transition-colors">
+                                <td class="p-3 font-bold text-[#333333]">NVN 7347 / AFNOR</td>
+                                <td class="p-3">NL (1996) / FR (1992)</td>
+                                <td class="p-3 font-mono">Variable (Column/Batch)</td>
+                                <td class="p-3">Demineralized Water</td>
+                                <td class="p-3 font-mono">Granular / Monolith</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>Sources: Pacheco-Torgal &amp; Jalali (2010); US EPA SW-846; CEN EN 12457</span>
+                <span class="text-[#901812] font-bold">Acidic vs. Neutral Extractions</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Análise Crítica e Compatibilização -->
+        <div class="lg:col-span-4 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block">METHODOLOGICAL CONVERGENCE</span>
+                <h3 class="text-fluid-h3 text-white font-bold">Acid Extraction vs Rainwater Leaching</h3>
+
+                <div class="space-y-2.5 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#901812]">
+                        <strong class="text-white block mb-0.5">EPA 1311 &amp; NBR 10005:</strong> Designed for municipal landfill co-disposal simulation (fermenting municipal solid waste producing organic acids). Highly aggressive.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#D1A705]">
+                        <strong class="text-[#D1A705] block mb-0.5">EN 12457 &amp; DIN 38414:</strong> Utilizes pure water to simulate real atmospheric percolation on road embankments and unconfined recycled aggregates.
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="document.getElementById('modal-compat-7-0').showModal()" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Explore Technical Discrepancies</span>
+                <i class="fa-solid fa-circle-info text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">Comparative Normative Evaluation: ABNT vs. US EPA vs. CEN European Norms</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Case Study: Ore Tailings vs Commercial (Slide 8,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: DISCREPÂNCIAS METODOLÓGICAS -->
+    <dialog id="modal-compat-7-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">STANDARDIZATION CHALLENGES</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Compatibility Gaps Across Jurisdictions</h3>
+            </div>
+            <button onclick="document.getElementById('modal-compat-7-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <!-- Single-line structure: picture + description -->
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-4 bg-white/10 rounded-2xl border border-white/10 mb-4">
+            <img src="bg-concrete1.png" alt="Standard Testing Equipment" class="w-28 h-28 rounded-xl object-cover flex-shrink-0 border border-white/20">
+            <p class="text-fluid-body text-[#EAEAEA]">Differences in particle crushing ($4\text{ mm}$ vs $9.5\text{ mm}$), leachant chemistry, and cumulative L/S ratios cause conflicting classifications for the exact same industrial residue.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-fluid-meta text-[#DEDEDE]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#901812]">
+                <strong class="text-white block">Monolith vs Granular:</strong> Crushing monolithic concrete into fine grains destroys the physical immobilization matrix, overestimating real-world leaching rates.
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                <strong class="text-[#D1A705] block">European Two-Stage Test:</strong> EN 12457-3 evaluates wash-off kinetics at $L/S = 2\,\text{l/kg}$ followed by slow diffusion at cumulative $L/S = 10\,\text{l/kg}$.
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (8,0): EXPERIMENTAL CASE STUDY - COMMERCIAL VS IOT CONCRETE BLOCKS -->
+<div id="slide-8-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-concrete1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 08 — EXPERIMENTAL BENCHMARKING</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Case Study: Commercial vs. Iron Ore Tailings (IOT) Blocks</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Tabela Comparativa de Lixiviação e Solubilização com Rolagem -->
+        <div class="lg:col-span-8 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-flask-vial text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Leached vs. Solubilized Elemental Spectra (mg/L)</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Elemental concentrations quantified by ICP-OES across NBR 10005 (Leached) and NBR 10006 (Solubilized) protocols:</p>
+
+                <div class="overflow-x-auto rounded-2xl border border-black/10 bg-white/80 shadow-sm">
+                    <table class="w-full text-left border-collapse text-fluid-meta">
+                        <thead>
+                            <tr class="bg-[#901812] text-white">
+                                <th class="p-2.5 border-b border-black/10 font-bold">Element</th>
+                                <th class="p-2.5 border-b border-black/10 font-bold">NBR 10004 Annex F (Leach.)</th>
+                                <th class="p-2.5 border-b border-black/10 font-bold">EPA SW-846 Limit</th>
+                                <th class="p-2.5 border-b border-black/10 font-bold">Leached (IOT Block)</th>
+                                <th class="p-2.5 border-b border-black/10 font-bold">NBR 10004 Annex G (Solub.)</th>
+                                <th class="p-2.5 border-b border-black/10 font-bold">Solub. (IOT Block)</th>
+                                <th class="p-2.5 border-b border-black/10 font-bold">Solub. (Comm. Block)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-black/5 text-[#333333]">
+                            <tr class="hover:bg-white/90 transition-colors">
+                                <td class="p-2 font-bold text-[#901812]">As</td>
+                                <td class="p-2 font-mono">1.0</td>
+                                <td class="p-2 font-mono">5.0</td>
+                                <td class="p-2 font-mono text-green-700 font-bold">0.0142</td>
+                                <td class="p-2 font-mono">0.010</td>
+                                <td class="p-2 font-mono text-[#901812] font-bold">0.0429*</td>
+                                <td class="p-2 font-mono text-[#901812] font-bold">0.0594*</td>
+                            </tr>
+                            <tr class="hover:bg-white/90 transition-colors">
+                                <td class="p-2 font-bold text-[#901812]">Pb</td>
+                                <td class="p-2 font-mono">1.0</td>
+                                <td class="p-2 font-mono">5.0</td>
+                                <td class="p-2 font-mono text-green-700">n.d.</td>
+                                <td class="p-2 font-mono">0.010</td>
+                                <td class="p-2 font-mono text-green-700">n.d.</td>
+                                <td class="p-2 font-mono text-green-700">n.d.</td>
+                            </tr>
+                            <tr class="hover:bg-white/90 transition-colors">
+                                <td class="p-2 font-bold text-[#901812]">Cr</td>
+                                <td class="p-2 font-mono">5.0</td>
+                                <td class="p-2 font-mono">5.0</td>
+                                <td class="p-2 font-mono text-green-700">n.d.</td>
+                                <td class="p-2 font-mono">0.050</td>
+                                <td class="p-2 font-mono text-green-700">n.d.</td>
+                                <td class="p-2 font-mono text-green-700 font-mono">0.0005</td>
+                            </tr>
+                            <tr class="hover:bg-white/90 transition-colors">
+                                <td class="p-2 font-bold text-[#333333]">Al</td>
+                                <td class="p-2 font-mono">-</td>
+                                <td class="p-2 font-mono">-</td>
+                                <td class="p-2 font-mono">1.7761</td>
+                                <td class="p-2 font-mono">0.200</td>
+                                <td class="p-2 font-mono text-green-700 font-bold">0.0943</td>
+                                <td class="p-2 font-mono text-[#901812] font-bold">0.4585*</td>
+                            </tr>
+                            <tr class="hover:bg-white/90 transition-colors">
+                                <td class="p-2 font-bold text-[#333333]">Fe</td>
+                                <td class="p-2 font-mono">-</td>
+                                <td class="p-2 font-mono">-</td>
+                                <td class="p-2 font-mono">0.5040</td>
+                                <td class="p-2 font-mono">0.300</td>
+                                <td class="p-2 font-mono text-green-700 font-mono">0.1128</td>
+                                <td class="p-2 font-mono text-green-700 font-mono">0.1606</td>
+                            </tr>
+                            <tr class="hover:bg-white/90 transition-colors">
+                                <td class="p-2 font-bold text-[#333333]">Mn</td>
+                                <td class="p-2 font-mono">-</td>
+                                <td class="p-2 font-mono">-</td>
+                                <td class="p-2 font-mono">0.1525</td>
+                                <td class="p-2 font-mono">0.100</td>
+                                <td class="p-2 font-mono text-green-700 font-mono">0.0679</td>
+                                <td class="p-2 font-mono text-green-700 font-mono">0.0337</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>*Exceeds potability threshold (ABNT NBR 10004 Annex G) | n.d.: not detected</span>
+                <span class="text-[#901812] font-bold">Both Matrixes: Class II A (Non-Inert)</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Diagnóstico Metodológico e Conclusão -->
+        <div class="lg:col-span-4 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block">ANALYTICAL DIAGNOSIS</span>
+                <h3 class="text-fluid-h3 text-white font-bold">Immobilization vs. Baseline Raw Materials</h3>
+
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-green-500">
+                        <strong class="text-white block mb-0.5">Leaching Compliance (Class I Rule-Out):</strong>
+                        All toxic heavy metals ($As, Pb, Cr$) leached under NBR 10005 remain orders of magnitude below Annex F and US EPA caps ($As = 0.0142 \ll 1.0\text{ mg/L}$). Neither block is hazardous.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#D1A705]">
+                        <strong class="text-[#D1A705] block mb-0.5">Solubilization Paradox:</strong>
+                        Commercial blocks leach more $Al$ ($0.4585\text{ mg/L}$) and $As$ ($0.0594\text{ mg/L}$) than IOT blocks, proving natural raw aggregates carry intrinsic soluble phases.
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="document.getElementById('modal-case-8-0').showModal()" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>View Comparative Petrography</span>
+                <i class="fa-solid fa-microscope text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">Experimental Data Source: SICon / UFV Laboratory Waste Evaluation Protocols</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Closing Module & Problem Set (Slide 9,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: COMPARAÇÃO PETROGRÁFICA E MECANISMOS -->
+    <dialog id="modal-case-8-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-3xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block">CASE STUDY INSIGHTS</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Iron Ore Tailings vs Commercial Aggregates</h3>
+            </div>
+            <button onclick="document.getElementById('modal-case-8-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <!-- Single-line structure: picture + description -->
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-4 bg-white/10 rounded-2xl border border-white/10 mb-4">
+            <img src="bg-concrete1.png" alt="Concrete Microstructure" class="w-28 h-28 rounded-xl object-cover flex-shrink-0 border border-white/20">
+            <p class="text-fluid-body text-[#EAEAEA]">Cementitious hydration binds tailing fines into crystalline C-S-H gels, delivering lower solubilized release of aluminum ($0.0943$ vs $0.4585\text{ mg/L}$) than traditional natural river sand mixtures.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-fluid-meta text-[#DEDEDE]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-green-500">
+                <strong class="text-white block">Chemical Fixation:</strong> Iron oxides and heavy metalloids present in tailings enter stable non-reactive phases upon alkaline hydration.
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                <strong class="text-[#D1A705] block">Annex G Standard Limit:</strong> Even standard commercial concrete fails pure drinking water potability requirements due to trace ionic background.
+            </div>
+        </div>
+    </dialog>
+</div>
+
+
+
+<!-- SLIDE (9,0): CLOSING MODULE — SYNTHESIS, REFERENCES & DUAL EVALUATION HUB -->
+<div id="slide-9-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks3.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">CLOSING MODULE — SYNTHESIS & DUAL EVALUATION</span>
+            <h2 class="text-fluid-h2 text-[#901812]">References & Assessment Submissions</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Referências Normativas e Literatura Central (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-book-bookmark text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Standard References</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Regulatory standards and academic literature governing environmental characterization of construction residues:</p>
+
+                <ul class="space-y-2.5 text-fluid-meta text-[#444444] font-semibold border-t border-black/10 pt-2.5">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-file-contract text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>ABNT NBR 10004/5/6:2004:</strong> Resíduos sólidos — Classificação, lixiviação e solubilização.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-file-lines text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>US EPA Method 1311:</strong> Toxicity Characteristic Leaching Procedure (TCLP). SW-846.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-file-lines text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>CEN EN 12457-3:</strong> Compliance leaching test for granular waste materials.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-book text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>Pacheco-Torgal &amp; Jalali (2010):</strong> <em>A sustentabilidade dos materiais de construção</em>. TecMinho.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>CIV 665 • SICon / DEC — UFV</span>
+                <span class="text-[#901812] font-bold">Part 2 Concluded</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: In-Class Quiz 051 (3.5 cols) -->
+        <div class="lg:col-span-3.5 sm:col-span-6 lg:col-span-3 p-5 sm:p-6 rounded-3xl card-glass-dark text-white text-center space-y-3 flex flex-col justify-between border-l-[10px] border-[#D1A705]">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] block font-bold uppercase tracking-wider mb-1">EVALUATION 01</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-2 leading-tight">In-Class Quiz 051</h3>
+                
+                <div class="bg-white/90 backdrop-blur-md p-3 rounded-2xl max-w-[150px] sm:max-w-[170px] mx-auto shadow-lg my-1.5">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSeE-ao63wEf85GADkrMjNq53t2nKEnNH85VejRJQeb0g1hWIA%2Fviewform%3Fusp%3Dheader&color=901812" alt="Quiz 051 QR Code" class="w-full h-auto rounded-lg">
+                </div>
+                <span class="text-fluid-tag text-[#DEDEDE] font-bold block">Scan for Live Quiz</span>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeE-ao63wEf85GADkrMjNq53t2nKEnNH85VejRJQeb0g1hWIA/viewform?usp=header" target="_blank" class="w-full py-3 px-4 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md inline-flex items-center justify-center space-x-2 min-h-[48px]">
+                <i class="fa-solid fa-pen-to-square text-[#D1A705] text-lg"></i>
+                <span>Open Quiz 051</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+            </a>
+        </div>
+
+        <!-- Coluna 3: Weekly Report Form (3.5 cols) -->
+        <div class="lg:col-span-3.5 sm:col-span-6 lg:col-span-4 p-5 sm:p-6 rounded-3xl card-glass-dark text-white text-center space-y-3 flex flex-col justify-between border-l-[10px] border-white">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] block font-bold uppercase tracking-wider mb-1">EVALUATION 02</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-2 leading-tight">Weekly Synthesis Report</h3>
+                
+                <div class="bg-white/90 backdrop-blur-md p-3 rounded-2xl max-w-[150px] sm:max-w-[170px] mx-auto shadow-lg my-1.5">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSeeNm_vrZKW5_BljtamhpkoPBt9OXsTNabj1F5a9aHTlvRp5g%2Fviewform%3Fusp%3Dsharing%26ouid%3D106628533404190640980&color=901812" alt="Weekly Report Form QR Code" class="w-full h-auto rounded-lg">
+                </div>
+                <span class="text-fluid-tag text-[#DEDEDE] font-bold block">Scan for Weekly Form</span>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeNm_vrZKW5_BljtamhpkoPBt9OXsTNabj1F5a9aHTlvRp5g/viewform?usp=sharing&ouid=106628533404190640980" target="_blank" class="w-full py-3 px-4 bg-[#333333] border border-white/20 text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md inline-flex items-center justify-center space-x-2 min-h-[48px]">
+                <i class="fa-solid fa-file-invoice text-[#D1A705] text-lg"></i>
+                <span>Open Weekly Form</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Toxicity of Construction Materials — Part 2 Complete</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">←</kbd> to Review Previous Slides | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">Home</kbd> to Return to Cover</span>
+    </footer>
+</div>
+
+    
+
+    </main>
+
+    <!-- MOTOR DE NAVEGAÇÃO MATRICIAL 2D -->
+    <script>
+        let currentX = 0, currentY = 0;
+        let slideGrid = {};
+
+        function updateSlideGrid() {
+            slideGrid = {};
+            document.querySelectorAll('[id^="slide-"]').forEach(slide => {
+                const parts = slide.id.replace('slide-', '').split('-');
+                if (parts.length === 2) slideGrid[`${parts[0]},${parts[1]}`] = slide.id;
+            });
+        }
+
+        function hasSlide(x, y) { return !!slideGrid[`${x},${y}`]; }
+
+        function updateUI() {
+            updateSlideGrid();
+            const keysH = Object.keys(slideGrid).filter(k => k.endsWith(',0'));
+            const maxH = Math.max(...keysH.map(k => parseInt(k.split(',')[0])), 0);
+            const totalMainSlides = keysH.length;
+            
+            document.getElementById('progressBar').style.width = `${maxH === 0 ? 100 : (currentX / maxH) * 100}%`;
+            document.getElementById('slideIndicator').innerText = `Slide (${currentX},${currentY}) | ${currentX + 1} of ${totalMainSlides}`;
+
+            const dirs = { 'up': [0,-1], 'down': [0,1], 'left': [-1,0], 'right': [1,0] };
+            for (let d in dirs) {
+                const btn = document.getElementById(`btn-nav-${d}`);
+                if (btn) btn.classList.toggle('nav-enabled', hasSlide(currentX + dirs[d][0], currentY + dirs[d][1]));
+            }
+        }
+
+        function moveInGrid(dx, dy) {
+            updateSlideGrid();
+            const nx = currentX + dx, ny = currentY + dy;
+            if (hasSlide(nx, ny)) {
+                const cur = document.getElementById(slideGrid[`${currentX},${currentY}`]);
+                const nxt = document.getElementById(slideGrid[`${nx},${ny}`]);
+                
+                cur.classList.remove('slide-active', 'slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+                nxt.classList.remove('slide-active', 'slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+
+                if (dx > 0) cur.classList.add('slide-hidden-left');
+                else if (dx < 0) cur.classList.add('slide-hidden-right');
+                else if (dy > 0) cur.classList.add('slide-hidden-down');
+                else if (dy < 0) cur.classList.add('slide-hidden-up');
+
+                nxt.classList.add('slide-active');
+
+                currentX = nx; currentY = ny;
+                updateUI();
+                if (window.renderMathInElement) renderMathInElement(nxt);
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (['INPUT','TEXTAREA','DIALOG'].includes(document.activeElement.tagName)) return;
+            if (e.key === 'ArrowRight' || e.key === ' ') moveInGrid(1, 0);
+            else if (e.key === 'ArrowLeft') moveInGrid(-1, 0);
+            else if (e.key === 'ArrowUp') moveInGrid(0, -1);
+            else if (e.key === 'ArrowDown') moveInGrid(0, 1);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => { 
+            updateUI(); 
+        });
+    </script>
+</body>
+</html>
