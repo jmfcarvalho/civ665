@@ -14,154 +14,129 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- CENTRAL RESOURCE DIRECTORY -->
-    <script>
-        const COURSE_ASSETS = {
-            logos: {
-                ufv: "https://dci.ufv.br/wp-content/themes/diretorias/assets/images/estrutura/logotipoUFV.png",
-                pms: "https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png"
-            },
-            
-            slideBackgrounds: {
-                "0_0": "bg-blocks3.png",
-                "1_0": "bg-clay4.png",
-                "2_0": "bg-geometric1.png",
-                "3_0": "bg-geometric2.png",
-                "4_0": "bg-nature3.png",
-                "5_0": "bg-blocks4.png",
-                "6_0": "bg-nature4.png",
-                "7_0": "bg-paint1.png",
-                "8_0": "bg-polymer1.png"
-            },
-
-            externalLinks: {
-                presentationAccess: "https://drive.google.com/drive/folders/1lrlm32HUiPbvwrDZsI3Vr3CcnAWixd8l?usp=sharing",
-                sharedFolder: "https://drive.google.com/drive/folders/1lrlm32HUiPbvwrDZsI3Vr3CcnAWixd8l?usp=sharing",
-                googleFormsQuiz: "https://docs.google.com/forms/d/e/1FAIpQLSf6rIoT2YIH5Rq9NeRT86UgcsjG6zMKoYOL1WPB7k05YnHwHw/viewform?usp=header",
-                videoPitchSubmission: "https://forms.google.com",
-                paperSubmission: "https://forms.google.com",
-                defenseMeet: "https://meet.google.com/yhd-gjrp-xck",
-                pmsPortal: "https://pms.ufv.br"
-            },
-
-            qrCodeGenerator: (url, color = "901812") => 
-                `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}&color=${color}`
-        };
-    </script>
-
-    <!-- SECTION 1: STYLES & IMMUTABLE CSS VARIABLES -->
     <style>
         :root {
-            --pms-red: #901812;
-            --pms-gold: #D1A705;
-            --pms-dark: #333333;
-            --pms-bg: #F4F6F5;
-            --pms-card-light: rgba(255, 255, 255, 0.65);
-            --pms-card-dark: rgba(51, 51, 51, 0.70);
-            --pms-text-muted: #444444;
+            /* Preset PMS */
+            --color-primary: #901812;
+            --color-secondary: #D1A705;
+            --color-dark: #333333;
+            --color-bg: #F4F6F5;
+            --bg-shade-left: rgba(244,246,245,0.96);
+            --bg-shade-mid: rgba(244,246,245,0.70);
+            --bg-shade-right: rgba(244,246,245,0.15);
+            --card-light: rgba(255, 255, 255, 0.72);
+            --card-dark: rgba(51, 51, 51, 0.78);
 
-            --font-title: 'Montserrat', sans-serif;
-            --font-body: 'PT Sans Narrow', sans-serif;
-
-            --fluid-h1: clamp(2.8rem, 6.0vw, 5.0rem);
-            --fluid-h2: clamp(2.2rem, 4.5vw, 3.5rem);
-            --fluid-h3: clamp(1.7rem, 3.2vw, 2.4rem);
-            --fluid-body: clamp(1.3rem, 2.2vw, 1.75rem);
-            --fluid-meta: clamp(1.1rem, 1.6vw, 1.45rem);
-            --fluid-tag: clamp(1.0rem, 1.4vw, 1.25rem);
+            /* Tipografia Super-Ampliada (Calibração Nativa 110%) */
+            --fluid-h1: clamp(2.8rem, 6.2vw, 5.5rem);
+            --fluid-h2: clamp(2.2rem, 4.6vw, 4.0rem);
+            --fluid-h3: clamp(1.75rem, 3.2vw, 2.8rem);
+            --fluid-body: clamp(1.35rem, 2.2vw, 1.95rem);
+            --fluid-meta: clamp(1.15rem, 1.6vw, 1.55rem);
+            --fluid-tag: clamp(1.05rem, 1.4vw, 1.35rem);
         }
 
-        html, body {
-            width: 100vw; height: 100vh; overflow: hidden;
-            background-color: var(--pms-bg);
-            font-family: var(--font-body); color: var(--pms-dark);
+        html, body { 
+            width: 100vw; 
+            height: 100vh; 
+            overflow: hidden; 
+            background-color: var(--color-bg); 
+            font-family: 'PT Sans Narrow', sans-serif; 
+            color: var(--color-dark); 
         }
 
-        .text-fluid-h1 { font-family: var(--font-title); font-size: var(--fluid-h1); font-weight: 900; color: var(--pms-red); line-height: 1.05; letter-spacing: -0.02em; }
-        .text-fluid-h2 { font-family: var(--font-title); font-size: var(--fluid-h2); font-weight: 800; color: var(--pms-red); line-height: 1.1; }
-        .text-fluid-h3 { font-family: var(--font-body); font-size: var(--fluid-h3); font-weight: 700; line-height: 1.2; }
-        .text-fluid-body { font-family: var(--font-body); font-size: var(--fluid-body); font-weight: 500; line-height: 1.4; }
-        .text-fluid-meta { font-family: var(--font-body); font-size: var(--fluid-meta); color: var(--pms-text-muted); font-weight: 600; }
-        .text-fluid-tag { font-family: var(--font-body); font-size: var(--fluid-tag); font-weight: 700; }
+        .text-fluid-h1 { font-family: 'Montserrat', sans-serif; font-size: var(--fluid-h1); font-weight: 900; line-height: 1.08; letter-spacing: -0.02em; }
+        .text-fluid-h2 { font-family: 'Montserrat', sans-serif; font-size: var(--fluid-h2); font-weight: 800; line-height: 1.15; }
+        .text-fluid-h3 { font-size: var(--fluid-h3); font-weight: 700; line-height: 1.25; }
+        .text-fluid-body { font-size: var(--fluid-body); font-weight: 500; line-height: 1.45; }
+        .text-fluid-meta { font-size: var(--fluid-meta); font-weight: 600; }
+        .text-fluid-tag { font-size: var(--fluid-tag); font-weight: 700; letter-spacing: 0.04em; }
 
-        .katex-display {
-            font-size: clamp(1.6rem, 3.5vw, 2.8rem) !important;
-            margin: 1rem 0 !important;
-        }
+        .katex-display { font-size: clamp(2.2rem, 4.5vw, 3.8rem) !important; margin: 1.2rem 0 !important; }
         .katex { font-size: 1.15em; }
 
-        .card-borderless-glass {
-            border: none !important;
-            background-color: var(--pms-card-light);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-borderless-glass-dark {
-            border: none !important;
-            background-color: var(--pms-card-dark);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-borderless-glass:hover, .card-borderless-glass-dark:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.10);
-        }
-
-        .bg-right-fade {
-            background-repeat: no-repeat;
-            background-position: right center;
-            background-size: cover;
-            position: relative;
-        }
-        .bg-right-fade::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, var(--pms-bg) 20%, rgba(244, 246, 245, 0.65) 50%, rgba(244, 246, 245, 0.15) 100%);
-            pointer-events: none;
-            z-index: 1;
-        }
-
         .slide-screen {
-            position: absolute; width: 100%; height: 100%; top: 0; left: 0;
-            opacity: 0; pointer-events: none; z-index: 0;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            top: 0; 
+            left: 0;
+            opacity: 0; 
+            pointer-events: none; 
+            z-index: 0;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
             overflow-y: auto;
         }
-        .slide-screen > * { position: relative; z-index: 2; }
         .slide-active { opacity: 1; transform: translate3d(0, 0, 0); pointer-events: auto; z-index: 10; }
         .slide-hidden-left  { opacity: 0; transform: translate3d(-100%, 0, 0); }
         .slide-hidden-right { opacity: 0; transform: translate3d(100%, 0, 0); }
         .slide-hidden-up    { opacity: 0; transform: translate3d(0, -100%, 0); }
         .slide-hidden-down  { opacity: 0; transform: translate3d(0, 100%, 0); }
 
-        .reveal-controls { position: fixed; bottom: 1.25rem; right: 1.5rem; width: 130px; height: 130px; z-index: 1000; }
-        .control-arrow {
-            position: absolute; width: 44px; height: 44px; background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            border-radius: 50%; color: #A1A1A1; font-size: 1.3rem; cursor: pointer;
-            display: flex; align-items: center; justify-content: center; opacity: 0.25; pointer-events: none;
-            transition: all 0.25s ease; box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        .card-glass { 
+            border: none !important; 
+            background-color: var(--card-light); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            box-shadow: 0 12px 36px rgba(0,0,0,0.06); 
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        .control-arrow.nav-up { top: 0; left: 43px; }
-        .control-arrow.nav-down { bottom: 0; left: 43px; }
-        .control-arrow.nav-left { top: 43px; left: 0; }
-        .control-arrow.nav-right { top: 43px; right: 0; }
-        .control-arrow.nav-enabled { color: var(--pms-red); opacity: 1; pointer-events: auto; }
-        .control-arrow.nav-enabled:hover { background: var(--pms-red); color: #FFFFFF; transform: scale(1.15); }
+        .card-glass-dark { 
+            border: none !important; 
+            background-color: var(--card-dark); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            color: white; 
+            box-shadow: 0 14px 40px rgba(0,0,0,0.18); 
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card-glass:hover, .card-glass-dark:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 42px rgba(0,0,0,0.12);
+        }
+
+        .reveal-controls { 
+            position: fixed; 
+            bottom: 1.25rem; 
+            right: 1.25rem; 
+            width: 110px; 
+            height: 110px; 
+            z-index: 1000; 
+            pointer-events: none; 
+        }
+        .control-arrow {
+            position: absolute; 
+            width: 38px; 
+            height: 38px; 
+            background: rgba(255, 255, 255, 0.40);
+            backdrop-filter: blur(6px); 
+            border-radius: 50%; 
+            color: #888888; 
+            cursor: pointer;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            opacity: 0.15; 
+            pointer-events: none;
+            transition: all 0.2s ease; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+            font-size: 0.95rem;
+        }
+        .control-arrow.nav-up { top: 0; left: 36px; }
+        .control-arrow.nav-down { bottom: 0; left: 36px; }
+        .control-arrow.nav-left { top: 36px; left: 0; }
+        .control-arrow.nav-right { top: 36px; right: 0; }
+        .control-arrow.nav-enabled { color: var(--color-primary); opacity: 0.65; pointer-events: auto; }
+        .control-arrow.nav-enabled:hover { background: var(--color-primary); color: #FFF; opacity: 1; transform: scale(1.1); }
     </style>
 </head>
-<body class="w-screen h-screen relative bg-[#F4F6F5]">
+<body class="w-screen h-screen relative">
 
-    <div class="fixed top-0 left-0 h-2 bg-[#D1A705] transition-all duration-500 z-[1000]" id="progressBar" style="width: 0%;"></div>
+    <div class="fixed top-0 left-0 h-2 bg-[var(--color-secondary)] transition-all duration-300 z-[1000]" id="progressBar" style="width: 0%;"></div>
 
-    <div class="fixed bottom-4 left-4 sm:bottom-6 sm:left-8 text-fluid-meta font-bold text-[#333333] bg-white/80 backdrop-blur-md px-4 py-2 rounded-full shadow-md z-[1000] flex items-center space-x-3">
-        <span class="w-3 h-3 rounded-full bg-[#901812]"></span>
-        <span id="slideIndicator">Slide (0,0)</span>
+    <div class="fixed bottom-3 left-3 text-[0.80rem] sm:text-[0.90rem] font-bold text-[var(--color-dark)] bg-white/70 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-sm z-[1000] flex items-center space-x-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-[var(--color-primary)]"></span>
+        <span id="slideIndicator">Slide (0,0) | 1 of 9</span>
     </div>
 
     <div class="reveal-controls">
@@ -171,34 +146,33 @@
         <button id="btn-nav-down" onclick="moveInGrid(0, 1)" class="control-arrow nav-down" aria-label="Down"><i class="fa-solid fa-chevron-down"></i></button>
     </div>
 
-    <!-- SECTION 2: HTML BODY & SLIDE STRUCTURE -->
-    <main class="w-full h-full relative">
+    <main class="w-full h-full relative" id="slideDeck">
 
         <!-- SLIDE (0,0): TITLE COVER -->
-        <div id="slide-0-0" class="slide-screen slide-active flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center gap-4">
+        <div id="slide-0-0" class="slide-screen slide-active flex flex-col justify-between p-6 sm:p-10 md:p-12" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks3.png') center right / cover fixed no-repeat;">
+            <header class="w-full flex justify-between items-center gap-4 flex-shrink-0">
                 <div class="flex items-center space-x-4 sm:space-x-6 bg-white/75 backdrop-blur-md px-6 py-3.5 rounded-2xl shadow-sm">
-                    <img id="img-logo-ufv-0-0" alt="UFV Logo" class="h-10 sm:h-12 w-auto">
-                    <div class="h-10 w-[1px] bg-[#DEDEDE]"></div>
-                    <span class="text-fluid-tag text-[#333333]">CIV 665</span>
+                    <img src="Logo UFV oficial horizontal.png" alt="UFV Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://dci.ufv.br/wp-content/themes/diretorias/assets/images/estrutura/logotipoUFV.png'">
+                    <div class="h-10 w-[1px] bg-black/10"></div>
+                    <span class="text-fluid-tag text-[#333333]">CIV 665 • DEC / UFV</span>
                 </div>
-                <a id="link-pms-portal-0-0" target="_blank" class="block bg-[#333333]/75 backdrop-blur-md p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform">
-                    <img id="img-logo-pms-0-0" alt="PMS Logo" class="h-12 sm:h-16 w-auto">
+                <a href="https://pms.ufv.br" target="_blank" class="block bg-[#333333]/75 backdrop-blur-md p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+                    <img src="pms.png" alt="PMS Logo" class="h-12 sm:h-16 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png'">
                 </a>
             </header>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full my-auto py-6">
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="p-8 sm:p-12 rounded-3xl card-borderless-glass border-l-[16px] border-[#901812]">
-                        <span class="text-fluid-tag text-[#D1A705] tracking-wider block mb-2">CIV 665 — GRADUATE PROGRAM (DEC/UFV)</span>
-                        <h1 class="text-fluid-h1 mb-4">ECO-EFFICIENT CONSTRUCTION & BUILDING MATERIALS<span class="block text-fluid-h2 text-[#333333] font-bold mt-2">Course Overview & Structural Dynamics</span></h1>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full my-auto py-4 flex-1">
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="p-8 sm:p-12 rounded-3xl card-glass border-l-[16px] border-[#901812]">
+                        <span class="text-fluid-tag text-[#D1A705] tracking-wider block mb-2 font-bold">CIV 665 — GRADUATE PROGRAM (DEC/UFV)</span>
+                        <h1 class="text-fluid-h1 mb-3 text-[#901812]">ECO-EFFICIENT CONSTRUCTION MATERIALS<span class="block text-fluid-h2 text-[#333333] font-bold mt-2">Course Overview & Structural Dynamics</span></h1>
                         <p class="text-fluid-body text-[#444444]">Methodological rigor, life-cycle analysis, eco-efficiency indicators, and research-driven seminars.</p>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-6">
-                    <div class="bg-white/85 backdrop-blur-md p-6 rounded-2xl text-center shadow-md">
-                        <img id="qr-presentation-cover-0-0" alt="Course Repository QR" class="w-full max-w-[220px] sm:max-w-[280px] lg:max-w-[320px] mx-auto rounded-lg">
+                <div class="lg:col-span-5 p-6 sm:p-10 rounded-3xl card-glass-dark text-white flex flex-col justify-between space-y-6">
+                    <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl text-center shadow-md">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2F1lrlm32HUiPbvwrDZsI3Vr3CcnAWixd8l%3Fusp%3Dsharing&color=901812" alt="Course Shared Drive QR Code" class="w-full max-w-[220px] sm:max-w-[260px] mx-auto rounded-lg">
                         <span class="text-fluid-tag text-[#333333] font-bold mt-3 block">Course Repository (Shared Drive)</span>
                     </div>
                     <div class="text-center space-y-1">
@@ -206,125 +180,154 @@
                         <p class="text-fluid-body font-bold text-white">Prof. José Maria Franco de Carvalho</p>
                         <p class="text-fluid-meta text-[#DEDEDE]">SICon / DEC — Universidade Federal de Viçosa</p>
                         <div class="pt-2 border-t border-white/10 mt-2">
-                    <span class="text-fluid-tag text-[#D1A705] block font-bold">Revision</span>
-                    <p class="text-fluid-meta text-white font-semibold">Paul Oluwaseun Oke</p>
-                </div>
+                            <span class="text-fluid-tag text-[#D1A705] block font-bold">Revision</span>
+                            <p class="text-fluid-meta text-white font-semibold">Paul Oluwaseun Oke</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <footer class="w-full flex-shrink-0"></footer>
         </div>
 
         <!-- SLIDE (1,0): COURSE STRUCTURE -->
-        <div id="slide-1-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
+        <div id="slide-1-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-clay4.png') center right / cover fixed no-repeat;">
+            <header class="w-full flex justify-between items-center mb-4 flex-shrink-0">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">PROGRAM STRUCTURE</span>
-                    <h2 class="text-fluid-h2">Course Architecture & Three-Part Design</h2>
+                    <span class="text-fluid-tag text-[#901812] font-bold">PROGRAM STRUCTURE</span>
+                    <h2 class="text-fluid-h2 text-[#901812]">Course Architecture & Three-Part Design</h2>
                 </div>
-                <img id="img-logo-pms-1-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
+                <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png'">
             </header>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-auto w-full py-4">
-                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-4 border-t-8 border-[#901812]">
-                    <span class="text-fluid-tag text-[#901812] block">PART ONE</span>
-                    <h3 class="text-fluid-h3 text-[#333333]">Contextualization & Concepts</h3>
-                    <ul class="text-fluid-body text-[#444444] space-y-2">
-                        <li>• Part 1: Introduction</li>
-                        <li>• Part 2: Material Toxicity</li>
-                        <li>• Part 3: Energy</li>
-                        <li>• Part 4: Life Cycle Assessment (LCA)</li>
-                    </ul>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-auto w-full py-4 items-stretch flex-1">
+                <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 border-t-8 border-[#901812] flex flex-col justify-between">
+                    <div>
+                        <span class="text-fluid-tag text-[#901812] block font-bold mb-2">PART ONE</span>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold mb-3">Contextualization & Concepts</h3>
+                        <ul class="text-fluid-body text-[#444444] space-y-2">
+                            <li class="flex items-start"><i class="fa-solid fa-angle-right text-[#901812] mt-1.5 mr-2"></i>Part 1: Introduction</li>
+                            <li class="flex items-start"><i class="fa-solid fa-angle-right text-[#901812] mt-1.5 mr-2"></i>Part 2: Material Toxicity</li>
+                            <li class="flex items-start"><i class="fa-solid fa-angle-right text-[#901812] mt-1.5 mr-2"></i>Part 3: Energy</li>
+                            <li class="flex items-start"><i class="fa-solid fa-angle-right text-[#901812] mt-1.5 mr-2"></i>Part 4: Life Cycle Assessment (LCA)</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-4 border-t-8 border-[#D1A705]">
-                    <span class="text-fluid-tag text-[#D1A705] block">PART TWO</span>
-                    <h3 class="text-fluid-h3 text-[#333333]">Literature Seminars</h3>
-                    <ul class="text-fluid-body text-[#444444] space-y-2">
-                        <li>• Subject 1: Performance & Microstructure</li>
-                        <li>• Subject 2: Utilization of Waste in Construction Materials</li>
-                    </ul>
+                <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 border-t-8 border-[#D1A705] flex flex-col justify-between">
+                    <div>
+                        <span class="text-fluid-tag text-[#D1A705] block font-bold mb-2">PART TWO</span>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold mb-3">Literature Seminars</h3>
+                        <ul class="text-fluid-body text-[#444444] space-y-2">
+                            <li class="flex items-start"><i class="fa-solid fa-angle-right text-[#D1A705] mt-1.5 mr-2"></i>Subject 1: Performance & Microstructure</li>
+                            <li class="flex items-start"><i class="fa-solid fa-angle-right text-[#D1A705] mt-1.5 mr-2"></i>Subject 2: Utilization of Waste in Construction Materials</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white space-y-4 border-t-8 border-white">
-                    <span class="text-fluid-tag text-[#D1A705] block">PART THREE</span>
-                    <h3 class="text-fluid-h3 text-white">Scientific Paper</h3>
-                    <p class="text-fluid-body text-[#DEDEDE]">Continuous development along the semester, culminating in formal article production and defense seminars.</p>
+                <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 border-t-8 border-white flex flex-col justify-between">
+                    <div>
+                        <span class="text-fluid-tag text-[#D1A705] block font-bold mb-2">PART THREE</span>
+                        <h3 class="text-fluid-h3 text-white font-bold mb-3">Scientific Paper</h3>
+                        <p class="text-fluid-body text-[#DEDEDE]">Continuous development along the semester, culminating in formal article production and defense seminars.</p>
+                    </div>
                 </div>
             </div>
+
+            <footer class="w-full flex-shrink-0"></footer>
         </div>
 
         <!-- SLIDE (2,0): EVALUATION SYSTEM -->
-        <div id="slide-2-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
+        <div id="slide-2-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric1.png') center right / cover fixed no-repeat;">
+            <header class="w-full flex justify-between items-center mb-4 flex-shrink-0">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">GRADING SYSTEM</span>
-                    <h2 class="text-fluid-h2">Assessment Breakdown</h2>
+                    <span class="text-fluid-tag text-[#901812] font-bold">GRADING SYSTEM</span>
+                    <h2 class="text-fluid-h2 text-[#901812]">Assessment Breakdown</h2>
                 </div>
-                <img id="img-logo-pms-2-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
+                <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png'">
             </header>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-auto w-full py-4">
-                <div class="p-8 rounded-3xl card-borderless-glass space-y-4 text-center">
-                    <span class="text-fluid-h1 text-[#901812] block">40%</span>
-                    <h3 class="text-fluid-h3 text-[#333333]">Quizzes & Weekly Pitches</h3>
-                    <p class="text-fluid-body text-[#444444]">In-class interactive quizzes (attendance tracking) + weekly off-class quizzes with 3-minute video pitch submissions.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-auto w-full py-4 items-stretch flex-1">
+                <div class="p-8 rounded-3xl card-glass space-y-4 text-center flex flex-col justify-between">
+                    <div>
+                        <span class="text-fluid-h1 text-[#901812] block">40%</span>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold mb-2">Quizzes & Weekly Pitches</h3>
+                        <p class="text-fluid-body text-[#444444]">In-class interactive quizzes (attendance tracking) + weekly off-class quizzes with 3-minute video pitch submissions.</p>
+                    </div>
                 </div>
 
-                <div class="p-8 rounded-3xl card-borderless-glass space-y-4 text-center">
-                    <span class="text-fluid-h1 text-[#D1A705] block">30%</span>
-                    <h3 class="text-fluid-h3 text-[#333333]">Literature Seminars</h3>
-                    <p class="text-fluid-body text-[#444444]">Executed in trios. Presentation of conceptual core + critical analysis of at least two recent scientific papers.</p>
+                <div class="p-8 rounded-3xl card-glass space-y-4 text-center flex flex-col justify-between">
+                    <div>
+                        <span class="text-fluid-h1 text-[#D1A705] block">30%</span>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold mb-2">Literature Seminars</h3>
+                        <p class="text-fluid-body text-[#444444]">Executed in trios. Presentation of conceptual core + critical analysis of at least two recent scientific papers.</p>
+                    </div>
                 </div>
 
-                <div class="p-8 rounded-3xl card-borderless-glass-dark text-white space-y-4 text-center">
-                    <span class="text-fluid-h1 text-[#D1A705] block">30%</span>
-                    <h3 class="text-fluid-h3 text-white">Final Scientific Paper</h3>
-                    <p class="text-fluid-body text-[#DEDEDE]">Group project (max 6 authors). Submission of full manuscript PDF + 30-minute video defense with mandatory full team participation.</p>
+                <div class="p-8 rounded-3xl card-glass-dark text-white space-y-4 text-center flex flex-col justify-between">
+                    <div>
+                        <span class="text-fluid-h1 text-[#D1A705] block">30%</span>
+                        <h3 class="text-fluid-h3 text-white font-bold mb-2">Final Scientific Paper</h3>
+                        <p class="text-fluid-body text-[#DEDEDE]">Group project (max 6 authors). Submission of full manuscript PDF + 30-minute video defense with mandatory full team participation.</p>
+                    </div>
                 </div>
             </div>
+
+            <footer class="w-full flex-shrink-0"></footer>
         </div>
 
         <!-- SLIDE (3,0): CLASS DYNAMICS & MODALITIES -->
-        <div id="slide-3-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
+        <div id="slide-3-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric2.png') center right / cover fixed no-repeat;">
+            <header class="w-full flex justify-between items-center mb-4 flex-shrink-0">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">OPERATIONAL DYNAMICS</span>
-                    <h2 class="text-fluid-h2">Class Execution & Modalities</h2>
+                    <span class="text-fluid-tag text-[#901812] font-bold">OPERATIONAL DYNAMICS</span>
+                    <h2 class="text-fluid-h2 text-[#901812]">Class Execution & Modalities</h2>
                 </div>
-                <img id="img-logo-pms-3-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
+                <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png'">
             </header>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-auto w-full py-4">
-                <div class="p-8 rounded-3xl card-borderless-glass space-y-4">
-                    <h3 class="text-fluid-h3 text-[#333333] border-b border-black/10 pb-2"><i class="fa-solid fa-users text-[#901812] mr-2"></i> Hybrid Course Delivery</h3>
-                    <ul class="text-fluid-body text-[#444444] space-y-3">
-                        <li><strong>In-Person Lectures:</strong> Mandatory for UFV full-time scholarship/regular students.</li>
-                        <li><strong>Synchronous Online Access:</strong> Dedicated for international students and non-scholarship part-time UFV students.</li>
-                    </ul>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-auto w-full py-4 items-stretch flex-1">
+                <div class="p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between border-l-[12px] border-[#901812]">
+                    <div>
+                        <h3 class="text-fluid-h3 text-[#333333] border-b border-black/10 pb-2 font-bold mb-4">
+                            <i class="fa-solid fa-users text-[#901812] mr-2"></i> Hybrid Course Delivery
+                        </h3>
+                        <ul class="text-fluid-body text-[#444444] space-y-3">
+                            <li><strong class="text-[#901812]">In-Person Lectures:</strong> Mandatory for UFV full-time scholarship/regular students.</li>
+                            <li><strong class="text-[#901812]">Synchronous Online Access:</strong> Dedicated for international students and non-scholarship part-time UFV students.</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="p-8 rounded-3xl card-borderless-glass-dark text-white space-y-4">
-                    <h3 class="text-fluid-h3 text-white border-b border-white/10 pb-2"><i class="fa-solid fa-[#D1A705] fa-chalkboard-user text-[#D1A705] mr-2"></i> Class Structure (Parts 1, 2, 3)</h3>
-                    <ul class="text-fluid-body text-[#DEDEDE] space-y-3">
-                        <li><strong>Part 1:</strong> Expository lectures delivered by the professor.</li>
-                        <li><strong>Part 2:</strong> Student-led seminars, featuring conceptual synthesis + critical review of two recent papers, followed by professor-guided debate.</li>
-                        <li><strong>Part 3:</strong> Supervised research paper development in teams (up to 6 authors).</li>
-                    </ul>
+                <div class="p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+                    <div>
+                        <h3 class="text-fluid-h3 text-white border-b border-white/10 pb-2 font-bold mb-4">
+                            <i class="fa-solid fa-chalkboard-user text-[#D1A705] mr-2"></i> Class Structure (Parts 1, 2, 3)
+                        </h3>
+                        <ul class="text-fluid-body text-[#DEDEDE] space-y-3">
+                            <li><strong class="text-[#D1A705]">Part 1:</strong> Expository lectures delivered by the professor.</li>
+                            <li><strong class="text-[#D1A705]">Part 2:</strong> Student-led seminars, featuring conceptual synthesis + critical review of two recent papers, followed by professor-guided debate.</li>
+                            <li><strong class="text-[#D1A705]">Part 3:</strong> Supervised research paper development in teams (up to 6 authors).</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
+            <footer class="w-full flex-shrink-0"></footer>
         </div>
 
         <!-- SLIDE (4,0): ANALYTICAL PROGRAM OVERVIEW -->
-        <div id="slide-4-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
+        <div id="slide-4-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-nature3.png') center right / cover fixed no-repeat;">
+            <header class="w-full flex justify-between items-center mb-4 flex-shrink-0">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">ANALYTICAL PROGRAMME</span>
-                    <h2 class="text-fluid-h2">Module Workload Overview (60h Total)</h2>
+                    <span class="text-fluid-tag text-[#901812] font-bold">ANALYTICAL PROGRAMME</span>
+                    <h2 class="text-fluid-h2 text-[#901812]">Module Workload Overview (60h Total)</h2>
                 </div>
-                <img id="img-logo-pms-4-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
+                <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png'">
             </header>
 
-            <div class="my-auto w-full py-4">
-                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass overflow-x-auto">
+            <div class="my-auto w-full py-4 flex-1 flex items-center justify-center">
+                <div class="w-full p-6 sm:p-8 rounded-3xl card-glass overflow-x-auto">
                     <table class="w-full text-left text-fluid-body">
                         <thead>
                             <tr class="border-b border-black/20 text-[#901812]">
@@ -339,282 +342,252 @@
                             <tr><td class="py-2.5 font-bold">2. Toxicity of Building Materials</td><td class="text-center">4h</td><td class="text-center">0h</td><td class="text-center font-bold">4h</td></tr>
                             <tr><td class="py-2.5 font-bold">3. Energy & Embodied Energy</td><td class="text-center">4h</td><td class="text-center">0h</td><td class="text-center font-bold">4h</td></tr>
                             <tr><td class="py-2.5 font-bold">4. Life Cycle Assessment (LCA) & Eco-Labelling</td><td class="text-center">12h</td><td class="text-center">0h</td><td class="text-center font-bold">12h</td></tr>
-                            <tr><td class="py-2.5 font-bold">5. Microstructural & Performance Assessment</td><td class="text-center">16h</td><td class="text-center">0h</td><td class="text-center font-bold">12h</td></tr>
-                            <tr><td class="py-2.5 font-bold">6. State-of-the-Art Residue & Waste Utilization</td><td class="text-center">16h</td><td class="text-center">0h</td><td class="text-center font-bold">12h</td></tr>
-                            <tr><td class="py-2.5 font-bold">7. Final Seminars</td><td class="text-center">4h</td><td class="text-center">0h</td><td class="text-center font-bold">12h</td></tr>
+                            <tr><td class="py-2.5 font-bold">5. Microstructural & Performance Assessment</td><td class="text-center">16h</td><td class="text-center">0h</td><td class="text-center font-bold">16h</td></tr>
+                            <tr><td class="py-2.5 font-bold">6. State-of-the-Art Residue & Waste Utilization</td><td class="text-center">16h</td><td class="text-center">0h</td><td class="text-center font-bold">16h</td></tr>
+                            <tr><td class="py-2.5 font-bold">7. Final Seminars</td><td class="text-center">4h</td><td class="text-center">0h</td><td class="text-center font-bold">4h</td></tr>
                             <tr class="bg-[#901812]/10 font-bold text-[#901812]"><td class="py-3">TOTAL SEMESTER HOURS</td><td class="text-center">60h</td><td class="text-center">0h</td><td class="text-center">60h</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+
+            <footer class="w-full flex-shrink-0"></footer>
         </div>
 
         <!-- SLIDE (5,0): ASSESSMENT DETAILS & SUBMISSIONS -->
-        <div id="slide-5-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
+        <div id="slide-5-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks4.png') center right / cover fixed no-repeat;">
+            <header class="w-full flex justify-between items-center mb-4 flex-shrink-0">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">SUBMISSION WORKFLOW</span>
-                    <h2 class="text-fluid-h2">Quizzes, Pitches & Final Defense</h2>
+                    <span class="text-fluid-tag text-[#901812] font-bold">SUBMISSION WORKFLOW</span>
+                    <h2 class="text-fluid-h2 text-[#901812]">Quizzes, Pitches & Final Defense</h2>
                 </div>
-                <img id="img-logo-pms-5-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
+                <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png'">
             </header>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-auto w-full py-4">
-                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-4">
-                    <h3 class="text-fluid-h3 text-[#333333]"><i class="fa-solid fa-video text-[#901812] mr-2"></i> Weekly Video Pitch Dynamics</h3>
-                    <p class="text-fluid-body text-[#444444]">Submitted via Google Forms alongside off-class questionnaires:</p>
-                    <ul class="text-fluid-body text-[#444444] space-y-2">
-                        <li>• Maximum duration: <strong>3 minutes</strong>.</li>
-                        <li>• Video hosted in student's personal repository (Drive/YouTube/Vimeo) with accessible link provided.</li>
-                        <li>• In-class quizzes verify real-time conceptual comprehension and attendance.</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white space-y-4">
-                    <h3 class="text-fluid-h3 text-white"><i class="fa-solid fa-file-lines text-[#D1A705] mr-2"></i> Final Paper Defense (Part 3)</h3>
-                    <p class="text-fluid-body text-[#DEDEDE]">Single Google Forms submission per group:</p>
-                    <ul class="text-fluid-body text-[#DEDEDE] space-y-2">
-                        <li>• Full manuscript PDF (complete formatting, citations, references).</li>
-                        <li>• <strong>30-minute video presentation/defense</strong> featuring all team members in a single video link.</li>
-                        <li>• Hosted on student repository, permanently accessible for professor evaluation.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE (6,0): BIBLIOGRAPHIC REFERENCES -->
-        <div id="slide-6-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#901812]">COURSE LITERATURE</span>
-                    <h2 class="text-fluid-h2">Fundamental & Complementary Bibliography</h2>
-                </div>
-                <img id="img-logo-pms-6-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
-            </header>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-auto w-full py-4">
-                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-3">
-                    <h3 class="text-fluid-h3 text-[#333333] border-b border-black/10 pb-2">Fundamental References</h3>
-                    <ul class="text-fluid-meta text-[#444444] space-y-2">
-                        <li>• <strong>Pacheco-Torgal, F. et al.</strong> (2014). <em>Eco-efficient Construction and Building Materials: LCA, Eco-labelling and Case Studies</em>. Woodhead Publishing.</li>
-                        <li>• <strong>Pacheco-Torgal, F. & Jalali, S.</strong> (2014). <em>Eco-efficient Construction and Building Materials</em>. Springer London.</li>
-                        <li>• <strong>ABNT NBR ISO 14040 / 14044 / 14045 / 14067</strong>. Environmental Management, LCA, Eco-efficiency, and Carbon Footprint Standards.</li>
-                        <li>• <strong>Callister, W. D. & Rethwisch, D. G.</strong> (2020). <em>Materials Science and Engineering: An Introduction</em>. Wiley.</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-3">
-                    <h3 class="text-fluid-h3 text-[#333333] border-b border-black/10 pb-2">Complementary References</h3>
-                    <ul class="text-fluid-meta text-[#444444] space-y-2">
-                        <li>• <strong>Scrivener, K., Snellings, R., & Lothenbach, B.</strong> (2018). <em>A Practical Guide to Microstructural Analysis of Cementitious Materials</em>. CRC Press.</li>
-                        <li>• <strong>Mehta, P. K. & Monteiro, P. J. M.</strong> (2014). <em>Concrete: Microstructure, Properties, and Materials</em>. McGraw-Hill.</li>
-                        <li>• <strong>ABNT NBR 10004 / 10005 / 10006</strong>. Solid Waste Classification and Leaching Extraction Procedures.</li>
-                        <li>• <strong>Young, J. F. et al.</strong> (1998). <em>The Science and Technology of Civil Engineering Materials</em>. Prentice Hall.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE (7,0): REPOSITORY ACCESS & SUBMISSION CENTER -->
-        <div id="slide-7-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
-                <div>
-                    <span class="text-fluid-tag text-[#901812]">CLOSING MODULE</span>
-                    <h2 class="text-fluid-h2">Shared Repository & Portal Access</h2>
-                </div>
-                <img id="img-logo-pms-7-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
-            </header>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 my-auto w-full py-4 items-center">
-                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass space-y-6">
-                    <span class="text-fluid-tag text-[#D1A705]">SHARED GOOGLE DRIVE FOLDER</span>
-                    <h3 class="text-fluid-h3 text-[#333333]">Access Course Material & Lecture Notes</h3>
-                    <p class="text-fluid-body text-[#444444]">All course slides, reading assignments, templates, and analytical guidelines are deposited in the official CIV 665 shared drive folder.</p>
-                    
-                    <div class="pt-2">
-                        <a id="btn-folder-direct-7-0" target="_blank" class="w-full py-4 px-8 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md min-h-[56px] flex items-center justify-center space-x-3">
-                            <i class="fa-solid fa-folder-open text-2xl text-[#D1A705]"></i>
-                            <span>Open CIV 665 Shared Folder</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-lg ml-1"></i>
-                        </a>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-auto w-full py-4 items-stretch flex-1">
+                <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold mb-3"><i class="fa-solid fa-video text-[#901812] mr-2"></i> Weekly Video Pitch Dynamics</h3>
+                        <p class="text-fluid-body text-[#444444] mb-3">Submitted via Google Forms alongside off-class questionnaires:</p>
+                        <ul class="text-fluid-body text-[#444444] space-y-2 font-semibold">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-[#D1A705] mt-1.5 mr-2"></i>Maximum duration: 3 minutes.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-[#D1A705] mt-1.5 mr-2"></i>Video hosted in student repository (Drive/YouTube/Vimeo) with accessible link.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-[#D1A705] mt-1.5 mr-2"></i>In-class quizzes verify real-time conceptual comprehension and attendance.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white text-center space-y-4">
-                    <span class="text-fluid-tag text-[#D1A705] block">SCAN TO ACCESS FOLDER DIRECTLY</span>
-                    <div class="bg-white/90 backdrop-blur-md p-5 rounded-2xl max-w-[260px] sm:max-w-[320px] lg:max-w-[360px] mx-auto shadow-lg">
-                        <img id="qr-shared-folder-7-0" alt="CIV 665 Shared Drive QR Code" class="w-full h-auto rounded-lg">
+                <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-fluid-h3 text-white font-bold mb-3"><i class="fa-solid fa-file-lines text-[#D1A705] mr-2"></i> Final Paper Defense (Part 3)</h3>
+                        <p class="text-fluid-body text-[#DEDEDE] mb-3">Single Google Forms submission per group:</p>
+                        <ul class="text-fluid-body text-[#DEDEDE] space-y-2 font-semibold">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-[#D1A705] mt-1.5 mr-2"></i>Full manuscript PDF (complete formatting, citations, references).</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-[#D1A705] mt-1.5 mr-2"></i>30-minute video presentation/defense featuring all team members in a single link.</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-[#D1A705] mt-1.5 mr-2"></i>Hosted on student repository, permanently accessible for evaluation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="w-full flex-shrink-0"></footer>
+        </div>
+
+        <!-- SLIDE (6,0): BIBLIOGRAPHIC REFERENCES -->
+        <div id="slide-6-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-nature4.png') center right / cover fixed no-repeat;">
+            <header class="w-full flex justify-between items-center mb-4 flex-shrink-0">
+                <div>
+                    <span class="text-fluid-tag text-[#901812] font-bold">COURSE LITERATURE</span>
+                    <h2 class="text-fluid-h2 text-[#901812]">Fundamental & Complementary Bibliography</h2>
+                </div>
+                <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png'">
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 my-auto w-full py-4 items-stretch flex-1">
+                <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-3 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-fluid-h3 text-[#333333] border-b border-black/10 pb-2 font-bold mb-3">Fundamental References</h3>
+                        <ul class="text-fluid-meta text-[#444444] space-y-2 font-semibold">
+                            <li>• <strong>Pacheco-Torgal, F. et al.</strong> (2014). <em>Eco-efficient Construction and Building Materials: LCA, Eco-labelling and Case Studies</em>. Woodhead Publishing.</li>
+                            <li>• <strong>Pacheco-Torgal, F. & Jalali, S.</strong> (2014). <em>Eco-efficient Construction and Building Materials</em>. Springer London.</li>
+                            <li>• <strong>ABNT NBR ISO 14040 / 14044 / 14045 / 14067</strong>. Environmental Management, LCA, Eco-efficiency, and Carbon Footprint Standards.</li>
+                            <li>• <strong>Callister, W. D. & Rethwisch, D. G.</strong> (2020). <em>Materials Science and Engineering: An Introduction</em>. Wiley.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-3 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-fluid-h3 text-[#333333] border-b border-black/10 pb-2 font-bold mb-3">Complementary References</h3>
+                        <ul class="text-fluid-meta text-[#444444] space-y-2 font-semibold">
+                            <li>• <strong>Scrivener, K., Snellings, R., & Lothenbach, B.</strong> (2018). <em>A Practical Guide to Microstructural Analysis of Cementitious Materials</em>. CRC Press.</li>
+                            <li>• <strong>Mehta, P. K. & Monteiro, P. J. M.</strong> (2014). <em>Concrete: Microstructure, Properties, and Materials</em>. McGraw-Hill.</li>
+                            <li>• <strong>ABNT NBR 10004 / 10005 / 10006</strong>. Solid Waste Classification and Leaching Extraction Procedures.</li>
+                            <li>• <strong>Young, J. F. et al.</strong> (1998). <em>The Science and Technology of Civil Engineering Materials</em>. Prentice Hall.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="w-full flex-shrink-0"></footer>
+        </div>
+
+        <!-- SLIDE (7,0): REPOSITORY ACCESS & SUBMISSION CENTER -->
+        <div id="slide-7-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-paint1.png') center right / cover fixed no-repeat;">
+            <header class="w-full flex justify-between items-center mb-4 flex-shrink-0">
+                <div>
+                    <span class="text-fluid-tag text-[#901812] font-bold">CLOSING MODULE</span>
+                    <h2 class="text-fluid-h2 text-[#901812]">Shared Repository & Portal Access</h2>
+                </div>
+                <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png'">
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 my-auto w-full py-4 items-center flex-1">
+                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-glass space-y-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-fluid-tag text-[#D1A705] font-bold block mb-2">SHARED GOOGLE DRIVE FOLDER</span>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold mb-3">Access Course Material & Lecture Notes</h3>
+                        <p class="text-fluid-body text-[#444444]">All course slides, reading assignments, templates, and analytical guidelines are deposited in the official CIV 665 shared drive folder.</p>
+                    </div>
+                    
+                    <a href="https://drive.google.com/drive/folders/1lrlm32HUiPbvwrDZsI3Vr3CcnAWixd8l?usp=sharing" target="_blank" class="w-full py-4 px-8 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md min-h-[56px] flex items-center justify-center space-x-3">
+                        <i class="fa-solid fa-folder-open text-2xl text-[#D1A705]"></i>
+                        <span>Open CIV 665 Shared Folder</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-lg ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-glass-dark text-white text-center space-y-4 flex flex-col justify-between">
+                    <div>
+                        <span class="text-fluid-tag text-[#D1A705] block font-bold mb-2">SCAN TO ACCESS FOLDER DIRECTLY</span>
+                        <div class="bg-white/90 backdrop-blur-md p-5 rounded-2xl max-w-[260px] sm:max-w-[300px] mx-auto shadow-lg">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2F1lrlm32HUiPbvwrDZsI3Vr3CcnAWixd8l%3Fusp%3Dsharing&color=901812" alt="CIV 665 Shared Drive QR Code" class="w-full h-auto rounded-lg">
+                        </div>
                     </div>
                     <p class="text-fluid-meta text-[#DEDEDE]">Department of Civil Engineering — UFV 2026</p>
                 </div>
             </div>
+
+            <footer class="w-full flex-shrink-0"></footer>
         </div>
 
         <!-- SLIDE (8,0): DEFENSE SESSION & IN-CLASS QUIZZ ACCESS -->
-        <div id="slide-8-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12">
-            <header class="w-full flex justify-between items-center mb-4">
+        <div id="slide-8-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-10 md:p-12" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-polymer1.png') center right / cover fixed no-repeat;">
+            <header class="w-full flex justify-between items-center mb-4 flex-shrink-0">
                 <div>
-                    <span class="text-fluid-tag text-[#901812]">SYNCHRONOUS INTERACTIONS</span>
-                    <h2 class="text-fluid-h2">Defense Session & In-Class Quiz Access</h2>
+                    <span class="text-fluid-tag text-[#901812] font-bold">SYNCHRONOUS INTERACTIONS</span>
+                    <h2 class="text-fluid-h2 text-[#901812]">Defense Session & In-Class Quiz Access</h2>
                 </div>
-                <img id="img-logo-pms-8-0" alt="PMS Logo" class="h-10 sm:h-12 w-auto">
+                <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png'">
             </header>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 my-auto w-full py-4 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 my-auto w-full py-4 items-stretch flex-1">
                 <!-- Google Meet Defense Session Card -->
-                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white text-center space-y-4">
-                    <span class="text-fluid-tag text-[#D1A705] block">LIVE VIRTUAL ROOM</span>
-                    <h3 class="text-fluid-h3 text-white">Online Defense & Synchronous Class</h3>
-                    
-                    <div class="bg-white/90 backdrop-blur-md p-4 rounded-2xl max-w-[220px] sm:max-w-[260px] mx-auto shadow-lg">
-                        <img id="qr-defense-meet-8-0" alt="Google Meet QR Code" class="w-full h-auto rounded-lg">
+                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-glass-dark text-white text-center space-y-4 flex flex-col justify-between">
+                    <div>
+                        <span class="text-fluid-tag text-[#D1A705] block font-bold mb-1">LIVE VIRTUAL ROOM</span>
+                        <h3 class="text-fluid-h3 text-white font-bold mb-3">Online Defense & Synchronous Class</h3>
+                        
+                        <div class="bg-white/90 backdrop-blur-md p-4 rounded-2xl max-w-[220px] sm:max-w-[240px] mx-auto shadow-lg mb-3">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fmeet.google.com%2Fyhd-gjrp-xck&color=901812" alt="Google Meet QR Code" class="w-full h-auto rounded-lg">
+                        </div>
                     </div>
 
-                    <div class="pt-2">
-                        <a id="btn-defense-meet-8-0" target="_blank" class="w-full py-3.5 px-6 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-video text-xl"></i>
-                            <span>Join Google Meet Session</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-sm ml-1"></i>
-                        </a>
-                    </div>
+                    <a href="https://meet.google.com/yhd-gjrp-xck" target="_blank" class="w-full py-3.5 px-6 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-video text-xl"></i>
+                        <span>Join Google Meet Session</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-sm ml-1"></i>
+                    </a>
                 </div>
 
                 <!-- In-Class Quiz Google Form Card -->
-                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-borderless-glass text-center space-y-4">
-                    <span class="text-fluid-tag text-[#901812] block">SYNCHRONOUS EVALUATION</span>
-                    <h3 class="text-fluid-h3 text-[#333333]">In-Class Interactive Quiz</h3>
-                    
-                    <div class="bg-white/90 backdrop-blur-md p-4 rounded-2xl max-w-[220px] sm:max-w-[260px] mx-auto shadow-lg border border-black/5">
-                        <img id="qr-inclass-quiz-8-0" alt="In-Class Quiz QR Code" class="w-full h-auto rounded-lg">
+                <div class="lg:col-span-6 p-6 sm:p-8 rounded-3xl card-glass text-center space-y-4 flex flex-col justify-between">
+                    <div>
+                        <span class="text-fluid-tag text-[#901812] block font-bold mb-1">SYNCHRONOUS EVALUATION</span>
+                        <h3 class="text-fluid-h3 text-[#333333] font-bold mb-3">In-Class Interactive Quiz</h3>
+                        
+                        <div class="bg-white/90 backdrop-blur-md p-4 rounded-2xl max-w-[220px] sm:max-w-[240px] mx-auto shadow-lg border border-black/5 mb-3">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSf6rIoT2YIH5Rq9NeRT86UgcsjG6zMKoYOL1WPB7k05YnHwHw%2Fviewform%3Fusp%3Dheader&color=333333" alt="In-Class Quiz QR Code" class="w-full h-auto rounded-lg">
+                        </div>
                     </div>
 
-                    <div class="pt-2">
-                        <a id="btn-inclass-quiz-8-0" target="_blank" class="w-full py-3.5 px-6 bg-[#333333] text-white font-bold rounded-2xl hover:bg-[#901812] transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-square-poll-vertical text-xl text-[#D1A705]"></i>
-                            <span>Submit In-Class Quiz</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-sm ml-1"></i>
-                        </a>
-                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6rIoT2YIH5Rq9NeRT86UgcsjG6zMKoYOL1WPB7k05YnHwHw/viewform?usp=header" target="_blank" class="w-full py-3.5 px-6 bg-[#333333] text-white font-bold rounded-2xl hover:bg-[#901812] transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-square-poll-vertical text-xl text-[#D1A705]"></i>
+                        <span>Submit In-Class Quiz</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-sm ml-1"></i>
+                    </a>
                 </div>
             </div>
+
+            <footer class="w-full flex-shrink-0"></footer>
         </div>
 
     </main>
 
-    <!-- SECTION 3: JAVASCRIPT LOGIC, ANIMATIONS & INTERACTIVITY -->
+    <!-- MOTOR DE NAVEGAÇÃO AUTOMÁTICO -->
     <script>
-        const slideGrid = { 
-            '0,0': 'slide-0-0',
-            '1,0': 'slide-1-0',
-            '2,0': 'slide-2-0',
-            '3,0': 'slide-3-0',
-            '4,0': 'slide-4-0',
-            '5,0': 'slide-5-0',
-            '6,0': 'slide-6-0',
-            '7,0': 'slide-7-0',
-            '8,0': 'slide-8-0'
-        };
-
         let currentX = 0, currentY = 0;
+        let slideGrid = {};
+
+        function updateSlideGrid() {
+            slideGrid = {};
+            document.querySelectorAll('[id^="slide-"]').forEach(slide => {
+                const parts = slide.id.replace('slide-', '').split('-');
+                if (parts.length === 2) slideGrid[`${parts[0]},${parts[1]}`] = slide.id;
+            });
+        }
 
         function hasSlide(x, y) { return !!slideGrid[`${x},${y}`]; }
 
-        function initializeAssets() {
-            const logoUfv00 = document.getElementById('img-logo-ufv-0-0');
-            if (logoUfv00) logoUfv00.src = COURSE_ASSETS.logos.ufv;
-
-            const logoPms00 = document.getElementById('img-logo-pms-0-0');
-            if (logoPms00) logoPms00.src = COURSE_ASSETS.logos.pms;
-
-            ['1-0', '2-0', '3-0', '4-0', '5-0', '6-0', '7-0', '8-0'].forEach(id => {
-                const el = document.getElementById(`img-logo-pms-${id}`);
-                if (el) el.src = COURSE_ASSETS.logos.pms;
-            });
-
-            const linkPortal00 = document.getElementById('link-pms-portal-0-0');
-            if (linkPortal00) linkPortal00.href = COURSE_ASSETS.externalLinks.pmsPortal;
-
-            Object.keys(slideGrid).forEach(key => {
-                const bgKey = key.replace(',', '_');
-                const slideEl = document.getElementById(slideGrid[key]);
-                const bgUrl = COURSE_ASSETS.slideBackgrounds[bgKey];
-
-                if (slideEl) {
-                    if (bgUrl && bgUrl.trim() !== "") {
-                        slideEl.style.backgroundImage = `url('${bgUrl}')`;
-                        slideEl.classList.add('bg-right-fade');
-                    } else {
-                        slideEl.style.backgroundImage = 'none';
-                        slideEl.classList.remove('bg-right-fade');
-                    }
-                }
-            });
-
-            const qrCover00 = document.getElementById('qr-presentation-cover-0-0');
-            if (qrCover00) qrCover00.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.sharedFolder);
-
-            const qrFolder70 = document.getElementById('qr-shared-folder-7-0');
-            if (qrFolder70) qrFolder70.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.sharedFolder);
-
-            const btnFolder70 = document.getElementById('btn-folder-direct-7-0');
-            if (btnFolder70) btnFolder70.href = COURSE_ASSETS.externalLinks.sharedFolder;
-
-            const qrMeet80 = document.getElementById('qr-defense-meet-8-0');
-            if (qrMeet80) qrMeet80.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.defenseMeet, "901812");
-
-            const btnMeet80 = document.getElementById('btn-defense-meet-8-0');
-            if (btnMeet80) btnMeet80.href = COURSE_ASSETS.externalLinks.defenseMeet;
-
-            const qrQuiz80 = document.getElementById('qr-inclass-quiz-8-0');
-            if (qrQuiz80) qrQuiz80.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.googleFormsQuiz, "333333");
-
-            const btnQuiz80 = document.getElementById('btn-inclass-quiz-8-0');
-            if (btnQuiz80) btnQuiz80.href = COURSE_ASSETS.externalLinks.googleFormsQuiz;
-        }
-
         function updateUI() {
-            const keysHorizontal = Object.keys(slideGrid).filter(k => k.endsWith(',0'));
-            const totalH = keysHorizontal.length;
-            document.getElementById('progressBar').style.width = `${(currentX / Math.max(totalH - 1, 1)) * 100}%`;
-            document.getElementById('slideIndicator').innerText = `Slide (${currentX}, ${currentY})`;
+            updateSlideGrid();
+            const keysH = Object.keys(slideGrid).filter(k => k.endsWith(',0'));
+            const maxH = Math.max(...keysH.map(k => parseInt(k.split(',')[0])), 0);
+            const totalMainSlides = keysH.length;
             
-            const arrows = { 'up': [0,-1], 'down': [0,1], 'left': [-1,0], 'right': [1,0] };
-            for (let d in arrows) {
-                const el = document.getElementById(`btn-nav-${d}`);
-                if (el) el.classList.toggle('nav-enabled', hasSlide(currentX + arrows[d][0], currentY + arrows[d][1]));
+            document.getElementById('progressBar').style.width = `${maxH === 0 ? 100 : (currentX / maxH) * 100}%`;
+            document.getElementById('slideIndicator').innerText = `Slide (${currentX},${currentY}) | ${currentX + 1} of ${totalMainSlides}`;
+
+            const dirs = { 'up': [0,-1], 'down': [0,1], 'left': [-1,0], 'right': [1,0] };
+            for (let d in dirs) {
+                const btn = document.getElementById(`btn-nav-${d}`);
+                if (btn) btn.classList.toggle('nav-enabled', hasSlide(currentX + dirs[d][0], currentY + dirs[d][1]));
             }
         }
 
         function moveInGrid(dx, dy) {
+            updateSlideGrid();
             const nx = currentX + dx, ny = currentY + dy;
             if (hasSlide(nx, ny)) {
                 const cur = document.getElementById(slideGrid[`${currentX},${currentY}`]);
                 const nxt = document.getElementById(slideGrid[`${nx},${ny}`]);
-                cur.classList.remove('slide-active');
                 
+                cur.classList.remove('slide-active', 'slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+                nxt.classList.remove('slide-active', 'slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+
                 if (dx > 0) cur.classList.add('slide-hidden-left');
                 else if (dx < 0) cur.classList.add('slide-hidden-right');
                 else if (dy > 0) cur.classList.add('slide-hidden-down');
                 else if (dy < 0) cur.classList.add('slide-hidden-up');
 
-                nxt.classList.remove('slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
                 nxt.classList.add('slide-active');
+
                 currentX = nx; currentY = ny;
                 updateUI();
+                if (window.renderMathInElement) renderMathInElement(nxt);
             }
         }
 
         document.addEventListener('keydown', (e) => {
-            if (['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+            if (['INPUT','TEXTAREA','DIALOG'].includes(document.activeElement.tagName)) return;
             if (e.key === 'ArrowRight' || e.key === ' ') moveInGrid(1, 0);
             else if (e.key === 'ArrowLeft') moveInGrid(-1, 0);
             else if (e.key === 'ArrowUp') moveInGrid(0, -1);
             else if (e.key === 'ArrowDown') moveInGrid(0, 1);
         });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeAssets();
-            updateUI();
+        document.addEventListener('DOMContentLoaded', () => { 
+            updateUI(); 
         });
     </script>
 </body>
