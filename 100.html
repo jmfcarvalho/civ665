@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full overflow-hidden select-none">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CIV 665 | Eco-Efficient Construction and Building Materials - PMS UFV</title>
+    
+    <!-- ESSENTIAL CDNs -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], throwOnError: false });"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Preset PMS */
+            --color-primary: #901812;
+            --color-secondary: #D1A705;
+            --color-dark: #333333;
+            --color-bg: #F4F6F5;
+            --bg-shade-left: rgba(244,246,245,0.96);
+            --bg-shade-mid: rgba(244,246,245,0.70);
+            --bg-shade-right: rgba(244,246,245,0.15);
+            --card-light: rgba(255, 255, 255, 0.58);
+            --card-dark: rgba(51, 51, 51, 0.65);
+
+            /* Tipografia Super-Ampliada (Calibração Nativa Full HD / 4k) */
+            --fluid-h1: clamp(2.8rem, 6.2vw, 5.5rem);
+            --fluid-h2: clamp(2.2rem, 4.6vw, 4.0rem);
+            --fluid-h3: clamp(1.75rem, 3.2vw, 2.8rem);
+            --fluid-body: clamp(1.35rem, 2.2vw, 1.95rem);
+            --fluid-meta: clamp(1.15rem, 1.6vw, 1.55rem);
+            --fluid-tag: clamp(1.05rem, 1.4vw, 1.35rem);
+        }
+
+        html, body { 
+            width: 100vw; 
+            height: 100vh; 
+            overflow: hidden; 
+            background-color: var(--color-bg); 
+            font-family: 'PT Sans Narrow', sans-serif; 
+            color: var(--color-dark); 
+        }
+
+        .text-fluid-h1 { font-family: 'Montserrat', sans-serif; font-size: var(--fluid-h1); font-weight: 900; line-height: 1.08; letter-spacing: -0.02em; }
+        .text-fluid-h2 { font-family: 'Montserrat', sans-serif; font-size: var(--fluid-h2); font-weight: 800; line-height: 1.15; }
+        .text-fluid-h3 { font-size: var(--fluid-h3); font-weight: 700; line-height: 1.25; }
+        .text-fluid-body { font-size: var(--fluid-body); font-weight: 500; line-height: 1.45; }
+        .text-fluid-meta { font-size: var(--fluid-meta); font-weight: 600; }
+        .text-fluid-tag { font-size: var(--fluid-tag); font-weight: 700; letter-spacing: 0.04em; }
+
+        .katex-display { font-size: clamp(1.45rem, 2.7vw, 2.45rem) !important; margin: 0.85rem 0 !important; line-height: 1.25 !important; }
+        .katex { font-size: 1.08em; }
+
+        .slide-screen {
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            top: 0; 
+            left: 0;
+            opacity: 0; 
+            pointer-events: none; 
+            z-index: 0;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+        .slide-active { opacity: 1; transform: translate3d(0, 0, 0); pointer-events: auto; z-index: 10; }
+        .slide-hidden-left  { opacity: 0; transform: translate3d(-100%, 0, 0); }
+        .slide-hidden-right { opacity: 0; transform: translate3d(100%, 0, 0); }
+        .slide-hidden-up    { opacity: 0; transform: translate3d(0, -100%, 0); }
+        .slide-hidden-down  { opacity: 0; transform: translate3d(0, 100%, 0); }
+
+        .slide-screen::-webkit-scrollbar {
+            width: 6px;
+        }
+        .slide-screen::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .slide-screen::-webkit-scrollbar-thumb {
+            background: rgba(144, 24, 18, 0.25);
+            border-radius: 9999px;
+        }
+        .slide-screen::-webkit-scrollbar-thumb:hover {
+            background: rgba(144, 24, 18, 0.65);
+        }
+
+        .card-glass { 
+            border: none !important; 
+            background-color: var(--card-light); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.25s ease,
+                border-color 0.25s ease;
+            will-change: transform, box-shadow; 
+        }
+        .card-glass-dark { 
+            border: none !important; 
+            background-color: var(--card-dark); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            color: white; 
+            box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.25s ease,
+                border-color 0.25s ease;
+            will-change: transform, box-shadow; 
+        }
+
+        .card-glass:hover {
+            transform: translateY(-4px);
+            background-color: rgba(255, 255, 255, 0.72);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-glass-dark:hover {
+            transform: translateY(-4px);
+            background-color: rgba(51, 51, 51, 0.78);
+            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+        }
+
+        .reveal-controls { 
+            position: fixed; 
+            bottom: 1.25rem; 
+            right: 1.25rem; 
+            width: 110px; 
+            height: 110px; 
+            z-index: 1000; 
+            pointer-events: none; 
+        }
+        .control-arrow {
+            position: absolute; 
+            width: 38px; 
+            height: 38px; 
+            background: rgba(255, 255, 255, 0.40);
+            backdrop-filter: blur(6px); 
+            border-radius: 50%; 
+            color: #888888; 
+            cursor: pointer;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            opacity: 0.15; 
+            pointer-events: none;
+            transition: all 0.2s ease; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+            font-size: 0.95rem;
+        }
+        .control-arrow.nav-up { top: 0; left: 36px; }
+        .control-arrow.nav-down { bottom: 0; left: 36px; }
+        .control-arrow.nav-left { top: 36px; left: 0; }
+        .control-arrow.nav-right { top: 36px; right: 0; }
+        .control-arrow.nav-enabled { color: var(--color-primary); opacity: 0.65; pointer-events: auto; }
+        .control-arrow.nav-enabled:hover { background: var(--color-primary); color: #FFF; opacity: 1; transform: scale(1.1); }
+    </style>
+</head>
+<body class="w-screen h-screen relative">
+
+    <div class="fixed top-0 left-0 h-2 bg-[var(--color-secondary)] transition-all duration-300 z-[1000]" id="progressBar" style="width: 0%;"></div>
+
+    <div class="fixed bottom-3 left-3 text-[0.80rem] sm:text-[0.90rem] font-bold text-[var(--color-dark)] bg-white/70 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-sm z-[1000] flex items-center space-x-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-[var(--color-primary)]"></span>
+        <span id="slideIndicator">Slide (0,0) | 1 of 5</span>
+    </div>
+
+    <div class="reveal-controls">
+        <button id="btn-nav-up" onclick="moveInGrid(0, -1)" class="control-arrow nav-up" aria-label="Up"><i class="fa-solid fa-chevron-up"></i></button>
+        <button id="btn-nav-left" onclick="moveInGrid(-1, 0)" class="control-arrow nav-left" aria-label="Left"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="btn-nav-right" onclick="moveInGrid(1, 0)" class="control-arrow nav-right" aria-label="Right"><i class="fa-solid fa-chevron-right"></i></button>
+        <button id="btn-nav-down" onclick="moveInGrid(0, 1)" class="control-arrow nav-down" aria-label="Down"><i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+
+    <main class="w-full h-full relative" id="slideDeck">
+
+         
+        
+<!-- SLIDE (0,0): TITLE & COURSE COVER - CLASS 100 -->
+<div id="slide-0-0" class="slide-screen slide-active flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center gap-4 flex-shrink-0">
+        <div class="flex items-center space-x-4 sm:space-x-6 bg-white/75 backdrop-blur-md px-6 py-3.5 rounded-2xl shadow-sm">
+            <img src="Logo UFV oficial horizontal.png" alt="UFV Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://dci.ufv.br/wp-content/themes/diretorias/assets/images/estrutura/logotipoUFV.png'">
+            <div class="h-10 w-[1px] bg-black/10"></div>
+            <span class="text-fluid-tag text-[#333333]">CIV 665 • SICon / UFV</span>
+        </div>
+        <a href="https://pms.ufv.br" target="_blank" class="block bg-[#333333]/75 backdrop-blur-md p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+            <img src="pms.png" alt="PMS Logo" class="h-12 sm:h-16 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+        </a>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full my-auto py-2">
+        <div class="lg:col-span-7 space-y-4">
+            <div class="p-8 sm:p-12 rounded-3xl card-glass border-l-[16px] border-[#901812]">
+                <span class="text-fluid-tag text-[#D1A705] tracking-wider block mb-2 font-bold uppercase">CIV 665 — ECO-EFFICIENT CONSTRUCTION AND BUILDING MATERIALS</span>
+                <h1 class="text-fluid-h1 mb-3 text-[#901812]">MINERAL RESOURCE DEPLETION<span class="block text-fluid-h2 text-[#333333] font-bold mt-2">Class 100: Geological Scarcity, Hubbert Curves &amp; Grave-to-Cradle</span></h1>
+                <p class="text-fluid-body text-[#444444]">Continental Crust Concentration, Non-Fuel Mineral Extraction Trends, Fixed-Stock vs. Opportunity Cost Paradigms, Dynamic Hubbert Bell Curve Modeling, and Exergy Accounting.</p>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5 p-6 sm:p-8 rounded-3xl card-glass-dark text-white flex flex-col justify-between space-y-6">
+            <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl text-center shadow-md">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fjmfcarvalho.github.io%2Fciv665%2F100.html&color=901812" alt="Slide Access QR Code" class="w-full max-w-[200px] sm:max-w-[240px] mx-auto rounded-lg">
+                <span class="text-fluid-tag text-[#333333] font-bold mt-3 block">Follow On Smartphone</span>
+            </div>
+            <div class="text-center space-y-1">
+                <span class="text-fluid-tag text-[#D1A705] block font-bold">Course Instructor</span>
+                <p class="text-fluid-body font-bold text-white">Prof. José Maria Franco de Carvalho</p>
+                <p class="text-fluid-meta text-[#DEDEDE]">SICon / DEC — Universidade Federal de Viçosa</p>
+                <div class="pt-2 border-t border-white/10 mt-2">
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold">Academic Domain</span>
+                    <p class="text-fluid-meta text-white font-semibold">Resource Depletion &amp; Circular Geochemistry</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Class 100 — Mineral Resource Depletion Assessment</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for Depletion Roadmap | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Crustal Exploitation</span>
+    </footer>
+</div>
+
+<!-- SLIDE (0,1): CLASS OVERVIEW, OBJECTIVES & METHODOLOGICAL ROADMAP (BRANCH Y=1) -->
+<div id="slide-0-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric2.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">CLASS ROADMAP &amp; PEDAGOGICAL PILLARS (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Class 100: Geological Limits &amp; Depletion Dynamics</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Cover</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-auto w-full py-2 items-stretch">
+        <!-- Card 1: Crustal Distribution & Non-Fuel Mineral Trends -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div>
+                <div class="flex items-center space-x-3 text-[#901812] mb-2">
+                    <i class="fa-solid fa-mountain text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Crustal Reserves &amp; Ore</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Less than 0.001% of crustal elements exist as concentrated ore deposits viable for thermodynamic and economic recovery.</p>
+            </div>
+            <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>US non-fuel mineral demand: 160 Mt to 3.3 Gt in 100 years</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Iron ore dominates bulk extraction (67% of non-fuel flows)</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Construction binders: Limestone (7%) and Gypsum (6%)</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Static reserve-to-production ratio: $R/P$ exhaustion horizon</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Dynamic Hubbert Modeling -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div>
+                <div class="flex items-center space-x-3 text-[#D1A705] mb-2">
+                    <i class="fa-solid fa-chart-area text-3xl text-[#D1A705]"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Dynamic Depletion</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Moving beyond static $R/P$ to dynamic bell-shaped Hubbert curves to model supply inflexion and structural scarcity.</p>
+            </div>
+            <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                <li class="flex items-start"><i class="fa-solid fa-wave-square text-[#D1A705] mt-1 mr-2 text-xs"></i>Inflection point: maximum extraction velocity ($P_{\text{peak}}$)</li>
+                <li class="flex items-start"><i class="fa-solid fa-bolt text-[#D1A705] mt-1 mr-2 text-xs"></i>Peak horizons: Copper (2012–2068) and Aluminum (2088)</li>
+                <li class="flex items-start"><i class="fa-solid fa-cube text-[#D1A705] mt-1 mr-2 text-xs"></i>Structural Iron extraction trajectory peaking around 2115</li>
+                <li class="flex items-start"><i class="fa-solid fa-arrow-down-wide-short text-[#D1A705] mt-1 mr-2 text-xs"></i>Ore-grade degradation escalating refining energy demand</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Grave-to-Cradle Paradigm & Outcomes -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-3 flex flex-col justify-between border-l-[12px] border-white">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block mb-1 uppercase">THE GRAVE-TO-CRADLE PARADIGM</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-2">Intergenerational Accounting</h3>
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Quantify</strong> how extracting rich ores today shifts extraction to low-grade deposits tomorrow.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Integrate</strong> the "Grave-to-Cradle" module into LCA to charge environmental remediation exergy.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Formulate</strong> mineral replacement strategies using mining residues, BOFS, and pozzolans.</span>
+                    </div>
+                </div>
+            </div>
+            <button onclick="moveInGrid(1, 0)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[50px] flex items-center justify-center space-x-2">
+                <span>Start Module 01: Crustal Depletion (Press →)</span>
+                <i class="fa-solid fa-arrow-right text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Class 100 — Geological Scarcity &amp; Hubbert Peak Depletion Architecture</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return to Cover | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to advance to Module 01</span>
+    </footer>
+</div>
+
+
+
+<!-- SLIDE (1,0): CONTINENTAL CRUST EXPLOITATION & NON-FUEL MINERALS -->
+<div id="slide-1-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-clay3.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 01 — GEOLOGICAL ENRICHMENT & EXTRACTIVE METABOLISM</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Crustal Concentration &amp; Non-Fuel Mineral Depletion</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Princípios Geológicos, Limiares de Minério e Índice R/P (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-mountain-sun text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Ore Genesis &amp; Static Depletion Horizon</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">While Earth's continental crust is entirely composed of minerals, less than 0.001% is concentrated into mineable ores by geological processes.</p>
+
+                <!-- Equação KaTeX do Índice R/P e Concentração de Minério com Rolagem Horizontal -->
+                <div class="bg-white/85 backdrop-blur-md p-3 sm:p-4 rounded-2xl text-center shadow-inner overflow-x-auto overflow-y-hidden border border-black/5" style="font-size: clamp(1.15rem, 1.95vw, 1.75rem);">
+                    $$\text{EF} = \frac{C_{\text{ore}}}{C_{\text{crust}}} \quad \Longrightarrow \quad t_{\text{exhaustion}} = \frac{R}{P} = \frac{\text{Proven Economic Reserves [t]}}{\text{Annual Production Rate [t/year]}}$$
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-fluid-meta text-[#444444] font-semibold">
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Extractive Acceleration:</strong>
+                        Global metals demand increased over 20-fold in the past century (e.g., US demand surged from 160 Mt to 3.3 Gt).
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Construction Commodities:</strong>
+                        Non-fuel mineral mining is driven by civil engineering: Iron ore (67%), Limestone (7%), and Gypsum (6%).
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>Data Source: USGS Mineral Commodity Summaries &amp; Pacheco-Torgal et al. (2014)</span>
+                <span class="text-[#901812] font-bold">Static vs. Dynamic Depletion</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Classificação de Fontes Minerais & Acesso ao Lab (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">GEOLOGICAL LIMITS</span>
+                    <button onclick="document.getElementById('modal-crust-trends-1-0').showModal()" class="text-fluid-tag text-white hover:text-[#D1A705] font-bold underline flex items-center gap-1">
+                        <i class="fa-solid fa-table"></i> Extraction Trends
+                    </button>
+                </div>
+
+                <h3 class="text-fluid-h3 text-white font-bold">Economic vs. Physical Scarcity</h3>
+
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#D1A705]">
+                        <strong class="text-[#D1A705] block mb-0.5">Static Paradigm Limit:</strong>
+                        $R/P$ ignores price dynamics, technological recovery, sub-economic resources, and exponential production growth.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-white">
+                        <strong class="text-white block mb-0.5">Ore Grade Degradation:</strong>
+                        Depletion forces extraction of lower-grade deposits, exponentially increasing energy input and refining residues.
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="moveInGrid(0, 1)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Launch R/P Depletion Simulator (Press ↓)</span>
+                <i class="fa-solid fa-hourglass-half text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 01 — Non-Fuel Mineral Extraction Trends &amp; Reserve Depletion Dynamics</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for R/P Simulator | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Hubbert Peak Analysis (Slide 2,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: ESTATÍSTICAS DE EXTRAÇÃO DE MINERAIS NÃO-ENERGÉTICOS (SLIDES 13-17 DO PDF) -->
+    <dialog id="modal-crust-trends-1-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-4xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block uppercase">HISTORICAL MINING DATA (1900–2008)</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Cumulative Non-Fuel Mineral Production (Pacheco-Torgal et al., 2014)</h3>
+            </div>
+            <button onclick="document.getElementById('modal-crust-trends-1-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="overflow-x-auto rounded-2xl border border-white/10 bg-white/5 max-h-[50vh]">
+            <table class="w-full text-left border-collapse text-fluid-meta">
+                <thead>
+                    <tr class="bg-[#901812] text-white sticky top-0">
+                        <th class="p-3 border-b border-white/10 font-bold">Mineral Commodity</th>
+                        <th class="p-3 border-b border-white/10 font-bold">Share of Non-Fuel Flows</th>
+                        <th class="p-3 border-b border-white/10 font-bold">Annual Extracted Volume</th>
+                        <th class="p-3 border-b border-white/10 font-bold">Primary Application in Construction</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-white/10 text-[#EAEAEA]">
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-white">Iron Ore (Fe)</td>
+                        <td class="p-2.5 font-mono text-[#D1A705] font-bold">67.0%</td>
+                        <td class="p-2.5 font-mono">&gt; 2.50 Billion tons/yr</td>
+                        <td class="p-2.5">Structural rebars, steel profiles, cables</td>
+                    </tr>
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-white">Limestone ($\text{CaCO}_3$)</td>
+                        <td class="p-2.5 font-mono text-[#D1A705] font-bold">7.0%</td>
+                        <td class="p-2.5 font-mono">Dominant mineral flux</td>
+                        <td class="p-2.5">Portland clinker calcination &amp; crushed aggregates</td>
+                    </tr>
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-white">Gypsum ($\text{CaSO}_4\cdot 2\text{H}_2\text{O}$)</td>
+                        <td class="p-2.5 font-mono text-[#D1A705] font-bold">6.0%</td>
+                        <td class="p-2.5 font-mono">~160 Million tons/yr</td>
+                        <td class="p-2.5">Plasterboards, wall finishes, cement set retarder</td>
+                    </tr>
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-white">Bauxite / Aluminum (Al)</td>
+                        <td class="p-2.5 font-mono font-bold">6.0%</td>
+                        <td class="p-2.5 font-mono">~60 Million tons/yr</td>
+                        <td class="p-2.5">Window frames, facades, lightweight alloy framing</td>
+                    </tr>
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-[#4ADE80]">Copper (Cu)</td>
+                        <td class="p-2.5 font-mono font-bold">0.60%</td>
+                        <td class="p-2.5 font-mono">~20 Million tons/yr</td>
+                        <td class="p-2.5">Electrical wiring, HVAC heat exchangers, plumbing</td>
+                    </tr>
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-[#4ADE80]">Zinc (Zn)</td>
+                        <td class="p-2.5 font-mono font-bold">0.48%</td>
+                        <td class="p-2.5 font-mono">~13 Million tons/yr</td>
+                        <td class="p-2.5">Galvanizing steel protection, roof cladding</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-4 p-3 bg-white/5 rounded-2xl text-fluid-tag text-[#DEDEDE] flex items-center justify-between">
+            <span>Aggregates and sand are locally abundant, but high quality river sand faces depletion zones globally.</span>
+            <button onclick="document.getElementById('modal-crust-trends-1-0').close()" class="px-4 py-2 bg-[#901812] text-white font-bold rounded-xl hover:bg-[#D1A705] hover:text-[#333333] transition-colors">Close</button>
+        </div>
+    </dialog>
+</div>
+
+<!-- SLIDE (1,1): VIRTUAL LAB - DYNAMIC RESERVE-TO-PRODUCTION (R/P) SIMULATOR (BRANCH Y=1) -->
+<div id="slide-1-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-clay4.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">VIRTUAL LAB (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Mineral Reserve-to-Production ($R/P$) Depletion Simulator</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Module 01</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 w-full items-stretch">
+            <!-- Painel de Seleção e Sliders de Dinâmica de Extração -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                <div class="border-b border-black/10 pb-2">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Commodity Parameters &amp; Extraction Rate</h3>
+                    <p class="text-fluid-meta text-[#555555] font-semibold">Simulate static vs. exponential $R/P$ depletion horizons under varying growth rates:</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block text-[#333333]">Target Mineral Commodity:</label>
+                        <select id="select-mineral-1-1" class="w-full p-3 bg-white/90 rounded-2xl border border-black/10 text-fluid-meta font-bold text-[#333333] cursor-pointer" onchange="selecionarMineral_1_1()">
+                            <option value="iron">Iron Ore (Fe) — Reserves: 180 Gt | Extraction: 2.50 Gt/yr</option>
+                            <option value="bauxite">Bauxite / Aluminum (Al) — Reserves: 30 Gt | Extraction: 0.38 Gt/yr</option>
+                            <option value="copper">Copper (Cu) — Reserves: 890 Mt | Extraction: 22 Mt/yr</option>
+                            <option value="zinc">Zinc (Zn) — Reserves: 250 Mt | Extraction: 13 Mt/yr</option>
+                            <option value="limestone">High-Purity Limestone — Reserves: 450 Gt | Extraction: 5.2 Gt/yr</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Proven Reserves Adjustment Factor:</span>
+                            <span id="lbl-reserve-adj-1-1" class="text-[#901812] font-bold font-mono">1.0x (USGS Baseline)</span>
+                        </label>
+                        <input type="range" id="input-reserve-adj-1-1" min="0.5" max="3.0" step="0.1" value="1.0" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularRP_1_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Annual Production Growth Rate ($r$):</span>
+                            <span id="lbl-prod-growth-1-1" class="text-[#901812] font-bold font-mono">2.0% / year</span>
+                        </label>
+                        <input type="range" id="input-prod-growth-1-1" min="0.0" max="5.0" step="0.5" value="2.0" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularRP_1_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Recycling Offset / Substitution Fraction:</span>
+                            <span id="lbl-recycle-rate-1-1" class="text-[#901812] font-bold font-mono">20%</span>
+                        </label>
+                        <input type="range" id="input-recycle-rate-1-1" min="0" max="60" step="5" value="20" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularRP_1_1()">
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-tag text-[#555555] font-semibold flex items-center justify-between">
+                    <span>Model: Static $R/P$ vs. Exponential $t_e = \frac{\ln(r \cdot R / P + 1)}{r}$</span>
+                    <button type="button" onclick="resetarLab_1_1()" class="text-[#901812] hover:underline font-bold">Reset Parameters</button>
+                </div>
+            </div>
+
+            <!-- Painel de Resultados de Esgotamento Geológico -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-1">DEPLETION HORIZON AUDIT</span>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-2">
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Static Horizon ($R/P$)</span>
+                            <span id="res-static-rp-1-1" class="text-fluid-h2 text-white font-mono font-bold leading-tight block my-1">90 years</span>
+                            <span class="text-fluid-tag text-[#DEDEDE]" id="res-static-year-1-1">Year 2116</span>
+                        </div>
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Exponential Horizon ($t_e$)</span>
+                            <span id="res-dynamic-te-1-1" class="text-fluid-h2 text-[#D1A705] font-mono font-bold leading-tight block my-1">52 years</span>
+                            <span class="text-fluid-tag text-[#FF6B6B] font-bold" id="res-dynamic-year-1-1">Year 2078</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-fluid-meta text-[#DEDEDE] mt-3">
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                            <strong class="text-white block mb-0.5">Growth Compression Penalty:</strong>
+                            <span id="res-growth-penalty-desc-1-1">Exponential growth at 2.0%/year compresses the exhaustion horizon by 38 years compared to constant-rate predictions.</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                            <strong class="text-white block mb-0.5">Circular Mitigation Credit:</strong>
+                            <span id="res-circular-benefit-desc-1-1">Recycling 20% of scrap extends reserve longevity by 14 additional years.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-triangle-exclamation text-[#D1A705] text-xl"></i>
+                    <span id="res-depletion-verdict-1-1">Copper and Zinc face acute depletion within this century under modest growth scenarios.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 01 — Non-Fuel Mineral Reserve-to-Production (R/P) Simulation Engine</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to go to Hubbert Peak Analysis (Slide 2,0)</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (1,1) -->
+    <script>
+        const mineralDb_1_1 = {
+            iron: { name: "Iron Ore", reserves: 180000, prod: 2500, unit: "Mt" },
+            bauxite: { name: "Bauxite / Al", reserves: 30000, prod: 380, unit: "Mt" },
+            copper: { name: "Copper (Cu)", reserves: 890, prod: 22, unit: "Mt" },
+            zinc: { name: "Zinc (Zn)", reserves: 250, prod: 13, unit: "Mt" },
+            limestone: { name: "Limestone", reserves: 450000, prod: 5200, unit: "Mt" }
+        };
+
+        function selecionarMineral_1_1() {
+            calcularRP_1_1();
+        }
+
+        function calcularRP_1_1() {
+            const key = document.getElementById('select-mineral-1-1').value;
+            const mineral = mineralDb_1_1[key];
+
+            const adj = parseFloat(document.getElementById('input-reserve-adj-1-1').value);
+            const r = parseFloat(document.getElementById('input-prod-growth-1-1').value) / 100;
+            const recRate = parseFloat(document.getElementById('input-recycle-rate-1-1').value) / 100;
+
+            document.getElementById('lbl-reserve-adj-1-1').innerText = `${adj.toFixed(1)}x (${adj === 1.0 ? 'USGS Baseline' : (adj > 1 ? 'New Discoveries' : 'Downgraded')})`;
+            document.getElementById('lbl-prod-growth-1-1').innerText = `${(r * 100).toFixed(1)}% / year`;
+            document.getElementById('lbl-recycle-rate-1-1').innerText = `${(recRate * 100).toFixed(0)}%`;
+
+            const currentYear = 2026;
+            const effectiveReserves = mineral.reserves * adj;
+            const netProd = mineral.prod * (1 - recRate);
+
+            // Horizonte estático
+            const staticYears = effectiveReserves / netProd;
+            const staticFinalYear = Math.round(currentYear + staticYears);
+
+            // Horizonte dinâmico com crescimento exponencial: R = (P/r) * (e^(r*t) - 1) => t = ln(r*R/P + 1) / r
+            let dynamicYears = 0;
+            if (r > 0) {
+                dynamicYears = Math.log((r * effectiveReserves / netProd) + 1) / r;
+            } else {
+                dynamicYears = staticYears;
+            }
+            const dynamicFinalYear = Math.round(currentYear + dynamicYears);
+            const penaltyYears = Math.max(0, staticYears - dynamicYears);
+
+            // Extensão devida à reciclagem
+            const unmitigatedProd = mineral.prod;
+            const unmitigatedStatic = effectiveReserves / unmitigatedProd;
+            const savedYears = Math.max(0, staticYears - unmitigatedStatic);
+
+            document.getElementById('res-static-rp-1-1').innerText = `${Math.round(staticYears)} years`;
+            document.getElementById('res-static-year-1-1').innerText = `Year ${staticFinalYear}`;
+            document.getElementById('res-dynamic-te-1-1').innerText = `${Math.round(dynamicYears)} years`;
+            document.getElementById('res-dynamic-year-1-1').innerText = `Year ${dynamicFinalYear}`;
+
+            document.getElementById('res-growth-penalty-desc-1-1').innerText = 
+                r > 0 
+                ? `Exponential growth at ${(r * 100).toFixed(1)}%/year compresses the exhaustion horizon by ${Math.round(penaltyYears)} years compared to static predictions.`
+                : "Zero demand growth assumed; exhaustion occurs strictly along constant linear baseline.";
+
+            document.getElementById('res-circular-benefit-desc-1-1').innerText = 
+                recRate > 0 
+                ? `Recycling ${(recRate * 100).toFixed(0)}% of materials extends current reserve life by ~${Math.round(savedYears)} additional years.`
+                : "No circular substitution applied; primary extraction directly depletes virgin crustal ore.";
+
+            const verdictEl = document.getElementById('res-depletion-verdict-1-1');
+            if (dynamicYears < 40) {
+                verdictEl.innerText = "Critical geological scarcity: Proven reserves exhausted before mid-century under current growth. Immediate recycling transition required.";
+            } else if (dynamicYears < 80) {
+                verdictEl.innerText = "Moderate exhaustion risk: Peak extraction will occur in the next 2-3 decades, triggering steep commodity price volatility.";
+            } else {
+                verdictEl.innerText = "Long-term reserve availability: Depletion horizon exceeds 80 years, but local quarrying permits and energy constraints remain limiting.";
+            }
+        }
+
+        function resetarLab_1_1() {
+            document.getElementById('select-mineral-1-1').value = 'iron';
+            document.getElementById('input-reserve-adj-1-1').value = 1.0;
+            document.getElementById('input-prod-growth-1-1').value = 2.0;
+            document.getElementById('input-recycle-rate-1-1').value = 20;
+            calcularRP_1_1();
+        }
+
+        if (document.getElementById('input-reserve-adj-1-1')) {
+            calcularRP_1_1();
+        }
+    </script>
+</div>
+
+
+
+<!-- SLIDE (2,0): DYNAMIC DEPLETION MODELING & HUBBERT PEAK THEORY -->
+<div id="slide-2-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-clay1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 02 — DYNAMIC RESOURCE DEPLETION</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Hubbert Peak Theory &amp; Production Inflexion</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Formulação Matemática da Curva em Sino de Hubbert (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-chart-area text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Logistic Production Dynamics</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Finite mineral exploitation follows a bell-shaped logistic curve where maximum extraction rate occurs when approximately half of recoverable resources are depleted.</p>
+
+                <!-- Equação KaTeX da Derivada Logística de Hubbert -->
+                <div class="bg-white/85 backdrop-blur-md p-3 sm:p-4 rounded-2xl text-center shadow-inner overflow-x-auto overflow-y-hidden border border-black/5" style="font-size: clamp(1.15rem, 1.95vw, 1.75rem);">
+                    $$P(t) = \frac{d Q(t)}{d t} = \frac{k \cdot Q_{\infty} \cdot e^{-k(t - t_{\text{peak}})}}{\left(1 + e^{-k(t - t_{\text{peak}})}\right)^2} \quad \left[\frac{\text{tons}}{\text{year}}\right]$$
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-fluid-meta text-[#444444] font-semibold">
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Hubbert Peak ($t_{\text{peak}}$):</strong>
+                        Point of maximum extraction velocity where production rate can no longer keep pace with growing infrastructural demand.
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Cumulative Endowment ($Q_{\infty}$):</strong>
+                        Total integrated area beneath the curve, comprising past production, proven reserves, and undiscovered deposits.
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>Theoretical Basis: M. King Hubbert (1956); Pacheco-Torgal et al. (2014)</span>
+                <span class="text-[#901812] font-bold">Dynamic Depletion Horizon</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Horizontes Críticos de Pico e Acesso ao Simulador (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">PROJECTED PEAKS</span>
+                    <button onclick="document.getElementById('modal-hubbert-curves-2-0').showModal()" class="text-fluid-tag text-white hover:text-[#D1A705] font-bold underline flex items-center gap-1">
+                        <i class="fa-solid fa-chart-line"></i> Hubbert Data
+                    </button>
+                </div>
+
+                <h3 class="text-fluid-h3 text-white font-bold">Peak Timing Across Commodities</h3>
+
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#D1A705]">
+                        <strong class="text-[#D1A705] block mb-0.5">Copper Imminent Inflexion:</strong>
+                        Peak extraction occurs between 2012 and 2068 depending on reserve discovery assumptions, threatening electrical grid deployment.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-white">
+                        <strong class="text-white block mb-0.5">Structural Aluminum &amp; Iron:</strong>
+                        Bauxite/Al reaches production peak around 2088; global Iron ore peaks around 2115, after which extraction energy rises exponentially.
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="moveInGrid(0, 1)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Launch Hubbert Curve Lab (Press ↓)</span>
+                <i class="fa-solid fa-bell-curve text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 02 — Hubbert Logistic Depletion Modeling for Structural Metals</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for Hubbert Simulator | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Grave-to-Cradle Accounting (Slide 3,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: COMPILAÇÃO DE PICOS DE HUBBERT PARA MINERAIS (SLIDES 18-20 DO PDF) -->
+    <dialog id="modal-hubbert-curves-2-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-4xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block uppercase">DYNAMIC DEPLETION PROJECTIONS</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Estimated Peak Extraction Years (Pacheco-Torgal et al., 2014)</h3>
+            </div>
+            <button onclick="document.getElementById('modal-hubbert-curves-2-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="overflow-x-auto rounded-2xl border border-white/10 bg-white/5 max-h-[50vh]">
+            <table class="w-full text-left border-collapse text-fluid-meta">
+                <thead>
+                    <tr class="bg-[#901812] text-white sticky top-0">
+                        <th class="p-3 border-b border-white/10 font-bold">Mineral Commodity</th>
+                        <th class="p-3 border-b border-white/10 font-bold">Assumed Baseline</th>
+                        <th class="p-3 border-b border-white/10 font-bold">Estimated Peak Year</th>
+                        <th class="p-3 border-b border-white/10 font-bold">Strategic Implication for Construction</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-white/10 text-[#EAEAEA]">
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-[#FF6B6B]">Copper (Cu) — Known Reserves</td>
+                        <td class="p-2.5 font-mono">Proven reserves only</td>
+                        <td class="p-2.5 font-mono text-[#FF6B6B] font-bold">2012</td>
+                        <td class="p-2.5">Critical supply constraint for building electrification</td>
+                    </tr>
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-[#D1A705]">Copper (Cu) — Ultimate Resources</td>
+                        <td class="p-2.5 font-mono">Including undiscovered</td>
+                        <td class="p-2.5 font-mono text-[#D1A705] font-bold">2068</td>
+                        <td class="p-2.5">Severe ore grade degradation, higher refining energy</td>
+                    </tr>
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-white">Aluminum (Al / Bauxite)</td>
+                        <td class="p-2.5 font-mono">World bauxite deposits</td>
+                        <td class="p-2.5 font-mono font-bold">2088</td>
+                        <td class="p-2.5">Curbs extruded facade profiles, forces secondary recycling</td>
+                    </tr>
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-[#4ADE80]">Iron Ore (Fe)</td>
+                        <td class="p-2.5 font-mono">Total global deposits</td>
+                        <td class="p-2.5 font-mono text-[#4ADE80] font-bold">2115</td>
+                        <td class="p-2.5">Structural rebars and steel framing sustain post-2100 peak</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-4 p-3 bg-white/5 rounded-2xl text-fluid-tag text-[#DEDEDE] flex items-center justify-between">
+            <span>Beyond the peak, extraction cannot match baseline demand even with increased capital expenditure.</span>
+            <button onclick="document.getElementById('modal-hubbert-curves-2-0').close()" class="px-4 py-2 bg-[#901812] text-white font-bold rounded-xl hover:bg-[#D1A705] hover:text-[#333333] transition-colors">Close</button>
+        </div>
+    </dialog>
+</div>
+
+<!-- SLIDE (2,1): VIRTUAL LAB - DYNAMIC HUBBERT BELL CURVE PEAK ESTIMATOR (BRANCH Y=1) -->
+<div id="slide-2-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-clay2.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">VIRTUAL LAB (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Dynamic Hubbert Bell Curve Peak Estimator</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Module 02</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 w-full items-stretch">
+            <!-- Painel de Sliders e Parâmetros de Hubbert -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                <div class="border-b border-black/10 pb-2">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Commodity Endowment &amp; Logistics Rate</h3>
+                    <p class="text-fluid-meta text-[#555555] font-semibold">Simulate Hubbert extraction trajectories and determine when supply inflexion occurs:</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block text-[#333333]">Construction Metal Preset:</label>
+                        <select id="select-metal-2-1" class="w-full p-3 bg-white/90 rounded-2xl border border-black/10 text-fluid-meta font-bold text-[#333333] cursor-pointer" onchange="selecionarMetal_2_1()">
+                            <option value="copper_reserves">Copper (Cu) — Known Reserves: Peak ~2012</option>
+                            <option value="copper_resources">Copper (Cu) — World Resources: Peak ~2068</option>
+                            <option value="aluminum">Aluminum / Bauxite (Al) — World Resources: Peak ~2088</option>
+                            <option value="iron">Iron Ore (Fe) — Global Endowment: Peak ~2115</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Ultimate Recoverable Endowment ($Q_{\infty}$):</span>
+                            <span id="lbl-qinf-2-1" class="text-[#901812] font-bold font-mono">2,800 Mt</span>
+                        </label>
+                        <input type="range" id="input-qinf-2-1" min="1000" max="250000" step="500" value="2800" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularHubbert_2_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Logistic Growth Factor ($k$):</span>
+                            <span id="lbl-growth-k-2-1" class="text-[#901812] font-bold font-mono">0.050 / yr</span>
+                        </label>
+                        <input type="range" id="input-growth-k-2-1" min="0.020" max="0.080" step="0.005" value="0.050" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularHubbert_2_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Endowment Extension via Circular Recycling:</span>
+                            <span id="lbl-circ-ext-2-1" class="text-[#901812] font-bold font-mono">0% (Linear Extraction)</span>
+                        </label>
+                        <input type="range" id="input-circ-ext-2-1" min="0" max="60" step="5" value="0" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularHubbert_2_1()">
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-tag text-[#555555] font-semibold flex items-center justify-between">
+                    <span>Peak Condition: $Q(t_{\text{peak}}) = Q_{\infty} / 2$; $P_{\max} = k \cdot Q_{\infty} / 4$</span>
+                    <button type="button" onclick="resetarLab_2_1()" class="text-[#901812] hover:underline font-bold">Reset Parameters</button>
+                </div>
+            </div>
+
+            <!-- Painel de Resultados do Pico de Hubbert -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-1">HUBBERT TRAJECTORY AUDIT</span>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-2">
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Projected Peak Year</span>
+                            <span id="res-peak-year-2-1" class="text-fluid-h2 text-white font-mono font-bold leading-tight block my-1">Year 2068</span>
+                            <span class="text-fluid-tag text-[#D1A705] font-bold" id="res-peak-status-2-1">Inflection Horizon</span>
+                        </div>
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Peak Production Rate ($P_{\max}$)</span>
+                            <span id="res-pmax-val-2-1" class="text-fluid-h2 text-[#4ADE80] font-mono font-bold leading-tight block my-1">35.0 Mt/yr</span>
+                            <span class="text-fluid-tag text-white font-mono" id="res-cum-half-2-1">Halfway Depleted</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-fluid-meta text-[#DEDEDE] mt-3">
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                            <strong class="text-white block mb-0.5">Post-Peak Production Stress:</strong>
+                            <span id="res-hubbert-desc-2-1">After 2068, mining yields decline by ~2.5% annually. Each additional ton extracted requires exploring lower concentration ores.</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                            <strong class="text-white block mb-0.5">Circular Postponement Effect:</strong>
+                            <span id="res-circ-postpone-2-1">Closed-loop secondary scrap recycling delays the peak inflection, sustaining industrial supply.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-triangle-exclamation text-[#D1A705] text-xl"></i>
+                    <span id="res-hubbert-verdict-2-1">Peak extraction signals the transition from high-grade natural concentration to energy-intensive beneficiation.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 02 — Hubbert Logistic Extraction Engine for Critical Metals</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to go to Grave-to-Cradle Accounting (Slide 3,0)</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (2,1) -->
+    <script>
+        const metalDb_2_1 = {
+            copper_reserves:  { name: "Copper (Reserves)",  qinf: 1400,   k: 0.058, basePeak: 2012, unit: "Mt" },
+            copper_resources: { name: "Copper (Resources)", qinf: 2800,   k: 0.048, basePeak: 2068, unit: "Mt" },
+            aluminum:         { name: "Aluminum (Bauxite)", qinf: 45000,  k: 0.042, basePeak: 2088, unit: "Mt" },
+            iron:             { name: "Iron Ore",           qinf: 220000, k: 0.038, basePeak: 2115, unit: "Mt" }
+        };
+
+        function selecionarMetal_2_1() {
+            const key = document.getElementById('select-metal-2-1').value;
+            const m = metalDb_2_1[key];
+            document.getElementById('input-qinf-2-1').value = m.qinf;
+            document.getElementById('input-growth-k-2-1').value = m.k;
+            calcularHubbert_2_1();
+        }
+
+        function calcularHubbert_2_1() {
+            const key = document.getElementById('select-metal-2-1').value;
+            const metal = metalDb_2_1[key];
+
+            const qinf = parseFloat(document.getElementById('input-qinf-2-1').value);
+            const k = parseFloat(document.getElementById('input-growth-k-2-1').value);
+            const circPct = parseFloat(document.getElementById('input-circ-ext-2-1').value) / 100;
+
+            document.getElementById('lbl-qinf-2-1').innerText = `${qinf.toLocaleString()} ${metal.unit}`;
+            document.getElementById('lbl-growth-k-2-1').innerText = `${k.toFixed(3)} / yr`;
+            document.getElementById('lbl-circ-ext-2-1').innerText = `${(circPct * 100).toFixed(0)}% ${circPct === 0 ? '(Linear Extraction)' : 'Offset'}`;
+
+            // Efeito de extensão do endowment por reciclagem
+            const effectiveQinf = qinf * (1 + circPct * 0.85);
+            const pMax = (k * effectiveQinf) / 4;
+
+            // Adiamento do pico em função do ganho de endowment circular
+            const delayYears = circPct > 0 ? Math.round((Math.log(effectiveQinf / qinf) / k) * 1.5) : 0;
+            const finalPeakYear = metal.basePeak + delayYears;
+
+            document.getElementById('res-peak-year-2-1').innerText = `Year ${finalPeakYear}`;
+            document.getElementById('res-pmax-val-2-1').innerText = `${pMax.toFixed(1)} ${metal.unit}/yr`;
+            document.getElementById('res-cum-half-2-1').innerText = `Halfway = ${(effectiveQinf / 2).toLocaleString()} ${metal.unit}`;
+
+            const statusEl = document.getElementById('res-peak-status-2-1');
+            const descEl = document.getElementById('res-hubbert-desc-2-1');
+            const circEl = document.getElementById('res-circ-postpone-2-1');
+            const verdictEl = document.getElementById('res-hubbert-verdict-2-1');
+
+            if (finalPeakYear <= 2026) {
+                statusEl.innerText = "Post-Peak Regime";
+                statusEl.className = "text-fluid-tag text-[#FF6B6B] font-bold";
+                descEl.innerText = `Operating in post-peak depletion regime. Primary supply faces physical extraction bottlenecks, accelerating reliance on secondary recovery.`;
+            } else if (finalPeakYear <= 2070) {
+                statusEl.innerText = "Imminent Inflection";
+                statusEl.className = "text-fluid-tag text-[#D1A705] font-bold";
+                descEl.innerText = `Peak extraction projected for ${finalPeakYear}. Beyond this inflection, mining throughput cannot sustain baseline growth despite increased investments.`;
+            } else {
+                statusEl.innerText = "Long-Range Peak";
+                statusEl.className = "text-fluid-tag text-[#4ADE80] font-bold";
+                descEl.innerText = `Abundant endowment postpones peak extraction to ${finalPeakYear}. Localized deposit scarcity and energy requirements dominate initial constraints.`;
+            }
+
+            if (delayYears > 0) {
+                circEl.innerText = `Circular secondary recycling (${(circPct * 100).toFixed(0)}%) extends effective reserves, postponing the peak by ~${delayYears} years and smoothing post-peak decline.`;
+            } else {
+                circEl.innerText = "No circular substitution applied. Trajectory adheres strictly to virgin crustal exhaustion.";
+            }
+
+            verdictEl.innerText = `Maximum supply velocity occurs at Year ${finalPeakYear}. Structural alternatives and clinker dilution mitigate post-peak commodity price spikes.`;
+        }
+
+        function resetarLab_2_1() {
+            document.getElementById('select-metal-2-1').value = 'copper_resources';
+            document.getElementById('input-circ-ext-2-1').value = 0;
+            selecionarMetal_2_1();
+        }
+
+        if (document.getElementById('input-qinf-2-1')) {
+            calcularHubbert_2_1();
+        }
+    </script>
+</div>
+
+
+
+<!-- SLIDE (3,0): GRAVE-TO-CRADLE PARADIGM & THERMODYNAMIC DEPLETION ACCOUNTING -->
+<div id="slide-3-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks4.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 03 — INTERGENERATIONAL ACCOUNTING &amp; EXERGY DEGRADATION</span>
+            <h2 class="text-fluid-h2 text-[#901812]">The Grave-to-Cradle Paradigm &amp; Exergy Costs</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Princípio Físico do Grave-to-Cradle e Balanço de Exergia (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-recycle text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Intergenerational Replacement Exergy</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Extracting high-concentration ores today forces future generations to exploit lower-grade crustal deposits, escalating required energy and ecological disruption.</p>
+
+                <!-- Equação KaTeX do Custo Exergético Grave-to-Cradle com Rolagem Horizontal -->
+                <div class="bg-white/85 backdrop-blur-md p-3 sm:p-4 rounded-2xl text-center shadow-inner overflow-x-auto overflow-y-hidden border border-black/5" style="font-size: clamp(1.15rem, 1.95vw, 1.75rem);">
+                    $$B_{\text{G2C}} = \int_{x_{\text{ore}}}^{x_{\text{crust}}} \left( \frac{\partial B_{\text{conc}}}{\partial x} \right) dx = T_0 \cdot \Delta S_{\text{mix}} + \Delta H_{\text{benef}} \quad \left[\frac{\text{kJ}}{\text{kg}}\right]$$
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-fluid-meta text-[#444444] font-semibold">
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">From Cradle-to-Grave:</strong>
+                        Standard LCA quantifies extraction to disposal; it ignores the cost to reconstitute or replace dissipated mineral capital.
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">To Grave-to-Cradle (G2C):</strong>
+                        Calculates theoretical exergy needed to reconcentrate degraded tailings back to original natural deposit grades.
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>Theoretical Architecture: Valero &amp; Valero (Thanatia Hypothesis)</span>
+                <span class="text-[#901812] font-bold">Thermodynamic Depletion Debt</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Mudança de Paradigma e Acesso ao Lab Virtual (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">PARADIGM EVOLUTION</span>
+                    <button onclick="document.getElementById('modal-g2c-principles-3-0').showModal()" class="text-fluid-tag text-white hover:text-[#D1A705] font-bold underline flex items-center gap-1">
+                        <i class="fa-solid fa-hourglass-start"></i> Foundations
+                    </button>
+                </div>
+
+                <h3 class="text-fluid-h3 text-white font-bold">Fixed-Stock vs. Opportunity Cost</h3>
+
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#FF6B6B]">
+                        <strong class="text-white block mb-0.5">Fixed-Stock View (Physical Mass):</strong>
+                        Assumes resources simply run out abruptly; fails to capture progressive economic and energetic quality downgrades.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#4ADE80]">
+                        <strong class="text-[#4ADE80] block mb-0.5">Opportunity Cost View (Exergy Quality):</strong>
+                        Measures the escalating energy penalty imposed on future societies to recover dispersed construction minerals.
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="moveInGrid(0, 1)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Launch Grave-to-Cradle Lab (Press ↓)</span>
+                <i class="fa-solid fa-atom text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 03 — Grave-to-Cradle Mineral Exergy Accounting &amp; Intergenerational Debt</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for G2C Simulator | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Closing &amp; Evaluations (Slide 4,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: PRINCÍPIOS GRAVE-TO-CRADLE (SLIDES 21-22 DO PDF) -->
+    <dialog id="modal-g2c-principles-3-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-4xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block uppercase">METHODOLOGICAL PARADIGM SHIFT</span>
+                <h3 class="text-fluid-h2 text-white font-bold">From Grave to Cradle: Accounting for Mineral Depletion</h3>
+            </div>
+            <button onclick="document.getElementById('modal-g2c-principles-3-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-fluid-meta text-[#EAEAEA]">
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-2">
+                <strong class="text-[#D1A705] text-fluid-h3 block">The Extraction Legacy:</strong>
+                <p class="text-sm sm:text-base leading-relaxed text-[#DEDEDE]">
+                    Current industry extracts the highest-purity, easily accessible mineral stocks. Once extracted and dispersed into urban infrastructure and demolition rubble, entropy increases. Reconstituting that chemical capital requires astronomical energy expenditures that standard cradle-to-grave LCA completely omits.
+                </p>
+            </div>
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-2">
+                <strong class="text-[#4ADE80] text-fluid-h3 block">The Grave-to-Cradle Stage:</strong>
+                <p class="text-sm sm:text-base leading-relaxed text-[#DEDEDE]">
+                    Proposed by mineral ecological economists, the "Grave-to-Cradle" stage adds a corrective metric: it computes the thermodynamic exergy necessary to return dispersed materials back to their baseline natural state. This penalizes linear dissipation and makes high-quality recycling economically and thermodynamically indispensable.
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 p-3 bg-white/5 rounded-2xl text-fluid-tag text-[#DEDEDE] flex items-center justify-between">
+            <span>By incorporating exergy replacement costs, building materials demonstrate up to 300% higher actual ecological burdens.</span>
+            <button onclick="document.getElementById('modal-g2c-principles-3-0').close()" class="px-4 py-2 bg-[#901812] text-white font-bold rounded-xl hover:bg-[#D1A705] hover:text-[#333333] transition-colors">Close</button>
+        </div>
+    </dialog>
+</div>
+
+<!-- SLIDE (3,1): VIRTUAL LAB - EXERGY-BASED GRAVE-TO-CRADLE REMEDIATION SIMULATOR (BRANCH Y=1) -->
+<div id="slide-3-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">VIRTUAL LAB (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Grave-to-Cradle Exergy Degradation &amp; Replacement Simulator</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Module 03</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 w-full items-stretch">
+            <!-- Painel de Sliders e Especificação Mineral -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                <div class="border-b border-black/10 pb-2">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Ore Degradation &amp; Concentration Gradient</h3>
+                    <p class="text-fluid-meta text-[#555555] font-semibold">Simulate the exergy replacement penalty as deposit grades decline toward average continental crust:</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block text-[#333333]">Mineral Matrix Benchmark:</label>
+                        <select id="select-mineral-g2c-3-1" class="w-full p-3 bg-white/90 rounded-2xl border border-black/10 text-fluid-meta font-bold text-[#333333] cursor-pointer" onchange="selecionarMineralG2C_3_1()">
+                            <option value="copper">Copper Ore (Chalcopyrite) — Initial Grade: 1.5% | Crust: 0.006%</option>
+                            <option value="iron">Iron Ore (Hematite) — Initial Grade: 62% | Crust: 5.63%</option>
+                            <option value="bauxite">Aluminum (Bauxite) — Initial Grade: 45% | Crust: 8.23%</option>
+                            <option value="zinc">Zinc Ore (Sphalerite) — Initial Grade: 4.0% | Crust: 0.007%</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Current Depleted Ore Grade ($x_{\text{ore}}$):</span>
+                            <span id="lbl-grade-curr-3-1" class="text-[#901812] font-bold font-mono">0.60%</span>
+                        </label>
+                        <input type="range" id="input-grade-curr-3-1" min="0.05" max="3.0" step="0.05" value="0.60" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularG2C_3_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Dispersed Material Mass Extracted ($m$):</span>
+                            <span id="lbl-mass-g2c-3-1" class="text-[#901812] font-bold font-mono">1,000 tons</span>
+                        </label>
+                        <input type="range" id="input-mass-g2c-3-1" min="100" max="10000" step="100" value="1000" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularG2C_3_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Closed-Loop Recycled Fraction:</span>
+                            <span id="lbl-recyc-g2c-3-1" class="text-[#901812] font-bold font-mono">30%</span>
+                        </label>
+                        <input type="range" id="input-recyc-g2c-3-1" min="0" max="90" step="5" value="30" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularG2C_3_1()">
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-tag text-[#555555] font-semibold flex items-center justify-between">
+                    <span>Model: $B_{\text{G2C}} = -R \cdot T_0 \cdot [\ln(x_{\text{ore}}) - \ln(x_{\text{crust}})] \cdot m$</span>
+                    <button type="button" onclick="resetarLab_3_1()" class="text-[#901812] hover:underline font-bold">Reset Parameters</button>
+                </div>
+            </div>
+
+            <!-- Painel de Resultados de Exergia e Dívida Intergeracional -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-1">REPLACEMENT EXERGY DEBT</span>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-2">
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Grave-to-Cradle Exergy</span>
+                            <span id="res-g2c-exergy-3-1" class="text-fluid-h2 text-white font-mono font-bold leading-tight block my-1">45.8 GJ</span>
+                            <span class="text-fluid-tag text-[#D1A705] font-bold" id="res-exergy-perton-3-1">45.8 MJ/kg mineral</span>
+                        </div>
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Crustal Dilution Factor</span>
+                            <span id="res-dilution-factor-3-1" class="text-fluid-h2 text-[#4ADE80] font-mono font-bold leading-tight block my-1">100x</span>
+                            <span class="text-fluid-tag text-white font-mono" id="res-energy-penalty-3-1">+380% Refining Energy</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-fluid-meta text-[#DEDEDE] mt-3">
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                            <strong class="text-white block mb-0.5">Thermodynamic Restoration Penalty:</strong>
+                            <span id="res-penalty-desc-3-1">To recover 1,000 tons of mineral from depleted ores requires 45.8 GJ of theoretical thermodynamic work strictly to overcome entropy of mixing.</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                            <strong class="text-white block mb-0.5">Circularity Exergy Preservation:</strong>
+                            <span id="res-circ-preserved-3-1">30% scrap recycling preserves 13.7 GJ of embodied exergy, bypassing the geological concentration step entirely.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-scale-balanced text-[#D1A705] text-xl"></i>
+                    <span id="res-g2c-verdict-3-1">Accounting for Grave-to-Cradle exergy demonstrates that primary linear depletion imposes severe intergenerational thermodynamic debt.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 03 — Grave-to-Cradle Exergy Degradation &amp; Ore Quality Simulation</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to go to References &amp; Assignment (Slide 4,0)</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (3,1) -->
+    <script>
+        const mineralG2CDb_3_1 = {
+            copper:  { name: "Copper",   defaultGrade: 0.60, minG: 0.05, maxG: 2.50, stepG: 0.05, crustG: 0.006,  specEx: 68.0 },
+            iron:    { name: "Iron Ore", defaultGrade: 48.0, minG: 15.0, maxG: 68.0, stepG: 1.0,  crustG: 5.63,   specEx: 12.0 },
+            bauxite: { name: "Aluminum", defaultGrade: 32.0, minG: 10.0, maxG: 55.0, stepG: 1.0,  crustG: 8.23,   specEx: 28.0 },
+            zinc:    { name: "Zinc",     defaultGrade: 2.50, minG: 0.10, maxG: 8.00, stepG: 0.10, crustG: 0.007,  specEx: 45.0 }
+        };
+
+        function selecionarMineralG2C_3_1() {
+            const key = document.getElementById('select-mineral-g2c-3-1').value;
+            const m = mineralG2CDb_3_1[key];
+            const inputGrade = document.getElementById('input-grade-curr-3-1');
+            inputGrade.min = m.minG;
+            inputGrade.max = m.maxG;
+            inputGrade.step = m.stepG;
+            inputGrade.value = m.defaultGrade;
+            calcularG2C_3_1();
+        }
+
+        function calcularG2C_3_1() {
+            const key = document.getElementById('select-mineral-g2c-3-1').value;
+            const m = mineralG2CDb_3_1[key];
+
+            const gradeCurr = parseFloat(document.getElementById('input-grade-curr-3-1').value);
+            const mass = parseFloat(document.getElementById('input-mass-g2c-3-1').value);
+            const recycRate = parseFloat(document.getElementById('input-recyc-g2c-3-1').value) / 100;
+
+            document.getElementById('lbl-grade-curr-3-1').innerText = `${gradeCurr.toFixed(2)}%`;
+            document.getElementById('lbl-mass-g2c-3-1').innerText = `${mass.toLocaleString()} tons`;
+            document.getElementById('lbl-recyc-g2c-3-1').innerText = `${(recycRate * 100).toFixed(0)}%`;
+
+            // Fator de diluição em relação à crosta média
+            const dilutionFactor = gradeCurr / m.crustG;
+            
+            // Modelo simplificado de exergia de separação / reconstituição térmica (kJ/kg)
+            const R_gas = 8.314;
+            const T0 = 298.15; // 25°C
+            const x_ore = gradeCurr / 100;
+            const x_crust = m.crustG / 100;
+            
+            // Exergia de mistura por kg: kJ/kg = (R * T0 / PesoMol) * ln(x_ore/x_crust) * fator empírico
+            const deltaExKjPerKg = m.specEx * Math.log(x_ore / x_crust);
+            const netMass = mass * (1 - recycRate);
+            const totalExergyGJ = (deltaExKjPerKg * netMass * 1000) / 1e6;
+            const preservedExergyGJ = (deltaExKjPerKg * (mass * recycRate) * 1000) / 1e6;
+            const refiningPenaltyPct = ((1 / x_ore) / (1 / (m.defaultGrade / 100)) - 1) * 100;
+
+            document.getElementById('res-g2c-exergy-3-1').innerText = `${totalExergyGJ.toFixed(1)} GJ`;
+            document.getElementById('res-exergy-perton-3-1').innerText = `${deltaExKjPerKg.toFixed(1)} MJ/kg mineral`;
+            document.getElementById('res-dilution-factor-3-1').innerText = `${dilutionFactor.toFixed(0)}x`;
+            document.getElementById('res-energy-penalty-3-1').innerText = `${refiningPenaltyPct > 0 ? '+' : ''}${refiningPenaltyPct.toFixed(0)}% Refining Work`;
+
+            document.getElementById('res-penalty-desc-3-1').innerText = 
+                `Extracting ${mass.toLocaleString()} tons from a ${gradeCurr.toFixed(2)}% deposit requires ${totalExergyGJ.toFixed(1)} GJ of restorative exergy compared to baseline continental crust.`;
+
+            document.getElementById('res-circ-preserved-3-1').innerText = 
+                recycRate > 0 
+                ? `Closed-loop recycling (${(recycRate * 100).toFixed(0)}%) preserves ${preservedExergyGJ.toFixed(1)} GJ of concentrated thermodynamic work, directly avoiding virgin ore calcination.`
+                : "Zero recycling credit; 100% of mineral mass represents dispersed geological capital.";
+
+            const verdictEl = document.getElementById('res-g2c-verdict-3-1');
+            if (dilutionFactor < 5) {
+                verdictEl.innerText = "Critical ore exhaustion: Deposit grade approaches mean continental crust. Beneficiation energy explodes asymptotically.";
+            } else if (dilutionFactor < 50) {
+                verdictEl.innerText = "Substantial exergy debt: Refining low-grade ores multiplies required fossil inputs and industrial tailing volumes.";
+            } else {
+                verdictEl.innerText = "Moderate enrichment: Concentrated natural work still buffers refining energy, but linear disposal accelerates crustal degradation.";
+            }
+        }
+
+        function resetarLab_3_1() {
+            document.getElementById('select-mineral-g2c-3-1').value = 'copper';
+            document.getElementById('input-mass-g2c-3-1').value = 1000;
+            document.getElementById('input-recyc-g2c-3-1').value = 30;
+            selecionarMineralG2C_3_1();
+        }
+
+        if (document.getElementById('input-mass-g2c-3-1')) {
+            calcularG2C_3_1();
+        }
+    </script>
+</div>
+
+
+
+<!-- SLIDE (4,0): CLOSING MODULE — SYNTHESIS, REFERENCES & DUAL EVALUATION HUB -->
+<div id="slide-4-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks3.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">CLOSING MODULE — SYNTHESIS &amp; DUAL EVALUATION</span>
+            <h2 class="text-fluid-h2 text-[#901812]">References &amp; Assessment Submissions</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Referências Centrais e Literatura Geológica (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-book-bookmark text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Standard References</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Foundational literature governing mineral reserve accounting, logistic peak depletion, and exergy thermodynamics:</p>
+
+                <ul class="space-y-2 text-fluid-meta text-[#444444] font-semibold border-t border-black/10 pt-2.5">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-book text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>Pacheco-Torgal, F. et al. (2014):</strong> <em>Eco-efficient Construction and Building Materials: Life Cycle Assessment (LCA), Eco-labelling and Case Studies</em>. Woodhead Publishing.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-file-lines text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>Hubbert, M. K. (1956):</strong> <em>Nuclear Energy and the Fossil Fuels</em>. Shell Development Company.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-file-lines text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>Valero, A., &amp; Valero, A. (2014):</strong> <em>Thanatia: The Destiny of the Earth's Mineral Resources</em>. World Scientific Publishing.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-chart-line text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>USGS (2024):</strong> <em>Mineral Commodity Summaries &amp; Minerals Yearbook</em>. U.S. Geological Survey.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>CIV 665 • SICon / DEC — UFV</span>
+                <span class="text-[#901812] font-bold">Class 100 Concluded</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: In-Class Quiz 101 (3.5 cols) -->
+        <div class="lg:col-span-3.5 sm:col-span-6 lg:col-span-3 p-5 sm:p-6 rounded-3xl card-glass-dark text-white text-center space-y-3 flex flex-col justify-between border-l-[10px] border-[#D1A705]">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] block font-bold uppercase tracking-wider mb-1">EVALUATION 01</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-2 leading-tight">In-Class Quiz 101</h3>
+
+                <div class="bg-white/90 backdrop-blur-md p-3 rounded-2xl max-w-[150px] sm:max-w-[170px] mx-auto shadow-lg my-1.5">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSe6CPhj_8LbxwzUNIdyAuFrAFMkMHDqrCa5OCOmlgwcU-9x4w%2Fviewform%3Fusp%3Dheader&color=901812" alt="Quiz 101 QR Code" class="w-full h-auto rounded-lg">
+                </div>
+                <span class="text-fluid-tag text-[#DEDEDE] font-bold block">Scan for Live Quiz</span>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6CPhj_8LbxwzUNIdyAuFrAFMkMHDqrCa5OCOmlgwcU-9x4w/viewform?usp=header" target="_blank" class="w-full py-3 px-4 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md inline-flex items-center justify-center space-x-2 min-h-[48px]">
+                <i class="fa-solid fa-pen-to-square text-[#D1A705] text-lg"></i>
+                <span>Open Quiz 101</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+            </a>
+        </div>
+
+        <!-- Coluna 3: Weekly Report Form (3.5 cols) -->
+        <div class="lg:col-span-3.5 sm:col-span-6 lg:col-span-4 p-5 sm:p-6 rounded-3xl card-glass-dark text-white text-center space-y-3 flex flex-col justify-between border-l-[10px] border-white">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] block font-bold uppercase tracking-wider mb-1">EVALUATION 02</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-2 leading-tight">Weekly Synthesis Report</h3>
+
+                <div class="bg-white/90 backdrop-blur-md p-3 rounded-2xl max-w-[150px] sm:max-w-[170px] mx-auto shadow-lg my-1.5">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSdFvbcRFGycYmxRav5Gl3D22DLN41gUmoHL8iDMxJ-DxXSGnQ%2Fviewform%3Fusp%3Dheader&color=901812" alt="Weekly Report Form QR Code" class="w-full h-auto rounded-lg">
+                </div>
+                <span class="text-fluid-tag text-[#DEDEDE] font-bold block">Scan for Weekly Form</span>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFvbcRFGycYmxRav5Gl3D22DLN41gUmoHL8iDMxJ-DxXSGnQ/viewform?usp=header" target="_blank" class="w-full py-3 px-4 bg-[#333333] border border-white/20 text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md inline-flex items-center justify-center space-x-2 min-h-[48px]">
+                <i class="fa-solid fa-file-invoice text-[#D1A705] text-lg"></i>
+                <span>Open Weekly Form</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Mineral Resource Depletion Assessment — Class 100 Complete</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">←</kbd> to Review Previous Slides | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">Home</kbd> to Return to Cover</span>
+    </footer>
+</div>
+
+    
+
+    </main>
+
+    <!-- MOTOR DE NAVEGAÇÃO MATRICIAL 2D -->
+    <script>
+        let currentX = 0, currentY = 0;
+        let slideGrid = {};
+
+        function updateSlideGrid() {
+            slideGrid = {};
+            document.querySelectorAll('[id^="slide-"]').forEach(slide => {
+                const parts = slide.id.replace('slide-', '').split('-');
+                if (parts.length === 2) slideGrid[`${parts[0]},${parts[1]}`] = slide.id;
+            });
+        }
+
+        function hasSlide(x, y) { return !!slideGrid[`${x},${y}`]; }
+
+        function updateUI() {
+            updateSlideGrid();
+            const keysH = Object.keys(slideGrid).filter(k => k.endsWith(',0'));
+            const maxH = Math.max(...keysH.map(k => parseInt(k.split(',')[0])), 0);
+            const totalMainSlides = keysH.length;
+            
+            document.getElementById('progressBar').style.width = `${maxH === 0 ? 100 : (currentX / maxH) * 100}%`;
+            document.getElementById('slideIndicator').innerText = `Slide (${currentX},${currentY}) | ${currentX + 1} of ${totalMainSlides}`;
+
+            const dirs = { 'up': [0,-1], 'down': [0,1], 'left': [-1,0], 'right': [1,0] };
+            for (let d in dirs) {
+                const btn = document.getElementById(`btn-nav-${d}`);
+                if (btn) btn.classList.toggle('nav-enabled', hasSlide(currentX + dirs[d][0], currentY + dirs[d][1]));
+            }
+        }
+
+        function moveInGrid(dx, dy) {
+            updateSlideGrid();
+            const nx = currentX + dx, ny = currentY + dy;
+            if (hasSlide(nx, ny)) {
+                const cur = document.getElementById(slideGrid[`${currentX},${currentY}`]);
+                const nxt = document.getElementById(slideGrid[`${nx},${ny}`]);
+                
+                cur.classList.remove('slide-active', 'slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+                nxt.classList.remove('slide-active', 'slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+
+                if (dx > 0) cur.classList.add('slide-hidden-left');
+                else if (dx < 0) cur.classList.add('slide-hidden-right');
+                else if (dy > 0) cur.classList.add('slide-hidden-down');
+                else if (dy < 0) cur.classList.add('slide-hidden-up');
+
+                nxt.classList.add('slide-active');
+
+                currentX = nx; currentY = ny;
+                updateUI();
+                if (window.renderMathInElement) renderMathInElement(nxt);
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (['INPUT','TEXTAREA','DIALOG'].includes(document.activeElement.tagName)) return;
+            if (e.key === 'ArrowRight' || e.key === ' ') moveInGrid(1, 0);
+            else if (e.key === 'ArrowLeft') moveInGrid(-1, 0);
+            else if (e.key === 'ArrowUp') moveInGrid(0, -1);
+            else if (e.key === 'ArrowDown') moveInGrid(0, 1);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => { 
+            updateUI(); 
+        });
+    </script>
+</body>
+</html>

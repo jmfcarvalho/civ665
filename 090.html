@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full overflow-hidden select-none">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CIV 665 | Eco-Efficient Construction and Building Materials - PMS UFV</title>
+    
+    <!-- ESSENTIAL CDNs -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], throwOnError: false });"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Preset PMS */
+            --color-primary: #901812;
+            --color-secondary: #D1A705;
+            --color-dark: #333333;
+            --color-bg: #F4F6F5;
+            --bg-shade-left: rgba(244,246,245,0.96);
+            --bg-shade-mid: rgba(244,246,245,0.70);
+            --bg-shade-right: rgba(244,246,245,0.15);
+            --card-light: rgba(255, 255, 255, 0.58);
+            --card-dark: rgba(51, 51, 51, 0.65);
+
+            /* Tipografia Super-Ampliada (Calibração Nativa Full HD / 4k) */
+            --fluid-h1: clamp(2.8rem, 6.2vw, 5.5rem);
+            --fluid-h2: clamp(2.2rem, 4.6vw, 4.0rem);
+            --fluid-h3: clamp(1.75rem, 3.2vw, 2.8rem);
+            --fluid-body: clamp(1.35rem, 2.2vw, 1.95rem);
+            --fluid-meta: clamp(1.15rem, 1.6vw, 1.55rem);
+            --fluid-tag: clamp(1.05rem, 1.4vw, 1.35rem);
+        }
+
+        html, body { 
+            width: 100vw; 
+            height: 100vh; 
+            overflow: hidden; 
+            background-color: var(--color-bg); 
+            font-family: 'PT Sans Narrow', sans-serif; 
+            color: var(--color-dark); 
+        }
+
+        .text-fluid-h1 { font-family: 'Montserrat', sans-serif; font-size: var(--fluid-h1); font-weight: 900; line-height: 1.08; letter-spacing: -0.02em; }
+        .text-fluid-h2 { font-family: 'Montserrat', sans-serif; font-size: var(--fluid-h2); font-weight: 800; line-height: 1.15; }
+        .text-fluid-h3 { font-size: var(--fluid-h3); font-weight: 700; line-height: 1.25; }
+        .text-fluid-body { font-size: var(--fluid-body); font-weight: 500; line-height: 1.45; }
+        .text-fluid-meta { font-size: var(--fluid-meta); font-weight: 600; }
+        .text-fluid-tag { font-size: var(--fluid-tag); font-weight: 700; letter-spacing: 0.04em; }
+
+        .katex-display { font-size: clamp(1.45rem, 2.7vw, 2.45rem) !important; margin: 0.85rem 0 !important; line-height: 1.25 !important; }
+        .katex { font-size: 1.08em; }
+
+        .slide-screen {
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            top: 0; 
+            left: 0;
+            opacity: 0; 
+            pointer-events: none; 
+            z-index: 0;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+        .slide-active { opacity: 1; transform: translate3d(0, 0, 0); pointer-events: auto; z-index: 10; }
+        .slide-hidden-left  { opacity: 0; transform: translate3d(-100%, 0, 0); }
+        .slide-hidden-right { opacity: 0; transform: translate3d(100%, 0, 0); }
+        .slide-hidden-up    { opacity: 0; transform: translate3d(0, -100%, 0); }
+        .slide-hidden-down  { opacity: 0; transform: translate3d(0, 100%, 0); }
+
+        .slide-screen::-webkit-scrollbar {
+            width: 6px;
+        }
+        .slide-screen::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .slide-screen::-webkit-scrollbar-thumb {
+            background: rgba(144, 24, 18, 0.25);
+            border-radius: 9999px;
+        }
+        .slide-screen::-webkit-scrollbar-thumb:hover {
+            background: rgba(144, 24, 18, 0.65);
+        }
+
+        .card-glass { 
+            border: none !important; 
+            background-color: var(--card-light); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.25s ease,
+                border-color 0.25s ease;
+            will-change: transform, box-shadow; 
+        }
+        .card-glass-dark { 
+            border: none !important; 
+            background-color: var(--card-dark); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            color: white; 
+            box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.25s ease,
+                border-color 0.25s ease;
+            will-change: transform, box-shadow; 
+        }
+
+        .card-glass:hover {
+            transform: translateY(-4px);
+            background-color: rgba(255, 255, 255, 0.72);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-glass-dark:hover {
+            transform: translateY(-4px);
+            background-color: rgba(51, 51, 51, 0.78);
+            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+        }
+
+        .reveal-controls { 
+            position: fixed; 
+            bottom: 1.25rem; 
+            right: 1.25rem; 
+            width: 110px; 
+            height: 110px; 
+            z-index: 1000; 
+            pointer-events: none; 
+        }
+        .control-arrow {
+            position: absolute; 
+            width: 38px; 
+            height: 38px; 
+            background: rgba(255, 255, 255, 0.40);
+            backdrop-filter: blur(6px); 
+            border-radius: 50%; 
+            color: #888888; 
+            cursor: pointer;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            opacity: 0.15; 
+            pointer-events: none;
+            transition: all 0.2s ease; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+            font-size: 0.95rem;
+        }
+        .control-arrow.nav-up { top: 0; left: 36px; }
+        .control-arrow.nav-down { bottom: 0; left: 36px; }
+        .control-arrow.nav-left { top: 36px; left: 0; }
+        .control-arrow.nav-right { top: 36px; right: 0; }
+        .control-arrow.nav-enabled { color: var(--color-primary); opacity: 0.65; pointer-events: auto; }
+        .control-arrow.nav-enabled:hover { background: var(--color-primary); color: #FFF; opacity: 1; transform: scale(1.1); }
+    </style>
+</head>
+<body class="w-screen h-screen relative">
+
+    <div class="fixed top-0 left-0 h-2 bg-[var(--color-secondary)] transition-all duration-300 z-[1000]" id="progressBar" style="width: 0%;"></div>
+
+    <div class="fixed bottom-3 left-3 text-[0.80rem] sm:text-[0.90rem] font-bold text-[var(--color-dark)] bg-white/70 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-sm z-[1000] flex items-center space-x-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-[var(--color-primary)]"></span>
+        <span id="slideIndicator">Slide (0,0) | 1 of 5</span>
+    </div>
+
+    <div class="reveal-controls">
+        <button id="btn-nav-up" onclick="moveInGrid(0, -1)" class="control-arrow nav-up" aria-label="Up"><i class="fa-solid fa-chevron-up"></i></button>
+        <button id="btn-nav-left" onclick="moveInGrid(-1, 0)" class="control-arrow nav-left" aria-label="Left"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="btn-nav-right" onclick="moveInGrid(1, 0)" class="control-arrow nav-right" aria-label="Right"><i class="fa-solid fa-chevron-right"></i></button>
+        <button id="btn-nav-down" onclick="moveInGrid(0, 1)" class="control-arrow nav-down" aria-label="Down"><i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+
+    <main class="w-full h-full relative" id="slideDeck">
+
+         
+        
+<!-- SLIDE (0,0): TITLE & COURSE COVER - CLASS 090 -->
+<div id="slide-0-0" class="slide-screen slide-active flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center gap-4 flex-shrink-0">
+        <div class="flex items-center space-x-4 sm:space-x-6 bg-white/75 backdrop-blur-md px-6 py-3.5 rounded-2xl shadow-sm">
+            <img src="Logo UFV oficial horizontal.png" alt="UFV Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://dci.ufv.br/wp-content/themes/diretorias/assets/images/estrutura/logotipoUFV.png'">
+            <div class="h-10 w-[1px] bg-black/10"></div>
+            <span class="text-fluid-tag text-[#333333]">CIV 665 • SICon / UFV</span>
+        </div>
+        <a href="https://pms.ufv.br" target="_blank" class="block bg-[#333333]/75 backdrop-blur-md p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+            <img src="pms.png" alt="PMS Logo" class="h-12 sm:h-16 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+        </a>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full my-auto py-2">
+        <div class="lg:col-span-7 space-y-4">
+            <div class="p-8 sm:p-12 rounded-3xl card-glass border-l-[16px] border-[#901812]">
+                <span class="text-fluid-tag text-[#D1A705] tracking-wider block mb-2 font-bold uppercase">CIV 665 — ECO-EFFICIENT CONSTRUCTION AND BUILDING MATERIALS</span>
+                <h1 class="text-fluid-h1 mb-3 text-[#901812]">ENVIRONMENTAL IMPACTS &amp; LCA<span class="block text-fluid-h2 text-[#333333] font-bold mt-2">Class 090: Methodological Frameworks &amp; Desirability Indices</span></h1>
+                <p class="text-fluid-body text-[#444444]">Anthropogenic Material Growth, Planetary Boundaries, ISO 14040/44 Protocols, Environmental Product Declarations (EPDs), and Derringer-Suich Composite Eco-Efficiency Modeling.</p>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5 p-6 sm:p-8 rounded-3xl card-glass-dark text-white flex flex-col justify-between space-y-6">
+            <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl text-center shadow-md">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fjmfcarvalho.github.io%2Fciv665%2F090.html&color=901812" alt="Slide Access QR Code" class="w-full max-w-[200px] sm:max-w-[240px] mx-auto rounded-lg">
+                <span class="text-fluid-tag text-[#333333] font-bold mt-3 block">Follow On Smartphone</span>
+            </div>
+            <div class="text-center space-y-1">
+                <span class="text-fluid-tag text-[#D1A705] block font-bold">Course Instructor</span>
+                <p class="text-fluid-body font-bold text-white">Prof. José Maria Franco de Carvalho</p>
+                <p class="text-fluid-meta text-[#DEDEDE]">SICon / DEC — Universidade Federal de Viçosa</p>
+                <div class="pt-2 border-t border-white/10 mt-2">
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold">Research Alignment</span>
+                    <p class="text-fluid-meta text-white font-semibold">Sustainable &amp; Innovative Construction Group (SICon)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Class 090 — Environmental Impacts &amp; Life Cycle Assessment</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for Pedagogical Framework | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Planetary Boundaries</span>
+    </footer>
+</div>
+
+<!-- SLIDE (0,1): CLASS OVERVIEW, OBJECTIVES & METHODOLOGICAL ROADMAP (BRANCH Y=1) -->
+<div id="slide-0-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric2.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">CLASS ROADMAP &amp; PEDAGOGICAL PILLARS (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Class 090: LCA Architecture &amp; Composite Indicators</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Cover</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-auto w-full py-2 items-stretch">
+        <!-- Card 1: Planetary Scarcity & Growth Paradigm -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div>
+                <div class="flex items-center space-x-3 text-[#901812] mb-2">
+                    <i class="fa-solid fa-earth-americas text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Planetary Boundaries</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">The built environment accounts for 40% of global raw material consumption, 40% of primary energy, and 40–50% of greenhouse gases.</p>
+            </div>
+            <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Fixed-stock paradigm vs. ecological overshoot</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>8-fold material extraction surge in the 20th century</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Global demand projected to double by 2050</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>First structural concrete LCA benchmarked in 2012</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: Standards & Labeling Hierarchy -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div>
+                <div class="flex items-center space-x-3 text-[#D1A705] mb-2">
+                    <i class="fa-solid fa-certificate text-3xl text-[#D1A705]"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Standardized LCA</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Standardized frameworks establishing verifiable environmental declarations and boundary protocols across supply chains.</p>
+            </div>
+            <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                <li class="flex items-start"><i class="fa-solid fa-file-circle-check text-[#D1A705] mt-1 mr-2 text-xs"></i>ISO 14040/44: Principles, framework, and inventory rules</li>
+                <li class="flex items-start"><i class="fa-solid fa-tags text-[#D1A705] mt-1 mr-2 text-xs"></i>Labels: Type I (Eco-labels), Type II, Type III (EPDs)</li>
+                <li class="flex items-start"><i class="fa-solid fa-scale-balanced text-[#D1A705] mt-1 mr-2 text-xs"></i>ISO 21930 / EN 15804 for building products</li>
+                <li class="flex items-start"><i class="fa-solid fa-recycle text-[#D1A705] mt-1 mr-2 text-xs"></i>Recycling allocation paradox: producer vs. user credit</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Multi-Criteria Desirability & Outcomes -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-3 flex flex-col justify-between border-l-[12px] border-white">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block mb-1 uppercase">ADVANCED QUANTITATIVE MODELING</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-2">Composite Eco-Efficiency</h3>
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Integrate</strong> Derringer-Suich desirability functions across 10 environmental impact categories.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Normalize</strong> impacts by compressive strength ($f_c$) to avoid deceptive greenwashing.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Evaluate</strong> waste incorporation (ORW, RHA, GGBS, SCBA, RCA) via overall EEP indices.</span>
+                    </div>
+                </div>
+            </div>
+            <button onclick="moveInGrid(1, 0)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[50px] flex items-center justify-center space-x-2">
+                <span>Start Module 01: Planetary Limits (Press →)</span>
+                <i class="fa-solid fa-arrow-right text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Class 090 — Environmental Impacts &amp; Composite Eco-Efficiency Framework</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return to Cover | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to advance to Module 01</span>
+    </footer>
+</div>
+
+
+
+<!-- SLIDE (1,0): ANTHROPOGENIC MATERIAL ACCELERATION & PLANETARY BOUNDARIES -->
+<div id="slide-1-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 01 — MACROECONOMIC MATERIAL DYNAMICS</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Anthropogenic Acceleration &amp; Planetary Limits</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: O Paradigma de Estoque Fixo e Pressão Antropogênica (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-arrow-trend-up text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">The Fixed-Stock Paradigm (1972–Present)</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">The industrial metabolism of modern construction drives exponential resource extraction, pushing the ecosphere beyond safe planetary boundaries.</p>
+
+                <!-- Equação KaTeX da Intensidade Metabólica com Rolagem Horizontal -->
+                <div class="bg-white/85 backdrop-blur-md p-3 sm:p-4 rounded-2xl text-center shadow-inner overflow-x-auto overflow-y-hidden border border-black/5" style="font-size: clamp(1.15rem, 1.95vw, 1.75rem);">
+                    $$M(t) = M_0 \cdot e^{k \cdot t} \quad \Longrightarrow \quad \Delta S_{\text{crust}} = \int_0^T \sum \dot{m}_{i,\text{extracted}}(t)\,dt \quad [\text{Gt}]$$
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-fluid-meta text-[#444444] font-semibold">
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">8-Fold Surge Last Century:</strong>
+                        Raw material throughput grew eightfold in the 20th century and is on track to double again by 2050.
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Construction Dominance (40%):</strong>
+                        Built infrastructure consumes 40% of all extracted virgin materials, generating 25% of solid waste.
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>Foundations: Meadows et al. (Limits to Growth, 1972)</span>
+                <span class="text-[#901812] font-bold">Structural Decoupling Imperative</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Fatores Setoriais e Acesso ao Simulador (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">CIVIL FOOTPRINT</span>
+                    <button onclick="document.getElementById('modal-planetary-limits-1-0').showModal()" class="text-fluid-tag text-white hover:text-[#D1A705] font-bold underline flex items-center gap-1">
+                        <i class="fa-solid fa-chart-pie"></i> Global Burdens
+                    </button>
+                </div>
+
+                <h3 class="text-fluid-h3 text-white font-bold">Macro Burden Partitioning</h3>
+
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#D1A705]">
+                        <strong class="text-[#D1A705] block mb-0.5">Primary Energy &amp; Water:</strong>
+                        Buildings and construction account for 40% of global primary energy and 15% of all accessible freshwater.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-white">
+                        <strong class="text-white block mb-0.5">GHG Emissions Share:</strong>
+                        Direct and indirect manufacturing emissions generate between 40% and 50% of worldwide greenhouse gases.
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="moveInGrid(0, 1)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Launch Planetary Overshoot Lab (Press ↓)</span>
+                <i class="fa-solid fa-gauge-high text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 01 — Meadows Limits to Growth &amp; Macro Construction Burdens</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for Growth Lab | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for LCA System Boundaries (Slide 2,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: DADOS DE LIMITES PLANETÁRIOS E HISTÓRIA DO LCA (SLIDES 2-4 DO PDF) -->
+    <dialog id="modal-planetary-limits-1-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-4xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block uppercase">MACRO-ENVIRONMENTAL NEXUS</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Construction Industry Share of Global Resources</h3>
+            </div>
+            <button onclick="document.getElementById('modal-planetary-limits-1-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-fluid-meta text-[#EAEAEA]">
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-2">
+                <strong class="text-[#D1A705] text-fluid-h3 block">Global Physical Consumption:</strong>
+                <ul class="space-y-1.5 list-disc pl-4 text-sm sm:text-base">
+                    <li><strong class="text-white">Raw Materials:</strong> 40% of all mineral and non-fuel geological flows.</li>
+                    <li><strong class="text-white">Primary Energy:</strong> 40% consumed directly in fabrication and operations.</li>
+                    <li><strong class="text-white">Freshwater:</strong> 15% dedicated to processing, batching, and curing.</li>
+                    <li><strong class="text-white">Solid Waste:</strong> 25% of municipal/industrial waste streams are CDW.</li>
+                </ul>
+            </div>
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-2">
+                <strong class="text-[#4ADE80] text-fluid-h3 block">Evolution of Environmental Scrutiny:</strong>
+                <p class="text-sm sm:text-base leading-relaxed text-[#DEDEDE]">
+                    Early conservation concerns focused strictly on local toxicity. In 1972, the Club of Rome model warned of societal exhaustion within the 21st century. The first comprehensive Life Cycle Assessment applied to structural concrete emerged only in 2012, highlighting a four-decade lag in holistic environmental accounting for bulk infrastructure.
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 p-3 bg-white/5 rounded-2xl text-fluid-tag text-[#DEDEDE] flex items-center justify-between">
+            <span>Material efficiency and secondary pozzolans are mandatory to avoid the 2050 demand doubling penalty.</span>
+            <button onclick="document.getElementById('modal-planetary-limits-1-0').close()" class="px-4 py-2 bg-[#901812] text-white font-bold rounded-xl hover:bg-[#D1A705] hover:text-[#333333] transition-colors">Close</button>
+        </div>
+    </dialog>
+</div>
+
+<!-- SLIDE (1,1): VIRTUAL LAB - GLOBAL MATERIAL CONSUMPTION & PLANETARY DEPLETION SIMULATOR (BRANCH Y=1) -->
+<div id="slide-1-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks2.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">VIRTUAL LAB (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Material Demand Trajectory &amp; Planetary Overshoot Simulator</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Module 01</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 w-full items-stretch">
+            <!-- Painel de Sliders e Parâmetros de Crescimento Global -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                <div class="border-b border-black/10 pb-2">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Global Extraction &amp; Infrastructure Parameters</h3>
+                    <p class="text-fluid-meta text-[#555555] font-semibold">Simulate historical and projected global extraction curves to evaluate planetary limits:</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Baseline Extraction ($M_{\text{2020}}$):</span>
+                            <span id="lbl-mat-base-1-1" class="text-[#901812] font-bold font-mono">100 Gt/year</span>
+                        </label>
+                        <input type="range" id="input-mat-base-1-1" min="60" max="140" step="5" value="100" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularMaterial_1_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Annual Growth Rate to 2050 ($k$):</span>
+                            <span id="lbl-mat-growth-1-1" class="text-[#901812] font-bold font-mono">2.3% / year</span>
+                        </label>
+                        <input type="range" id="input-mat-growth-1-1" min="0.5" max="4.0" step="0.1" value="2.3" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularMaterial_1_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Construction Sector Extraction Share:</span>
+                            <span id="lbl-mat-share-1-1" class="text-[#901812] font-bold font-mono">40%</span>
+                        </label>
+                        <input type="range" id="input-mat-share-1-1" min="25" max="60" step="1" value="40" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularMaterial_1_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Circular Economy / Substitution Rate:</span>
+                            <span id="lbl-mat-circ-1-1" class="text-[#901812] font-bold font-mono">15%</span>
+                        </label>
+                        <input type="range" id="input-mat-circ-1-1" min="0" max="50" step="5" value="15" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularMaterial_1_1()">
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-tag text-[#555555] font-semibold flex items-center justify-between">
+                    <span>Calibrated to UNEP IRP &amp; Limits to Growth projections</span>
+                    <button type="button" onclick="resetarLab_1_1()" class="text-[#901812] hover:underline font-bold">Reset Parameters</button>
+                </div>
+            </div>
+
+            <!-- Painel de Resultados Numéricos e Diagnóstico do Limite Planetário -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-1">ANTHROPOGENIC METABOLISM AUDIT</span>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-2">
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Demand in 2050 ($M_{\text{2050}}$)</span>
+                            <span id="res-demand-2050-1-1" class="text-fluid-h2 text-white font-mono font-bold leading-tight block my-1">198.8 Gt/yr</span>
+                            <span class="text-fluid-tag text-[#FF6B6B] font-bold" id="res-factor-tag-1-1">+98.8% Expansion</span>
+                        </div>
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Construction Demand</span>
+                            <span id="res-cbm-demand-1-1" class="text-fluid-h2 text-[#D1A705] font-mono font-bold leading-tight block my-1">67.6 Gt/yr</span>
+                            <span class="text-fluid-tag text-white font-mono" id="res-avoided-tag-1-1">11.9 Gt/yr Substituted</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-fluid-meta text-[#DEDEDE] mt-3">
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                            <strong class="text-white block mb-0.5">Cumulative Extraction Burden (2020–2050):</strong>
+                            <span id="res-cumulative-desc-1-1">4,295 Gt of crustal minerals extracted; construction accounts for 1,718 Gt, risking acute local quarry depletion.</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                            <strong class="text-white block mb-0.5">Ecological Threshold Implication:</strong>
+                            <span id="res-overshoot-verdict-1-1">Overshoot scenario: Without reaching >35% circular substitution, ecological assimilation limits will trigger systemic material shortages.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-triangle-exclamation text-[#D1A705] text-xl"></i>
+                    <span id="res-policy-note-1-1">Material efficiency and secondary by-product valorization (SCMs, RCA) are mandatory to flatten the extraction curve.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 01 — Macroeconomic Material Extraction &amp; Depletion Simulator</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to go to LCA System Boundaries (Slide 2,0)</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (1,1) -->
+    <script>
+        function calcularMaterial_1_1() {
+            const m0 = parseFloat(document.getElementById('input-mat-base-1-1').value);
+            const k = parseFloat(document.getElementById('input-mat-growth-1-1').value) / 100;
+            const share = parseFloat(document.getElementById('input-mat-share-1-1').value) / 100;
+            const circ = parseFloat(document.getElementById('input-mat-circ-1-1').value) / 100;
+
+            document.getElementById('lbl-mat-base-1-1').innerText = `${m0.toFixed(0)} Gt/year`;
+            document.getElementById('lbl-mat-growth-1-1').innerText = `${(k * 100).toFixed(1)}% / year`;
+            document.getElementById('lbl-mat-share-1-1').innerText = `${(share * 100).toFixed(0)}%`;
+            document.getElementById('lbl-mat-circ-1-1').innerText = `${(circ * 100).toFixed(0)}%`;
+
+            const years = 30; // 2020 a 2050
+            const m2050 = m0 * Math.exp(k * years);
+            const expansionPct = ((m2050 - m0) / m0) * 100;
+
+            // Integral de extração cumulativa: m0 * (e^(k*T) - 1) / k
+            const cumulativeTotal = m0 * (Math.exp(k * years) - 1) / k;
+            const cumulativeCbm = cumulativeTotal * share;
+
+            const cbmGross2050 = m2050 * share;
+            const cbmAvoided2050 = cbmGross2050 * circ;
+            const cbmNet2050 = cbmGross2050 - cbmAvoided2050;
+
+            document.getElementById('res-demand-2050-1-1').innerText = `${m2050.toFixed(1)} Gt/yr`;
+            document.getElementById('res-factor-tag-1-1').innerText = `+${expansionPct.toFixed(1)}% Expansion`;
+            document.getElementById('res-cbm-demand-1-1').innerText = `${cbmNet2050.toFixed(1)} Gt/yr`;
+            document.getElementById('res-avoided-tag-1-1').innerText = `${cbmAvoided2050.toFixed(1)} Gt/yr Substituted`;
+
+            document.getElementById('res-cumulative-desc-1-1').innerText = 
+                `${Math.round(cumulativeTotal).toLocaleString()} Gt of cumulative minerals extracted; construction directly claims ${Math.round(cumulativeCbm).toLocaleString()} Gt.`;
+
+            const verdictEl = document.getElementById('res-overshoot-verdict-1-1');
+            const noteEl = document.getElementById('res-policy-note-1-1');
+
+            if (k > 0.025 && circ < 0.20) {
+                verdictEl.innerText = "Severe planetary overshoot: Raw material demand doubles before 2050 with negligible circular retention, confirming the 1972 exhaustion model.";
+                noteEl.innerText = "Aggressive clinker reduction, quarry quotas, and mandatory CDW recycling policies are urgently required.";
+            } else if (circ >= 0.35) {
+                verdictEl.innerText = "Decoupling trajectory: High secondary substitution buffers peak virgin throughput, attenuating ecosphere extraction stress.";
+                noteEl.innerText = "Circular economy pathways decouple infrastructural expansion from virgin geological exhaustion.";
+            } else {
+                verdictEl.innerText = "Moderate stress trajectory: Material expansion continues steadily, requiring sustained expansion of SCM and waste valorization.";
+                noteEl.innerText = "Aligning material efficiency with sustainable development frameworks is critical to avoid regional mineral shortages.";
+            }
+        }
+
+        function resetarLab_1_1() {
+            document.getElementById('input-mat-base-1-1').value = 100;
+            document.getElementById('input-mat-growth-1-1').value = 2.3;
+            document.getElementById('input-mat-share-1-1').value = 40;
+            document.getElementById('input-mat-circ-1-1').value = 15;
+            calcularMaterial_1_1();
+        }
+
+        if (document.getElementById('input-mat-base-1-1')) {
+            calcularMaterial_1_1();
+        }
+    </script>
+</div>
+
+
+
+<!-- SLIDE (2,0): LCA SYSTEM BOUNDARIES, STANDARDS & EPD TYPOLOGY -->
+<div id="slide-2-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-nature1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 02 — STANDARDIZATION &amp; BOUNDARY PARADIGMS</span>
+            <h2 class="text-fluid-h2 text-[#901812]">LCA Frameworks, Standards &amp; Environmental Labels</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Normas ISO, Etapas e Fronteiras de Sistema (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-arrows-split-up-and-left text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Standardized 4-Stage Architecture</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Standardized LCA tracks inputs, energetic transformations, and emissions across defined life cycle stages (ISO 14040/44).</p>
+
+                <!-- Equação KaTeX do Balanço de Inventário com Rolagem Horizontal -->
+                <div class="bg-white/85 backdrop-blur-md p-3 sm:p-4 rounded-2xl text-center shadow-inner overflow-x-auto overflow-y-hidden border border-black/5" style="font-size: clamp(1.15rem, 1.95vw, 1.75rem);">
+                    $$\text{LCI} = \sum_{j} m_j \cdot c_{i,j} \quad \Longrightarrow \quad \text{LCIA}_k = \sum_{i} \text{LCI}_i \cdot \text{CF}_{i,k} \quad [\text{Impact units}]$$
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-fluid-meta text-[#444444] font-semibold">
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Cradle-to-Gate (A1–A3):</strong>
+                        Covers raw extraction and processing; the most critical manufacturing phase for concrete.
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Cradle-to-Grave (A1–C4):</strong>
+                        Encompasses logistics (A4), installation (A5), use/maintenance (B), and final demolition/disposal (C).
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>Normative Standards: ISO 14040/44, ISO 14025, ISO 21930</span>
+                <span class="text-[#901812] font-bold">Methodological Harmonization</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Rotulagem Ambiental e Acesso ao Lab (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">LABELING HIERARCHY</span>
+                    <button onclick="document.getElementById('modal-iso-labels-2-0').showModal()" class="text-fluid-tag text-white hover:text-[#D1A705] font-bold underline flex items-center gap-1">
+                        <i class="fa-solid fa-tags"></i> ISO Labels
+                    </button>
+                </div>
+
+                <h3 class="text-fluid-h3 text-white font-bold">EPDs &amp; Recycling Debates</h3>
+
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#D1A705]">
+                        <strong class="text-[#D1A705] block mb-0.5">Type III Declarations (EPDs):</strong>
+                        Third-party verified parameter declarations governed by ISO 14025 and refined by ISO 21930 for construction goods.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-white">
+                        <strong class="text-white block mb-0.5">The Allocation Dilemma:</strong>
+                        Where are recycling benefits credited? To the primary material producer or to the secondary downcycling user?
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="moveInGrid(0, 1)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Launch Boundary Evaluator (Press ↓)</span>
+                <i class="fa-solid fa-diagram-project text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 02 — ISO LCA Methodological Stages &amp; Allocation Allocation Norms</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for Boundary Lab | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Composite Eco-Efficiency (Slide 3,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: CLASSIFICAÇÃO DE ROTULAGEM AMBIENTAL ISO (SLIDES 5-7 DO PDF) -->
+    <dialog id="modal-iso-labels-2-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-4xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block uppercase">NORMATIVE CLASSIFICATION</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Environmental Declarations &amp; Labeling Types (ISO)</h3>
+            </div>
+            <button onclick="document.getElementById('modal-iso-labels-2-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-fluid-meta text-[#EAEAEA]">
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-2">
+                <strong class="text-[#D1A705] text-fluid-h3 block">Type I (ISO 14024):</strong>
+                <p class="text-sm sm:text-base leading-relaxed">
+                    Voluntary, multi-criteria, third-party verified eco-labels (e.g., German Blue Angel, 1978). Awards certification based on compliance with preset environmental performance thresholds.
+                </p>
+            </div>
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-2">
+                <strong class="text-white text-fluid-h3 block">Type II (ISO 14021):</strong>
+                <p class="text-sm sm:text-base leading-relaxed">
+                    Self-declared environmental claims made directly by manufacturers without mandatory third-party verification. Historically prone to greenwashing suspicions.
+                </p>
+            </div>
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-2">
+                <strong class="text-[#4ADE80] text-fluid-h3 block">Type III (ISO 14025):</strong>
+                <p class="text-sm sm:text-base leading-relaxed">
+                    Environmental Product Declarations (EPDs). Quantifies lifecycle environmental performance via predetermined indicators without imposing arbitrary pass/fail scores.
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 p-3 bg-white/5 rounded-2xl text-fluid-tag text-[#DEDEDE] flex items-center justify-between">
+            <span>EPDs are strictly governed by Product Category Rules (PCRs) under ISO 21930 and EN 15804.</span>
+            <button onclick="document.getElementById('modal-iso-labels-2-0').close()" class="px-4 py-2 bg-[#901812] text-white font-bold rounded-xl hover:bg-[#D1A705] hover:text-[#333333] transition-colors">Close</button>
+        </div>
+    </dialog>
+</div>
+
+<!-- SLIDE (2,1): VIRTUAL LAB - MULTI-TIER LCA BOUNDARY & RECYCLING ALLOCATION EVALUATOR (BRANCH Y=1) -->
+<div id="slide-2-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-nature2.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">VIRTUAL LAB (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">LCA System Boundary &amp; Recycling Credit Allocator</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Module 02</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 w-full items-stretch">
+            <!-- Painel de Sliders e Configuração de Escopo LCA -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                <div class="border-b border-black/10 pb-2">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Boundary Scenarios &amp; Material Mix</h3>
+                    <p class="text-fluid-meta text-[#555555] font-semibold">Simulate lifecycle impacts under cradle-to-gate vs. cradle-to-grave boundaries for 1 m³ of concrete:</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block text-[#333333]">System Boundary Definition:</label>
+                        <select id="select-scope-2-1" class="w-full p-3 bg-white/90 rounded-2xl border border-black/10 text-fluid-meta font-bold text-[#333333] cursor-pointer" onchange="calcularFronteira_2_1()">
+                            <option value="gate">Cradle-to-Gate (A1–A3 Production Stage)</option>
+                            <option value="site">Cradle-to-Site (A1–A5 Production + Assembly)</option>
+                            <option value="grave">Cradle-to-Grave (A1–C4 Full Life Cycle)</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Clinker Content ($C_{\text{clinker}}$):</span>
+                            <span id="lbl-clinker-2-1" class="text-[#901812] font-bold font-mono">350 kg/m³</span>
+                        </label>
+                        <input type="range" id="input-clinker-2-1" min="150" max="500" step="10" value="350" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularFronteira_2_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Recycled Aggregate Fraction (RCA):</span>
+                            <span id="lbl-rca-2-1" class="text-[#901812] font-bold font-mono">0%</span>
+                        </label>
+                        <input type="range" id="input-rca-2-1" min="0" max="100" step="10" value="0" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularFronteira_2_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Recycling Credit Allocation to Producer:</span>
+                            <span id="lbl-alloc-2-1" class="text-[#901812] font-bold font-mono">50%</span>
+                        </label>
+                        <input type="range" id="input-alloc-2-1" min="0" max="100" step="10" value="50" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularFronteira_2_1()">
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-tag text-[#555555] font-semibold flex items-center justify-between">
+                    <span>Impact coefficients calibrated to Souza et al. (2021) &amp; Ecoinvent</span>
+                    <button type="button" onclick="resetarLab_2_1()" class="text-[#901812] hover:underline font-bold">Reset Scope</button>
+                </div>
+            </div>
+
+            <!-- Painel de Métricas e Diagnóstico de Fronteira -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-1">BOUNDARY FOOTPRINT AUDIT</span>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-2">
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Net Carbon Impact</span>
+                            <span id="res-gwp-val-2-1" class="text-fluid-h2 text-white font-mono font-bold leading-tight block my-1">328 kg CO₂e</span>
+                            <span class="text-fluid-tag text-[#4ADE80] font-bold" id="res-scope-tag-2-1">Scope: Cradle-to-Gate</span>
+                        </div>
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Primary Energy (TPE)</span>
+                            <span id="res-tpe-val-2-1" class="text-fluid-h2 text-[#D1A705] font-mono font-bold leading-tight block my-1">2,850 MJ/m³</span>
+                            <span class="text-fluid-tag text-white font-mono" id="res-clinker-share-2-1">86% from Clinker</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-fluid-meta text-[#DEDEDE] mt-3">
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                            <strong class="text-white block mb-0.5">Manufacturing Dominance:</strong>
+                            <span id="res-gate-dominance-2-1">Cradle-to-gate stages represent >75% of total lifecycle concrete emissions, justifying its selection as primary EPD boundary.</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                            <strong class="text-white block mb-0.5">Recycling Credit Allocation:</strong>
+                            <span id="res-alloc-desc-2-1">End-of-life recycling assigns an avoided burden credit of 18 kg CO₂e directly to the producer under a 50/50 allocation rule.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-scale-balanced text-[#D1A705] text-xl"></i>
+                    <span id="res-boundary-note-2-1">Transparent allocation rules prevent double-counting of circular benefits across life cycle stages.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 02 — Multi-Tier LCA System Boundary &amp; Allocation Modeling</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to go to Composite Eco-Efficiency (Slide 3,0)</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (2,1) -->
+    <script>
+        function calcularFronteira_2_1() {
+            const scope = document.getElementById('select-scope-2-1').value;
+            const clinkerKg = parseFloat(document.getElementById('input-clinker-2-1').value);
+            const rcaPct = parseFloat(document.getElementById('input-rca-2-1').value) / 100;
+            const alloc = parseFloat(document.getElementById('input-alloc-2-1').value) / 100;
+
+            document.getElementById('lbl-clinker-2-1').innerText = `${clinkerKg.toFixed(0)} kg/m³`;
+            document.getElementById('lbl-rca-2-1').innerText = `${(rcaPct * 100).toFixed(0)}%`;
+            document.getElementById('lbl-alloc-2-1').innerText = `${(alloc * 100).toFixed(0)}%`;
+
+            // Fatores de emissão (kg CO2e / unidade)
+            // Clinker: 0.88 kg CO2e/kg | Agregados virgens: 0.005 kg CO2e/kg (1800 kg/m3 = 9 kg)
+            // RCA evita 60% da pegada do agregado natural, mas adiciona transporte/britagem
+            const gwpClinker = clinkerKg * 0.88;
+            const gwpAggregates = 1800 * (0.005 * (1 - rcaPct) + 0.003 * rcaPct);
+            const gwpBatching = 12.0;
+            const a1a3Gwp = gwpClinker + gwpAggregates + gwpBatching;
+            const a1a3Tpe = (clinkerKg * 7.2) + (1800 * 0.08) + 250; // MJ
+
+            let totalGwp = a1a3Gwp;
+            let totalTpe = a1a3Tpe;
+
+            const a4TransportGwp = 18.0; // frete médio até canteiro
+            const a5AssemblyGwp = 8.0;
+            const cStagesGwp = 24.0;    // demolição e transporte
+            const creditAvoidedGwp = (rcaPct > 0 ? (rcaPct * 25.0) : 15.0) * alloc;
+
+            const scopeTagEl = document.getElementById('res-scope-tag-2-1');
+
+            if (scope === 'gate') {
+                scopeTagEl.innerText = "Scope: Cradle-to-Gate (A1–A3)";
+                totalGwp = a1a3Gwp;
+                totalTpe = a1a3Tpe;
+            } else if (scope === 'site') {
+                scopeTagEl.innerText = "Scope: Cradle-to-Site (A1–A5)";
+                totalGwp = a1a3Gwp + a4TransportGwp + a5AssemblyGwp;
+                totalTpe = a1a3Tpe + 380;
+            } else {
+                scopeTagEl.innerText = "Scope: Cradle-to-Grave (A1–C4 - Net D)";
+                totalGwp = a1a3Gwp + a4TransportGwp + a5AssemblyGwp + cStagesGwp - creditAvoidedGwp;
+                totalTpe = a1a3Tpe + 620 - (creditAvoidedGwp * 10);
+            }
+
+            const clinkerSharePct = (gwpClinker / a1a3Gwp) * 100;
+
+            document.getElementById('res-gwp-val-2-1').innerText = `${Math.round(totalGwp)} kg CO₂e`;
+            document.getElementById('res-tpe-val-2-1').innerText = `${Math.round(totalTpe).toLocaleString()} MJ/m³`;
+            document.getElementById('res-clinker-share-2-1').innerText = `${clinkerSharePct.toFixed(0)}% from Clinker`;
+
+            document.getElementById('res-alloc-desc-2-1').innerText = 
+                scope === 'grave'
+                ? `End-of-life recycling assigns an avoided burden credit of ${creditAvoidedGwp.toFixed(1)} kg CO₂e directly to the producer under a ${(alloc * 100).toFixed(0)}% allocation rule.`
+                : "Recycling credit allocation (Module D) is omitted under partial boundary scopes (Cradle-to-Gate/Site).";
+        }
+
+        function resetarLab_2_1() {
+            document.getElementById('select-scope-2-1').value = 'gate';
+            document.getElementById('input-clinker-2-1').value = 350;
+            document.getElementById('input-rca-2-1').value = 0;
+            document.getElementById('input-alloc-2-1').value = 50;
+            calcularFronteira_2_1();
+        }
+
+        if (document.getElementById('input-clinker-2-1')) {
+            calcularFronteira_2_1();
+        }
+    </script>
+</div>
+
+
+
+<!-- SLIDE (3,0): COMPOSITE ECO-EFFICIENCY & DERRINGER-SUICH DESIRABILITY MODELING -->
+<div id="slide-3-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-concrete1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 03 — MULTI-CRITERIA DECISION ANALYSIS (MCDA)</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Composite Eco-Efficiency &amp; Desirability Functions</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Formulação Matemática de Desirabilidade e Pilares Hierárquicos (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-chart-radar text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Derringer-Suich Mathematical Formulation</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Normalizes disparate multi-category LCA indicators relative to structural performance, eliminating subjective weighting controversy.</p>
+
+                <!-- Equação KaTeX da Função de Desirabilidade com Rolagem Horizontal -->
+                <div class="bg-white/85 backdrop-blur-md p-3 sm:p-4 rounded-2xl text-center shadow-inner overflow-x-auto overflow-y-hidden border border-black/5" style="font-size: clamp(1.15rem, 1.95vw, 1.75rem);">
+                    $$d_i(y) = \left[ \frac{y_{\max} - y}{y_{\max} - y_{\min}} \right]^w \quad \Longrightarrow \quad \text{EEP} = \left( \prod_{k=1}^{5} I_k \right)^{1/5}$$
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-fluid-meta text-[#444444] font-semibold">
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Compressive Normalization ($f_c$):</strong>
+                        Impacts are divided by strength ($I_j / f_c$) to prevent allocating false environmental superiority to structurally underperforming mixtures.
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Geometric Mean Aggregation:</strong>
+                        If any individual category collapses to zero desirability ($d_i = 0$), the overall Eco-Efficiency Potential ($\text{EEP}$) collapses to zero.
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>Analytical Formulation: Souza et al. (2021) — J. Build. Eng.</span>
+                <span class="text-[#901812] font-bold">10-Category Hierarchical Model</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: 5 Pilares Sintéticos e Acesso ao Laboratório (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">PILLAR TAXONOMY</span>
+                    <button onclick="document.getElementById('modal-indicators-framework-3-0').showModal()" class="text-fluid-tag text-white hover:text-[#D1A705] font-bold underline flex items-center gap-1">
+                        <i class="fa-solid fa-sitemap"></i> Framework
+                    </button>
+                </div>
+
+                <h3 class="text-fluid-h3 text-white font-bold">The 5 Core Indicator Groups</h3>
+
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#D1A705]">
+                        <strong class="text-[#D1A705] block mb-0.5">Energy &amp; Carbon:</strong>
+                        $\text{EIR}$ (Total Primary Energy reduction) and $\text{GGR}$ (Global Warming Potential abatement).
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-white">
+                        <strong class="text-white block mb-0.5">Ecosystem Protection:</strong>
+                        $\text{MIR}$ (Raw Materials &amp; Water), $\text{EPR}$ (Eco-Toxicity), and $\text{AEO}$ (Acidification, Eutrophication, Ozone).
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="moveInGrid(0, 1)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Launch EEP Engine (Press ↓)</span>
+                <i class="fa-solid fa-calculator text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 03 — Souza et al. (2021) Composite Eco-Efficiency Framework</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for EEP Simulator | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Key References &amp; Seminars (Slide 4,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: ESTRUTURA HIERÁRQUICA DE INDICADORES (SLIDES 9-11 DO PDF) -->
+    <dialog id="modal-indicators-framework-3-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-4xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block uppercase">HIERARCHICAL INDICATORS (SOUZA ET AL., 2021)</span>
+                <h3 class="text-fluid-h2 text-white font-bold">10 Midpoint Categories to 5 Eco-Efficiency Indices</h3>
+            </div>
+            <button onclick="document.getElementById('modal-indicators-framework-3-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-fluid-meta text-[#EAEAEA]">
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#901812]">
+                <strong class="text-white block font-bold">1. EIR (Energy):</strong>
+                Total Consumption of Primary Energy ($\text{TPE} / f_c$).
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                <strong class="text-[#D1A705] block font-bold">2. MIR (Materials):</strong>
+                Primary Raw Material ($\text{PRM}$), Recycled Material ($\text{RM}$), and Water Consumption ($\text{WC}$).
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                <strong class="text-white block font-bold">3. GGR (Greenhouse):</strong>
+                Global Warming Potential ($\text{GWP} / f_c$).
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#4ADE80]">
+                <strong class="text-[#4ADE80] block font-bold">4. EPR (Ecotoxicity):</strong>
+                Freshwater ($\text{FAETP}$), Terrestrial ($\text{TETP}$), and Marine ($\text{MAETP}$) Ecotoxicity.
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#38BDF8]">
+                <strong class="text-[#38BDF8] block font-bold">5. AEO (Abatement):</strong>
+                Acidification ($\text{AP}$), Eutrophication ($\text{EP}$), and Ozone Depletion ($\text{ODP}$).
+            </div>
+            <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#F59E0B]">
+                <strong class="text-[#F59E0B] block font-bold">Target Scaling:</strong>
+                Individual parameters mapped between worst-case ($d=0.0$) and best-practice target ($d=1.0$).
+            </div>
+        </div>
+        <div class="mt-4 p-3 bg-white/5 rounded-2xl text-fluid-tag text-[#DEDEDE] flex items-center justify-between">
+            <span>Overall Eco-Efficiency Potential: $\text{EEP} = (\text{EIR} \times \text{MIR} \times \text{GGR} \times \text{EPR} \times \text{AEO})^{1/5}$.</span>
+            <button onclick="document.getElementById('modal-indicators-framework-3-0').close()" class="px-4 py-2 bg-[#901812] text-white font-bold rounded-xl hover:bg-[#D1A705] hover:text-[#333333] transition-colors">Close</button>
+        </div>
+    </dialog>
+</div>
+
+<!-- SLIDE (3,1): VIRTUAL LAB - CONCRETE ECO-EFFICIENCY POTENTIAL (EEP) ENGINE (BRANCH Y=1) -->
+<div id="slide-3-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-paint1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">VIRTUAL LAB (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Concrete Eco-Efficiency Potential (EEP) Engine</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Module 03</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 w-full items-stretch">
+            <!-- Painel de Seleção de Traço e Sliders de Desempenho -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                <div class="border-b border-black/10 pb-2">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Concrete Mix Preset &amp; Mechanical Performance</h3>
+                    <p class="text-fluid-meta text-[#555555] font-semibold">Simulate composite eco-efficiency scores calibrated against empirical benchmarks:</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block text-[#333333]">Empirical Concrete Formulation (Souza et al., 2021):</label>
+                        <select id="select-concrete-preset-3-1" class="w-full p-3 bg-white/90 rounded-2xl border border-black/10 text-fluid-meta font-bold text-[#333333] cursor-pointer" onchange="selecionarPresetConcreto_3_1()">
+                            <option value="ref20">REF20 (Pure Portland Reference, 20 MPa) — EEP = 0.00</option>
+                            <option value="ref30">REF30 (Pure Portland Reference, 30 MPa) — EEP = 0.51</option>
+                            <option value="orw">5% Ornamental Rock Waste (ORW) — EEP = 0.89</option>
+                            <option value="rha">10% Rice Husk Ash (RHA) — EEP = 0.73</option>
+                            <option value="ggbs">21% Blast Furnace Slag (GGBS) — EEP = 0.76</option>
+                            <option value="fa">25% Fly Ash (FA) — EEP = 0.76</option>
+                            <option value="scba">33% Sugarcane Bagasse Ash (SCBA) — EEP = 0.73</option>
+                            <option value="rca">100% Recycled Concrete Aggregate (RCA) — EEP = 0.69</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Compressive Strength ($f_c$):</span>
+                            <span id="lbl-eep-fc-3-1" class="text-[#901812] font-bold font-mono">30.0 MPa</span>
+                        </label>
+                        <input type="range" id="input-eep-fc-3-1" min="15.0" max="60.0" step="1.0" value="30.0" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularEEP_3_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Industrial By-Product / Waste Substitution:</span>
+                            <span id="lbl-eep-subst-3-1" class="text-[#901812] font-bold font-mono">25%</span>
+                        </label>
+                        <input type="range" id="input-eep-subst-3-1" min="0" max="60" step="5" value="25" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularEEP_3_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Desirability Weight Exponent ($w$):</span>
+                            <span id="lbl-eep-weight-3-1" class="text-[#901812] font-bold font-mono">1.0 (Linear)</span>
+                        </label>
+                        <input type="range" id="input-eep-weight-3-1" min="0.1" max="2.0" step="0.1" value="1.0" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularEEP_3_1()">
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-tag text-[#555555] font-semibold flex items-center justify-between">
+                    <span>Algorithm: $\text{EEP} = \sqrt[5]{\text{EIR} \cdot \text{MIR} \cdot \text{GGR} \cdot \text{EPR} \cdot \text{AEO}}$</span>
+                    <button type="button" onclick="resetarLab_3_1()" class="text-[#901812] hover:underline font-bold">Reset Parameters</button>
+                </div>
+            </div>
+
+            <!-- Painel de Resultados do EEP e Sub-indicadores -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-1">MCDA SYNTHETIC SCORE</span>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-2">
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Eco-Efficiency Potential (EEP)</span>
+                            <span id="res-eep-score-3-1" class="text-fluid-h2 text-white font-mono font-bold leading-tight block my-1">0.76</span>
+                            <span class="text-fluid-tag text-[#4ADE80] font-bold" id="res-eep-badge-3-1">High Eco-Efficiency</span>
+                        </div>
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Greenhouse Abatement (GGR)</span>
+                            <span id="res-ggr-val-3-1" class="text-fluid-h2 text-[#D1A705] font-mono font-bold leading-tight block my-1">0.82</span>
+                            <span class="text-fluid-tag text-white font-mono" id="res-gwp-fc-ratio-3-1">11.4 kg CO₂e / MPa</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-fluid-meta text-[#DEDEDE] mt-3">
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                            <strong class="text-white block mb-0.5">Pillar Vector Decomposition:</strong>
+                            <span id="res-pillars-breakdown-3-1">EIR: 0.78 | MIR: 0.74 | GGR: 0.82 | EPR: 0.72 | AEO: 0.75. Balanced mitigation across toxicological and climatic vectors.</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                            <strong class="text-white block mb-0.5">Clinker Decoupling Merit:</strong>
+                            <span id="res-merit-desc-3-1">Substituting 25% clinker enhances the desirability product by 49% relative to standard 20 MPa ordinary concrete.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-trophy text-[#D1A705] text-xl"></i>
+                    <span id="res-verdict-eep-3-1">High-performance formulation: Combines low embodied carbon with structural compliance.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 03 — Multi-Criteria Concrete Eco-Efficiency Potential Simulator</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to advance to Key References &amp; Seminars (Slide 4,0)</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (3,1) -->
+    <script>
+        const concretePresets_3_1 = {
+            ref20: { name: "REF20", fc: 20.0, subst: 0, baseEep: 0.00, eir: 0.15, mir: 0.10, ggr: 0.05, epr: 0.12, aeo: 0.08 },
+            ref30: { name: "REF30", fc: 30.0, subst: 0, baseEep: 0.51, eir: 0.55, mir: 0.48, ggr: 0.52, epr: 0.50, aeo: 0.50 },
+            orw:   { name: "5% ORW", fc: 34.0, subst: 5, baseEep: 0.89, eir: 0.90, mir: 0.88, ggr: 0.92, epr: 0.85, aeo: 0.90 },
+            rha:   { name: "10% RHA", fc: 31.0, subst: 10, baseEep: 0.73, eir: 0.75, mir: 0.70, ggr: 0.76, epr: 0.71, aeo: 0.73 },
+            ggbs:  { name: "21% GGBS", fc: 35.0, subst: 21, baseEep: 0.76, eir: 0.78, mir: 0.75, ggr: 0.80, epr: 0.74, aeo: 0.73 },
+            fa:    { name: "25% FA", fc: 33.0, subst: 25, baseEep: 0.76, eir: 0.77, mir: 0.74, ggr: 0.81, epr: 0.73, aeo: 0.75 },
+            scba:  { name: "33% SCBA", fc: 30.0, subst: 33, baseEep: 0.73, eir: 0.74, mir: 0.72, ggr: 0.78, epr: 0.70, aeo: 0.71 },
+            rca:   { name: "100% RCA", fc: 28.0, subst: 40, baseEep: 0.69, eir: 0.68, mir: 0.85, ggr: 0.65, epr: 0.66, aeo: 0.62 }
+        };
+
+        function selecionarPresetConcreto_3_1() {
+            const key = document.getElementById('select-concrete-preset-3-1').value;
+            const p = concretePresets_3_1[key];
+            document.getElementById('input-eep-fc-3-1').value = p.fc;
+            document.getElementById('input-eep-subst-3-1').value = p.subst;
+            calcularEEP_3_1();
+        }
+
+        function calcularEEP_3_1() {
+            const key = document.getElementById('select-concrete-preset-3-1').value;
+            const preset = concretePresets_3_1[key];
+            const fc = parseFloat(document.getElementById('input-eep-fc-3-1').value);
+            const substPct = parseFloat(document.getElementById('input-eep-subst-3-1').value) / 100;
+            const weightExp = parseFloat(document.getElementById('input-eep-weight-3-1').value);
+
+            document.getElementById('lbl-eep-fc-3-1').innerText = `${fc.toFixed(1)} MPa`;
+            document.getElementById('lbl-eep-subst-3-1').innerText = `${(substPct * 100).toFixed(0)}%`;
+            document.getElementById('lbl-eep-weight-3-1').innerText = `${weightExp.toFixed(1)} ${weightExp === 1.0 ? '(Linear)' : ''}`;
+
+            // Ajuste dos pilares baseado na resistência mecânica e fração de substituição
+            const strengthBonus = Math.max(0.2, Math.min(1.2, fc / 30.0));
+            const substBonus = 1.0 + (substPct * 0.45);
+
+            let eir = Math.min(1.0, Math.max(0.01, preset.eir * strengthBonus * substBonus));
+            let mir = Math.min(1.0, Math.max(0.01, preset.mir * substBonus));
+            let ggr = Math.min(1.0, Math.max(0.01, preset.ggr * strengthBonus * substBonus));
+            let epr = Math.min(1.0, Math.max(0.01, preset.epr * strengthBonus));
+            let aeo = Math.min(1.0, Math.max(0.01, preset.aeo * strengthBonus));
+
+            if (key === 'ref20') {
+                eir = 0.01; mir = 0.01; ggr = 0.01; epr = 0.01; aeo = 0.01;
+            }
+
+            // Aplicação do expoente de ponderação de Derringer-Suich
+            const eirW = Math.pow(eir, weightExp);
+            const mirW = Math.pow(mir, weightExp);
+            const ggrW = Math.pow(ggr, weightExp);
+            const eprW = Math.pow(epr, weightExp);
+            const aeoW = Math.pow(aeo, weightExp);
+
+            const eepScore = key === 'ref20' ? 0.00 : Math.pow(eirW * mirW * ggrW * eprW * aeoW, 1 / (5 * weightExp));
+            const gwpRatio = (350 * (1 - substPct * 0.7)) / fc;
+
+            document.getElementById('res-eep-score-3-1').innerText = eepScore.toFixed(2);
+            document.getElementById('res-ggr-val-3-1').innerText = ggr.toFixed(2);
+            document.getElementById('res-gwp-fc-ratio-3-1').innerText = `${gwpRatio.toFixed(1)} kg CO₂e / MPa`;
+
+            document.getElementById('res-pillars-breakdown-3-1').innerText = 
+                `EIR: ${eir.toFixed(2)} | MIR: ${mir.toFixed(2)} | GGR: ${ggr.toFixed(2)} | EPR: ${epr.toFixed(2)} | AEO: ${aeo.toFixed(2)}. Geometric mean preserves strict multi-criteria balance.`;
+
+            document.getElementById('res-merit-desc-3-1').innerText = 
+                `Current mix achieves an EEP score of ${eepScore.toFixed(2)}, decoupling clinker emissions while maintaining ${fc.toFixed(1)} MPa structural compliance.`;
+
+            const badgeEl = document.getElementById('res-eep-badge-3-1');
+            const verdictEl = document.getElementById('res-verdict-eep-3-1');
+
+            if (eepScore >= 0.75) {
+                badgeEl.innerText = "Superior Eco-Efficiency";
+                badgeEl.className = "text-fluid-tag text-[#4ADE80] font-bold";
+                verdictEl.innerText = "Top eco-efficient benchmark: High compressive performance coupled with extensive waste valorization.";
+            } else if (eepScore >= 0.45) {
+                badgeEl.innerText = "Transitional Compliance";
+                badgeEl.className = "text-fluid-tag text-[#D1A705] font-bold";
+                verdictEl.innerText = "Moderate eco-efficiency: Standard industrial performance with scope for higher clinker substitution.";
+            } else {
+                badgeEl.innerText = "Critical Environmental Burden";
+                badgeEl.className = "text-fluid-tag text-[#FF6B6B] font-bold";
+                verdictEl.innerText = "Poor eco-efficiency (EEP < 0.45): High specific emissions per MPa delivered. Redesign mix proportions.";
+            }
+        }
+
+        function resetarLab_3_1() {
+            document.getElementById('select-concrete-preset-3-1').value = 'fa';
+            selecionarPresetConcreto_3_1();
+        }
+
+        if (document.getElementById('select-concrete-preset-3-1')) {
+            calcularEEP_3_1();
+        }
+    </script>
+</div>
+
+
+
+<!-- SLIDE (4,0): CLOSING MODULE — SYNTHESIS, REFERENCES, SEMINAR GUIDELINES & DUAL EVALUATION HUB -->
+<div id="slide-4-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks3.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">CLOSING MODULE — SYNTHESIS &amp; DUAL EVALUATION</span>
+            <h2 class="text-fluid-h2 text-[#901812]">References, Seminar Rules &amp; Assessment</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Referências Centrais e Diretrizes dos Seminários (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-book-bookmark text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Standard References</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Foundational literature governing environmental impact metrics, ISO frameworks, and eco-efficiency modeling:</p>
+
+                <ul class="space-y-2 text-fluid-meta text-[#444444] font-semibold border-t border-black/10 pt-2.5">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-book text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>Meadows, D. H. et al. (1972):</strong> <em>The Limits to Growth</em>. Club of Rome / Universe Books.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-file-lines text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>ISO 14040/44 &amp; ISO 21930:</strong> Environmental management, LCA principles, and EPD rules for construction.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-file-lines text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>Souza, A. M. et al. (2021):</strong> Application of the desirability function for concrete eco-efficiency. <em>J. Build. Eng.</em></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-book text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>Pacheco-Torgal, F. et al. (2014):</strong> <em>Eco-efficient Construction and Building Materials</em>. Woodhead.</span>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>CIV 665 • SICon / DEC — UFV</span>
+                <span class="text-[#901812] font-bold">Class 090 Concluded</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: In-Class Quiz 091 (3.5 cols) -->
+        <div class="lg:col-span-3.5 sm:col-span-6 lg:col-span-3 p-5 sm:p-6 rounded-3xl card-glass-dark text-white text-center space-y-3 flex flex-col justify-between border-l-[10px] border-[#D1A705]">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] block font-bold uppercase tracking-wider mb-1">EVALUATION 01</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-2 leading-tight">In-Class Quiz 090</h3>
+
+                <div class="bg-white/90 backdrop-blur-md p-3 rounded-2xl max-w-[150px] sm:max-w-[170px] mx-auto shadow-lg my-1.5">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSd1NzvXoV73Dvnja3--m47L95qLE6HOwQ-fycxVCovschNj7w%2Fviewform%3Fusp%3Dheader&color=901812" alt="Quiz 091 QR Code" class="w-full h-auto rounded-lg">
+                </div>
+                <span class="text-fluid-tag text-[#DEDEDE] font-bold block">Scan for Live Quiz</span>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1NzvXoV73Dvnja3--m47L95qLE6HOwQ-fycxVCovschNj7w/viewform?usp=header" target="_blank" class="w-full py-3 px-4 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md inline-flex items-center justify-center space-x-2 min-h-[48px]">
+                <i class="fa-solid fa-pen-to-square text-[#D1A705] text-lg"></i>
+                <span>Open Quiz 090</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+            </a>
+        </div>
+
+        <!-- Coluna 3: Weekly Report Form (3.5 cols) -->
+        <div class="lg:col-span-3.5 sm:col-span-6 lg:col-span-4 p-5 sm:p-6 rounded-3xl card-glass-dark text-white text-center space-y-3 flex flex-col justify-between border-l-[10px] border-white">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] block font-bold uppercase tracking-wider mb-1">EVALUATION 02</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-2 leading-tight">Weekly Synthesis Report</h3>
+
+                <div class="bg-white/90 backdrop-blur-md p-3 rounded-2xl max-w-[150px] sm:max-w-[170px] mx-auto shadow-lg my-1.5">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSf-SaULzgroQWuRaiD_CcWMQZTDmTvhdSMn9Lx7Fsm4LSy3aw%2Fviewform%3Fusp%3Dheader&color=901812" alt="Weekly Report Form QR Code" class="w-full h-auto rounded-lg">
+                </div>
+                <span class="text-fluid-tag text-[#DEDEDE] font-bold block">Scan for Weekly Form</span>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-SaULzgroQWuRaiD_CcWMQZTDmTvhdSMn9Lx7Fsm4LSy3aw/viewform?usp=header" target="_blank" class="w-full py-3 px-4 bg-[#333333] border border-white/20 text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md inline-flex items-center justify-center space-x-2 min-h-[48px]">
+                <i class="fa-solid fa-file-invoice text-[#D1A705] text-lg"></i>
+                <span>Open Weekly Form</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Environmental Impacts of Building Materials — Class 090 Complete</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">←</kbd> to Review Previous Slides | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">Home</kbd> to Return to Cover</span>
+    </footer>
+</div>
+
+    
+
+    </main>
+
+    <!-- MOTOR DE NAVEGAÇÃO MATRICIAL 2D -->
+    <script>
+        let currentX = 0, currentY = 0;
+        let slideGrid = {};
+
+        function updateSlideGrid() {
+            slideGrid = {};
+            document.querySelectorAll('[id^="slide-"]').forEach(slide => {
+                const parts = slide.id.replace('slide-', '').split('-');
+                if (parts.length === 2) slideGrid[`${parts[0]},${parts[1]}`] = slide.id;
+            });
+        }
+
+        function hasSlide(x, y) { return !!slideGrid[`${x},${y}`]; }
+
+        function updateUI() {
+            updateSlideGrid();
+            const keysH = Object.keys(slideGrid).filter(k => k.endsWith(',0'));
+            const maxH = Math.max(...keysH.map(k => parseInt(k.split(',')[0])), 0);
+            const totalMainSlides = keysH.length;
+            
+            document.getElementById('progressBar').style.width = `${maxH === 0 ? 100 : (currentX / maxH) * 100}%`;
+            document.getElementById('slideIndicator').innerText = `Slide (${currentX},${currentY}) | ${currentX + 1} of ${totalMainSlides}`;
+
+            const dirs = { 'up': [0,-1], 'down': [0,1], 'left': [-1,0], 'right': [1,0] };
+            for (let d in dirs) {
+                const btn = document.getElementById(`btn-nav-${d}`);
+                if (btn) btn.classList.toggle('nav-enabled', hasSlide(currentX + dirs[d][0], currentY + dirs[d][1]));
+            }
+        }
+
+        function moveInGrid(dx, dy) {
+            updateSlideGrid();
+            const nx = currentX + dx, ny = currentY + dy;
+            if (hasSlide(nx, ny)) {
+                const cur = document.getElementById(slideGrid[`${currentX},${currentY}`]);
+                const nxt = document.getElementById(slideGrid[`${nx},${ny}`]);
+                
+                cur.classList.remove('slide-active', 'slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+                nxt.classList.remove('slide-active', 'slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+
+                if (dx > 0) cur.classList.add('slide-hidden-left');
+                else if (dx < 0) cur.classList.add('slide-hidden-right');
+                else if (dy > 0) cur.classList.add('slide-hidden-down');
+                else if (dy < 0) cur.classList.add('slide-hidden-up');
+
+                nxt.classList.add('slide-active');
+
+                currentX = nx; currentY = ny;
+                updateUI();
+                if (window.renderMathInElement) renderMathInElement(nxt);
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (['INPUT','TEXTAREA','DIALOG'].includes(document.activeElement.tagName)) return;
+            if (e.key === 'ArrowRight' || e.key === ' ') moveInGrid(1, 0);
+            else if (e.key === 'ArrowLeft') moveInGrid(-1, 0);
+            else if (e.key === 'ArrowUp') moveInGrid(0, -1);
+            else if (e.key === 'ArrowDown') moveInGrid(0, 1);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => { 
+            updateUI(); 
+        });
+    </script>
+</body>
+</html>
