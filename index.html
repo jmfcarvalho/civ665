@@ -1,94 +1,65 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full overflow-hidden select-none">
+<html lang="en" class="h-full select-none">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CIV 665 | Eco-efficient Construction and Building Materials - PMS UFV</title>
+    <title>CIV 665 | Course Portal - PMS UFV</title>
     
     <!-- ESSENTIAL CDNs -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
-            onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], throwOnError: false });"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- ========================================================================= -->
-    <!-- CENTRAL RESOURCE DIRECTORY                                                -->
-    <!-- ========================================================================= -->
+    <!-- CENTRAL RESOURCE DIRECTORY -->
     <script>
         const COURSE_ASSETS = {
             logos: {
-                ufv: "https://dci.ufv.br/wp-content/themes/diretorias/assets/images/estrutura/logotipoUFV.png",
-                pms: "https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png"
+                ufv: "Logo UFV oficial horizontal.png",
+                pms: "pms.png"
             },
-            
-            slideBackgrounds: {
-                "0_0": "bg-geometric1.png"
-            },
-
             externalLinks: {
-                presentationAccess: "https://jmfcarvalho.github.io/civ665/",
-                pmsPortal: "https://jmfcarvalho.github.io/civ665/"
+                sharedDrive: "https://drive.google.com/open?id=1lk2dcMJCYRIH672xxkG2vDPFvih__Urr&usp=drive_fs",
+                pmsPortal: "https://pms.ufv.br",
+                portalAccess: "https://jmfcarvalho.github.io/civ665/"
             },
-
-            classLinks: [
-                { id: "010", title: "Class 010", desc: "Course Overview & Structural Dynamics" },
-                { id: "020", title: "Class 020", desc: "Natural Climate Cycles & Global Impacts" },
-                { id: "030", title: "Class 030", desc: "Sustainable Development & Construction" },
-                { id: "040", title: "Class 040", desc: "Eco-Efficient Building Materials" },
-                { id: "050", title: "Class 050", desc: "Toxicity of Construction Materials - Part 1" },
-                { id: "060", title: "Class 060", desc: "Toxicity of Construction Materials - Part 2" },
-                { id: "070", title: "Class 070", desc: "Embodied Energy, Eco-efficiency Indicators, and Emergy" },
-                { id: "080", title: "Class 080", desc: "Thermal Energy Efficiency, Advanced Insulation, and PCMs" },
-                { id: "090", title: "Class 090", desc: "Environmental Impacts of Building Materials" },
-                { id: "100", title: "Class 100", desc: "Mineral Resources Depletion Assessment" },
-                { id: "110", title: "Class 110", desc: "Life-Cycle Assessment (LCA) Framework" },
-                { id: "120", title: "Class 120", desc: "LCA of Sustainable Building Materials" },
-                { id: "130", title: "Class 130", desc: "LCA Applied to the Building Sector" },
-                { id: "140", title: "Class 140", desc: "LCA-Based Eco-Efficiency & Carbon Footprint" }
-            ],
-
             qrCodeGenerator: (url, color = "901812") => 
                 `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}&color=${color}`
         };
     </script>
 
-    <!-- ========================================================================= -->
-    <!-- SECTION 1: STYLES & IMMUTABLE CSS VARIABLES                              -->
-    <!-- ========================================================================= -->
     <style>
         :root {
             --pms-red: #901812;
             --pms-gold: #D1A705;
             --pms-dark: #333333;
             --pms-bg: #F4F6F5;
-            --pms-card-light: rgba(255, 255, 255, 0.65);
-            --pms-card-dark: rgba(51, 51, 51, 0.70);
+            --pms-card-light: rgba(255, 255, 255, 0.72);
+            --pms-card-dark: rgba(51, 51, 51, 0.85);
             --pms-text-muted: #444444;
 
             --font-title: 'Montserrat', sans-serif;
             --font-body: 'PT Sans Narrow', sans-serif;
 
-            --fluid-h1: clamp(2.0rem, 4.0vw, 3.4rem);
-            --fluid-h2: clamp(1.6rem, 3.0vw, 2.4rem);
-            --fluid-h3: clamp(1.3rem, 2.2vw, 1.8rem);
-            --fluid-body: clamp(1.05rem, 1.6vw, 1.35rem);
-            --fluid-meta: clamp(0.9rem, 1.3vw, 1.15rem);
-            --fluid-tag: clamp(0.8rem, 1.1vw, 1.0rem);
+            --fluid-h1: clamp(2.2rem, 4.5vw, 3.8rem);
+            --fluid-h2: clamp(1.6rem, 3.2vw, 2.5rem);
+            --fluid-h3: clamp(1.25rem, 2.2vw, 1.75rem);
+            --fluid-body: clamp(1.10rem, 1.6vw, 1.40rem);
+            --fluid-meta: clamp(0.95rem, 1.3vw, 1.20rem);
+            --fluid-tag: clamp(0.85rem, 1.1vw, 1.05rem);
         }
 
-        html, body {
-            width: 100vw; height: 100vh; overflow: hidden;
-            background-color: var(--pms-bg);
-            font-family: var(--font-body); color: var(--pms-dark);
-        }
+        body {
+    background-color: var(--pms-bg);
+    font-family: var(--font-body);
+    color: var(--pms-dark);
+    min-height: 100vh;
+    position: relative;
+}
 
-        .text-fluid-h1 { font-family: var(--font-title); font-size: var(--fluid-h1); font-weight: 900; color: var(--pms-red); line-height: 1.05; letter-spacing: -0.02em; }
-        .text-fluid-h2 { font-family: var(--font-title); font-size: var(--fluid-h2); font-weight: 800; color: var(--pms-red); line-height: 1.1; }
-        .text-fluid-h3 { font-family: var(--font-body); font-size: var(--fluid-h3); font-weight: 700; line-height: 1.2; }
-        .text-fluid-body { font-family: var(--font-body); font-size: var(--fluid-body); font-weight: 500; line-height: 1.3; }
+        .text-fluid-h1 { font-family: var(--font-title); font-size: var(--fluid-h1); font-weight: 900; color: var(--pms-red); line-height: 1.1; letter-spacing: -0.02em; }
+        .text-fluid-h2 { font-family: var(--font-title); font-size: var(--fluid-h2); font-weight: 800; color: var(--pms-red); line-height: 1.15; }
+        .text-fluid-h3 { font-family: var(--font-body); font-size: var(--fluid-h3); font-weight: 700; line-height: 1.25; }
+        .text-fluid-body { font-family: var(--font-body); font-size: var(--fluid-body); font-weight: 500; line-height: 1.4; }
         .text-fluid-meta { font-family: var(--font-body); font-size: var(--fluid-meta); color: var(--pms-text-muted); font-weight: 600; }
         .text-fluid-tag { font-family: var(--font-body); font-size: var(--fluid-tag); font-weight: 700; }
 
@@ -100,207 +71,556 @@
             box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        .card-borderless-glass:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.12);
+        }
+
         .card-borderless-glass-dark {
             border: none !important;
             background-color: var(--pms-card-dark);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .bg-right-fade {
+        .bg-portal-fade {
+            background-image: url('bg-geometric1.png');
             background-repeat: no-repeat;
-            background-position: right center;
+            background-position: right top;
             background-size: cover;
             position: relative;
         }
-        .bg-right-fade::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, var(--pms-bg) 20%, rgba(244, 246, 245, 0.65) 50%, rgba(244, 246, 245, 0.15) 100%);
-            pointer-events: none;
-            z-index: 1;
-        }
+        .bg-portal-fade::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: 
+        linear-gradient(135deg, rgba(244, 246, 245, 0.95) 0%, rgba(244, 246, 245, 0.82) 50%, rgba(244, 246, 245, 0.60) 100%),
+        url('bg-geometric1.png') right top / cover no-repeat;
+}
 
-        .slide-screen {
-            position: absolute; width: 100%; height: 100%; top: 0; left: 0;
-            opacity: 0; pointer-events: none; z-index: 0;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
-            overflow-y: auto;
-        }
-        .slide-screen > * { position: relative; z-index: 2; }
-        .slide-active { opacity: 1; transform: translate3d(0, 0, 0); pointer-events: auto; z-index: 10; }
-
-        .class-btn {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            min-height: 52px;
-        }
-        .class-btn:hover {
-            background: var(--pms-red);
-            color: #FFFFFF !important;
-            transform: translateY(-3px) scale(1.01);
-            box-shadow: 0 10px 20px -5px rgba(144, 24, 18, 0.35);
-        }
-        .class-btn:hover .class-num {
-            color: var(--pms-gold) !important;
-        }
-        .class-btn:hover .class-desc {
-            color: rgba(255, 255, 255, 0.85) !important;
-        }
-        .class-btn:hover .class-icon {
-            color: #FFFFFF !important;
-            transform: translateX(4px);
-        }
-
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: var(--pms-red);
-            border-radius: 8px;
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.70);
+            backdrop-filter: blur(8px);
         }
     </style>
 </head>
-<body class="w-screen h-screen relative bg-[#F4F6F5]">
+<body class="bg-portal-fade min-h-screen flex flex-col justify-between p-4 sm:p-8 md:p-12 relative">
 
-    <!-- TOP PROGRESS BAR -->
-    <div class="fixed top-0 left-0 h-2 bg-[#D1A705] transition-all duration-500 z-[1000]" id="progressBar" style="width: 100%;"></div>
-
-    <!-- RESPONSIVE SLIDE INDICATOR -->
-    <div class="fixed bottom-4 left-4 sm:bottom-6 sm:left-8 text-fluid-meta font-bold text-[#333333] bg-white/80 backdrop-blur-md px-4 py-2 rounded-full shadow-md z-[1000] flex items-center space-x-3">
-        <span class="w-3 h-3 rounded-full bg-[#901812]"></span>
-        <span id="slideIndicator">Slide (0,0) — Index</span>
-    </div>
-
-    <!-- ========================================================================= -->
-    <!-- SECTION 2: HTML BODY & SLIDE STRUCTURE                                    -->
-    <!-- ========================================================================= -->
-    <main class="w-full h-full relative">
-
-        <!-- SLIDE (0,0): COURSE INDEX / CLASS DIRECTORY -->
-        <div id="slide-0-0" class="slide-screen slide-active flex flex-col justify-between p-4 sm:p-8 md:p-10 h-full">
-            <header class="w-full flex justify-between items-center gap-4 shrink-0 mb-4">
-                <div class="flex items-center space-x-3 sm:space-x-5 bg-white/75 backdrop-blur-md px-5 py-2.5 rounded-2xl shadow-sm">
-                    <img id="img-logo-ufv-0-0" alt="UFV Logo" class="h-8 sm:h-10 w-auto">
-                    <div class="h-8 w-[1px] bg-[#DEDEDE]"></div>
-                    <span class="text-fluid-tag text-[#333333]">CIV 665</span>
+    <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col justify-between min-h-[92vh] space-y-8">
+        
+        <!-- HEADER -->
+        <header class="w-full flex justify-between items-center gap-4">
+            <div class="flex items-center space-x-4 sm:space-x-6 bg-white/80 backdrop-blur-md px-6 py-3.5 rounded-2xl shadow-sm">
+                <img id="img-logo-ufv" src="Logo UFV oficial horizontal.png" alt="UFV Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://dci.ufv.br/wp-content/themes/diretorias/assets/images/estrutura/logotipoUFV.png'">
+                <div class="h-10 w-[1px] bg-[#DEDEDE]"></div>
+                <div>
+                    <span class="text-fluid-tag text-[#901812] block font-bold">CIV 665</span>
+                    <span class="text-fluid-meta text-[#333333] font-bold hidden sm:inline">PPGEC / DEC / UFV</span>
                 </div>
-                <a id="link-pms-portal-0-0" target="_blank" class="block bg-[#333333]/75 backdrop-blur-md p-3 rounded-2xl shadow-lg hover:scale-105 transition-transform">
-                    <img id="img-logo-pms-0-0" alt="PMS Logo" class="h-9 sm:h-12 w-auto">
-                </a>
-            </header>
+            </div>
+            <a id="link-pms-portal" href="https://pms.ufv.br" target="_blank" class="block bg-[#333333]/85 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+                <img id="img-logo-pms" src="pms.png" alt="PMS Logo" class="h-10 sm:h-14 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ153/main/assets/pms_logo/pms.png'">
+            </a>
+        </header>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch w-full my-auto flex-1 overflow-hidden py-2">
-                <!-- LEFT SIDE: TITLE & COURSE INFO -->
-                <div class="lg:col-span-4 flex flex-col justify-between space-y-4">
-                    <div class="p-6 sm:p-8 rounded-3xl card-borderless-glass border-l-[12px] border-[#901812]">
-                        <span class="text-fluid-tag text-[#D1A705] tracking-wider block mb-1">CIV 665 — GRADUATE PROGRAM IN CIVIL ENGINEERING</span>
-                        <h1 class="text-fluid-h1 mb-3">ECO-EFFICIENT CONSTRUCTION AND BUILDING MATERIALS<span class="block text-fluid-h2 text-[#333333] font-bold mt-1">Course Modules</span></h1>
-                        <p class="text-fluid-body text-[#444444]">Select any class below to access lecture notes, analytical tools, Life Cycle Assessments, and virtual materials laboratories.</p>
-                    </div>
-
-                    <!-- QR CODE CARD -->
-                    <div class="p-5 rounded-3xl card-borderless-glass-dark text-white flex items-center space-x-5 shadow-lg">
-                        <div class="bg-white/90 backdrop-blur-md p-2.5 rounded-xl shrink-0">
-                            <img id="qr-presentation-cover-0-0" alt="Course Access QR Code" class="w-24 h-24 sm:w-28 sm:h-28 rounded-lg">
-                        </div>
-                        <div class="space-y-1">
-                            <span class="text-fluid-tag text-[#D1A705] block font-bold">Quick Mobile Access</span>
-                            <p class="text-fluid-meta text-[#DEDEDE] leading-tight">Scan to open the CIV 665 course portal on your mobile device.</p>
-                            <span class="text-fluid-tag text-white font-bold block pt-1">Prof. Dr. José Maria Franco de Carvalho</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RIGHT SIDE: INTERACTIVE CLASS BUTTONS GRID -->
-                <div class="lg:col-span-8 p-4 sm:p-6 rounded-3xl card-borderless-glass flex flex-col h-full overflow-hidden">
-                    <div class="flex items-center justify-between pb-3 mb-3 border-b border-black/10 shrink-0">
-                        <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">
-                            <i class="fa-solid fa-list-check mr-2"></i>Class Directory (010 – 260)
-                        </span>
-                        <span class="text-fluid-meta text-[#444444]">14 Modules Available</span>
-                    </div>
-
-                    <div id="class-grid-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3 overflow-y-auto custom-scrollbar pr-1 flex-1">
-                        <!-- BUTTONS DYNAMICALLY RENDERED VIA JS -->
+        <!-- HERO SECTION -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full">
+            <div class="lg:col-span-8">
+                <div class="p-8 sm:p-12 rounded-3xl card-borderless-glass border-l-[16px] border-[#901812]">
+                    <span class="text-fluid-tag text-[#D1A705] tracking-wider block mb-2 font-bold">CIV 665 — GRADUATE PROGRAM IN CIVIL ENGINEERING</span>
+                    <h1 class="text-fluid-h1 mb-4">ECO-EFFICIENT CONSTRUCTION AND BUILDING MATERIALS</h1>
+                    <p class="text-fluid-body text-[#444444] max-w-3xl">
+                        Interactive presentations, technical modules, life-cycle assessments, and material evaluation frameworks for sustainable civil infrastructure.
+                    </p>
+                    <div class="mt-6 flex flex-wrap items-center gap-3 text-fluid-meta text-[#555555]">
+                        <button onclick="document.getElementById('modal-prof-profile').showModal()" class="flex items-center bg-white/90 hover:bg-[#901812] hover:text-white px-3.5 py-2 rounded-xl transition-all shadow-sm cursor-pointer border border-black/5 font-bold text-[#901812]">
+                            <i class="fa-solid fa-user-tie mr-2"></i> Prof. José Maria Franco de Carvalho <i class="fa-solid fa-circle-info ml-2 text-xs"></i>
+                        </button>
+                        <span class="hidden sm:inline">•</span>
+                        <button onclick="document.getElementById('modal-ai-statement').showModal()" class="flex items-center bg-white/90 hover:bg-[#D1A705] hover:text-[#333333] px-3.5 py-2 rounded-xl transition-all shadow-sm cursor-pointer border border-black/5 font-bold text-[#333333]">
+                            <i class="fa-solid fa-wand-magic-sparkles mr-2 text-[#901812]"></i> AI Course Development Statement <i class="fa-solid fa-circle-info ml-2 text-xs"></i>
+                        </button>
+                        <span class="hidden sm:inline">•</span>
+                        <span class="flex items-center font-bold text-[#444444]"><i class="fa-solid fa-graduation-cap text-[#901812] mr-2"></i> Semester 2026/2</span>
+                        <span class="hidden sm:inline">•</span>
+                        <span class="flex items-center font-bold text-[#444444]"><i class="fa-solid fa-flask text-[#901812] mr-2"></i> PMS & tecnoPARQ Ecosystem</span>
                     </div>
                 </div>
             </div>
+
+            <div class="lg:col-span-4 p-6 sm:p-8 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-6">
+                <div class="bg-white/90 backdrop-blur-md p-5 rounded-2xl text-center shadow-md">
+                    <img id="qr-portal-access" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fjmfcarvalho.github.io%2Fciv665%2F&color=901812" alt="Course Portal QR Code" class="w-full max-w-[180px] sm:max-w-[210px] mx-auto rounded-lg">
+                    <span class="text-fluid-tag text-[#333333] font-bold mt-2 block">Scan for Course Portal</span>
+                </div>
+                <a id="btn-shared-drive" href="https://drive.google.com/open?id=1lrlm32HUiPbvwrDZsI3Vr3CcnAWixd8l&usp=drive_fs" target="_blank" class="w-full py-3.5 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag shadow-md flex items-center justify-center space-x-2 min-h-[50px]">
+                    <i class="fa-solid fa-folder-open text-[#D1A705]"></i>
+                    <span>Open Shared Drive Folder</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- COURSE LECTURES & ROADMAP -->
+        <section class="space-y-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#901812] uppercase tracking-wider block font-bold">Course Modules</span>
+                    <h2 class="text-fluid-h2 text-[#333333]">Chronological Lecture Roadmap</h2>
+                </div>
+                <div class="hidden md:flex items-center space-x-2 text-fluid-meta text-[#555555]">
+                    <span class="w-3 h-3 rounded-full bg-[#901812]"></span>
+                    <span>Direct Slide Deck Access</span>
+                </div>
+            </div>
+
+            <!-- GRID OF LECTURES -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- 010 -->
+                <div class="p-6 rounded-3xl card-borderless-glass flex flex-col justify-between space-y-4 hover:border-l-8 hover:border-[#901812] transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-fluid-tag font-bold text-white bg-[#901812] px-3 py-1 rounded-full">Class 010</span>
+                        </div>
+                        <h3 class="text-fluid-h3 text-[#333333] mb-2">Course Overview & Structural Dynamics</h3>
+                        <p class="text-fluid-body text-[#444444]">Methodological rigor, life-cycle analysis, eco-efficiency indicators, and research-driven seminars.</p>
+                    </div>
+                    <a href="https://jmfcarvalho.github.io/civ665/010.html" class="w-full py-3 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag text-center shadow-md flex items-center justify-center space-x-2 min-h-[48px]">
+                        <span>Launch Presentation 010</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 020 -->
+                <div class="p-6 rounded-3xl card-borderless-glass flex flex-col justify-between space-y-4 hover:border-l-8 hover:border-[#901812] transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-fluid-tag font-bold text-white bg-[#901812] px-3 py-1 rounded-full">Class 020</span>
+                        </div>
+                        <h3 class="text-fluid-h3 text-[#333333] mb-2">Natural Climate Cycles & Global Impacts</h3>
+                        <p class="text-fluid-body text-[#444444]">Earth Systems, Paleoclimatic Timeline, Anthropogenic Forcings & Environmental Responsibilities.</p>
+                    </div>
+                    <a href="https://jmfcarvalho.github.io/civ665/020.html" class="w-full py-3 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag text-center shadow-md flex items-center justify-center space-x-2 min-h-[48px]">
+                        <span>Launch Presentation 020</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 030 -->
+                <div class="p-6 rounded-3xl card-borderless-glass flex flex-col justify-between space-y-4 hover:border-l-8 hover:border-[#901812] transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-fluid-tag font-bold text-white bg-[#901812] px-3 py-1 rounded-full">Class 030</span>
+                        </div>
+                        <h3 class="text-fluid-h3 text-[#333333] mb-2">Sustainable Development & Construction</h3>
+                        <p class="text-fluid-body text-[#444444]">Historical trajectory, Life Cycle Assessment (LCA) and Green Building, Methodological critiques.</li>.</p>
+                    </div>
+                    <a href="https://jmfcarvalho.github.io/civ665/030.html" class="w-full py-3 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag text-center shadow-md flex items-center justify-center space-x-2 min-h-[48px]">
+                        <span>Launch Presentation 030</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 040 -->
+                <div class="p-6 rounded-3xl card-borderless-glass flex flex-col justify-between space-y-4 hover:border-l-8 hover:border-[#901812] transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-fluid-tag font-bold text-white bg-[#901812] px-3 py-1 rounded-full">Class 040</span>
+                        </div>
+                        <h3 class="text-fluid-h3 text-[#333333] mb-2">Eco-Efficient Building Materials</h3>
+                        <p class="text-fluid-body text-[#444444]">Overview on Availability, Materials Profiles and Transport.</p>
+                    </div>
+                    <a href="https://jmfcarvalho.github.io/civ665/040.html" class="w-full py-3 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag text-center shadow-md flex items-center justify-center space-x-2 min-h-[48px]">
+                        <span>Launch Presentation 040</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 050 -->
+                <div class="p-6 rounded-3xl card-borderless-glass flex flex-col justify-between space-y-4 hover:border-l-8 hover:border-[#901812] transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-fluid-tag font-bold text-white bg-[#901812] px-3 py-1 rounded-full">Class 050</span>
+                        </div>
+                        <h3 class="text-fluid-h3 text-[#333333] mb-2">Toxicity of Construction Materials - Part 1</h3>
+                        <p class="text-fluid-body text-[#444444]">Overview of Hazardous Substances, Volatile Organic Compounds (VOCs), Heavy Metals, and Indoor Environmental Quality.</p>
+                    </div>
+                    <a href="https://jmfcarvalho.github.io/civ665/050.html" class="w-full py-3 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag text-center shadow-md flex items-center justify-center space-x-2 min-h-[48px]">
+                        <span>Launch Presentation 050</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 060 -->
+                <div class="p-6 rounded-3xl card-borderless-glass flex flex-col justify-between space-y-4 hover:border-l-8 hover:border-[#901812] transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-fluid-tag font-bold text-white bg-[#901812] px-3 py-1 rounded-full">Class 060</span>
+                        </div>
+                        <h3 class="text-fluid-h3 text-[#333333] mb-2">Toxicity of Construction Materials - Part 2</h3>
+                        <p class="text-fluid-body text-[#444444]">Environmental Characterization, ABNT NBR 10004/10005/10006 Normative Criteria, EPA Standards, and Laboratory Waste Extraction.</p>
+                    </div>
+                    <a href="https://jmfcarvalho.github.io/civ665/060.html" class="w-full py-3 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag text-center shadow-md flex items-center justify-center space-x-2 min-h-[48px]">
+                        <span>Launch Presentation 060</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 070 -->
+                <div class="p-6 rounded-3xl card-borderless-glass flex flex-col justify-between space-y-4 hover:border-l-8 hover:border-[#901812] transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-fluid-tag font-bold text-white bg-[#901812] px-3 py-1 rounded-full">Class 070</span>
+                        </div>
+                        <h3 class="text-fluid-h3 text-[#333333] mb-2">Embodied Energy & Emergy Dynamics</h3>
+                        <p class="text-fluid-body text-[#444444]">Global Energy Transition, Embodied Energy Accounting (Cradle-to-Gate/Grave), Freight Logistics, Clinker Replacement, and Emergy Systems Ecology.</p>
+                    </div>
+                    <a href="https://jmfcarvalho.github.io/civ665/070.html" class="w-full py-3 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag text-center shadow-md flex items-center justify-center space-x-2 min-h-[48px]">
+                        <span>Launch Presentation 070</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 080 -->
+                <div class="p-6 rounded-3xl card-borderless-glass flex flex-col justify-between space-y-4 hover:border-l-8 hover:border-[#901812] transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-fluid-tag font-bold text-white bg-[#901812] px-3 py-1 rounded-full">Class 080</span>
+                        </div>
+                        <h3 class="text-fluid-h3 text-[#333333] mb-2">Energy in Building Materials</h3>
+                        <p class="text-fluid-body text-[#444444]">Thermal Insulation Physics, Embodied Energy Penalties, Bio-Based Composites, Vacuum Insulation Panels (VIPs), Microstructural Modeling, and Phase Change Materials (PCMs).</p>
+                    </div>
+                    <a href="https://jmfcarvalho.github.io/civ665/080.html" class="w-full py-3 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag text-center shadow-md flex items-center justify-center space-x-2 min-h-[48px]">
+                        <span>Launch Presentation 080</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 090 -->
+                <div class="p-6 rounded-3xl card-borderless-glass flex flex-col justify-between space-y-4 hover:border-l-8 hover:border-[#901812] transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-fluid-tag font-bold text-white bg-[#901812] px-3 py-1 rounded-full">Class 090</span>
+                        </div>
+                        <h3 class="text-fluid-h3 text-[#333333] mb-2">Environmental Impacts & LCA</h3>
+                        <p class="text-fluid-body text-[#444444]">Anthropogenic Material Growth, Planetary Boundaries, ISO 14040/44 Protocols, Environmental Product Declarations (EPDs), and Derringer-Suich Composite Eco-Efficiency Modeling.</p>
+                    </div>
+                    <a href="https://jmfcarvalho.github.io/civ665/090.html" class="w-full py-3 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag text-center shadow-md flex items-center justify-center space-x-2 min-h-[48px]">
+                        <span>Launch Presentation 090</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 100 -->
+                <div class="p-6 rounded-3xl card-borderless-glass flex flex-col justify-between space-y-4 hover:border-l-8 hover:border-[#901812] transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-fluid-tag font-bold text-white bg-[#901812] px-3 py-1 rounded-full">Class 100</span>
+                        </div>
+                        <h3 class="text-fluid-h3 text-[#333333] mb-2">Mineral Resources Depletion</h3>
+                        <p class="text-fluid-body text-[#444444]">Continental Crust Concentration, Non-Fuel Mineral Extraction Trends, Fixed-Stock vs. Opportunity Cost Paradigms, Dynamic Hubbert Bell Curve Modeling, and Exergy Accounting.</p>
+                    </div>
+                    <a href="https://jmfcarvalho.github.io/civ665/100.html" class="w-full py-3 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag text-center shadow-md flex items-center justify-center space-x-2 min-h-[48px]">
+                        <span>Launch Presentation 100</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 110 -->
+                <div class="p-6 rounded-3xl card-borderless-glass flex flex-col justify-between space-y-4 hover:border-l-8 hover:border-[#901812] transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-fluid-tag font-bold text-white bg-[#901812] px-3 py-1 rounded-full">Class 110</span>
+                        </div>
+                        <h3 class="text-fluid-h3 text-[#333333] mb-2">Life-Cycle Assessment (LCA) of Building Materials</h3>
+                        <p class="text-fluid-body text-[#444444]">Inventory modeling, LCI database compilation, allocation procedures, and environmental product declarations (EPD).</p>
+                    </div>
+                    <a href="https://jmfcarvalho.github.io/civ665/110.html" class="w-full py-3 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag text-center shadow-md flex items-center justify-center space-x-2 min-h-[48px]">
+                        <span>Launch Presentation 110</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- 120 -->
+                <div class="p-6 rounded-3xl card-borderless-glass flex flex-col justify-between space-y-4 hover:border-l-8 hover:border-[#901812] transition-all">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-fluid-tag font-bold text-white bg-[#901812] px-3 py-1 rounded-full">Class 130</span>
+                        </div>
+                        <h3 class="text-fluid-h3 text-[#333333] mb-2">LCA-based Eco-Efficiency & Carbon Footprint</h3>
+                        <p class="text-fluid-body text-[#444444]">Multi-criteria optimization, ISO 14045 eco-efficiency ratios, Scope 1-3 CO2e calculations, and benchmark compliance.</p>
+                    </div>
+                    <a href="https://jmfcarvalho.github.io/civ665/120.html" class="w-full py-3 px-4 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-tag text-center shadow-md flex items-center justify-center space-x-2 min-h-[48px]">
+                        <span>Launch Presentation 120</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+                <!-- 130 -->
+<div class="p-6 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-4">
+    <div>
+        <div class="flex justify-between items-center mb-2">
+            <span class="text-fluid-tag font-bold text-[#333333] bg-[#D1A705] px-3 py-1 rounded-full">Seminar 130</span>
+        </div>
+        <h3 class="text-fluid-h3 text-white mb-2">Performance & Microstructure – Ceramic Materials</h3>
+        <p class="text-fluid-body text-[#DEDEDE]">Clay composition, sintering, phase transformations, durability, and degradation mechanisms.</p>
+    </div>
+    <div class="p-3 bg-white/10 rounded-2xl text-fluid-meta text-[#D1A705] text-center font-bold">
+        <i class="fa-solid fa-users-rectangle mr-2"></i> Student Seminar Delivery
+    </div>
+</div>
+
+<!-- 140 -->
+<div class="p-6 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-4">
+    <div>
+        <div class="flex justify-between items-center mb-2">
+            <span class="text-fluid-tag font-bold text-[#333333] bg-[#D1A705] px-3 py-1 rounded-full">Seminar 140</span>
+        </div>
+        <h3 class="text-fluid-h3 text-white mb-2">Performance & Microstructure – Cementitious Matrices</h3>
+        <p class="text-fluid-body text-[#DEDEDE]">Hydration kinetics, C-S-H structure, supplementary cementitious materials (SCMs), permeability, and long-term durability.</p>
+    </div>
+    <div class="p-3 bg-white/10 rounded-2xl text-fluid-meta text-[#D1A705] text-center font-bold">
+        <i class="fa-solid fa-users-rectangle mr-2"></i> Student Seminar Delivery
+    </div>
+</div>
+
+<!-- 150 -->
+<div class="p-6 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-4">
+    <div>
+        <div class="flex justify-between items-center mb-2">
+            <span class="text-fluid-tag font-bold text-[#333333] bg-[#D1A705] px-3 py-1 rounded-full">Seminar 150</span>
+        </div>
+        <h3 class="text-fluid-h3 text-white mb-2">Performance & Microstructure – Alkali-Activated Materials</h3>
+        <p class="text-fluid-body text-[#DEDEDE]">Geopolymers and alkali-activated slag/fly ash, reaction mechanisms, efflorescence, and mechanical performance.</p>
+    </div>
+    <div class="p-3 bg-white/10 rounded-2xl text-fluid-meta text-[#D1A705] text-center font-bold">
+        <i class="fa-solid fa-users-rectangle mr-2"></i> Student Seminar Delivery
+    </div>
+</div>
+
+<!-- 160 -->
+<div class="p-6 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-4">
+    <div>
+        <div class="flex justify-between items-center mb-2">
+            <span class="text-fluid-tag font-bold text-[#333333] bg-[#D1A705] px-3 py-1 rounded-full">Seminar 160</span>
+        </div>
+        <h3 class="text-fluid-h3 text-white mb-2">Performance & Microstructure – Advanced Composites</h3>
+        <p class="text-fluid-body text-[#DEDEDE]">Bio-based composites, fiber-reinforced mortars, and non-conventional building materials.</p>
+    </div>
+    <div class="p-3 bg-white/10 rounded-2xl text-fluid-meta text-[#D1A705] text-center font-bold">
+        <i class="fa-solid fa-users-rectangle mr-2"></i> Student Seminar Delivery
+    </div>
+</div>
+
+<!-- 170 -->
+<div class="p-6 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-4">
+    <div>
+        <div class="flex justify-between items-center mb-2">
+            <span class="text-fluid-tag font-bold text-[#333333] bg-[#D1A705] px-3 py-1 rounded-full">Seminar 170</span>
+        </div>
+        <h3 class="text-fluid-h3 text-white mb-2">Utilization of Waste in Construction Materials – Principles</h3>
+        <p class="text-fluid-body text-[#DEDEDE]">Waste management hierarchy, NBR 10004 solid waste classification, and industrial symbiosis.</p>
+    </div>
+    <div class="p-3 bg-white/10 rounded-2xl text-fluid-meta text-[#D1A705] text-center font-bold">
+        <i class="fa-solid fa-users-rectangle mr-2"></i> Student Seminar Delivery
+    </div>
+</div>
+
+<!-- 180 -->
+<div class="p-6 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-4">
+    <div>
+        <div class="flex justify-between items-center mb-2">
+            <span class="text-fluid-tag font-bold text-[#333333] bg-[#D1A705] px-3 py-1 rounded-full">Seminar 180</span>
+        </div>
+        <h3 class="text-fluid-h3 text-white mb-2">Industrial By-products & Mining Tailings</h3>
+        <p class="text-fluid-body text-[#DEDEDE]">Fly ash, blast furnace slag, silica fume, bauxite residue (red mud), and iron ore tailings incorporation.</p>
+    </div>
+    <div class="p-3 bg-white/10 rounded-2xl text-fluid-meta text-[#D1A705] text-center font-bold">
+        <i class="fa-solid fa-users-rectangle mr-2"></i> Student Seminar Delivery
+    </div>
+</div>
+
+<!-- 190 -->
+<div class="p-6 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-4">
+    <div>
+        <div class="flex justify-between items-center mb-2">
+            <span class="text-fluid-tag font-bold text-[#333333] bg-[#D1A705] px-3 py-1 rounded-full">Seminar 190</span>
+        </div>
+        <h3 class="text-fluid-h3 text-white mb-2">Construction and Demolition Waste (CDW) Recycled Aggregates</h3>
+        <p class="text-fluid-body text-[#DEDEDE]">Processing, pore structure, mechanical performance, and structural applications.</p>
+    </div>
+    <div class="p-3 bg-white/10 rounded-2xl text-fluid-meta text-[#D1A705] text-center font-bold">
+        <i class="fa-solid fa-users-rectangle mr-2"></i> Student Seminar Delivery
+    </div>
+</div>
+
+<!-- 200 -->
+<div class="p-6 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-4">
+    <div>
+        <div class="flex justify-between items-center mb-2">
+            <span class="text-fluid-tag font-bold text-[#333333] bg-[#D1A705] px-3 py-1 rounded-full">Seminar 200</span>
+        </div>
+        <h3 class="text-fluid-h3 text-white mb-2">Leaching, Ecotoxicity, and Technical Viability of Waste-Based Products</h3>
+        <p class="text-fluid-body text-[#DEDEDE]">Environmental safety standards, leaching behavior, and durability criteria.</p>
+    </div>
+    <div class="p-3 bg-white/10 rounded-2xl text-fluid-meta text-[#D1A705] text-center font-bold">
+        <i class="fa-solid fa-users-rectangle mr-2"></i> Student Seminar Delivery
+    </div>
+</div>
+
+<!-- 210 -->
+<div class="p-6 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-4">
+    <div>
+        <div class="flex justify-between items-center mb-2">
+            <span class="text-fluid-tag font-bold text-[#333333] bg-[#D1A705] px-3 py-1 rounded-full">Seminar 210</span>
+        </div>
+        <h3 class="text-fluid-h3 text-white mb-2">Paper 1 Presentation</h3>
+        <p class="text-fluid-body text-[#DEDEDE]">Critical defense and methodological analysis of selected peer-reviewed scientific literature.</p>
+    </div>
+    <div class="p-3 bg-white/10 rounded-2xl text-fluid-meta text-[#D1A705] text-center font-bold">
+        <i class="fa-solid fa-file-lines mr-2"></i> Oral Defense
+    </div>
+</div>
+
+<!-- 220 -->
+<div class="p-6 rounded-3xl card-borderless-glass-dark text-white flex flex-col justify-between space-y-4">
+    <div>
+        <div class="flex justify-between items-center mb-2">
+            <span class="text-fluid-tag font-bold text-[#333333] bg-[#D1A705] px-3 py-1 rounded-full">Seminar 220</span>
+        </div>
+        <h3 class="text-fluid-h3 text-white mb-2">Paper 2 Presentation</h3>
+        <p class="text-fluid-body text-[#DEDEDE]">Critical defense and methodological analysis of selected peer-reviewed scientific literature.</p>
+    </div>
+    <div class="p-3 bg-white/10 rounded-2xl text-fluid-meta text-[#D1A705] text-center font-bold">
+        <i class="fa-solid fa-file-lines mr-2"></i> Oral Defense
+    </div>
+</div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="w-full py-6 border-t border-black/10 flex flex-col sm:flex-row justify-between items-center text-fluid-meta text-[#555555] gap-4">
+            <div>
+                © 2026 <strong>PMS — Center for Prototyping Materials, Parts and Systems</strong> | PPGEC / DEC / UFV
+            </div>
+            <div class="flex items-center space-x-6 font-bold">
+                <button onclick="document.getElementById('modal-prof-profile').showModal()" class="hover:text-[#901812] transition-colors cursor-pointer"><i class="fa-solid fa-user-tie mr-1"></i> Instructor Profile</button>
+                <button onclick="document.getElementById('modal-ai-statement').showModal()" class="hover:text-[#901812] transition-colors cursor-pointer"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i> AI Development Statement</button>
+                <a href="https://pms.ufv.br" target="_blank" class="hover:text-[#901812] transition-colors"><i class="fa-solid fa-globe mr-1"></i> PMS Portal</a>
+                <a href="https://drive.google.com/open?id=1lk2dcMJCYRIH672xxkG2vDPFvih__Urr&usp=drive_fs" target="_blank" class="hover:text-[#901812] transition-colors"><i class="fa-brands fa-google-drive mr-1"></i> Drive</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- MODAL AUTOCONTIDO: PROFESSOR PROFILE (UPDATED IN ENGLISH) -->
+    <dialog id="modal-prof-profile" class="rounded-3xl p-6 sm:p-10 bg-[#262626] text-white max-w-4xl w-full shadow-2xl border border-white/20">
+        <div class="flex justify-between items-start border-b border-white/20 pb-4 mb-6">
+            <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-[#D1A705] shadow-md flex-shrink-0 bg-white/10">
+                    <img src="PhotoS.jpg" alt="Prof. José Maria Franco de Carvalho" class="w-full h-full object-cover object-top" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/PhotoS.jpg'">
+                </div>
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold block">COURSE INSTRUCTOR & SCIENTIFIC LEAD</span>
+                    <h3 class="text-fluid-h2 text-white font-bold">Prof. José Maria Franco de Carvalho</h3>
+                    <p class="text-fluid-meta !text-[#DEDEDE]">Associate Professor | CNPq PQ-C Researcher | Coordinator of PMS & PPGEC — UFV</p>
+                </div>
+            </div>
+            <button onclick="document.getElementById('modal-prof-profile').close()" class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
 
-    </main>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 max-h-[60vh] overflow-y-auto pr-2">
+            <!-- Academic Background -->
+            <div class="md:col-span-7 space-y-3">
+                <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block">
+                    <i class="fa-solid fa-graduation-cap mr-1.5"></i> Academic Profile & Scientific Leadership
+                </span>
+                <p class="text-fluid-body !text-[#F5F5F5] text-justify leading-relaxed">
+                    Civil Engineer graduated from the Federal University of Viçosa - UFV (2004), Master of Science in Civil Engineering from the Federal University of Ouro Preto - UFOP (2007), and Ph.D. in Civil Engineering from the Federal University of Ouro Preto with a doctoral research internship (sandwich period) at the Federal Institute for Materials Research and Testing in Berlin - BAM, Germany (2019).
+                </p>
+                <p class="text-fluid-body !text-[#F5F5F5] text-justify leading-relaxed">
+                    He is currently an Associate Professor at the Federal University of Viçosa (UFV), a CNPq Research Productivity Fellow (Level PQ-C), General Coordinator of the Prototyping Center for Materials, Parts, and Systems (PMS/UFV), Coordinator of the Graduate Program in Civil Engineering (PPGEC/UFV), and Co-Leader of the Sustainable & Innovative Construction Research Group (SICon - CNPq/UFV). He actively collaborates with CNPq research groups RECICLOS (UFOP), ATIVE (UFOP), DEC UFV Structures, and TechBIM (UFV).
+                </p>
+                <div class="p-4 bg-white/10 rounded-2xl border border-white/15 text-fluid-meta !text-[#E5E5E5]">
+                    <strong class="text-[#D1A705] block mb-1">Primary Technological & Research Focus:</strong>
+                    Sustainable construction materials, eco-efficient concretes, industrial waste valorization, alkali-activated cementitious matrices, structural repair and rehabilitation of bridge infrastructure, and structural health management.
+                </div>
+            </div>
 
-    <!-- ========================================================================= -->
-    <!-- SECTION 3: JAVASCRIPT LOGIC                                               -->
-    <!-- ========================================================================= -->
-    <script>
-        const slideGrid = { 
-            '0,0': 'slide-0-0'
-        };
+            <!-- Personal Profile & Trivia -->
+            <div class="md:col-span-5 space-y-4 border-t md:border-t-0 md:border-l border-white/15 pt-4 md:pt-0 md:pl-6">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-3">
+                        <i class="fa-solid fa-fingerprint mr-1.5"></i> Personal Profile & Trivia
+                    </span>
+                    <ul class="space-y-2.5 text-fluid-meta !text-[#E5E5E5]">
+                        <li class="flex items-center space-x-2.5 p-2 bg-white/5 rounded-xl border border-white/5">
+                            <i class="fa-solid fa-location-dot text-[#D1A705] text-lg w-6 text-center"></i>
+                            <span>Born in Coimbra, Minas Gerais, Brazil</span>
+                        </li>
+                        <li class="flex items-center space-x-2.5 p-2 bg-white/5 rounded-xl border border-white/5">
+                            <i class="fa-solid fa-glasses text-[#D1A705] text-lg w-6 text-center"></i>
+                            <span>Proudly nerdy personality</span>
+                        </li>
+                        <li class="flex items-center space-x-2.5 p-2 bg-white/5 rounded-xl border border-white/5">
+                            <i class="fa-solid fa-music text-[#D1A705] text-lg w-6 text-center"></i>
+                            <span>Rock enthusiast (with eclectic appreciation from samba to electronic)</span>
+                        </li>
+                        <li class="flex items-center space-x-2.5 p-2 bg-white/5 rounded-xl border border-white/5">
+                            <i class="fa-solid fa-drum text-[#D1A705] text-lg w-6 text-center"></i>
+                            <span>Amateur drummer ("noise maker")</span>
+                        </li>
+                        <li class="flex items-center space-x-2.5 p-2 bg-white/5 rounded-xl border border-white/5">
+                            <i class="fa-solid fa-futbol text-[#D1A705] text-lg w-6 text-center"></i>
+                            <span>Devoted supporter of Fluminense FC and São Paulo FC</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </dialog>
 
-        let currentX = 0, currentY = 0;
+    <!-- MODAL AUTOCONTIDO: STATEMENT ON THE USE OF AI IN PREPARING THE COURSE AND PRESENTATIONS -->
+    <dialog id="modal-ai-statement" class="rounded-3xl p-6 sm:p-10 bg-[#262626] text-white max-w-3xl w-full shadow-2xl border border-white/20">
+        <div class="flex justify-between items-start border-b border-white/20 pb-4 mb-4">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-wand-magic-sparkles text-2xl text-[#D1A705]"></i>
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold block uppercase tracking-wider">PEDAGOGICAL & TECHNICAL DISCLOSURE</span>
+                    <h2 class="text-fluid-h2 text-white font-bold">Statement on the Use of Artificial Intelligence</h2>
+                </div>
+            </div>
+            <button onclick="document.getElementById('modal-ai-statement').close()" class="w-12 h-12 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="space-y-4 text-fluid-body !text-[#F5F5F5] max-h-[60vh] overflow-y-auto pr-2">
+            <p class="!text-[#F5F5F5] leading-relaxed">
+                In line with academic integrity, transparency, and scientific rigor, instructional materials, web interfaces, and interactive technical components for this course were developed through collaborative human-AI integration using state-of-the-art Large Language Models.
+            </p>
+            <div class="space-y-2.5 text-fluid-meta">
+                <div class="p-4 bg-white/10 rounded-2xl border border-white/15 !text-[#E5E5E5]">
+                    <strong class="text-[#D1A705] block mb-1 font-bold"><i class="fa-solid fa-code mr-1.5"></i> 1. Interface Engineering & Interactive Tools:</strong>
+                    Generative models supported the implementation of lightweight front-end code, responsive layouts, dynamic data visualizations, and interactive engineering calculation modules.
+                </div>
+                <div class="p-4 bg-white/10 rounded-2xl border border-white/15 !text-[#E5E5E5]">
+                    <strong class="text-[#D1A705] block mb-1 font-bold"><i class="fa-solid fa-layer-group mr-1.5"></i> 2. Content Structuring & Didactic Scaffolding:</strong>
+                    AI assistance was employed to synthesize extensive technical documentation, regulatory standards, and academic literature into structured, progressive pedagogical units.
+                </div>
+                <div class="p-4 bg-white/10 rounded-2xl border border-white/15 !text-[#E5E5E5]">
+                    <strong class="text-[#D1A705] block mb-1 font-bold"><i class="fa-solid fa-user-check mr-1.5"></i> 3. Academic Oversight & Intellectual Responsibility:</strong>
+                    All technical concepts, mathematical formulations, references, and didactic sequences were curated, verified, and validated by the instructor, who retains full pedagogical and intellectual responsibility for the course content.
+                </div>
+            </div>
+        </div>
+    </dialog>
 
-        function renderClassButtons() {
-            const container = document.getElementById('class-grid-container');
-            if (!container) return;
-
-            container.innerHTML = COURSE_ASSETS.classLinks.map(cls => `
-                <a href="https://jmfcarvalho.github.io/civ665/${cls.id}" 
-                   target="_blank" 
-                   class="class-btn p-3.5 rounded-2xl border border-black/5 flex items-center justify-between group shadow-sm">
-                    <div class="flex items-center space-x-3 min-w-0">
-                        <span class="class-num font-mono text-fluid-h3 font-extrabold text-[#901812] transition-colors shrink-0">
-                            ${cls.id}
-                        </span>
-                        <div class="truncate">
-                            <span class="block font-bold text-fluid-body text-[#333333] group-hover:text-white transition-colors truncate">
-                                ${cls.title}
-                            </span>
-                            <span class="class-desc text-fluid-meta text-[#666666] transition-colors block truncate">
-                                ${cls.desc}
-                            </span>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-arrow-right-long class-icon text-[#901812] text-lg ml-2 transition-all shrink-0"></i>
-                </a>
-            `).join('');
-        }
-
-        function initializeAssets() {
-            const logoUfv00 = document.getElementById('img-logo-ufv-0-0');
-            if (logoUfv00) logoUfv00.src = COURSE_ASSETS.logos.ufv;
-
-            const logoPms00 = document.getElementById('img-logo-pms-0-0');
-            if (logoPms00) logoPms00.src = COURSE_ASSETS.logos.pms;
-
-            const linkPortal00 = document.getElementById('link-pms-portal-0-0');
-            if (linkPortal00) linkPortal00.href = COURSE_ASSETS.externalLinks.pmsPortal;
-
-            const slide00 = document.getElementById('slide-0-0');
-            const bgUrl = COURSE_ASSETS.slideBackgrounds["0_0"];
-            if (slide00 && bgUrl && bgUrl.trim() !== "") {
-                slide00.style.backgroundImage = `url('${bgUrl}')`;
-                slide00.classList.add('bg-right-fade');
-            }
-
-            const qrCover00 = document.getElementById('qr-presentation-cover-0-0');
-            if (qrCover00) qrCover00.src = COURSE_ASSETS.qrCodeGenerator(COURSE_ASSETS.externalLinks.presentationAccess);
-
-            renderClassButtons();
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeAssets();
-        });
-    </script>
 </body>
 </html>
