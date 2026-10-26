@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full overflow-hidden select-none">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CIV 665 | Eco-Efficient Construction and Building Materials - PMS UFV</title>
+    
+    <!-- ESSENTIAL CDNs -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], throwOnError: false });"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Preset PMS */
+            --color-primary: #901812;
+            --color-secondary: #D1A705;
+            --color-dark: #333333;
+            --color-bg: #F4F6F5;
+            --bg-shade-left: rgba(244,246,245,0.96);
+            --bg-shade-mid: rgba(244,246,245,0.70);
+            --bg-shade-right: rgba(244,246,245,0.15);
+            --card-light: rgba(255, 255, 255, 0.58);
+            --card-dark: rgba(51, 51, 51, 0.65);
+
+            /* Tipografia Super-Ampliada (Calibração Nativa Full HD / 4k) */
+            --fluid-h1: clamp(2.8rem, 6.2vw, 5.5rem);
+            --fluid-h2: clamp(2.2rem, 4.6vw, 4.0rem);
+            --fluid-h3: clamp(1.75rem, 3.2vw, 2.8rem);
+            --fluid-body: clamp(1.35rem, 2.2vw, 1.95rem);
+            --fluid-meta: clamp(1.15rem, 1.6vw, 1.55rem);
+            --fluid-tag: clamp(1.05rem, 1.4vw, 1.35rem);
+        }
+
+        html, body { 
+            width: 100vw; 
+            height: 100vh; 
+            overflow: hidden; 
+            background-color: var(--color-bg); 
+            font-family: 'PT Sans Narrow', sans-serif; 
+            color: var(--color-dark); 
+        }
+
+        .text-fluid-h1 { font-family: 'Montserrat', sans-serif; font-size: var(--fluid-h1); font-weight: 900; line-height: 1.08; letter-spacing: -0.02em; }
+        .text-fluid-h2 { font-family: 'Montserrat', sans-serif; font-size: var(--fluid-h2); font-weight: 800; line-height: 1.15; }
+        .text-fluid-h3 { font-size: var(--fluid-h3); font-weight: 700; line-height: 1.25; }
+        .text-fluid-body { font-size: var(--fluid-body); font-weight: 500; line-height: 1.45; }
+        .text-fluid-meta { font-size: var(--fluid-meta); font-weight: 600; }
+        .text-fluid-tag { font-size: var(--fluid-tag); font-weight: 700; letter-spacing: 0.04em; }
+
+        .katex-display { font-size: clamp(1.45rem, 2.7vw, 2.45rem) !important; margin: 0.85rem 0 !important; line-height: 1.25 !important; }
+        .katex { font-size: 1.08em; }
+
+        .slide-screen {
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            top: 0; 
+            left: 0;
+            opacity: 0; 
+            pointer-events: none; 
+            z-index: 0;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+        .slide-active { opacity: 1; transform: translate3d(0, 0, 0); pointer-events: auto; z-index: 10; }
+        .slide-hidden-left  { opacity: 0; transform: translate3d(-100%, 0, 0); }
+        .slide-hidden-right { opacity: 0; transform: translate3d(100%, 0, 0); }
+        .slide-hidden-up    { opacity: 0; transform: translate3d(0, -100%, 0); }
+        .slide-hidden-down  { opacity: 0; transform: translate3d(0, 100%, 0); }
+
+        .slide-screen::-webkit-scrollbar {
+            width: 6px;
+        }
+        .slide-screen::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .slide-screen::-webkit-scrollbar-thumb {
+            background: rgba(144, 24, 18, 0.25);
+            border-radius: 9999px;
+        }
+        .slide-screen::-webkit-scrollbar-thumb:hover {
+            background: rgba(144, 24, 18, 0.65);
+        }
+
+        .card-glass { 
+            border: none !important; 
+            background-color: var(--card-light); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            box-shadow: 0 12px 36px rgba(0,0,0,0.06);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.25s ease,
+                border-color 0.25s ease;
+            will-change: transform, box-shadow; 
+        }
+        .card-glass-dark { 
+            border: none !important; 
+            background-color: var(--card-dark); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            color: white; 
+            box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.25s ease,
+                border-color 0.25s ease;
+            will-change: transform, box-shadow; 
+        }
+
+        .card-glass:hover {
+            transform: translateY(-4px);
+            background-color: rgba(255, 255, 255, 0.72);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-glass-dark:hover {
+            transform: translateY(-4px);
+            background-color: rgba(51, 51, 51, 0.78);
+            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+        }
+
+        .reveal-controls { 
+            position: fixed; 
+            bottom: 1.25rem; 
+            right: 1.25rem; 
+            width: 110px; 
+            height: 110px; 
+            z-index: 1000; 
+            pointer-events: none; 
+        }
+        .control-arrow {
+            position: absolute; 
+            width: 38px; 
+            height: 38px; 
+            background: rgba(255, 255, 255, 0.40);
+            backdrop-filter: blur(6px); 
+            border-radius: 50%; 
+            color: #888888; 
+            cursor: pointer;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            opacity: 0.15; 
+            pointer-events: none;
+            transition: all 0.2s ease; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+            font-size: 0.95rem;
+        }
+        .control-arrow.nav-up { top: 0; left: 36px; }
+        .control-arrow.nav-down { bottom: 0; left: 36px; }
+        .control-arrow.nav-left { top: 36px; left: 0; }
+        .control-arrow.nav-right { top: 36px; right: 0; }
+        .control-arrow.nav-enabled { color: var(--color-primary); opacity: 0.65; pointer-events: auto; }
+        .control-arrow.nav-enabled:hover { background: var(--color-primary); color: #FFF; opacity: 1; transform: scale(1.1); }
+    </style>
+</head>
+<body class="w-screen h-screen relative">
+
+    <div class="fixed top-0 left-0 h-2 bg-[var(--color-secondary)] transition-all duration-300 z-[1000]" id="progressBar" style="width: 0%;"></div>
+
+    <div class="fixed bottom-3 left-3 text-[0.80rem] sm:text-[0.90rem] font-bold text-[var(--color-dark)] bg-white/70 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-sm z-[1000] flex items-center space-x-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-[var(--color-primary)]"></span>
+        <span id="slideIndicator">Slide (0,0) | 1 of 5</span>
+    </div>
+
+    <div class="reveal-controls">
+        <button id="btn-nav-up" onclick="moveInGrid(0, -1)" class="control-arrow nav-up" aria-label="Up"><i class="fa-solid fa-chevron-up"></i></button>
+        <button id="btn-nav-left" onclick="moveInGrid(-1, 0)" class="control-arrow nav-left" aria-label="Left"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="btn-nav-right" onclick="moveInGrid(1, 0)" class="control-arrow nav-right" aria-label="Right"><i class="fa-solid fa-chevron-right"></i></button>
+        <button id="btn-nav-down" onclick="moveInGrid(0, 1)" class="control-arrow nav-down" aria-label="Down"><i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+
+    <main class="w-full h-full relative" id="slideDeck">
+
+         
+        
+
+<!-- SLIDE (0,0): TITLE & COURSE COVER - CLASS 120 -->
+<div id="slide-0-0" class="slide-screen slide-active flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center gap-4 flex-shrink-0">
+        <div class="flex items-center space-x-4 sm:space-x-6 bg-white/75 backdrop-blur-md px-6 py-3.5 rounded-2xl shadow-sm">
+            <img src="Logo UFV oficial horizontal.png" alt="UFV Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://dci.ufv.br/wp-content/themes/diretorias/assets/images/estrutura/logotipoUFV.png'">
+            <div class="h-10 w-[1px] bg-black/10"></div>
+            <span class="text-fluid-tag text-[#333333]">CIV 665 • SICon / UFV</span>
+        </div>
+        <a href="https://pms.ufv.br" target="_blank" class="block bg-[#333333]/75 backdrop-blur-md p-4 rounded-2xl shadow-lg hover:scale-105 transition-transform">
+            <img src="pms.png" alt="PMS Logo" class="h-12 sm:h-16 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+        </a>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full my-auto py-2">
+        <div class="lg:col-span-7 space-y-4">
+            <div class="p-8 sm:p-12 rounded-3xl card-glass border-l-[16px] border-[#901812]">
+                <span class="text-fluid-tag text-[#D1A705] tracking-wider block mb-2 font-bold uppercase">CIV 665 — ECO-EFFICIENT CONSTRUCTION AND BUILDING MATERIALS</span>
+                <h1 class="text-fluid-h1 mb-3 text-[#901812]">LCA-BASED ECO-EFFICIENCY<span class="block text-fluid-h2 text-[#333333] font-bold mt-2">Class 120: Carbon Footprint &amp; Multi-Criteria Optimization</span></h1>
+                <p class="text-fluid-body text-[#444444]">GHG Protocol Scopes 1–3 Partitioning, ISO 14045 Eco-Efficiency Ratios ($EER$), Binder Intensity ($\text{bi}$), Carbon Intensity ($\text{ci}$), and Multi-Objective Pareto Frontiers.</p>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5 p-6 sm:p-8 rounded-3xl card-glass-dark text-white flex flex-col justify-between space-y-6">
+            <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl text-center shadow-md">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fjmfcarvalho.github.io%2Fciv665%2F120.html&color=901812" alt="Slide Access QR Code" class="w-full max-w-[200px] sm:max-w-[240px] mx-auto rounded-lg">
+                <span class="text-fluid-tag text-[#333333] font-bold mt-3 block">Follow On Smartphone</span>
+            </div>
+            <div class="text-center space-y-1">
+                <span class="text-fluid-tag text-[#D1A705] block font-bold">Course Instructor</span>
+                <p class="text-fluid-body font-bold text-white">Prof. José Maria Franco de Carvalho</p>
+                <p class="text-fluid-meta text-[#DEDEDE]">SICon / DEC — Universidade Federal de Viçosa</p>
+                <div class="pt-2 border-t border-white/10 mt-2">
+                    <span class="text-fluid-tag text-[#D1A705] block font-bold">Academic Domain</span>
+                    <p class="text-fluid-meta text-white font-semibold">Quantitative Eco-Efficiency &amp; Decarbonization Modeling</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Class 120 — LCA-based Eco-Efficiency &amp; Carbon Footprint</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for Pedagogical Framework | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Carbon Accounting (Slide 1,0)</span>
+    </footer>
+</div>
+
+<!-- SLIDE (0,1): CLASS OVERVIEW, OBJECTIVES & METHODOLOGICAL ROADMAP (BRANCH Y=1) -->
+<div id="slide-0-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-geometric2.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">CLASS ROADMAP &amp; PEDAGOGICAL PILLARS (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Class 120: Methodological Framework &amp; Analytical Pillars</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Cover</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 my-auto w-full py-2 items-stretch">
+        <!-- Card 1: Carbon Footprint Scopes 1-3 -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div>
+                <div class="flex items-center space-x-3 text-[#901812] mb-2">
+                    <i class="fa-solid fa-smog text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Scope 1–3 Accounting</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Decomposing direct process calcination, fossil thermal fuels, grid electricity, and supply chain transport.</p>
+            </div>
+            <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Scope 1: Stoichiometric calcination ($\text{CaCO}_3 \to \text{CaO} + \text{CO}_2$)</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Scope 2: Grid emission factors for clinker grinding and batching</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Scope 3: Upstream transport and auxiliary raw material extraction</li>
+                <li class="flex items-start"><i class="fa-solid fa-check text-[#901812] mt-1 mr-2 text-xs"></i>Dynamic Decarbonization Ledger simulator in Slide (1,1)</li>
+            </ul>
+        </div>
+
+        <!-- Card 2: ISO 14045 & Clinker Indices -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div>
+                <div class="flex items-center space-x-3 text-[#D1A705] mb-2">
+                    <i class="fa-solid fa-chart-line text-3xl text-[#D1A705]"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Eco-Efficiency Ratios</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Normative ISO 14045 evaluation correlating structural capacity ($f_c$, service life) with life-cycle impacts.</p>
+            </div>
+            <ul class="text-fluid-meta space-y-2 text-[#444444] border-t border-black/10 pt-3 font-semibold">
+                <li class="flex items-start"><i class="fa-solid fa-scale-balanced text-[#D1A705] mt-1 mr-2 text-xs"></i>ISO 14045 Eco-Efficiency Ratio: $EER = \text{Value} / \text{Impact}$</li>
+                <li class="flex items-start"><i class="fa-solid fa-cube text-[#D1A705] mt-1 mr-2 text-xs"></i>Binder Intensity: $\text{bi} = c / f_c$ [kg binder / (m³ · MPa)]</li>
+                <li class="flex items-start"><i class="fa-solid fa-leaf text-[#D1A705] mt-1 mr-2 text-xs"></i>Carbon Intensity: $\text{ci} = \text{CO}_2 / f_c$ [kg CO₂e / (m³ · MPa)]</li>
+                <li class="flex items-start"><i class="fa-solid fa-sliders text-[#D1A705] mt-1 mr-2 text-xs"></i>Clinker Intensity Optimizer simulator in Slide (2,1)</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Multi-Criteria Pareto Optimization -->
+        <div class="p-6 sm:p-8 rounded-3xl card-glass-dark text-white space-y-3 flex flex-col justify-between border-l-[12px] border-white">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block mb-1 uppercase">ADVANCED OPTIMIZATION</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-2">Pareto Mix Design</h3>
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Formulate</strong> multi-objective functions: $\min [\text{GWP}(\mathbf{x}), \text{Cost}(\mathbf{x})]$.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Enforce</strong> structural performance constraints ($f_c \ge f_{c,\text{target}}$) and durability thresholds.</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-[#D1A705] mt-1 mr-2.5"></i>
+                        <span><strong>Evaluate</strong> Pareto-optimal trade-offs between unit cost and carbon abatement in Slide (3,1).</span>
+                    </div>
+                </div>
+            </div>
+            <button onclick="moveInGrid(1, 0)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[50px] flex items-center justify-center space-x-2">
+                <span>Start Module 01: Carbon Footprint (Press →)</span>
+                <i class="fa-solid fa-arrow-right text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Class 120 — Methodological Pillars &amp; Multi-Criteria Framework</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return to Cover | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to advance to Module 01</span>
+    </footer>
+</div>
+
+
+
+
+
+<!-- SLIDE (1,0): CARBON FOOTPRINT ACCOUNTING & SCOPE 1-3 PARTITIONING -->
+<div id="slide-1-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-nature3.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 01 — GHG PROTOCOL &amp; PROCESS DECARBONIZATION</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Carbon Footprint &amp; Scope 1–3 Partitioning</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Formulação Analítica dos Escopos 1, 2 e 3 (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-smog text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Stoichiometric &amp; Energy Emission Vectors</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Decomposes structural concrete emissions into direct chemical calcination, thermal fuel combustion, electrical grids, and logistics chains.</p>
+
+                <!-- Equação KaTeX da Pegada de Carbono com Rolagem Horizontal -->
+                <div class="bg-white/85 backdrop-blur-md p-3 sm:p-4 rounded-2xl text-center shadow-inner overflow-x-auto overflow-y-hidden border border-black/5" style="font-size: clamp(1.15rem, 1.95vw, 1.75rem);">
+                    $$\text{GWP}_{\text{total}} = \underbrace{m_{\text{clinker}} \cdot (\alpha_{\text{calc}} + \beta_{\text{fuel}})}_{\text{Scope 1 (Direct)}} + \underbrace{E_{\text{elec}} \cdot \text{EF}_{\text{grid}}}_{\text{Scope 2 (Indirect Grid)}} + \underbrace{\sum_{k} m_k \cdot d_k \cdot \text{EF}_{\text{trans},k}}_{\text{Scope 3 (Upstream / Logistics)}}$$
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-fluid-meta text-[#444444] font-semibold">
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Scope 1 Calcination ($\alpha_{\text{calc}}$):</strong>
+                        Stoichiometric decarbonation ($\text{CaCO}_3 \xrightarrow{\Delta} \text{CaO} + \text{CO}_2$) emits exactly $0.785\ \text{kg CO}_2/\text{kg CaO}$ ($\sim 525\ \text{kg CO}_2/\text{t clinker}$).
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Scopes 2 &amp; 3 Drivers:</strong>
+                        Grinding/milling electricity accounts for Scope 2 ($E_{\text{elec}} \sim 90\text{--}130\ \text{kWh/t}$), while heavy raw mineral freight dominates Scope 3.
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>Normative Framework: GHG Protocol Corporate Standard &amp; ISO 14064-1</span>
+                <span class="text-[#901812] font-bold">Process Emission Accounting</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Mitigação Setorial e Acesso ao Simulador (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">CARBON LEDGER</span>
+                    <button onclick="document.getElementById('modal-scopes-breakdown-1-0').showModal()" class="text-fluid-tag text-white hover:text-[#D1A705] font-bold underline flex items-center gap-1">
+                        <i class="fa-solid fa-chart-pie"></i> Scope Vectors
+                    </button>
+                </div>
+
+                <h3 class="text-fluid-h3 text-white font-bold">Clinker Factor &amp; Fuel Switching</h3>
+
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#D1A705]">
+                        <strong class="text-[#D1A705] block mb-0.5">Clinker-to-Cement Ratio:</strong>
+                        Reducing clinker factor from 0.75 to 0.50 via supplementary cementitious materials (SCMs) directly scales down raw limestone calcination.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-white">
+                        <strong class="text-white block mb-0.5">Alternative Fuel Coprocessing:</strong>
+                        Replacing petroleum coke with biomass residues and non-recyclable refuse-derived fuel (RDF) mitigates Scope 1 thermal emissions ($\beta_{\text{fuel}}$).
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="moveInGrid(0, 1)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Launch Carbon Ledger Lab (Press ↓)</span>
+                <i class="fa-solid fa-gauge-high text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 01 — GHG Protocol Scopes 1–3 &amp; Concrete Decarbonization</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for Carbon Lab | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Eco-Efficiency Ratios (Slide 2,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: DETALHAMENTO DOS ESCOPOS 1-3 EM CIMENTO E CONCRETO -->
+    <dialog id="modal-scopes-breakdown-1-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-4xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block uppercase">GHG PROTOCOL &amp; ISO 14064 TAXONOMY</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Scopes 1, 2 and 3 in the Cementitious Supply Chain</h3>
+            </div>
+            <button onclick="document.getElementById('modal-scopes-breakdown-1-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-fluid-meta text-[#EAEAEA]">
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-2">
+                <strong class="text-[#D1A705] text-fluid-h3 block">Scope 1 (Direct):</strong>
+                <ul class="space-y-1.5 list-disc pl-4 text-sm sm:text-base">
+                    <li><strong class="text-white">Process Calcination:</strong> $\approx 60\text{--}65\%$ of clinker emissions, chemically released from limestone.</li>
+                    <li><strong class="text-white">Stationary Combustion:</strong> Rotary kiln fuel burn ($\approx 30\text{--}35\%$ of clinker footprint).</li>
+                    <li><strong class="text-white">Quarry Fleet:</strong> Heavy mobile excavation machinery operating on-site.</li>
+                </ul>
+            </div>
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-2">
+                <strong class="text-white text-fluid-h3 block">Scope 2 (Indirect Energy):</strong>
+                <ul class="space-y-1.5 list-disc pl-4 text-sm sm:text-base">
+                    <li><strong class="text-white">Raw Meal Grinding:</strong> High-pressure vertical roller mills.</li>
+                    <li><strong class="text-white">Clinker Finishing:</strong> Ball mills for clinker-gypsum grinding.</li>
+                    <li><strong class="text-white">Batching Plant:</strong> Concrete plant mixers, pneumatic silos, and aggregate conveyors.</li>
+                </ul>
+            </div>
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-2">
+                <strong class="text-[#4ADE80] text-fluid-h3 block">Scope 3 (Supply Chain):</strong>
+                <ul class="space-y-1.5 list-disc pl-4 text-sm sm:text-base">
+                    <li><strong class="text-white">Raw Aggregates Extraction:</strong> Natural sand and gravel crushing.</li>
+                    <li><strong class="text-white">Inbound Logistics:</strong> Fuel consumed hauling SCMs, aggregates, and admixtures to the ready-mix batch plant.</li>
+                    <li><strong class="text-white">Outbound Delivery:</strong> Transit mixer trucks to construction site.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-4 p-3 bg-white/5 rounded-2xl text-fluid-tag text-[#DEDEDE] flex items-center justify-between">
+            <span>In structural concrete, Scope 1 clinker calcination constitutes over 70% of the cradle-to-gate carbon footprint.</span>
+            <button onclick="document.getElementById('modal-scopes-breakdown-1-0').close()" class="px-4 py-2 bg-[#901812] text-white font-bold rounded-xl hover:bg-[#D1A705] hover:text-[#333333] transition-colors">Close</button>
+        </div>
+    </dialog>
+</div>
+
+<!-- SLIDE (1,1): VIRTUAL LAB - SCOPE 1-3 CARBON FOOTPRINT & DECARBONIZATION LEDGER SIMULATOR (BRANCH Y=1) -->
+<div id="slide-1-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-nature4.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">VIRTUAL LAB (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Scope 1–3 Carbon Footprint &amp; Decarbonization Ledger</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Module 01</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 w-full items-stretch">
+            <!-- Painel de Sliders e Parâmetros de Processo -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                <div class="border-b border-black/10 pb-2">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Industrial Binder &amp; Grid Parameters</h3>
+                    <p class="text-fluid-meta text-[#555555] font-semibold">Simulate process levers across $1\ \text{m}^3$ of structural concrete ($350\ \text{kg/m}^3$ binder content):</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Clinker Factor in Binder ($f_{\text{clinker}}$):</span>
+                            <span id="lbl-clinker-factor-1-1" class="text-[#901812] font-bold font-mono">75% (CP II Baseline)</span>
+                        </label>
+                        <input type="range" id="input-clinker-factor-1-1" min="30" max="95" step="5" value="75" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularScopes_1_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Kiln Thermal Substitution / Coprocessing:</span>
+                            <span id="lbl-thermal-subst-1-1" class="text-[#901812] font-bold font-mono">15% Biomass / RDF</span>
+                        </label>
+                        <input type="range" id="input-thermal-subst-1-1" min="0" max="60" step="5" value="15" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularScopes_1_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Grid Electricity Factor ($\text{EF}_{\text{grid}}$):</span>
+                            <span id="lbl-grid-ef-1-1" class="text-[#901812] font-bold font-mono">0.12 kg CO₂e/kWh</span>
+                        </label>
+                        <input type="range" id="input-grid-ef-1-1" min="0.04" max="0.70" step="0.02" value="0.12" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularScopes_1_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Aggregate Supply &amp; Transit Mixer Distance:</span>
+                            <span id="lbl-trans-dist-1-1" class="text-[#901812] font-bold font-mono">40 km radius</span>
+                        </label>
+                        <input type="range" id="input-trans-dist-1-1" min="10" max="150" step="5" value="40" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularScopes_1_1()">
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-tag text-[#555555] font-semibold flex items-center justify-between">
+                    <span>Baseline functional unit: $1\ \text{m}^3$ concrete ($f_c \approx 30\ \text{MPa}$)</span>
+                    <button type="button" onclick="resetarLab_1_1()" class="text-[#901812] hover:underline font-bold">Reset Parameters</button>
+                </div>
+            </div>
+
+            <!-- Painel de Resultados do Ledger de Carbono -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-1">GHG PROTOCOL LEDGER AUDIT</span>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-2">
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Total Carbon Footprint</span>
+                            <span id="res-gwp-total-1-1" class="text-fluid-h2 text-white font-mono font-bold leading-tight block my-1">247 kg CO₂e</span>
+                            <span class="text-fluid-tag text-[#4ADE80] font-bold" id="res-reduct-tag-1-1">-21% vs. OPC Reference</span>
+                        </div>
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Scope 1 Process Emissions</span>
+                            <span id="res-scope1-val-1-1" class="text-fluid-h2 text-[#D1A705] font-mono font-bold leading-tight block my-1">208 kg CO₂e</span>
+                            <span class="text-fluid-tag text-white font-mono" id="res-calc-share-1-1">84% of Total GWP</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-fluid-meta text-[#DEDEDE] mt-3">
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                            <strong class="text-white block mb-0.5">Scope Breakdown Partitioning:</strong>
+                            <span id="res-scopes-desc-1-1">Scope 1: 208 kg | Scope 2: 6 kg | Scope 3: 33 kg CO₂e. Calcination alone represents 138 kg CO₂e.</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                            <strong class="text-white block mb-0.5">Decarbonization Pathway Verdict:</strong>
+                            <span id="res-pathway-verdict-1-1">Clinker dilution via pozzolanic substitution flattens Scope 1 calcination with greater abatement efficacy than electrical grid upgrades.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-leaf text-[#D1A705] text-xl"></i>
+                    <span id="res-policy-note-1-1">Achieving net-zero 2050 targets requires coupling low-clinker formulations ($f_{\text{clinker}} \le 0.45$) with localized supply chains.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 01 — Scope 1–3 Carbon Footprint Simulator</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to go to Eco-Efficiency Ratios (Slide 2,0)</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (1,1) -->
+    <script>
+        function calcularScopes_1_1() {
+            const clinkerPct = parseFloat(document.getElementById('input-clinker-factor-1-1').value) / 100;
+            const thermalSubstPct = parseFloat(document.getElementById('input-thermal-subst-1-1').value) / 100;
+            const gridEf = parseFloat(document.getElementById('input-grid-ef-1-1').value);
+            const distKm = parseFloat(document.getElementById('input-trans-dist-1-1').value);
+
+            document.getElementById('lbl-clinker-factor-1-1').innerText = `${(clinkerPct * 100).toFixed(0)}% ${clinkerPct <= 0.45 ? '(Low-Carbon SCM)' : (clinkerPct <= 0.75 ? '(CP II / Blended)' : '(High Clinker OPC)')}`;
+            document.getElementById('lbl-thermal-subst-1-1').innerText = `${(thermalSubstPct * 100).toFixed(0)}% Biomass / RDF`;
+            document.getElementById('lbl-grid-ef-1-1').innerText = `${gridEf.toFixed(2)} kg CO₂e/kWh`;
+            document.getElementById('lbl-trans-dist-1-1').innerText = `${distKm.toFixed(0)} km radius`;
+
+            const totalBinderKg = 350.0; // kg/m3 de concreto
+            const clinkerMassKg = totalBinderKg * clinkerPct;
+
+            // Scope 1:
+            // Calcinação estequiométrica: 0.525 kg CO2 por kg de clínquer
+            // Combustão fóssil térmica padrão: 0.335 kg CO2 por kg de clínquer (reduzido pela substituição térmica)
+            const gwpCalcination = clinkerMassKg * 0.525;
+            const gwpThermalFuel = clinkerMassKg * 0.335 * (1 - thermalSubstPct * 0.85);
+            const gwpScope1 = gwpCalcination + gwpThermalFuel;
+
+            // Scope 2:
+            // Moagem de clínquer + acionamento de fábrica: 110 kWh/t clínquer (0.11 kWh/kg)
+            // Misturador de concreto: 4.5 kWh/m3
+            const elecKwhTotal = (clinkerMassKg * 0.11) + 4.5;
+            const gwpScope2 = elecKwhTotal * gridEf;
+
+            // Scope 3:
+            // Agregados: 1850 kg/m3 * 0.004 kg CO2e/kg extração virgem
+            // Frete de agregados e cimento: 2200 kg * distKm * 0.00010 kg CO2e/(kg.km)
+            const gwpAggExtract = 1850 * 0.004;
+            const gwpTransport = (totalBinderKg + 1850) * distKm * 0.00010;
+            const gwpScope3 = gwpAggExtract + gwpTransport;
+
+            const gwpTotal = gwpScope1 + gwpScope2 + gwpScope3;
+
+            // Referência OPC pura (95% clinker, 0% substituição térmica, 0.25 kg CO2/kWh, 40 km): ~315 kg CO2e
+            const gwpReference = 315.0;
+            const reductionPct = ((gwpReference - gwpTotal) / gwpReference) * 100;
+            const scope1Share = (gwpScope1 / gwpTotal) * 100;
+
+            document.getElementById('res-gwp-total-1-1').innerText = `${Math.round(gwpTotal)} kg CO₂e`;
+            document.getElementById('res-reduct-tag-1-1').innerText = `${reductionPct >= 0 ? '-' : '+'}${Math.abs(reductionPct).toFixed(1)}% vs. OPC Ref.`;
+            document.getElementById('res-reduct-tag-1-1').className = reductionPct >= 0 ? "text-fluid-tag text-[#4ADE80] font-bold" : "text-fluid-tag text-[#FF6B6B] font-bold";
+
+            document.getElementById('res-scope1-val-1-1').innerText = `${Math.round(gwpScope1)} kg CO₂e`;
+            document.getElementById('res-calc-share-1-1').innerText = `${scope1Share.toFixed(0)}% of Total GWP`;
+
+            document.getElementById('res-scopes-desc-1-1').innerText = 
+                `Scope 1: ${Math.round(gwpScope1)} kg | Scope 2: ${Math.round(gwpScope2)} kg | Scope 3: ${Math.round(gwpScope3)} kg CO₂e. Calcination strictly drives ${Math.round(gwpCalcination)} kg CO₂e.`;
+
+            const verdictEl = document.getElementById('res-pathway-verdict-1-1');
+            const noteEl = document.getElementById('res-policy-note-1-1');
+
+            if (clinkerPct <= 0.50 && thermalSubstPct >= 0.30) {
+                verdictEl.innerText = "Low-Carbon Tier 1: Substantial clinker displacement coupled with thermal biomass cuts GWP below 200 kg CO₂e/m³.";
+                noteEl.innerText = "Validated benchmark for LEED v4.1 Whole-Building LCA decarbonization credits.";
+            } else if (clinkerPct >= 0.85) {
+                verdictEl.innerText = "High-Emissions Carbon Lock-in: Scope 1 calcination accounts for >88% of cradle-to-gate impact, limiting operational mitigation.";
+                noteEl.innerText = "Immediate SCM integration (slag, fly ash, calcined clay) is essential to meet regional performance benchmarks.";
+            } else {
+                verdictEl.innerText = "Transitional Decarbonization: Standard industrial performance with balanced Scope 1 calcination and regional Scope 3 freight.";
+                noteEl.innerText = "Optimizing delivery radius and kiln fuel switching provides secondary carbon abatement.";
+            }
+        }
+
+        function resetarLab_1_1() {
+            document.getElementById('input-clinker-factor-1-1').value = 75;
+            document.getElementById('input-thermal-subst-1-1').value = 15;
+            document.getElementById('input-grid-ef-1-1').value = 0.12;
+            document.getElementById('input-trans-dist-1-1').value = 40;
+            calcularScopes_1_1();
+        }
+
+        if (document.getElementById('input-clinker-factor-1-1')) {
+            calcularScopes_1_1();
+        }
+    </script>
+</div>
+
+
+
+
+
+<!-- SLIDE (2,0): ISO 14045 ECO-EFFICIENCY RATIOS & BINDER EFFICIENCY METRICS -->
+<div id="slide-2-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-concrete1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 02 — ISO 14045 &amp; INTENSITY METRICS</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Eco-Efficiency Ratios &amp; Binder Indices</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Formulações Analíticas da ISO 14045 e Índices de Damineli et al. (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-scale-balanced text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Quantitative Structural Normalization</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Links structural load-bearing performance ($f_c$) and service life directly to lifecycle carbon emissions, avoiding false low-strength eco-claims.</p>
+
+                <!-- Equação KaTeX das Métricas de Intensidade com Rolagem Horizontal -->
+                <div class="bg-white/85 backdrop-blur-md p-3 sm:p-4 rounded-2xl text-center shadow-inner overflow-x-auto overflow-y-hidden border border-black/5" style="font-size: clamp(1.15rem, 1.95vw, 1.75rem);">
+                    $$\text{EER} = \frac{\text{Product Value}}{\text{Environmental Impact}} \quad \Longleftrightarrow \quad \text{bi} = \frac{b}{f_c} \quad \left[\frac{\text{kg binder}}{\text{m}^3 \cdot \text{MPa}}\right] \quad \text{ci} = \frac{\text{GWP}}{f_c} \quad \left[\frac{\text{kg CO}_2\text{e}}{\text{m}^3 \cdot \text{MPa}}\right]$$
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-fluid-meta text-[#444444] font-semibold">
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Binder Intensity ($\text{bi}$):</strong>
+                        Measures binder consumption per unit of compressive strength delivered ($b/f_c$). World benchmark targets $\text{bi} \le 5.0\ \text{kg}/(\text{m}^3 \cdot \text{MPa})$.
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">CO₂ Intensity ($\text{ci}$):</strong>
+                        Normalizes cradle-to-gate global warming potential by compressive resistance. World average hovers at $\sim 8.5\ \text{kg CO}_2\text{e}/(\text{m}^3 \cdot \text{MPa})$.
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>Normative Basis: ISO 14045:2012 &amp; Damineli et al. (2010, Cem. Concr. Res.)</span>
+                <span class="text-[#901812] font-bold">Structural Efficiency Indices</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Limiares Mundiais e Acesso ao Simulador (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">ECO-EFFICIENCY BENCHMARKS</span>
+                    <button onclick="document.getElementById('modal-damineli-indices-2-0').showModal()" class="text-fluid-tag text-white hover:text-[#D1A705] font-bold underline flex items-center gap-1">
+                        <i class="fa-solid fa-chart-column"></i> Global Ranges
+                    </button>
+                </div>
+
+                <h3 class="text-fluid-h3 text-white font-bold">The Packing &amp; Clinker Nexus</h3>
+
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#D1A705]">
+                        <strong class="text-[#D1A705] block mb-0.5">Particle Packing Decoupling:</strong>
+                        Optimizing aggregate grain size distributions decreases intergranular porosity, reducing required paste volume and suppressing $\text{bi}$.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-white">
+                        <strong class="text-white block mb-0.5">Clinker Intensity ($\text{cli}$):</strong>
+                        Replaces clinker with pozzolans, slag, or fillers to decouple structural load performance from limestone calcination emissions.
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="moveInGrid(0, 1)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Launch Clinker Optimizer Lab (Press ↓)</span>
+                <i class="fa-solid fa-sliders text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 02 — ISO 14045 Eco-Efficiency Evaluation &amp; Damineli Intensity Metrics</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for Clinker Lab | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Pareto Optimization (Slide 3,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: COMPARAÇÃO DE ÍNDICES BI E CI EM NÍVEL GLOBAL -->
+    <dialog id="modal-damineli-indices-2-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-4xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block uppercase">GLOBAL BENCHMARKING (DAMINELI ET AL., 2010)</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Empirical Distribution of bi and ci across Concrete Classes</h3>
+            </div>
+            <button onclick="document.getElementById('modal-damineli-indices-2-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="overflow-x-auto rounded-2xl border border-white/10 bg-white/5 max-h-[50vh]">
+            <table class="w-full text-left border-collapse text-fluid-meta">
+                <thead>
+                    <tr class="bg-[#901812] text-white sticky top-0">
+                        <th class="p-3 border-b border-white/10 font-bold">Concrete Class</th>
+                        <th class="p-3 border-b border-white/10 font-bold">Mean Strength ($f_c$)</th>
+                        <th class="p-3 border-b border-white/10 font-bold">Binder Intensity ($\text{bi}$)</th>
+                        <th class="p-3 border-b border-white/10 font-bold">CO₂ Intensity ($\text{ci}$)</th>
+                        <th class="p-3 border-b border-white/10 font-bold">Primary Eco-Efficiency Factor</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-white/10 text-[#EAEAEA]">
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-[#FF6B6B]">Low Strength (C15–C20)</td>
+                        <td class="p-2.5 font-mono">15–20 MPa</td>
+                        <td class="p-2.5 font-mono text-[#FF6B6B] font-bold">14.0–22.0 kg/(m³·MPa)</td>
+                        <td class="p-2.5 font-mono text-[#FF6B6B] font-bold">12.0–18.0 kg CO₂e/(m³·MPa)</td>
+                        <td class="p-2.5 text-xs">Inefficient binder utilization; high water/cement ratio and poor particle packing.</td>
+                    </tr>
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-[#D1A705]">Standard Structural (C30–C40)</td>
+                        <td class="p-2.5 font-mono">30–40 MPa</td>
+                        <td class="p-2.5 font-mono text-[#D1A705] font-bold">8.5–12.0 kg/(m³·MPa)</td>
+                        <td class="p-2.5 font-mono text-[#D1A705] font-bold">7.0–10.0 kg CO₂e/(m³·MPa)</td>
+                        <td class="p-2.5 text-xs">Standard commercial mix; highly dependent on regional clinker factor.</td>
+                    </tr>
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-white">High Strength (C50–C80)</td>
+                        <td class="p-2.5 font-mono">50–80 MPa</td>
+                        <td class="p-2.5 font-mono text-[#4ADE80] font-bold">5.0–7.5 kg/(m³·MPa)</td>
+                        <td class="p-2.5 font-mono text-[#4ADE80] font-bold">4.0–6.5 kg CO₂e/(m³·MPa)</td>
+                        <td class="p-2.5 text-xs">High packing density; superplasticizers enable low w/b and low specific emissions.</td>
+                    </tr>
+                    <tr class="hover:bg-white/10 transition-colors">
+                        <td class="p-2.5 font-bold text-[#4ADE80]">Ultra-Low Carbon Benchmark</td>
+                        <td class="p-2.5 font-mono">&gt; 35 MPa</td>
+                        <td class="p-2.5 font-mono text-[#4ADE80] font-bold">&le; 5.0 kg/(m³·MPa)</td>
+                        <td class="p-2.5 font-mono text-[#4ADE80] font-bold">&le; 3.0 kg CO₂e/(m³·MPa)</td>
+                        <td class="p-2.5 text-xs">High SCM substitution (LC3, GGBS, fly ash) + multimodal aggregate packing.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-4 p-3 bg-white/5 rounded-2xl text-fluid-tag text-[#DEDEDE] flex items-center justify-between">
+            <span>Low-strength concretes frequently exhibit the poorest eco-efficiency due to high specific clinker consumption per MPa delivered.</span>
+            <button onclick="document.getElementById('modal-damineli-indices-2-0').close()" class="px-4 py-2 bg-[#901812] text-white font-bold rounded-xl hover:bg-[#D1A705] hover:text-[#333333] transition-colors">Close</button>
+        </div>
+    </dialog>
+</div>
+
+<!-- SLIDE (2,1): VIRTUAL LAB - CONCRETE ECO-EFFICIENCY & CLINKER INTENSITY OPTIMIZER (BRANCH Y=1) -->
+<div id="slide-2-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">VIRTUAL LAB (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Concrete Eco-Efficiency &amp; Clinker Intensity Optimizer</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Module 02</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 w-full items-stretch">
+            <!-- Painel de Sliders e Formulação de Mistura -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                <div class="border-b border-black/10 pb-2">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Mix Design &amp; Compressive Capacity</h3>
+                    <p class="text-fluid-meta text-[#555555] font-semibold">Tune binder consumption, clinker fraction, and target strength to audit $\text{bi}$, $\text{ci}$, and ISO 14045 $EER$:</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Compressive Strength ($f_c$ at 28 days):</span>
+                            <span id="lbl-opt-fc-2-1" class="text-[#901812] font-bold font-mono">35.0 MPa</span>
+                        </label>
+                        <input type="range" id="input-opt-fc-2-1" min="15.0" max="80.0" step="1.0" value="35.0" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularEcoEficiencia_2_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Total Binder Content ($b$):</span>
+                            <span id="lbl-opt-binder-2-1" class="text-[#901812] font-bold font-mono">340 kg/m³</span>
+                        </label>
+                        <input type="range" id="input-opt-binder-2-1" min="200" max="550" step="10" value="340" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularEcoEficiencia_2_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Clinker Substitution by SCM / Filler:</span>
+                            <span id="lbl-opt-subst-2-1" class="text-[#901812] font-bold font-mono">35% SCM (Slag/Clay/FA)</span>
+                        </label>
+                        <input type="range" id="input-opt-subst-2-1" min="0" max="70" step="5" value="35" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularEcoEficiencia_2_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Granular Packing Packing Density Optimization:</span>
+                            <span id="lbl-opt-packing-2-1" class="text-[#901812] font-bold font-mono">Medium (+10% fc boost)</span>
+                        </label>
+                        <input type="range" id="input-opt-packing-2-1" min="0" max="20" step="5" value="10" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularEcoEficiencia_2_1()">
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-tag text-[#555555] font-semibold flex items-center justify-between">
+                    <span>Target: $\text{bi} \le 7.0\ \text{kg}/(\text{m}^3\text{MPa})$; $\text{ci} \le 5.0\ \text{kg CO}_2\text{e}/(\text{m}^3\text{MPa})$</span>
+                    <button type="button" onclick="resetarLab_2_1()" class="text-[#901812] hover:underline font-bold">Reset Parameters</button>
+                </div>
+            </div>
+
+            <!-- Painel de Resultados de Índices de Intensidade e EER -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-1">INTENSITY INDICES &amp; ISO 14045 AUDIT</span>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-2">
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Binder Intensity ($\text{bi}$)</span>
+                            <span id="res-bi-val-2-1" class="text-fluid-h2 text-white font-mono font-bold leading-tight block my-1">8.8 kg/(m³·MPa)</span>
+                            <span class="text-fluid-tag text-[#D1A705] font-bold" id="res-bi-badge-2-1">Moderate Efficiency</span>
+                        </div>
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">CO₂ Intensity ($\text{ci}$)</span>
+                            <span id="res-ci-val-2-1" class="text-fluid-h2 text-[#4ADE80] font-mono font-bold leading-tight block my-1">5.3 kg/(m³·MPa)</span>
+                            <span class="text-fluid-tag text-white font-mono" id="res-eer-val-2-1">EER: 0.19 MPa/kg CO₂e</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-fluid-meta text-[#DEDEDE] mt-3">
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                            <strong class="text-white block mb-0.5">Clinker Intensity Metric ($\text{cli}$):</strong>
+                            <span id="res-cli-desc-2-1">Consumes 5.7 kg clinker per MPa delivered ($221\ \text{kg clinker/m}^3$). Total concrete carbon footprint is 206 kg CO₂e/m³.</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                            <strong class="text-white block mb-0.5">ISO 14045 Eco-Efficiency Ratio:</strong>
+                            <span id="res-iso-desc-2-1">Delivers 0.188 MPa of structural capacity per kg of embodied CO₂e emission. High SCM substitution improves EER by +48% over pure OPC.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-chart-line text-[#D1A705] text-xl"></i>
+                    <span id="res-opt-verdict-2-1">Formulation achieves compliant structural eco-efficiency. Granular packing enhances strength without expanding clinker inventory.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 02 — Concrete Eco-Efficiency &amp; Clinker Intensity Optimizer</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to go to Pareto Optimization (Slide 3,0)</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (2,1) -->
+    <script>
+        function calcularEcoEficiencia_2_1() {
+            const baseFc = parseFloat(document.getElementById('input-opt-fc-2-1').value);
+            const binderKg = parseFloat(document.getElementById('input-opt-binder-2-1').value);
+            const substPct = parseFloat(document.getElementById('input-opt-subst-2-1').value) / 100;
+            const packingBonusPct = parseFloat(document.getElementById('input-opt-packing-2-1').value) / 100;
+
+            const effectiveFc = baseFc * (1 + packingBonusPct);
+
+            document.getElementById('lbl-opt-fc-2-1').innerText = `${effectiveFc.toFixed(1)} MPa ${packingBonusPct > 0 ? `(${baseFc.toFixed(0)} + ${Math.round(packingBonusPct * 100)}% pack)` : ''}`;
+            document.getElementById('lbl-opt-binder-2-1').innerText = `${binderKg.toFixed(0)} kg/m³`;
+            document.getElementById('lbl-opt-subst-2-1').innerText = `${(substPct * 100).toFixed(0)}% SCM (Slag/Clay/FA)`;
+            document.getElementById('lbl-opt-packing-2-1').innerText = `${packingBonusPct === 0 ? 'Baseline (0%)' : (packingBonusPct === 0.10 ? 'Medium (+10% fc)' : 'High (+20% fc)')}`;
+
+            const clinkerFactor = 1.0 - substPct;
+            const clinkerKg = binderKg * clinkerFactor;
+            const scmKg = binderKg * substPct;
+
+            // Fatores de emissão:
+            // Clinker: 0.86 kg CO2e/kg | SCM médio beneficiado (moagem/secagem): 0.05 kg CO2e/kg
+            // Agregados + água + transporte médio local: 28 kg CO2e/m3
+            const gwpClinker = clinkerKg * 0.86;
+            const gwpScm = scmKg * 0.05;
+            const gwpBaselineOther = 28.0;
+            const totalGwp = gwpClinker + gwpScm + gwpBaselineOther;
+
+            // Índices de Damineli et al.
+            const bi = binderKg / effectiveFc;
+            const cli = clinkerKg / effectiveFc;
+            const ci = totalGwp / effectiveFc;
+
+            // ISO 14045 EER = Functional Value (MPa) / Environmental Impact (kg CO2e)
+            const eer = effectiveFc / totalGwp;
+
+            document.getElementById('res-bi-val-2-1').innerText = `${bi.toFixed(1)} kg/(m³·MPa)`;
+            document.getElementById('res-ci-val-2-1').innerText = `${ci.toFixed(1)} kg/(m³·MPa)`;
+            document.getElementById('res-eer-val-2-1').innerText = `EER: ${eer.toFixed(3)} MPa/kg CO₂e`;
+
+            document.getElementById('res-cli-desc-2-1').innerText = 
+                `Consumes ${cli.toFixed(1)} kg clinker per MPa delivered (${Math.round(clinkerKg)} kg clinker/m³). Total concrete carbon footprint is ${Math.round(totalGwp)} kg CO₂e/m³.`;
+
+            const opcReferenceGwp = (binderKg * 0.86) + gwpBaselineOther;
+            const eerOpcRef = effectiveFc / opcReferenceGwp;
+            const eerGainPct = ((eer - eerOpcRef) / eerOpcRef) * 100;
+
+            document.getElementById('res-iso-desc-2-1').innerText = 
+                `Delivers ${eer.toFixed(3)} MPa of structural capacity per kg of embodied CO₂e. SCM substitution improves EER by ${eerGainPct >= 0 ? '+' : ''}${eerGainPct.toFixed(0)}% relative to pure OPC.`;
+
+            const biBadgeEl = document.getElementById('res-bi-badge-2-1');
+            const verdictEl = document.getElementById('res-opt-verdict-2-1');
+
+            if (ci <= 4.5 && bi <= 7.0) {
+                biBadgeEl.innerText = "Superior Eco-Efficiency";
+                biBadgeEl.className = "text-fluid-tag text-[#4ADE80] font-bold";
+                verdictEl.innerText = "Benchmark low-carbon mix: High specific strength combined with deep clinker decarbonization (ci ≤ 4.5 kg CO₂e/m³·MPa).";
+            } else if (ci <= 7.5) {
+                biBadgeEl.innerText = "Moderate Efficiency";
+                biBadgeEl.className = "text-fluid-tag text-[#D1A705] font-bold";
+                verdictEl.innerText = "Transitional compliance: Mix satisfies standard structural performance with scope for higher pozzolanic replacement.";
+            } else {
+                biBadgeEl.innerText = "Critical Carbon Intensity";
+                biBadgeEl.className = "text-fluid-tag text-[#FF6B6B] font-bold";
+                verdictEl.innerText = "High-carbon footprint (ci > 7.5 kg CO₂e/m³·MPa): Inefficient binder utilization. Redesign aggregate packing to reduce paste demand.";
+            }
+        }
+
+        function resetarLab_2_1() {
+            document.getElementById('input-opt-fc-2-1').value = 35.0;
+            document.getElementById('input-opt-binder-2-1').value = 340;
+            document.getElementById('input-opt-subst-2-1').value = 35;
+            document.getElementById('input-opt-packing-2-1').value = 10;
+            calcularEcoEficiencia_2_1();
+        }
+
+        if (document.getElementById('input-opt-fc-2-1')) {
+            calcularEcoEficiencia_2_1();
+        }
+    </script>
+</div>
+
+
+
+
+
+<!-- SLIDE (3,0): MULTI-CRITERIA DECISION ANALYSIS & PARETO OPTIMIZATION -->
+<div id="slide-3-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-polymer1.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">MODULE 03 — MULTI-OBJECTIVE TRADE-OFF OPTIMIZATION</span>
+            <h2 class="text-fluid-h2 text-[#901812]">Pareto Optimization &amp; Low-Carbon Mix Design</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Formulação Matemática de Otimização Multiobjetivo (7 cols) -->
+        <div class="lg:col-span-7 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-code-compare text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Non-Dominated Solutions Vector</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Resolves non-trivial structural conflicts between life cycle global warming potential, unit economic production cost, and mechanical durability.</p>
+
+                <!-- Equação KaTeX da Otimização Multiobjetivo com Rolagem Horizontal -->
+                <div class="bg-white/85 backdrop-blur-md p-3 sm:p-4 rounded-2xl text-center shadow-inner overflow-x-auto overflow-y-hidden border border-black/5" style="font-size: clamp(1.15rem, 1.95vw, 1.75rem);">
+                    $$\min_{\mathbf{x}} \mathbf{F}(\mathbf{x}) = \begin{bmatrix} \text{GWP}(\mathbf{x}) \\ \text{Cost}(\mathbf{x}) \end{bmatrix} \quad \text{s.t.} \quad \begin{cases} f_c(\mathbf{x}) \ge f_{c,\text{target}} \\ D_{\text{app}}(\mathbf{x}) \le D_{\text{limit}} \\ \sum x_i = 1.0\ \text{m}^3 \end{cases}$$
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-fluid-meta text-[#444444] font-semibold">
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Pareto Dominance ($\mathbf{x}_1 \prec \mathbf{x}_2$):</strong>
+                        A concrete mix dominates another if it delivers strictly lower GWP and cost without sacrificing structural compressive resistance or durability.
+                    </div>
+                    <div class="p-3 bg-white/70 rounded-xl border border-black/5">
+                        <strong class="text-[#901812] block">Economic Marginal Abatement:</strong>
+                        Quantifies the marginal financial investment required ($\Delta \$ / \Delta \text{t CO}_2\text{e}$) when transitioning from OPC to ternary calcined-clay systems.
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>Analytical Formulation: Habert et al. (2020) &amp; ISO 14045:2012</span>
+                <span class="text-[#901812] font-bold">Non-Dominated Pareto Envelope</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: Fronteiras de Trade-off e Acesso ao Simulador (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between border-l-[12px] border-[#D1A705]">
+            <div class="space-y-3">
+                <div class="flex justify-between items-start">
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">TRADE-OFF DYNAMICS</span>
+                    <button onclick="document.getElementById('modal-pareto-principles-3-0').showModal()" class="text-fluid-tag text-white hover:text-[#D1A705] font-bold underline flex items-center gap-1">
+                        <i class="fa-solid fa-chart-line"></i> Pareto Mechanics
+                    </button>
+                </div>
+
+                <h3 class="text-fluid-h3 text-white font-bold">Cost vs. Carbon Abatement</h3>
+
+                <div class="space-y-2 text-fluid-meta text-[#DEDEDE]">
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-[#D1A705]">
+                        <strong class="text-[#D1A705] block mb-0.5">The Early Strength Barrier:</strong>
+                        High-volume SCM replacements (e.g. &gt;50% GGBS or Fly Ash) exhibit slower early hydration kinetics, requiring chemical activators or thermal curing.
+                    </div>
+                    <div class="p-3 bg-white/10 rounded-xl border-l-4 border-white">
+                        <strong class="text-white block mb-0.5">Ternary Synergy Optimization:</strong>
+                        Combining limestone calcined clay (LC3) with multimodal superplasticizers unlocks optimal Pareto positions with zero cost penalty.
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="moveInGrid(0, 1)" class="w-full py-3.5 bg-[#901812] hover:bg-[#D1A705] hover:text-[#333333] text-white font-bold rounded-2xl transition-all text-fluid-body shadow-md min-h-[52px] flex items-center justify-center space-x-2">
+                <span>Launch Pareto Frontier Lab (Press ↓)</span>
+                <i class="fa-solid fa-calculator text-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 03 — Multi-Criteria Optimization &amp; Pareto Boundary Formulation</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↓</kbd> for Pareto Lab | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> for Synthesis &amp; Quiz 120 (Slide 4,0)</span>
+    </footer>
+
+    <!-- MODAL NATIVO: PRINCÍPIOS DE DOMINÂNCIA DE PARETO EM ECOEFICIÊNCIA -->
+    <dialog id="modal-pareto-principles-3-0" class="backdrop:bg-black/60 rounded-3xl p-6 sm:p-8 card-glass-dark text-white max-w-4xl w-full shadow-2xl border border-white/15">
+        <div class="flex justify-between items-start border-b border-white/20 pb-3 mb-4">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] font-bold block uppercase">MULTI-CRITERIA DECISION ANALYSIS (MCDA)</span>
+                <h3 class="text-fluid-h2 text-white font-bold">Pareto Efficiency &amp; Marginal Decarbonization Abatement</h3>
+            </div>
+            <button onclick="document.getElementById('modal-pareto-principles-3-0').close()" class="w-11 h-11 rounded-full bg-white/10 hover:bg-[#901812] text-white flex items-center justify-center text-xl transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-fluid-meta text-[#EAEAEA]">
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-2">
+                <strong class="text-[#D1A705] text-fluid-h3 block">Boundary Envelopes:</strong>
+                <p class="text-sm sm:text-base leading-relaxed text-[#DEDEDE]">
+                    Concrete formulation is intrinsically multi-attribute. Increasing clinker substitution with SCMs sharply curtails embodied $\text{CO}_2\text{e}$ emissions, but can induce latency in 1-day stripping strength and demands specialized chemical admixtures that shift material pricing. Solutions on the Pareto envelope represent mixtures where no single objective can be enhanced without degrading another.
+                </p>
+            </div>
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/10 space-y-2">
+                <strong class="text-[#4ADE80] text-fluid-h3 block">Marginal Abatement Metric:</strong>
+                <p class="text-sm sm:text-base leading-relaxed text-[#DEDEDE]">
+                    The marginal abatement cost curve ($\text{MACC}$) measures:
+                    $$\text{MAC} = \frac{\text{Cost}_{\text{green}} - \text{Cost}_{\text{ref}}}{\text{GWP}_{\text{ref}} - \text{GWP}_{\text{green}}} \quad \left[\frac{\text{\$}}{\text{t CO}_2\text{e avoided}}\right]$$
+                    Industrial by-products such as blast furnace slag and low-grade fly ash often exhibit negative or neutral abatement costs when aggregate packing is optimized.
+                </p>
+            </div>
+        </div>
+        <div class="mt-4 p-3 bg-white/5 rounded-2xl text-fluid-tag text-[#DEDEDE] flex items-center justify-between">
+            <span>Pareto optimality eliminates arbitrary single-score weighting bias in structural concrete procurement.</span>
+            <button onclick="document.getElementById('modal-pareto-principles-3-0').close()" class="px-4 py-2 bg-[#901812] text-white font-bold rounded-xl hover:bg-[#D1A705] hover:text-[#333333] transition-colors">Close</button>
+        </div>
+    </dialog>
+</div>
+
+<!-- SLIDE (3,1): VIRTUAL LAB - PARETO FRONTIER & LOW-CARBON MIX DESIGN LAB (BRANCH Y=1) -->
+<div id="slide-3-1" class="slide-screen slide-hidden-down flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-polymer2.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center flex-shrink-0 mb-2">
+        <div>
+            <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider">VIRTUAL LAB (BRANCH Y=1)</span>
+            <h2 class="text-fluid-h2 text-[#333333]">Pareto Frontier &amp; Low-Carbon Mix Design Lab</h2>
+        </div>
+        <button onclick="moveInGrid(0, -1)" class="px-5 py-2.5 bg-white/85 backdrop-blur-md text-[#901812] font-bold rounded-2xl shadow-sm hover:bg-[#901812] hover:text-white transition-colors text-fluid-tag border border-[#901812]/20 min-h-[48px] flex items-center space-x-2">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Return to Module 03</span>
+        </button>
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="w-full flex-1 flex items-center justify-center my-auto py-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 w-full items-stretch">
+            <!-- Painel de Sliders e Configuração de Mix -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass space-y-4 flex flex-col justify-between">
+                <div class="border-b border-black/10 pb-2">
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Mix Proportions &amp; Economic Constraints</h3>
+                    <p class="text-fluid-meta text-[#555555] font-semibold">Simulate structural trade-offs across 1 m³ of concrete to compute Pareto non-dominance:</p>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block text-[#333333]">Binder Formulation Architecture:</label>
+                        <select id="select-binder-type-3-1" class="w-full p-3 bg-white/90 rounded-2xl border border-black/10 text-fluid-meta font-bold text-[#333333] cursor-pointer" onchange="selecionarPresetPareto_3_1()">
+                            <option value="opc">OPC Pure Portland (95% Clinker) — Standard Ref.</option>
+                            <option value="slag50">50% Blast Furnace Slag (GGBS) — High Latent Hydration</option>
+                            <option value="fa30">30% Coal Fly Ash (Class F) — High Fluidity</option>
+                            <option value="lc3">LC3 System (50% Clinker + 30% Calcined Clay + 15% Limestone)</option>
+                            <option value="ternary">Ternary Mix (40% Clinker + 40% GGBS + 15% Silica Fume/Filler)</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Superplasticizer Dosage (Solids % of Binder):</span>
+                            <span id="lbl-sp-dose-3-1" class="text-[#901812] font-bold font-mono">0.60% ($3.50/kg)</span>
+                        </label>
+                        <input type="range" id="input-sp-dose-3-1" min="0.10" max="1.50" step="0.05" value="0.60" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularPareto_3_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Water-to-Binder Ratio ($w/b$):</span>
+                            <span id="lbl-wb-ratio-3-1" class="text-[#901812] font-bold font-mono">0.42</span>
+                        </label>
+                        <input type="range" id="input-wb-ratio-3-1" min="0.28" max="0.60" step="0.01" value="0.42" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularPareto_3_1()">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label class="text-fluid-meta font-bold block flex justify-between text-[#333333]">
+                            <span>Carbon Price Credit Penalty ($\$ / \text{t CO}_2\text{e}$):</span>
+                            <span id="lbl-carbon-tax-3-1" class="text-[#901812] font-bold font-mono">$40 / t CO₂e</span>
+                        </label>
+                        <input type="range" id="input-carbon-tax-3-1" min="0" max="120" step="10" value="40" class="w-full accent-[#901812] h-4 cursor-pointer" oninput="calcularPareto_3_1()">
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/70 rounded-2xl border border-black/5 text-fluid-tag text-[#555555] font-semibold flex items-center justify-between">
+                    <span>Model: Non-dominated Pareto frontier mapping $\text{GWP}$ vs. Unit Cost</span>
+                    <button type="button" onclick="resetarLab_3_1()" class="text-[#901812] hover:underline font-bold">Reset Parameters</button>
+                </div>
+            </div>
+
+            <!-- Painel de Resultados de Pareto e Indicadores de Abatimento -->
+            <div class="lg:col-span-6 p-6 sm:p-7 rounded-3xl card-glass-dark text-white space-y-4 flex flex-col justify-between">
+                <div>
+                    <span class="text-fluid-tag text-[#D1A705] font-bold uppercase tracking-wider block mb-1">MULTI-CRITERIA PARETO AUDIT</span>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-2">
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Unit Concrete Cost</span>
+                            <span id="res-cost-total-3-1" class="text-fluid-h2 text-white font-mono font-bold leading-tight block my-1">$92.40 / m³</span>
+                            <span class="text-fluid-tag text-[#4ADE80] font-bold" id="res-cost-delta-3-1">-$4.80 vs. OPC Ref.</span>
+                        </div>
+                        <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-md text-center border border-white/10">
+                            <span class="text-fluid-meta text-[#DEDEDE] block">Embodied GWP</span>
+                            <span id="res-gwp-val-3-1" class="text-fluid-h2 text-[#4ADE80] font-mono font-bold leading-tight block my-1">168 kg CO₂e/m³</span>
+                            <span class="text-fluid-tag text-[#4ADE80] font-bold" id="res-gwp-reduct-3-1">-46.7% Decarbonized</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-fluid-meta text-[#DEDEDE] mt-3">
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-[#D1A705]">
+                            <strong class="text-white block mb-0.5">Pareto Envelope Status:</strong>
+                            <span id="res-pareto-status-3-1">Pareto-optimal mix: Non-dominated solution delivering 38.5 MPa with a negative marginal abatement cost of -$31.20 / t CO₂e.</span>
+                        </div>
+                        <div class="p-3 bg-white/5 rounded-xl border-l-4 border-white">
+                            <strong class="text-white block mb-0.5">Strength &amp; Durability Compliance:</strong>
+                            <span id="res-compliance-desc-3-1">Delivers 38.5 MPa compressive capacity ($f_c \ge 35\ \text{MPa}$) and superior chloride resistance via refined SCM pore structure.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3 bg-white/5 rounded-2xl text-fluid-meta text-[#DEDEDE] flex items-center space-x-3 backdrop-blur-sm border border-white/10">
+                    <i class="fa-solid fa-trophy text-[#D1A705] text-xl"></i>
+                    <span id="res-verdict-pareto-3-1">LC3 and blended ternary architectures dominate the Pareto boundary across environmental and economic vectors.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: Module 03 — Low-Carbon Mix Design &amp; Multi-Objective Pareto Simulator</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">↑</kbd> to return | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">→</kbd> to advance to Synthesis &amp; Quiz 120 (Slide 4,0)</span>
+    </footer>
+
+    <!-- SCRIPT LOCAL AUTOCONTIDO DO SLIDE (3,1) -->
+    <script>
+        const paretoPresets_3_1 = {
+            opc:     { name: "OPC",     clinkerRatio: 0.95, scmCost: 0,   clinkerCost: 95.0,  gwpScm: 0,    wbBase: 0.48, fcBase: 36.0, scmDose: 0.00 },
+            slag50:  { name: "GGBS 50", clinkerRatio: 0.48, scmCost: 55,  clinkerCost: 95.0,  gwpScm: 45.0, wbBase: 0.42, fcBase: 39.0, scmDose: 0.50 },
+            fa30:    { name: "FA 30",   clinkerRatio: 0.68, scmCost: 40,  clinkerCost: 95.0,  gwpScm: 12.0, wbBase: 0.44, fcBase: 35.0, scmDose: 0.30 },
+            lc3:     { name: "LC3",     clinkerRatio: 0.50, scmCost: 45,  clinkerCost: 95.0,  gwpScm: 25.0, wbBase: 0.40, fcBase: 41.0, scmDose: 0.45 },
+            ternary: { name: "Ternary", clinkerRatio: 0.40, scmCost: 65,  clinkerCost: 95.0,  gwpScm: 40.0, wbBase: 0.38, fcBase: 44.0, scmDose: 0.55 }
+        };
+
+        function selecionarPresetPareto_3_1() {
+            const key = document.getElementById('select-binder-type-3-1').value;
+            const p = paretoPresets_3_1[key];
+            document.getElementById('input-wb-ratio-3-1').value = p.wbBase;
+            calcularPareto_3_1();
+        }
+
+        function calcularPareto_3_1() {
+            const key = document.getElementById('select-binder-type-3-1').value;
+            const p = paretoPresets_3_1[key];
+
+            const spDosePct = parseFloat(document.getElementById('input-sp-dose-3-1').value);
+            const wb = parseFloat(document.getElementById('input-wb-ratio-3-1').value);
+            const carbonTax = parseFloat(document.getElementById('input-carbon-tax-3-1').value);
+
+            document.getElementById('lbl-sp-dose-3-1').innerText = `${spDosePct.toFixed(2)}% ($3.50/kg)`;
+            document.getElementById('lbl-wb-ratio-3-1').innerText = `${wb.toFixed(2)}`;
+            document.getElementById('lbl-carbon-tax-3-1').innerText = `$${carbonTax.toFixed(0)} / t CO₂e`;
+
+            const totalBinderKg = 340.0;
+            const clinkerKg = totalBinderKg * p.clinkerRatio;
+            const scmKg = totalBinderKg * p.scmDose;
+
+            // Emissões de GWP (kg CO2e / m3):
+            // Clínquer: 0.86 kg CO2e/kg | SCM: gwpScm / 1000 por kg
+            // Agregados virgens e logística base: 26 kg CO2e/m3
+            const gwpClinker = clinkerKg * 0.86;
+            const gwpScm = scmKg * (p.gwpScm / 1000.0);
+            const gwpBaseOther = 26.0;
+            const totalGwp = gwpClinker + gwpScm + gwpBaseOther;
+
+            // Modelo mecânico simplificado de Abram / Bolomey
+            // fc = A * (b / w) - B com bônus de empacotamento superplastificante
+            const spBonus = 1.0 + (spDosePct * 0.12);
+            const wbPenalty = (0.50 / wb);
+            const effectiveFc = p.fcBase * wbPenalty * spBonus * 0.90;
+
+            // Custos unitários dos componentes ($/m3):
+            // Clínquer: $95/ton ($0.095/kg) | SCM: $scmCost/ton | Agregados: $38/m3 | Água: $2/m3
+            // Superplastificante: $3.50/kg de aditivo líquido
+            const spKg = totalBinderKg * (spDosePct / 100.0);
+            const costClinker = clinkerKg * (p.clinkerCost / 1000.0);
+            const costScm = scmKg * (p.scmCost / 1000.0);
+            const costAggregates = 38.0;
+            const costSp = spKg * 3.50;
+            const costProduction = 18.0; // mão-de-obra e usinagem
+            const costCarbon = (totalGwp / 1000.0) * carbonTax;
+
+            const totalCost = costClinker + costScm + costAggregates + costSp + costProduction + costCarbon;
+
+            // Linha de base de referência (OPC a wb=0.48, sem carbono tributado):
+            const refGwp = (340 * 0.95 * 0.86) + gwpBaseOther; // ~303 kg CO2e
+            const refCost = (340 * 0.95 * 0.095) + costAggregates + (340 * 0.005 * 3.50) + costProduction + ((refGwp / 1000.0) * carbonTax); // ~$97.20
+
+            const deltaCost = totalCost - refCost;
+            const gwpReductionPct = ((refGwp - totalGwp) / refGwp) * 100;
+
+            // Marginal Abatement Cost ($ / t CO2e evitado)
+            const avoidedCO2Tons = (refGwp - totalGwp) / 1000.0;
+            const mac = avoidedCO2Tons > 0 ? (deltaCost / avoidedCO2Tons) : 0;
+
+            document.getElementById('res-cost-total-3-1').innerText = `$${totalCost.toFixed(2)} / m³`;
+            document.getElementById('res-cost-delta-3-1').innerText = `${deltaCost <= 0 ? '-' : '+'}$${Math.abs(deltaCost).toFixed(2)} vs. OPC Ref.`;
+            document.getElementById('res-cost-delta-3-1').className = deltaCost <= 0 ? "text-fluid-tag text-[#4ADE80] font-bold" : "text-fluid-tag text-[#D1A705] font-bold";
+
+            document.getElementById('res-gwp-val-3-1').innerText = `${Math.round(totalGwp)} kg CO₂e/m³`;
+            document.getElementById('res-gwp-reduct-3-1').innerText = `-${gwpReductionPct.toFixed(1)}% Decarbonized`;
+
+            const statusEl = document.getElementById('res-pareto-status-3-1');
+            const compEl = document.getElementById('res-compliance-desc-3-1');
+            const verdictEl = document.getElementById('res-verdict-pareto-3-1');
+
+            compEl.innerText = `Delivers ${effectiveFc.toFixed(1)} MPa compressive capacity (${effectiveFc >= 35 ? 'Compliant f_c ≥ 35 MPa' : 'Sub-structural f_c < 35 MPa'}) at w/b = ${wb.toFixed(2)}.`;
+
+            if (deltaCost <= 0 && gwpReductionPct >= 35) {
+                statusEl.innerText = `Dominant Pareto Point: Achieves ${effectiveFc.toFixed(1)} MPa with a negative abatement cost of $${mac.toFixed(2)}/t CO₂e (Direct cost saving).`;
+                verdictEl.innerText = "Strictly non-dominated formulation: Outperforms the ordinary Portland benchmark in both financial expense and carbon abatement.";
+            } else if (effectiveFc >= 35 && gwpReductionPct >= 20) {
+                statusEl.innerText = `Pareto-Optimal Trade-Off: High-performance structural mix with a modest marginal abatement cost of +$${mac.toFixed(2)}/t CO₂e.`;
+                verdictEl.innerText = "Feasible frontier solution: Balances high mechanical capacity and chemical durability with certified carbon abatement.";
+            } else {
+                statusEl.innerText = "Dominated or Sub-optimal Solution: High carbon footprint or inadequate compressive capacity compared to blended alternatives.";
+                verdictEl.innerText = "Sub-optimal mix: Reconfigure w/b ratio and SCM fractions to shift coordinates onto the efficient Pareto envelope.";
+            }
+        }
+
+        function resetarLab_3_1() {
+            document.getElementById('select-binder-type-3-1').value = 'lc3';
+            document.getElementById('input-sp-dose-3-1').value = 0.60;
+            document.getElementById('input-carbon-tax-3-1').value = 40;
+            selecionarPresetPareto_3_1();
+        }
+
+        if (document.getElementById('input-sp-dose-3-1')) {
+            calcularPareto_3_1();
+        }
+    </script>
+</div>
+
+
+
+
+
+<!-- SLIDE (4,0): CLOSING MODULE — SYNTHESIS, CANONICAL REFERENCES & DUAL EVALUATION HUB -->
+<div id="slide-4-0" class="slide-screen slide-hidden-right flex flex-col justify-between p-6 sm:p-8 md:p-10 min-h-full h-full" style="background: linear-gradient(90deg, var(--bg-shade-left) 25%, var(--bg-shade-mid) 60%, var(--bg-shade-right) 100%), url('bg-blocks3.png') center right / cover fixed no-repeat;">
+    <!-- Camada 1: Cabeçalho Estático Sempre Visível -->
+    <header class="w-full flex justify-between items-center mb-2 flex-shrink-0">
+        <div>
+            <span class="text-fluid-tag text-[#901812] font-bold uppercase tracking-wider">CLOSING MODULE — SYNTHESIS &amp; DUAL EVALUATION</span>
+            <h2 class="text-fluid-h2 text-[#901812]">References &amp; Assessment Submissions</h2>
+        </div>
+        <img src="pms.png" alt="PMS Logo" class="h-10 sm:h-12 w-auto" onerror="this.src='https://raw.githubusercontent.com/jmfcarvalho/civ665/main/assets/pms_logo/pms.png'">
+    </header>
+
+    <!-- Camada 2: Núcleo Centralizado Verticalmente -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-7 my-auto w-full py-2 items-stretch">
+        <!-- Coluna 1: Referências Centrais e Literatura Normativa (5 cols) -->
+        <div class="lg:col-span-5 p-6 sm:p-7 rounded-3xl card-glass space-y-3 flex flex-col justify-between border-l-[12px] border-[#901812]">
+            <div class="space-y-2">
+                <div class="flex items-center space-x-3 text-[#901812] mb-1">
+                    <i class="fa-solid fa-book-bookmark text-3xl"></i>
+                    <h3 class="text-fluid-h3 text-[#333333] font-bold">Standard References</h3>
+                </div>
+                <p class="text-fluid-body text-[#444444]">Foundational literature governing carbon footprint accounting, eco-efficiency metrics, and multi-criteria optimization:</p>
+
+                <ul class="space-y-2 text-fluid-meta text-[#444444] font-semibold border-t border-black/10 pt-2.5">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-file-lines text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>ISO 14045:2012:</strong> <em>Environmental management — Eco-efficiency assessment of product systems — Principles, requirements and guidelines</em>. ISO, Geneva.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-file-lines text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>Damineli, B. L. et al. (2010):</strong> Measuring the eco-efficiency of cement use. <em>Cement and Concrete Research</em>, 40(4), 555-572.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-book text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>Habert, G. et al. (2020):</strong> Environmental impacts and decarbonization pathways for the cement and concrete sector. <em>Nature Reviews Earth &amp; Environment</em>, 1(11), 559-573.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-certificate text-[#901812] mt-1 mr-2 text-xs"></i>
+                        <span><strong>WRI &amp; WBCSD (2004):</strong> <em>The Greenhouse Gas Protocol: A Corporate Accounting and Reporting Standard</em> (Revised Edition).</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex items-center justify-between pt-2 border-t border-black/10 text-fluid-tag text-[#777777] font-semibold">
+                <span>CIV 665 • SICon / DEC — UFV</span>
+                <span class="text-[#901812] font-bold">Class 120 Concluded</span>
+            </div>
+        </div>
+
+        <!-- Coluna 2: In-Class Quiz 120 (3.5 cols) -->
+        <div class="lg:col-span-3.5 sm:col-span-6 lg:col-span-3 p-5 sm:p-6 rounded-3xl card-glass-dark text-white text-center space-y-3 flex flex-col justify-between border-l-[10px] border-[#D1A705]">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] block font-bold uppercase tracking-wider mb-1">EVALUATION 01</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-2 leading-tight">In-Class Quiz 120</h3>
+
+                <div class="bg-white/90 backdrop-blur-md p-3 rounded-2xl max-w-[150px] sm:max-w-[170px] mx-auto shadow-lg my-1.5">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSfkN7N8CROwYKjQv0dgFL8pz5G3tPlydlrpbHuAJbv970vMAw%2Fviewform%3Fusp%3Dheader&color=901812" alt="Quiz 120 QR Code" class="w-full h-auto rounded-lg">
+                </div>
+                <span class="text-fluid-tag text-[#DEDEDE] font-bold block">Scan for Live Quiz</span>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkN7N8CROwYKjQv0dgFL8pz5G3tPlydlrpbHuAJbv970vMAw/viewform?usp=header" target="_blank" class="w-full py-3 px-4 bg-[#901812] text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md inline-flex items-center justify-center space-x-2 min-h-[48px]">
+                <i class="fa-solid fa-pen-to-square text-[#D1A705] text-lg"></i>
+                <span>Open Quiz 120</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+            </a>
+        </div>
+
+        <!-- Coluna 3: Weekly Report Form 110 & 120 (3.5 cols) -->
+        <div class="lg:col-span-3.5 sm:col-span-6 lg:col-span-4 p-5 sm:p-6 rounded-3xl card-glass-dark text-white text-center space-y-3 flex flex-col justify-between border-l-[10px] border-white">
+            <div>
+                <span class="text-fluid-tag text-[#D1A705] block font-bold uppercase tracking-wider mb-1">EVALUATION 02</span>
+                <h3 class="text-fluid-h3 text-white font-bold mb-2 leading-tight">Weekly Synthesis Report</h3>
+
+                <div class="bg-white/90 backdrop-blur-md p-3 rounded-2xl max-w-[150px] sm:max-w-[170px] mx-auto shadow-lg my-1.5">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSfi2PKo2xso1RrUecfJwIPalMjf6qKwImVhi3WTg83B5cKlYA%2Fviewform%3Fusp%3Dpublish-editor&color=901812" alt="Weekly Report Form QR Code" class="w-full h-auto rounded-lg">
+                </div>
+                <span class="text-fluid-tag text-[#DEDEDE] font-bold block">Scan for Weekly Form</span>
+            </div>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfi2PKo2xso1RrUecfJwIPalMjf6qKwImVhi3WTg83B5cKlYA/viewform?usp=publish-editor" target="_blank" class="w-full py-3 px-4 bg-[#333333] border border-white/20 text-white font-bold rounded-2xl hover:bg-[#D1A705] hover:text-[#333333] transition-all text-fluid-body shadow-md inline-flex items-center justify-center space-x-2 min-h-[48px]">
+                <i class="fa-solid fa-file-invoice text-[#D1A705] text-lg"></i>
+                <span>Open Weekly Form</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Camada 3: Rodapé Opcional / Notas Técnicas -->
+    <footer class="w-full flex justify-between items-center text-fluid-tag text-[#777777] border-t border-black/10 pt-2 flex-shrink-0">
+        <span class="font-bold">CIV 665: LCA-based Eco-Efficiency &amp; Carbon Footprint — Class 120 Complete</span>
+        <span class="font-semibold">Press <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">←</kbd> to Review Previous Slides | <kbd class="px-2 py-0.5 bg-black/10 rounded font-mono text-black">Home</kbd> to Return to Cover</span>
+    </footer>
+</div>
+
+
+
+    
+
+    </main>
+
+    <!-- MOTOR DE NAVEGAÇÃO MATRICIAL 2D -->
+    <script>
+        let currentX = 0, currentY = 0;
+        let slideGrid = {};
+
+        function updateSlideGrid() {
+            slideGrid = {};
+            document.querySelectorAll('[id^="slide-"]').forEach(slide => {
+                const parts = slide.id.replace('slide-', '').split('-');
+                if (parts.length === 2) slideGrid[`${parts[0]},${parts[1]}`] = slide.id;
+            });
+        }
+
+        function hasSlide(x, y) { return !!slideGrid[`${x},${y}`]; }
+
+        function updateUI() {
+            updateSlideGrid();
+            const keysH = Object.keys(slideGrid).filter(k => k.endsWith(',0'));
+            const maxH = Math.max(...keysH.map(k => parseInt(k.split(',')[0])), 0);
+            const totalMainSlides = keysH.length;
+            
+            document.getElementById('progressBar').style.width = `${maxH === 0 ? 100 : (currentX / maxH) * 100}%`;
+            document.getElementById('slideIndicator').innerText = `Slide (${currentX},${currentY}) | ${currentX + 1} of ${totalMainSlides}`;
+
+            const dirs = { 'up': [0,-1], 'down': [0,1], 'left': [-1,0], 'right': [1,0] };
+            for (let d in dirs) {
+                const btn = document.getElementById(`btn-nav-${d}`);
+                if (btn) btn.classList.toggle('nav-enabled', hasSlide(currentX + dirs[d][0], currentY + dirs[d][1]));
+            }
+        }
+
+        function moveInGrid(dx, dy) {
+            updateSlideGrid();
+            const nx = currentX + dx, ny = currentY + dy;
+            if (hasSlide(nx, ny)) {
+                const cur = document.getElementById(slideGrid[`${currentX},${currentY}`]);
+                const nxt = document.getElementById(slideGrid[`${nx},${ny}`]);
+                
+                cur.classList.remove('slide-active', 'slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+                nxt.classList.remove('slide-active', 'slide-hidden-left', 'slide-hidden-right', 'slide-hidden-up', 'slide-hidden-down');
+
+                if (dx > 0) cur.classList.add('slide-hidden-left');
+                else if (dx < 0) cur.classList.add('slide-hidden-right');
+                else if (dy > 0) cur.classList.add('slide-hidden-down');
+                else if (dy < 0) cur.classList.add('slide-hidden-up');
+
+                nxt.classList.add('slide-active');
+
+                currentX = nx; currentY = ny;
+                updateUI();
+                if (window.renderMathInElement) renderMathInElement(nxt);
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (['INPUT','TEXTAREA','DIALOG'].includes(document.activeElement.tagName)) return;
+            if (e.key === 'ArrowRight' || e.key === ' ') moveInGrid(1, 0);
+            else if (e.key === 'ArrowLeft') moveInGrid(-1, 0);
+            else if (e.key === 'ArrowUp') moveInGrid(0, -1);
+            else if (e.key === 'ArrowDown') moveInGrid(0, 1);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => { 
+            updateUI(); 
+        });
+    </script>
+</body>
+</html>
